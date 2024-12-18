@@ -6,12 +6,14 @@
       "@/*": [
         "./*"
       ]
-    }
+    },
+    "jsx": "react-native" // Important for React Native.This tells the TypeScript compiler to handle JSX syntax specifically for React Native.
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
   ]
 }
