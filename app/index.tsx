@@ -1,13 +1,14 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import '../../global.css'
+import '../global.css'
+import { Link } from "expo-router";
 
 const index = () => {
   return (
     <SafeAreaView>
-      <View className="bg-red-300 h-20" >
-        <Text className="text-red-600">ColorMind Home BYE BYE page!!</Text>
+      <View className="" >
+      <Link href="/sign-up" ><Text className="text-blue-700 text-3xl">Sign Up</Text></Link>
 
       </View>
     </SafeAreaView>

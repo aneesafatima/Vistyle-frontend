@@ -8,6 +8,9 @@ declare module "react-native" {
   interface TextProps {
     className?: string;
   }
+  interface LinksProps {
+    className?: string;
+  }
   //   interface ImageProps {
   //     className?: string;
   //   }
