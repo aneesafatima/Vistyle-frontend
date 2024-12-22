@@ -6,7 +6,8 @@ module.exports = {
     "./app/**/*.{js,jsx,ts,tsx}",
   ], // Any files inside the nested app folder,
   theme: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 };
