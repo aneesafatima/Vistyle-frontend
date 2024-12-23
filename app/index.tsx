@@ -9,7 +9,7 @@ const HomePage = () => {
     <SafeAreaView className="flex-1 justify-center items-center bg-white">
       <View className="text-center">
         <Text className="text-4xl font-semibold text-center">ColorMind</Text>
-        <Text className="mt-4 text-lg font-medium text-center text-red-500">
+        <Text className="mt-4 text-lg font-medium text-center">
           Welcome to ColorMind, your AI-powered space for personalized clothing
           and accessory recommendations.
         </Text>

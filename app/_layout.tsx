@@ -1,16 +1,19 @@
-import React, { Component } from "react";
-import { Text, View } from "react-native";
+import React from "react";
 import { Stack } from "expo-router";
+import { Provider } from "react-redux";
+import { store } from "../query/store";
 
-const _layout = () => {
-{
+const MainLayout = () => {
+  
     return (
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      </Stack>
+      <Provider store={store}>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        </Stack>
+      </Provider>
     );
-  }
-}
+  
+};
 
-export default _layout;
+export default MainLayout;
