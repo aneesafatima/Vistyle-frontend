@@ -16,7 +16,7 @@
     "@expo/dev-server": "^0.5.5",
     "@expo/vector-icons": "^14.0.2",
     "@hookform/resolvers": "^3.9.1",
-    "@react-navigation/native": "^7.0.0",
+    "@react-navigation/native": "^7.0.14",
     "@reduxjs/toolkit": "^2.5.0",
     "expo": "~52.0.20",
     "expo-font": "~13.0.2",

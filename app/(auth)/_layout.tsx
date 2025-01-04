@@ -23,6 +23,12 @@ const _layout = () => {
             headerShown: false,
           }}
         ></Stack.Screen>
+        <Stack.Screen
+          name="otp-verification"
+          options={{
+            headerShown: false,
+          }}
+        ></Stack.Screen>
       </Stack>
     </>
   );
