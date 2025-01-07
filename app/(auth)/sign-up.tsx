@@ -1,43 +1,80 @@
-import { View, Text, Alert, Pressable, TextInput } from "react-native";
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useForm, Controller } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "expo-router";
+import React from 'react';
+import { View, Text, TextInput, Pressable, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useForm, Controller } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'expo-router'; // Import useRouter from expo-router
+import { useSignUpUserMutation } from '../../query/features/authApi'; // Import the mutation hook
 
-const singupSchema = z
+const signUpSchema = z
   .object({
-    email: z.string().email("Invalid email address"),
-    password: z.string().min(6, "Password must be at least 6 characters"),
-    passwordConfirm: z
-      .string()
-      .min(6, "Password confirmation must be at least 6 characters"),
+    name: z.string().nonempty('Name is required'),
+    email: z.string().email('Invalid email address'),
+    password: z.string().min(6, 'Password must be at least 6 characters'),
+    passwordConfirm: z.string(),
   })
   .refine((data) => data.password === data.passwordConfirm, {
-    message: "Passwords do not match",
-    path: ["passwordConfirm"],
+    message: 'Passwords do not match',
+    path: ['passwordConfirm'],
   });
 
-type LoginFormValues = z.infer<typeof singupSchema>;
+type LoginFormValues = z.infer<typeof signUpSchema>;
 
-const signUp = () => {
+const SignUp = () => {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormValues>({
-    resolver: zodResolver(singupSchema),
-    defaultValues: { email: "", password: "", passwordConfirm: "" },
+    resolver: zodResolver(signUpSchema),
+    defaultValues: { name: '', email: '', password: '', passwordConfirm: '' },
   });
 
-  const onSubmit = (data: LoginFormValues) => {
-    Alert.alert("Login Success", `Email: ${data.email}`);
+  const [signUpUser, { isLoading }] = useSignUpUserMutation(); // RTK Query mutation hook
+  const router = useRouter();
+
+  const onSubmit = async (data: LoginFormValues) => {
+    try {
+      const result = await signUpUser({
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        passwordConfirm: data.passwordConfirm,
+    }).unwrap(); // Call the mutation and unwrap the result
+      Alert.alert('Success', 'User registered successfully!');
+      console.log(result);
+
+      // Redirect to login page
+      router.push('/login');
+    } catch (error: any) {
+      Alert.alert('Error', error?.data?.message || 'Something went wrong');
+      console.error(error);
+    }
   };
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100 justify-center px-6">
-      <Text className="text-2xl font-bold text-center mb-4">Sign up</Text>
+      <Text className="text-2xl font-bold text-center mb-4">Sign Up</Text>
+
+      {/* Name Field */}
+      <View className="mb-4">
+        <Text className="text-lg text-gray-800">Name</Text>
+        <Controller
+          control={control}
+          name="name"
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextInput
+              className="border border-gray-300 rounded-lg px-4 py-4 mt-2 bg-white"
+              placeholder="Enter your name"
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+            />
+          )}
+        />
+        {errors.name && <Text className="mt-1 text-red-500">{errors.name.message}</Text>}
+      </View>
 
       {/* Email Field */}
       <View className="mb-4">
@@ -56,7 +93,7 @@ const signUp = () => {
             />
           )}
         />
-        {errors.email && <Text className="mt-1">{errors.email.message}</Text>}
+        {errors.email && <Text className="mt-1 text-red-500">{errors.email.message}</Text>}
       </View>
 
       {/* Password Field */}
@@ -76,12 +113,10 @@ const signUp = () => {
             />
           )}
         />
-        {errors.password && (
-          <Text className="mt-1">{errors.password.message}</Text>
-        )}
+        {errors.password && <Text className="mt-1 text-red-500">{errors.password.message}</Text>}
       </View>
 
-      {/* Password Confirm Field */}
+      {/* Confirm Password Field */}
       <View className="mb-4">
         <Text className="text-lg text-gray-800">Confirm Password</Text>
         <Controller
@@ -99,27 +134,22 @@ const signUp = () => {
           )}
         />
         {errors.passwordConfirm && (
-          <Text className="mt-1">{errors.passwordConfirm.message}</Text>
+          <Text className="mt-1 text-red-500">{errors.passwordConfirm.message}</Text>
         )}
       </View>
 
       {/* Submit Button */}
       <Pressable
-        className="bg-black py-3 rounded-lg"
+        className="py-3 rounded-lg bg-black"
         onPress={handleSubmit(onSubmit)}
+        disabled={isLoading} // Disable the button while loading
       >
         <Text className="text-white text-center text-lg font-medium">
-          Login
+          {isLoading ? 'Signing Up...' : 'Sign Up'}
         </Text>
       </Pressable>
-      <Text className="text-center mt-2 text-lg font-medium">
-        Alredy have an account?{" "}
-        <Link href="/login">
-          <Text className="underline">login</Text>
-        </Link>
-      </Text>
     </SafeAreaView>
   );
 };
 
-export default signUp;
+export default SignUp;
