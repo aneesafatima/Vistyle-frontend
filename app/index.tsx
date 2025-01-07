@@ -17,22 +17,8 @@ const HomePage = () => {
         {/* Explore Button */}
         <View className="mx-auto mt-4">
           <Link href="/login">
-            <View
-              style={{
-                paddingHorizontal: 24,
-                paddingVertical: 10,
-                backgroundColor: "#000",
-                borderRadius: 8,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 18,
-                  fontWeight: "600",
-                  textAlign: "center",
-                }}
-              >
+            <View className="bg-black py-3 rounded-lg">
+              <Text className="text-white text-lg font-medium text-center">
                 Explore
               </Text>
             </View>

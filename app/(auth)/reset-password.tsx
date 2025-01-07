@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigation } from '@react-navigation/native';
 import { Link } from "expo-router";
 
 const logInSchema = z
@@ -15,6 +16,7 @@ const logInSchema = z
 type LoginFormValues = z.infer<typeof logInSchema>;
 
 const resetPassword = () => {
+  const navigation = useNavigation();
   const {
     control,
     handleSubmit,
@@ -25,8 +27,10 @@ const resetPassword = () => {
   });
 
   const onSubmit = (data: LoginFormValues) => {
-    Alert.alert("Login Success", `Email: ${data.email}`);
+   navigation.navigate('otp-verification');
   };
+
+  console.log(errors)
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100 justify-center px-6">
