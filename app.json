@@ -1,26 +1,16 @@
 {
   "expo": {
-    "name": "Colormind",
-    "slug": "Colormind",
+    "name": "ColorTheory",
+    "slug": "color-theory",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash": {
-      "image": "",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+
     "ios": {
       "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "",
-        "backgroundColor": "#ffffff"
-      }
     },
     "web": {
       "bundler": "metro",

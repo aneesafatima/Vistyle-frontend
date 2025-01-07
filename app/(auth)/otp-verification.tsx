@@ -1,23 +1,23 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function OtpVerification() {
   const [otpCombo, setOtpCombo] = useState<(number | null)[]>(
     new Array(6).fill(null)
   );
-
-  // const otpResendTimer = () => {
-  //   let c=0;
-  //   for(let i=300;i>=0;i--){
-  //       c++;
-  //       setTimeout(()=>{
-  //           const minutes = Math.floor(i / 60);
-  //           const remainingSeconds = i % 60;
-  //           return `${minutes}:${remainingSeconds}`;
-  //       },c*1000)
-  //   }
-  // }
+  const [timer, setTimer] = useState(300);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTimer((prev) => {
+        if (prev === 0) {
+          clearInterval(intervalId);
+          return 0;
+        } else return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
   return (
     <SafeAreaView>
       <View className="items-center flex-col ">
@@ -41,7 +41,18 @@ export default function OtpVerification() {
             Submit
           </Text>
         </TouchableOpacity>
-        <Text className="text-gray-500 text-sm">Resend OTP in  </Text>
+        <Text className="text-gray-500 text-sm">
+          Resend OTP{" "}
+          {timer !== 0
+            ? `in ${Math.floor(timer / 60) ? Math.floor(timer / 60) : "00"}:${
+                timer % 60
+                  ? timer % 60 < 10
+                    ? `0${timer % 60}`
+                    : timer % 60
+                  : "00"
+              }`
+            : ""}
+        </Text>
       </View>
     </SafeAreaView>
   );
