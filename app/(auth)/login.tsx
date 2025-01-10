@@ -6,14 +6,15 @@ import {
   TextInput,
   ActivityIndicator,
 } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "expo-router";
 import { useLoginUserMutation } from "../../query/features/authApi";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { GlobalContext } from "@/context/GlobalProvider";
+import * as SecureStore from "expo-secure-store";
 
 import { useRouter } from "expo-router"; // Import useRouter from expo-router
 
@@ -33,8 +34,21 @@ const logIn = () => {
     defaultValues: { email: "", password: "" },
   });
   const router = useRouter();
+  const { setIsLoggedIn, setUserData } = useContext(GlobalContext)!;
 
   const [loginUser, { isLoading }] = useLoginUserMutation();
+  //put this the next two functions as a helper or in a custom hook
+  async function saveToken(token: string) {
+    try {
+      await SecureStore.setItemAsync("userToken", token, {
+        //set options if needed
+      });
+      setIsLoggedIn(true);
+      router.replace("/(user)/home");
+    } catch (error) {
+      console.error("Error saving token:", error);
+    }
+  }
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
@@ -43,11 +57,11 @@ const logIn = () => {
         password: data.password,
       }).unwrap();
       Alert.alert("Login Success", "You have logged in successfully!");
-      await AsyncStorage.setItem("user", JSON.stringify(result.user));
-
-      router.push("/(user)/home");
-
-      console.log(result);
+      await saveToken(result["token"]);
+      setUserData({
+        name: result["user"].name,
+        email: result["user"].email,
+      });
     } catch (error: any) {
       Alert.alert(
         "Login Failed",

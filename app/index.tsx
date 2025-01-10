@@ -3,8 +3,10 @@ import { Text, View, TouchableOpacity, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 import { Link } from "expo-router";
+import * as SecureStore from "expo-secure-store";
 
 const HomePage = () => {
+  console.log(SecureStore.getItem("userToken"));
   return (
     <SafeAreaView className="flex-1 justify-center items-center bg-white">
       <View className="text-center">

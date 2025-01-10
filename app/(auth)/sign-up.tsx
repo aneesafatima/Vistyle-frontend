@@ -1,55 +1,65 @@
-import React from 'react';
-import { View, Text, TextInput, Pressable, Alert } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useForm, Controller } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'expo-router'; // Import useRouter from expo-router
-import { useSignUpUserMutation } from '../../query/features/authApi'; // Import the mutation hook
-
+import React, { useContext } from "react";
+import { View, Text, TextInput, Pressable, Alert } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useForm, Controller } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "expo-router"; // Import useRouter from expo-router
+import { useSignUpUserMutation } from "../../query/features/authApi"; // Import the mutation hook
+import { GlobalContext } from "@/context/GlobalProvider";
+import * as SecureStore from "expo-secure-store";
 const signUpSchema = z
   .object({
-    name: z.string().nonempty('Name is required'),
-    email: z.string().email('Invalid email address'),
-    password: z.string().min(6, 'Password must be at least 6 characters'),
+    name: z.string().nonempty("Name is required"),
+    email: z.string().email("Invalid email address"),
+    password: z.string().min(6, "Password must be at least 6 characters"),
     passwordConfirm: z.string(),
   })
   .refine((data) => data.password === data.passwordConfirm, {
-    message: 'Passwords do not match',
-    path: ['passwordConfirm'],
+    message: "Passwords do not match",
+    path: ["passwordConfirm"],
   });
 
 type LoginFormValues = z.infer<typeof signUpSchema>;
 
 const SignUp = () => {
+
+  const {  setUserData, setIsLoggedIn } = useContext(GlobalContext)!;
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormValues>({
     resolver: zodResolver(signUpSchema),
-    defaultValues: { name: '', email: '', password: '', passwordConfirm: '' },
+    defaultValues: { name: "", email: "", password: "", passwordConfirm: "" },
   });
 
   const [signUpUser, { isLoading }] = useSignUpUserMutation(); // RTK Query mutation hook
   const router = useRouter();
 
+  async function saveToken(token: string) {
+    try {
+      await SecureStore.setItemAsync("userToken", token, {
+        //set options if needed
+      });
+      setIsLoggedIn(true);
+      router.replace("/(user)/home");
+    } catch (error) {
+      console.error("Error saving token:", error);
+    }
+  }
+
   const onSubmit = async (data: LoginFormValues) => {
     try {
-      const result = await signUpUser({
-        name: data.name,
-        email: data.email,
-        password: data.password,
-        passwordConfirm: data.passwordConfirm,
-    }).unwrap(); // Call the mutation and unwrap the result
-      Alert.alert('Success', 'User registered successfully!');
-      console.log(result);
-
-      // Redirect to login page
-      router.push('/login');
+      const result = await signUpUser(data).unwrap(); // Call the mutation and unwrap the result
+      //store the token
+      await saveToken(result["token"]);
+      setUserData({
+        name: result["user"].name,
+        email: result["user"].email,
+      });
     } catch (error: any) {
-      Alert.alert('Error', error?.data?.message || 'Something went wrong');
-      console.error(error);
+      Alert.alert("Error", error?.data?.message || "Something went wrong");
     }
   };
 
@@ -73,7 +83,9 @@ const SignUp = () => {
             />
           )}
         />
-        {errors.name && <Text className="mt-1 text-red-500">{errors.name.message}</Text>}
+        {errors.name && (
+          <Text className="mt-1 text-red-500">{errors.name.message}</Text>
+        )}
       </View>
 
       {/* Email Field */}
@@ -93,7 +105,9 @@ const SignUp = () => {
             />
           )}
         />
-        {errors.email && <Text className="mt-1 text-red-500">{errors.email.message}</Text>}
+        {errors.email && (
+          <Text className="mt-1 text-red-500">{errors.email.message}</Text>
+        )}
       </View>
 
       {/* Password Field */}
@@ -113,7 +127,9 @@ const SignUp = () => {
             />
           )}
         />
-        {errors.password && <Text className="mt-1 text-red-500">{errors.password.message}</Text>}
+        {errors.password && (
+          <Text className="mt-1 text-red-500">{errors.password.message}</Text>
+        )}
       </View>
 
       {/* Confirm Password Field */}
@@ -134,7 +150,9 @@ const SignUp = () => {
           )}
         />
         {errors.passwordConfirm && (
-          <Text className="mt-1 text-red-500">{errors.passwordConfirm.message}</Text>
+          <Text className="mt-1 text-red-500">
+            {errors.passwordConfirm.message}
+          </Text>
         )}
       </View>
 
@@ -145,7 +163,7 @@ const SignUp = () => {
         disabled={isLoading} // Disable the button while loading
       >
         <Text className="text-white text-center text-lg font-medium">
-          {isLoading ? 'Signing Up...' : 'Sign Up'}
+          {isLoading ? "Signing Up..." : "Sign Up"}
         </Text>
       </Pressable>
     </SafeAreaView>
