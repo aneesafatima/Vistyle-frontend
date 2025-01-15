@@ -7,7 +7,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "expo-router"; // Import useRouter from expo-router
 import { useSignUpUserMutation } from "../../query/features/authApi"; // Import the mutation hook
 import { GlobalContext } from "@/context/GlobalProvider";
-import * as SecureStore from "expo-secure-store";
+// import * as SecureStore from "expo-secure-store"; //for production
+import { saveToken } from "@/utils/storage";
 const signUpSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -23,8 +24,7 @@ const signUpSchema = z
 type LoginFormValues = z.infer<typeof signUpSchema>;
 
 const SignUp = () => {
-
-  const {  setUserData, setIsLoggedIn } = useContext(GlobalContext)!;
+  const { setUserData, setIsLoggedIn } = useContext(GlobalContext)!;
   const {
     control,
     handleSubmit,
@@ -37,27 +37,17 @@ const SignUp = () => {
   const [signUpUser, { isLoading }] = useSignUpUserMutation(); // RTK Query mutation hook
   const router = useRouter();
 
-  async function saveToken(token: string) {
-    try {
-      await SecureStore.setItemAsync("userToken", token, {
-        //set options if needed
-      });
-      setIsLoggedIn(true);
-      router.replace("/(user)/home");
-    } catch (error) {
-      console.error("Error saving token:", error);
-    }
-  }
-
   const onSubmit = async (data: LoginFormValues) => {
     try {
       const result = await signUpUser(data).unwrap(); // Call the mutation and unwrap the result
       //store the token
       await saveToken(result["token"]);
+      setIsLoggedIn(true);
       setUserData({
         name: result["user"].name,
         email: result["user"].email,
       });
+      router.replace("/(user)/home");
     } catch (error: any) {
       Alert.alert("Error", error?.data?.message || "Something went wrong");
     }

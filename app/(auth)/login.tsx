@@ -14,8 +14,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "expo-router";
 import { useLoginUserMutation } from "../../query/features/authApi";
 import { GlobalContext } from "@/context/GlobalProvider";
-import * as SecureStore from "expo-secure-store";
-
+import { saveToken } from "@/utils/storage";
+// import * as SecureStore from "expo-secure-store"; for production
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router"; // Import useRouter from expo-router
 
 const logInSchema = z.object({
@@ -38,17 +39,6 @@ const logIn = () => {
 
   const [loginUser, { isLoading }] = useLoginUserMutation();
   //put this the next two functions as a helper or in a custom hook
-  async function saveToken(token: string) {
-    try {
-      await SecureStore.setItemAsync("userToken", token, {
-        //set options if needed
-      });
-      setIsLoggedIn(true);
-      router.replace("/(user)/home");
-    } catch (error) {
-      console.error("Error saving token:", error);
-    }
-  }
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
@@ -58,10 +48,12 @@ const logIn = () => {
       }).unwrap();
       Alert.alert("Login Success", "You have logged in successfully!");
       await saveToken(result["token"]);
+      setIsLoggedIn(true);
       setUserData({
         name: result["user"].name,
         email: result["user"].email,
       });
+      router.replace("/(user)/home");
     } catch (error: any) {
       Alert.alert(
         "Login Failed",

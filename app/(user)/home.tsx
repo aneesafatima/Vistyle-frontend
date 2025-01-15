@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { GlobalContext } from "@/context/GlobalProvider";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const HomePage = () => {
   const { isLoggedIn,userData } = useContext(GlobalContext)!;
@@ -22,6 +23,8 @@ const HomePage = () => {
     // };
     // fetchUser();
   }, []);
+
+  console.log()
 
   return (
     isLoggedIn &&
