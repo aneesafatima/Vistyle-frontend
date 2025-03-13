@@ -18,13 +18,7 @@ const _layout = () => {
           }}
         ></Stack.Screen>
         <Stack.Screen
-          name="reset-password"
-          options={{
-            headerShown: false,
-          }}
-        ></Stack.Screen>
-        <Stack.Screen
-          name="otp-verification"
+          name="forgot-password"
           options={{
             headerShown: false,
           }}

@@ -15,3 +15,14 @@ export async function getToken() {
     console.error("Error getting token:", error);
   }
 }
+
+export async function removeToken() {
+  try {
+    console.log("Removing token");
+    await AsyncStorage.removeItem("userToken");
+    return true;
+  } catch (error) {
+    console.error("Error removing token:", error);
+    return false;
+  }
+}

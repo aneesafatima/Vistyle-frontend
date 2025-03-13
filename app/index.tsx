@@ -3,30 +3,31 @@ import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 import { Link, router } from "expo-router";
-import * as SecureStore from "expo-secure-store";
+
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useTokenStatusQuery } from "@/query/features/authApi";
 import { getToken } from "@/utils/storage";
 
 const HomePage = () => {
   console.log("In Home Page");
-  const [token, setToken] = useState<string | null>(null);
-  const { setIsLoggedIn } = useContext(GlobalContext)!;
+
+  const { setIsLoggedIn,setToken, token } = useContext(GlobalContext)!;
   const { data } = useTokenStatusQuery(token as string, {
     skip: !token,
   });
 
-  useEffect(() => {
-    getToken().then((val) => {
-      val && setToken(val);
-      //set user details in global context
-    });
-    if (data) {
-      console.log("data stored !!");
-      setIsLoggedIn(true);
-      router.replace("/(user)/home");
-    }
-  });
+  // useEffect(() => {
+  //   getToken().then((val) => {
+  //     val && setToken(val);
+  //     //set user details in global context
+  //   });
+  //   if (data) {
+  //     console.log(data);
+  //     console.log("data stored !!");
+  //     setIsLoggedIn(true);
+  //     router.replace("/(user)/home");
+  //   }
+  // });
   return (
     <SafeAreaView className="flex-1 justify-center items-center bg-white">
       <View className="text-center">

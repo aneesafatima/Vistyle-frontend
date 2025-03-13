@@ -22,7 +22,6 @@ const signUpSchema = z
   });
 
 type LoginFormValues = z.infer<typeof signUpSchema>;
-
 const SignUp = () => {
   const { setUserData, setIsLoggedIn } = useContext(GlobalContext)!;
   const {

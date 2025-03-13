@@ -11,14 +11,14 @@ declare module "react-native" {
   interface LinksProps {
     className?: string;
   }
+  interface TextInputProps {
+    className?: string;
+  }
   //   interface ImageProps {
   //     className?: string;
   //   }
   //   interface TouchableOpacityProps {
   //   className?:string;
-  //   }
-  //  interface TextInputProps {
-  //   className?: string;
   //   }
   //   interface ImageBackgroundProps {
   //   className?: string;

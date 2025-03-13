@@ -127,7 +127,7 @@ const logIn = () => {
 
       {/* Reset Password Link */}
       <Text className="text-center mt-2 text-lg font-medium">
-        <Link href="/reset-password">
+        <Link href="/forgot-password">
           <Text className="underline">Reset password</Text>
         </Link>
       </Text>
