@@ -1,4 +1,11 @@
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Pressable,
+  ActivityIndicator,
+  Alert,
+} from "react-native";
 import React, { useEffect, useState, useContext } from "react";
 import { useOtpVerifyMutation } from "@/query/features/authApi";
 import { GlobalContext } from "@/context/GlobalProvider";
@@ -12,7 +19,7 @@ export default function OtpVerify({ setStep }: UserEmailProps) {
     new Array(6).fill(null)
   );
   const [timer, setTimer] = useState(300);
-  const [otpVerify] = useOtpVerifyMutation();
+  const [otpVerify, { isLoading }] = useOtpVerifyMutation();
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTimer((prev) => {
@@ -33,7 +40,6 @@ export default function OtpVerify({ setStep }: UserEmailProps) {
       Alert.alert("Error", error?.data?.message || "Something went wrong");
     }
   };
-
   return (
     <View className="items-center flex-col ">
       <View className="flex-row justify-center mt-32">
@@ -60,11 +66,19 @@ export default function OtpVerify({ setStep }: UserEmailProps) {
           />
         ))}
       </View>
-      <TouchableOpacity className="w-28 my-6" onPress={() => checkOtp()}>
-        <Text className="bg-black py-3 text-center rounded-md text-white">
-          Submit
-        </Text>
-      </TouchableOpacity>
+      <Pressable
+        className={`bg-black py-3 rounded-lg flex-row justify-center items-center`}
+        onPress={checkOtp}
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <ActivityIndicator size="small" color="#ffffff" className="mr-2" />
+        ) : (
+          <Text className="text-white text-lg font-medium text-center">
+            Submit
+          </Text>
+        )}
+      </Pressable>
       <Text className="text-gray-500 text-sm">
         Resend OTP{" "}
         {timer !== 0

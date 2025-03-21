@@ -1,4 +1,4 @@
-import { View, Text, Alert, Pressable, TextInput } from "react-native";
+import { View, Text, Alert, Pressable, TextInput,ActivityIndicator } from "react-native";
 import React,{useContext} from "react";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
@@ -12,7 +12,7 @@ interface UserEmailProps {
 
 const UserEmail = ({ setStep }: UserEmailProps) => {
   const { setEmail } = useContext(GlobalContext)!;
-  const [forgotPassword, {isSuccess}] = useForgotPasswordMutation();
+  const [forgotPassword, {isLoading}] = useForgotPasswordMutation();
   const logInSchema = z.object({
     email: z.string().email("Invalid email address"),
   });
@@ -28,7 +28,7 @@ const UserEmail = ({ setStep }: UserEmailProps) => {
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
-      const res = await forgotPassword(data).unwrap();
+     await forgotPassword(data)
       Alert.alert(
         "Email sent",
         "Please check your email to reset your password"
@@ -39,7 +39,6 @@ const UserEmail = ({ setStep }: UserEmailProps) => {
       Alert.alert("Error", error?.data?.message || "Something went wrong");
     }
   };
-
   return (
     <View>
       <Text className="text-2xl font-bold text-center mb-4">
@@ -66,13 +65,15 @@ const UserEmail = ({ setStep }: UserEmailProps) => {
         {errors.email && <Text className="mt-1">{errors.email.message}</Text>}
       </View>
 
+      {/* Submit Button */}
       <Pressable
-        className="bg-black py-3 rounded-lg"
+        className={`bg-black py-3 rounded-lg flex-row justify-center items-center`}
         onPress={handleSubmit(onSubmit)}
+        disabled={isLoading}
       >
-        <Text className="text-white text-center text-lg font-medium">
-          Reset Password
-        </Text>
+        {isLoading ? (
+          <ActivityIndicator size="small" color="#ffffff" className="mr-2" />
+        ): <Text className="text-white text-lg font-medium text-center">Submit</Text>}
       </Pressable>
     </View>
   );

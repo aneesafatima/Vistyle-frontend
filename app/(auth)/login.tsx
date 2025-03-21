@@ -13,12 +13,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "expo-router";
 import { useLoginUserMutation } from "../../query/features/authApi";
-import { GlobalContext } from "@/context/GlobalProvider";
-import { saveToken } from "@/utils/storage";
-// import * as SecureStore from "expo-secure-store"; for production
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useRouter } from "expo-router"; // Import useRouter from expo-router
-
+import useAuth from "@/hooks/useAuth";
+import { LoginResponseType } from "@/types/auth";
 const logInSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
@@ -26,6 +22,7 @@ const logInSchema = z.object({
 type LoginFormValues = z.infer<typeof logInSchema>;
 
 const logIn = () => {
+  const { loggingUserIn } = useAuth();
   const {
     control,
     handleSubmit,
@@ -34,26 +31,17 @@ const logIn = () => {
     resolver: zodResolver(logInSchema),
     defaultValues: { email: "", password: "" },
   });
-  const router = useRouter();
-  const { setIsLoggedIn, setUserData } = useContext(GlobalContext)!;
 
   const [loginUser, { isLoading }] = useLoginUserMutation();
   //put this the next two functions as a helper or in a custom hook
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
-      const result = await loginUser({
+      const result: LoginResponseType = await loginUser({
         email: data.email,
         password: data.password,
       }).unwrap();
-      Alert.alert("Login Success", "You have logged in successfully!");
-      await saveToken(result["token"]);
-      setIsLoggedIn(true);
-      setUserData({
-        name: result["user"].name,
-        email: result["user"].email,
-      });
-      router.replace("/(user)/home");
+      await loggingUserIn(result);
     } catch (error: any) {
       Alert.alert(
         "Login Failed",

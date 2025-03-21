@@ -1,3 +1,4 @@
+import resetPassword from "@/app/(auth)/forgot-password";
 import OtpVerify from "@/components/OtpVerify";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Constants from "expo-constants";
@@ -61,6 +62,16 @@ export const authApi = createApi({
         };
       },
     }),
+    resetPassword: builder.mutation({
+      query: (userData: userData) => {
+        console.log("Data in reset password", userData);
+        return {
+          url: "/reset-password",
+          method: "PATCH",
+          body: userData, //change this as needed
+        };
+      },
+    }),
   }),
 });
 
@@ -69,5 +80,6 @@ export const {
   useLoginUserMutation,
   useTokenStatusQuery,
   useForgotPasswordMutation,
-  useOtpVerifyMutation
+  useOtpVerifyMutation,
+  useResetPasswordMutation,
 } = authApi;
