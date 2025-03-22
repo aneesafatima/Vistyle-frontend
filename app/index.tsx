@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 import { Link, router } from "expo-router";
@@ -24,7 +24,7 @@ const HomePage = () => {
     });
     if (data) {
       setIsLoggedIn(true);
-      router.replace("/(user)/home");
+      router.navigate("/(user)/home");
     }
   },[data]);
   return (
@@ -38,13 +38,13 @@ const HomePage = () => {
 
         {/* Explore Button */}
         <View className="mx-auto mt-4">
-          <Link href="/login">
-            <View className="bg-black rounded-lg">
+          
+            <Pressable className="bg-black rounded-lg" onPress={() => router.replace("/(user)/home")}>
               <Text className="text-white p-3  text-lg font-medium text-center">
                 Explore
               </Text>
-            </View>
-          </Link>
+            </Pressable>
+    
         </View>
       </View>
     </SafeAreaView>
