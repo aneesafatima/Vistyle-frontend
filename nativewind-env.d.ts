@@ -20,4 +20,8 @@ declare module "react-native" {
   interface ActivityIndicatorProps {
     className?: string;
   }
+  interface DropDownPickerProps {
+    className?: string;
+  }
+
 }

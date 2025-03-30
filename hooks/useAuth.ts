@@ -13,8 +13,8 @@ const useAuth = () => {
     await saveToken(result["token"]);
     setIsLoggedIn(true);
     setUserData({
-      name: result["user"].name,
-      email: result["user"].email,
+      name: result.user.name,
+      email: result.user.email,
     });
     router.replace("/(user)/home");
   };

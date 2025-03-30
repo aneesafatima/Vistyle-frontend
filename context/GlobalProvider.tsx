@@ -11,8 +11,8 @@ type GlobalContextType = {
 };
 
 type userDataType = {
-  name: "string" | null;
-  email: "string" | null;
+  name: "string";
+  email: "string";
 };
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
 
@@ -20,7 +20,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState<null | userDataType>(null);
   const [email, setEmail] = useState("");
-    const [token, setToken] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
   return (
     <GlobalContext.Provider
       value={{
@@ -31,7 +31,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         email,
         setEmail,
         token,
-        setToken
+        setToken,
       }}
     >
       {children}

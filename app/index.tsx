@@ -13,21 +13,24 @@ const HomePage = () => {
   //remove back button from some pages
   console.log("In Main Page");
 
-  const { setIsLoggedIn, setToken, token } = useContext(GlobalContext)!;
+  const { setIsLoggedIn, setToken, token, setUserData } =
+    useContext(GlobalContext)!;
   const { data } = useTokenStatusQuery(token as string, {
     skip: !token,
   });
   useEffect(() => {
     getToken().then((val) => {
       val && setToken(val);
-      //set user details in global context
     });
     if (data) {
-      console.log("Token Status Data", data);
+      setUserData({
+        name: data.user.name,
+        email: data.user.email,
+      });
       setIsLoggedIn(true);
       router.navigate("/(user)/home");
     }
-  },[data]);
+  }, [data]);
   return (
     <SafeAreaView className="flex-1 justify-center items-center bg-white">
       <View className="text-center">
@@ -39,12 +42,14 @@ const HomePage = () => {
 
         {/* Explore Button */}
         <View className="mx-auto mt-4">
-            <Pressable className="bg-black rounded-lg" onPress={() => router.replace("/(user)/home")}>
-              <Text className="text-white p-3  text-lg font-medium text-center">
-                Explore
-              </Text>
-            </Pressable>
-    
+          <Pressable
+            className="bg-black rounded-lg"
+            onPress={() => router.replace("/(user)/home")}
+          >
+            <Text className="text-white p-3  text-lg font-medium text-center">
+              Explore
+            </Text>
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>
