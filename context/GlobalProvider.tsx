@@ -11,8 +11,8 @@ type GlobalContextType = {
 };
 
 type userDataType = {
-  name: "string";
-  email: "string";
+  name: "string" | null;
+  email: "string" | null;
 };
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
 

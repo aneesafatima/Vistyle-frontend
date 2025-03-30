@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
@@ -23,6 +23,7 @@ const HomePage = () => {
       //set user details in global context
     });
     if (data) {
+      console.log("Token Status Data", data);
       setIsLoggedIn(true);
       router.navigate("/(user)/home");
     }
@@ -38,7 +39,6 @@ const HomePage = () => {
 
         {/* Explore Button */}
         <View className="mx-auto mt-4">
-          
             <Pressable className="bg-black rounded-lg" onPress={() => router.replace("/(user)/home")}>
               <Text className="text-white p-3  text-lg font-medium text-center">
                 Explore
