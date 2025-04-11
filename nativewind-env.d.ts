@@ -23,5 +23,10 @@ declare module "react-native" {
   interface DropDownPickerProps {
     className?: string;
   }
-
+  interface FlatListProps {
+    className?: string;
+  }
+  interface ImageProps {
+    className?: string;
+  }
 }

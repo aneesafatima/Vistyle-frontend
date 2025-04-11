@@ -1,0 +1,57 @@
+{
+    "status": "success",
+    "results": [{
+        "ASIN": "B0C1LZJ8GH",
+        "Title": "Urbano Fashion Men's Slim Fit Stretch Jeans",
+        "Brand": "Urbano Fashion",
+        "Price": {
+            "Currency": "INR",
+            "Amount": 1099,
+            "Display": "₹1,099"
+        },
+        "Image": "https://m.media-amazon.com/images/I/81BZyDPSs4L._AC_UL480_FMwebp_QL65_.jpg",
+        "ProductURL": "https://www.amazon.in/dp/B0C1LZJ8GH",
+        "Rating": 4.2,
+        "Reviews": 2421,
+        "Category": "Men's Clothing",
+        "SubCategory": "Jeans",
+        "Availability": "In Stock",
+        "Description": "Comfortable stretchable denim with a slim fit and modern look. Great for everyday wear."
+    },
+    {
+        "ASIN": "B07WF9V81B",
+        "Title": "Amazon Brand - Symbol Women's Fit & Flare Dress",
+        "Brand": "Symbol",
+        "Price": {
+            "Currency": "INR",
+            "Amount": 799,
+            "Display": "₹799"
+        },
+        "Image": "https://m.media-amazon.com/images/I/91x-P9TqlIL._AC_UL480_FMwebp_QL65_.jpg",
+        "ProductURL": "https://www.amazon.in/dp/B07WF9V81B",
+        "Rating": 4.1,
+        "Reviews": 1548,
+        "Category": "Women's Clothing",
+        "SubCategory": "Dresses",
+        "Availability": "In Stock",
+        "Description": "Elegant fit & flare dress made with breathable rayon. Ideal for casual and semi-formal outings."
+    },
+    {
+        "ASIN": "B08WRKZ1TP",
+        "Title": "Jockey Men's Cotton Vest (Pack of 3)",
+        "Brand": "Jockey",
+        "Price": {
+            "Currency": "INR",
+            "Amount": 499,
+            "Display": "₹499"
+        },
+        "Image": "https://m.media-amazon.com/images/I/71+2diYxjXL._AC_UL480_FMwebp_QL65_.jpg",
+        "ProductURL": "https://www.amazon.in/dp/B08WRKZ1TP",
+        "Rating": 4.5,
+        "Reviews": 3260,
+        "Category": "Men's Clothing",
+        "SubCategory": "Innerwear",
+        "Availability": "In Stock",
+        "Description": "Soft cotton vests with a classic fit and ribbed neck. Pack of 3."
+    } ]
+}

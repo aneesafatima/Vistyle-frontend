@@ -1,0 +1,1269 @@
+{
+    "status": "success",
+    "results": [
+        {
+            "code": "0967955_group_124",
+            "name": "Loose Fit Printed T-shirt",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 699,
+                "priceType": "BUY",
+                "formattedValue": "Rs.699.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9425074290689",
+            "sellingAttributes": [
+                "New Arrival"
+            ],
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 699,
+                "priceType": "BUY",
+                "formattedValue": "Rs.699.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "0967955124",
+                    "name": "Loose Fit Printed T-shirt",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg"
+                        }
+                    ],
+                    "pk": "9411300261889",
+                    "sellingAttributes": [
+                        "New Arrival"
+                    ],
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 699,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.699.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2Nzk1NV9ncm91cF8xMjRfZW5faW47MDk2Nzk1NTEyNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "0000FF",
+                        "text": "Light blue/Grand Lake",
+                        "filterName": "Blue_0000FF",
+                        "hybrisCode": "74"
+                    },
+                    "rgbColor": "#AFBFDF",
+                    "damStyleWith": [
+                        "1029317001",
+                        "1275327002"
+                    ],
+                    "turnToSku": "0967955124001"
+                }
+            ],
+            "visible": false,
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "0967955124",
+                "name": "Loose Fit Printed T-shirt",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg"
+                    }
+                ],
+                "pk": "9411300261889",
+                "sellingAttributes": [
+                    "New Arrival"
+                ],
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 699,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.699.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2Nzk1NV9ncm91cF8xMjRfZW5faW47MDk2Nzk1NTEyNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "0000FF",
+                    "text": "Light blue/Grand Lake",
+                    "filterName": "Blue_0000FF",
+                    "hybrisCode": "74"
+                },
+                "rgbColor": "#AFBFDF",
+                "damStyleWith": [
+                    "1029317001",
+                    "1275327002"
+                ],
+                "turnToSku": "0967955124001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                },
+                {
+                    "orderFilter": 375,
+                    "filterCode": "XXL"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "0967955124",
+                "0967955081",
+                "0967955102",
+                "0967955104"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2Nzk1NV9ncm91cF8xMjRfZW5faW47MDk2Nzk1NTEyNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+            "searchEngineProductId": "0967955_group_124_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.0967955124.html",
+            "categoryName": "Men",
+            "rgbColors": [
+                "#AFBFDF",
+                "#FFFFFF",
+                "#DED8C5",
+                "#FFFFFF"
+            ],
+            "articleColorNames": [
+                "Light blue/Grand Lake",
+                "White/Valencia",
+                "Light beige/Better Than Ever",
+                "White/Cologne",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 11,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "men_tshirtstanks_printed",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/a5/1e/a51e5012c468646ac12444a252522dffc3e0a432.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/a5/1e/a51e5012c468646ac12444a252522dffc3e0a432.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/17/2a/172a29e4922b06d6ff00dbf6ec01a2d978336b31.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVEDETAIL],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/17/2a/172a29e4922b06d6ff00dbf6ec01a2d978336b31.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/08/80/0880d3c5518078201f2b196fd36ab065d47f4d14.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVEDETAIL],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/f8/70/f87091a6f6d27c43678f1dcc7fbfe4d680291003.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/f8/70/f87091a6f6d27c43678f1dcc7fbfe4d680291003.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/08/80/0880d3c5518078201f2b196fd36ab065d47f4d14.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "0967955124",
+                "0967955081",
+                "0967955102",
+                "0967955104",
+                "0967955106",
+                "0967955107",
+                "0967955108",
+                "0967955110",
+                "0967955111",
+                "0967955112",
+                "0967955115"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e4/17/e41738e7548bcf19ae2ec5be5a39e507c4e2ecd1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/d3/5c/d35c622819e98c67f3442c9e4dc46771a189a9ea.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/1d/02/1d024bb67a4d6701809e9776c2a80797c206563d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/61/78/6178fb24a07d11efb17e026398840cccb2ab0cea.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/5c/d5/5cd55da81b4cda8fd32f807e145f949d1d96e8c5.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/d5/b1/d5b15e116234490c8bd7f4466d10287676201f8a.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/fc/6f/fc6ff3a8dca6af7bac8f30024f173a84a315f802.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/2b/10/2b10a12aaf772d103978ae4b16c6a05fbdebf7d9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/f9/b3/f9b36fd4312726a80b6b86b34ec991431bd2fa42.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/71/93/71933f98061e99f201935b283bbf9ec5448e2a63.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg",
+                "https://image.hm.com/assets/hm/e4/17/e41738e7548bcf19ae2ec5be5a39e507c4e2ecd1.jpg",
+                "https://image.hm.com/assets/hm/d3/5c/d35c622819e98c67f3442c9e4dc46771a189a9ea.jpg",
+                "https://image.hm.com/assets/hm/1d/02/1d024bb67a4d6701809e9776c2a80797c206563d.jpg",
+                "https://image.hm.com/assets/hm/61/78/6178fb24a07d11efb17e026398840cccb2ab0cea.jpg",
+                "https://image.hm.com/assets/hm/5c/d5/5cd55da81b4cda8fd32f807e145f949d1d96e8c5.jpg",
+                "https://image.hm.com/assets/hm/d5/b1/d5b15e116234490c8bd7f4466d10287676201f8a.jpg",
+                "https://image.hm.com/assets/hm/fc/6f/fc6ff3a8dca6af7bac8f30024f173a84a315f802.jpg",
+                "https://image.hm.com/assets/hm/2b/10/2b10a12aaf772d103978ae4b16c6a05fbdebf7d9.jpg",
+                "https://image.hm.com/assets/hm/f9/b3/f9b36fd4312726a80b6b86b34ec991431bd2fa42.jpg",
+                "https://image.hm.com/assets/hm/71/93/71933f98061e99f201935b283bbf9ec5448e2a63.jpg"
+            ]
+        },
+        {
+            "code": "0685816_group_002",
+            "name": "Regular Fit T-shirt",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 399,
+                "priceType": "BUY",
+                "formattedValue": "Rs.399.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "8952201216001",
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 399,
+                "priceType": "BUY",
+                "formattedValue": "Rs.399.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "0685816002",
+                    "name": "Regular Fit T-shirt",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg"
+                        }
+                    ],
+                    "pk": "8944077799425",
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 399,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.399.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8wMDJfZW5faW47MDY4NTgxNjAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "000000",
+                        "text": "Black",
+                        "filterName": "Black_000000",
+                        "hybrisCode": "09"
+                    },
+                    "campaignMedia": {
+                        "url": "https://photorankmedia-a.akamaihd.net/media/o/e/4/oe46jk4/mobile.jpg",
+                        "id": "3307680012",
+                        "author": "luisferarvizu",
+                        "type": "CAMPAIGN"
+                    },
+                    "rgbColor": "#272628",
+                    "damStyleWith": [
+                        "0538358019",
+                        "0664647036",
+                        "1251621001",
+                        "1251692001"
+                    ],
+                    "turnToSku": "0685816002001"
+                }
+            ],
+            "visible": false,
+            "concept": [
+                "BASICS"
+            ],
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "0685816002",
+                "name": "Regular Fit T-shirt",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg"
+                    }
+                ],
+                "pk": "8944077799425",
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 399,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.399.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8wMDJfZW5faW47MDY4NTgxNjAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "000000",
+                    "text": "Black",
+                    "filterName": "Black_000000",
+                    "hybrisCode": "09"
+                },
+                "campaignMedia": {
+                    "url": "https://photorankmedia-a.akamaihd.net/media/o/e/4/oe46jk4/mobile.jpg",
+                    "id": "3307680012",
+                    "author": "luisferarvizu",
+                    "type": "CAMPAIGN"
+                },
+                "rgbColor": "#272628",
+                "damStyleWith": [
+                    "0538358019",
+                    "0664647036",
+                    "1251621001",
+                    "1251692001"
+                ],
+                "turnToSku": "0685816002001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 375,
+                    "filterCode": "XXL"
+                },
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "0685816002",
+                "0685816001",
+                "0685816053",
+                "0685816178"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8wMDJfZW5faW47MDY4NTgxNjAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+            "searchEngineProductId": "0685816_group_002_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.0685816002.html",
+            "categoryName": "Men",
+            "rgbColors": [
+                "#272628",
+                "#FFFFFF",
+                "#AFAFAF",
+                "#C0BBAD"
+            ],
+            "articleColorNames": [
+                "Black",
+                "White",
+                "Grey marl",
+                "Light beige",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 13,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "men_tshirtstanks_shortsleeve",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/87/4b/874b8ab7378d7eef57fec49100904b8b04285cb5.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/bd/df/bddf2d435d2f48af8ca30a3f93360f59a092372d.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/e0/12/e01276d51a07d5f881173bd3c64521b85845dabb.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/87/4b/874b8ab7378d7eef57fec49100904b8b04285cb5.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/bd/df/bddf2d435d2f48af8ca30a3f93360f59a092372d.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/e0/12/e01276d51a07d5f881173bd3c64521b85845dabb.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/16/e5/16e52de63457c54cfb7777d1ea3007029e79094f.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/16/e5/16e52de63457c54cfb7777d1ea3007029e79094f.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "0685816002",
+                "0685816001",
+                "0685816053",
+                "0685816178",
+                "0685816185",
+                "0685816229",
+                "0685816252",
+                "0685816254",
+                "0685816257",
+                "0685816264",
+                "0685816265",
+                "0685816266",
+                "0685816271"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/38/06/380609a19cfd897b634bfea723a83df777092531.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg",
+                "https://image.hm.com/assets/hm/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg",
+                "https://image.hm.com/assets/hm/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg",
+                "https://image.hm.com/assets/hm/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg",
+                "https://image.hm.com/assets/hm/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg",
+                "https://image.hm.com/assets/hm/38/06/380609a19cfd897b634bfea723a83df777092531.jpg",
+                "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg",
+                "https://image.hm.com/assets/hm/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg",
+                "https://image.hm.com/assets/hm/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg",
+                "https://image.hm.com/assets/hm/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg",
+                "https://image.hm.com/assets/hm/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg",
+                "https://image.hm.com/assets/hm/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg",
+                "https://image.hm.com/assets/hm/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg"
+            ]
+        },
+        {
+            "code": "0945531_group_057",
+            "name": "3-pack Regular Fit T-shirts",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 1199,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,199.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9421532037121",
+            "sellingAttributes": [
+                "New Arrival"
+            ],
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 1199,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,199.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "0945531057",
+                    "name": "3-pack Regular Fit T-shirts",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                        }
+                    ],
+                    "pk": "9412329078785",
+                    "sellingAttributes": [
+                        "New Arrival"
+                    ],
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 1199,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,199.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk0NTUzMV9ncm91cF8wNTdfZW5faW47MDk0NTUzMTA1N19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "F5F5DC",
+                        "text": "Beige/Brown/Grey",
+                        "filterName": "Beige_F5F5DC",
+                        "hybrisCode": "12"
+                    },
+                    "rgbColor": "#C0BBAD",
+                    "comparativePrice": {
+                        "formattedPrice": "Rs.399.67",
+                        "multipack": true
+                    },
+                    "quantity": "3",
+                    "turnToSku": "0945531057001"
+                }
+            ],
+            "visible": false,
+            "concept": [
+                "BASICS"
+            ],
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "0945531057",
+                "name": "3-pack Regular Fit T-shirts",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                    }
+                ],
+                "pk": "9412329078785",
+                "sellingAttributes": [
+                    "New Arrival"
+                ],
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 1199,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,199.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk0NTUzMV9ncm91cF8wNTdfZW5faW47MDk0NTUzMTA1N19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "F5F5DC",
+                    "text": "Beige/Brown/Grey",
+                    "filterName": "Beige_F5F5DC",
+                    "hybrisCode": "12"
+                },
+                "rgbColor": "#C0BBAD",
+                "comparativePrice": {
+                    "formattedPrice": "Rs.399.67",
+                    "multipack": true
+                },
+                "quantity": "3",
+                "turnToSku": "0945531057001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                },
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
+                    "orderFilter": 375,
+                    "filterCode": "XXL"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "0945531057",
+                "0945531001",
+                "0945531012",
+                "0945531052"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk0NTUzMV9ncm91cF8wNTdfZW5faW47MDk0NTUzMTA1N19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+            "searchEngineProductId": "0945531_group_057_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.0945531057.html",
+            "categoryName": "Men",
+            "rgbColors": [
+                "#C0BBAD",
+                "#FFFFFF",
+                "#272628",
+                "#FFFFFF"
+            ],
+            "articleColorNames": [
+                "Beige/Brown/Grey",
+                "White",
+                "Black",
+                "Grey marl/Navy blue"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 4,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "men_tshirtstanks_multipacks",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/b6/42/b642823f9c591a11dfa2fc3937974261b4dd3b1c.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/b6/42/b642823f9c591a11dfa2fc3937974261b4dd3b1c.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "0945531057",
+                "0945531001",
+                "0945531012",
+                "0945531052"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/70/06/7006e71e95a2f1d848b6f96366fd75ac2d031d38.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/19/10/19108b8f7717f2afbeb05c645a5fe6640b961445.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/ed/ba/edba2cccccaef6290d488b95ba7443ae6bbc0125.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg",
+                "https://image.hm.com/assets/hm/70/06/7006e71e95a2f1d848b6f96366fd75ac2d031d38.jpg",
+                "https://image.hm.com/assets/hm/19/10/19108b8f7717f2afbeb05c645a5fe6640b961445.jpg",
+                "https://image.hm.com/assets/hm/ed/ba/edba2cccccaef6290d488b95ba7443ae6bbc0125.jpg"
+            ]
+        },
+        {
+            "code": "1216851_group_013",
+            "name": "5-pack Regular Fit T-shirts",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 1999,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,999.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9427798228993",
+            "sellingAttributes": [
+                "New Arrival"
+            ],
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 1999,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,999.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "1216851013",
+                    "name": "5-pack Regular Fit T-shirts",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                        }
+                    ],
+                    "pk": "9416352235521",
+                    "sellingAttributes": [
+                        "New Arrival"
+                    ],
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 1999,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,999.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNjg1MV9ncm91cF8wMTNfZW5faW47MTIxNjg1MTAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "0000FF",
+                        "text": "Pink/Light blue/Brown",
+                        "filterName": "Blue_0000FF",
+                        "hybrisCode": "76"
+                    },
+                    "rgbColor": "#23263B",
+                    "comparativePrice": {
+                        "formattedPrice": "Rs.399.80",
+                        "multipack": true
+                    },
+                    "quantity": "5",
+                    "turnToSku": "1216851013001"
+                }
+            ],
+            "visible": false,
+            "concept": [
+                "BASICS"
+            ],
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "1216851013",
+                "name": "5-pack Regular Fit T-shirts",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                    }
+                ],
+                "pk": "9416352235521",
+                "sellingAttributes": [
+                    "New Arrival"
+                ],
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 1999,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,999.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNjg1MV9ncm91cF8wMTNfZW5faW47MTIxNjg1MTAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "0000FF",
+                    "text": "Pink/Light blue/Brown",
+                    "filterName": "Blue_0000FF",
+                    "hybrisCode": "76"
+                },
+                "rgbColor": "#23263B",
+                "comparativePrice": {
+                    "formattedPrice": "Rs.399.80",
+                    "multipack": true
+                },
+                "quantity": "5",
+                "turnToSku": "1216851013001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 375,
+                    "filterCode": "XXL"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "1216851013",
+                "1216851001",
+                "1216851002",
+                "1216851005"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNjg1MV9ncm91cF8wMTNfZW5faW47MTIxNjg1MTAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+            "searchEngineProductId": "1216851_group_013_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.1216851013.html",
+            "categoryName": "Men",
+            "rgbColors": [
+                "#23263B",
+                "#272628",
+                "#FFFFFF",
+                "#5C595B"
+            ],
+            "articleColorNames": [
+                "Pink/Light blue/Brown",
+                "Black",
+                "White",
+                "Grey marl",
+                "dc",
+                "dc",
+                "dc",
+                "dc"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 8,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "men_tshirtstanks_multipacks",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/88/d7/88d715b17ca991a72809b77f104c854d35553612.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/88/d7/88d715b17ca991a72809b77f104c854d35553612.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/46/0c/460cc9f9cf787574816f2d6b0b4912e88aef56b1.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/46/0c/460cc9f9cf787574816f2d6b0b4912e88aef56b1.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "1216851013",
+                "1216851001",
+                "1216851002",
+                "1216851005",
+                "1216851008",
+                "1216851010",
+                "1216851011",
+                "1216851016"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/c3/47/c347b61f215b45029c6ae267c1a65ab9dc950c39.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/6e/9c/6e9c0efc0a5d67f4149bde8b813d63594366c1fd.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/f8/4c/f84cf610391015cb33024f88c0e7d1c8ebe08587.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/c3/f0/c3f0c9c8aa53c21830d104561a2dee53f1dff490.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/92/f0/92f086b261b3944ca0f13afe73dee25f1deaf5dd.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/23/0d/230d25c3d0a7e81992b1c1ec551a17cb32ef5326.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e8/3c/e83ca7d7837fbf96bddacb337cb99e162680e5bd.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg",
+                "https://image.hm.com/assets/hm/c3/47/c347b61f215b45029c6ae267c1a65ab9dc950c39.jpg",
+                "https://image.hm.com/assets/hm/6e/9c/6e9c0efc0a5d67f4149bde8b813d63594366c1fd.jpg",
+                "https://image.hm.com/assets/hm/f8/4c/f84cf610391015cb33024f88c0e7d1c8ebe08587.jpg",
+                "https://image.hm.com/assets/hm/c3/f0/c3f0c9c8aa53c21830d104561a2dee53f1dff490.jpg",
+                "https://image.hm.com/assets/hm/92/f0/92f086b261b3944ca0f13afe73dee25f1deaf5dd.jpg",
+                "https://image.hm.com/assets/hm/23/0d/230d25c3d0a7e81992b1c1ec551a17cb32ef5326.jpg",
+                "https://image.hm.com/assets/hm/e8/3c/e83ca7d7837fbf96bddacb337cb99e162680e5bd.jpg"
+            ]
+        },
+        {
+            "code": "0685816_group_252",
+            "name": "Regular Fit T-shirt",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 399,
+                "priceType": "BUY",
+                "formattedValue": "Rs.399.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9416604942337",
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 399,
+                "priceType": "BUY",
+                "formattedValue": "Rs.399.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "0685816252",
+                    "name": "Regular Fit T-shirt",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg"
+                        }
+                    ],
+                    "pk": "9400278253569",
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 399,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.399.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8yNTJfZW5faW47MDY4NTgxNjI1Ml9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "F5F5DC",
+                        "text": "Brown",
+                        "filterName": "Beige_F5F5DC",
+                        "hybrisCode": "15"
+                    },
+                    "rgbColor": "#594C43",
+                    "turnToSku": "0685816252001"
+                }
+            ],
+            "visible": false,
+            "concept": [
+                "BASICS"
+            ],
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "0685816252",
+                "name": "Regular Fit T-shirt",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg"
+                    }
+                ],
+                "pk": "9400278253569",
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 399,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.399.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8yNTJfZW5faW47MDY4NTgxNjI1Ml9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "F5F5DC",
+                    "text": "Brown",
+                    "filterName": "Beige_F5F5DC",
+                    "hybrisCode": "15"
+                },
+                "rgbColor": "#594C43",
+                "turnToSku": "0685816252001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 375,
+                    "filterCode": "XXL"
+                },
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "0685816252",
+                "0685816001",
+                "0685816002",
+                "0685816053"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8yNTJfZW5faW47MDY4NTgxNjI1Ml9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+            "searchEngineProductId": "0685816_group_252_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.0685816252.html",
+            "categoryName": "Men",
+            "rgbColors": [
+                "#594C43",
+                "#FFFFFF",
+                "#272628",
+                "#AFAFAF"
+            ],
+            "articleColorNames": [
+                "Brown",
+                "White",
+                "Black",
+                "Grey marl",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 13,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "men_tshirtstanks_shortsleeve",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/68/69/6869a2502b691f3ffcf4251b5f59df0ecbe5cf78.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/2b/c0/2bc002af1a2b2b25bc9abb085fd8d2cf16e1d21f.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/2b/c0/2bc002af1a2b2b25bc9abb085fd8d2cf16e1d21f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/68/69/6869a2502b691f3ffcf4251b5f59df0ecbe5cf78.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/ed/e3/ede376565f53b7e3836b3dec4d7c1f55c586d514.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/ed/e3/ede376565f53b7e3836b3dec4d7c1f55c586d514.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/01/ab/01ab01c67cfd2707df231e0211ded57469e8c9c1.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/01/ab/01ab01c67cfd2707df231e0211ded57469e8c9c1.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "0685816252",
+                "0685816001",
+                "0685816002",
+                "0685816053",
+                "0685816178",
+                "0685816185",
+                "0685816229",
+                "0685816254",
+                "0685816257",
+                "0685816264",
+                "0685816265",
+                "0685816266",
+                "0685816271"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/38/06/380609a19cfd897b634bfea723a83df777092531.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg",
+                "https://image.hm.com/assets/hm/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg",
+                "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg",
+                "https://image.hm.com/assets/hm/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg",
+                "https://image.hm.com/assets/hm/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg",
+                "https://image.hm.com/assets/hm/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg",
+                "https://image.hm.com/assets/hm/38/06/380609a19cfd897b634bfea723a83df777092531.jpg",
+                "https://image.hm.com/assets/hm/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg",
+                "https://image.hm.com/assets/hm/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg",
+                "https://image.hm.com/assets/hm/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg",
+                "https://image.hm.com/assets/hm/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg",
+                "https://image.hm.com/assets/hm/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg",
+                "https://image.hm.com/assets/hm/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg"
+            ]
+        }
+    ]
+}
