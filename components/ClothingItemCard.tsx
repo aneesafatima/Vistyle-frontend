@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, Pressable } from "react-native";
 import { useMaskedImageQuery } from "../query/features/imageApi";
+import { segmentItem } from "@/lib/skia";
 
 type ItemProps = {
   name: string;
@@ -13,11 +14,11 @@ const ShoppingItemCard = ({ item }: { item: ItemProps }) => {
     skip: !stickerStatus,
   });
   useEffect(() => {
-    console.log("In useEffect", maskedImage);
+
     if (maskedImage) {
-      console.log(maskedImage);
       //create sticker with the masked image
       setStickerStatus(false);
+      segmentItem(maskedImage.data.result[0]);
     }
   }, [maskedImage]);
 
