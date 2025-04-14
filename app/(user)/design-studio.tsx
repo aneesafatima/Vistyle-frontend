@@ -5,7 +5,7 @@ const DesignStudio = () => {
     <SafeAreaView>
       <View>
       
-        <Text className="text-3xl text-center mt-10 font-bold">design-studio</Text>
+        <Text className="text-3xl text-center mt-10 font-bold text-blue-400">design-studio</Text>
       </View>
     </SafeAreaView>
   );
