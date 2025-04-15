@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, Pressable } from "react-native";
 import { useMaskedImageQuery } from "../query/features/imageApi";
-import { segmentItem } from "@/lib/skia";
+import useImageProcessing from "@/lib/skia";
 
 type ItemProps = {
   name: string;
@@ -10,20 +10,32 @@ type ItemProps = {
 };
 const ShoppingItemCard = ({ item }: { item: ItemProps }) => {
   const [stickerStatus, setStickerStatus] = useState(false);
-  const { data: maskedImage, isLoading } = useMaskedImageQuery(item.image, {
+  const {
+    data: maskedImage,
+    isLoading,
+  } = useMaskedImageQuery(item.image, {
     skip: !stickerStatus,
   });
-  useEffect(() => {
 
-    if (maskedImage) {
-      //create sticker with the masked image
-      setStickerStatus(false);
-      segmentItem(maskedImage.data.result[0]);
-    }
+  const { segmentItem } = useImageProcessing(
+    maskedImage?.data.result[0],
+    item.image, 
+  );
+  useEffect(() => {
+    const doSegmentation = async () => {
+      if (maskedImage.data.result[0]) {
+        //create sticker with the masked image
+        console.log("In use effect");
+        setStickerStatus(false);
+        await segmentItem();
+      }
+    };
+    doSegmentation();
   }, [maskedImage]);
 
   const createSticker = () => {
     //give a loader to show the creation of sticker
+    // if(maskedImage) refetch();
     setStickerStatus(true);
   };
   return isLoading ? (

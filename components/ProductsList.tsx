@@ -11,7 +11,7 @@ const ProductsList = () => {
      image: item.images[0].baseUrl
     }
   })
-  console.log(filteredData)
+ 
  
   const data = [
     {
