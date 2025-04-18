@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { SkImage } from "@shopify/react-native-skia";
 type GlobalContextType = {
   isLoggedIn: boolean;
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
