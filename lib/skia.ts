@@ -5,6 +5,8 @@ import {
   useImage,
   SkImage,
   ImageInfo,
+  PaintStyle,
+  StrokeCap,
 } from "@shopify/react-native-skia";
 import {
   ImageManipulatorContext,
@@ -21,21 +23,20 @@ export default function useImageProcessing(
     width: number | null,
     height: number | null
   ) {
-    let c = 0;
+    console.log("In sticker effect function");
     if (img && width && height) {
+      console.log("Image: ", width, height);
       const surface = Skia.Surface.Make(width, height); //creates a surface to draw on
       const canvas = surface?.getCanvas(); //gets the canvas from the surface
       canvas?.drawImage(img, 0, 0); //draws the image on the canvas
       const imageInfo: ImageInfo = {
-        width: 50,
-        height: 50,
+        width,
+        height,
         colorType: ColorType.RGBA_8888, // RGBA format
-        alphaType: AlphaType.Unpremul, // Premultiplied alpha
+        alphaType: AlphaType.Unpremul,
       };
       const pixels = canvas?.readPixels(0, 0, imageInfo); //reads the pixels from the canvas
       if (pixels) {
-        let lx = 0,
-          ly = 0;
         const path = Skia.Path.Make(); //creates a path to draw on
         for (let x = 0; x < width; x++) {
           for (let y = 0; y < height; y++) {
@@ -51,18 +52,20 @@ export default function useImageProcessing(
               ];
 
               if (neighbors.some((n) => n)) {
-                if (c == 0) {
-                  c = 1;
-                  path.moveTo(x, y); // Move to the pixel position
-                } else {
-                  path.quadTo(lx, ly, x, y); // Draw a line to the pixel position
-                }
-                lx = x;
-                ly = y;
+                path.addCircle(x, y, 1.5); // Draw a circle at the pixel position
               }
             }
           }
         }
+        path.close();
+
+        const strokePaint = Skia.Paint();
+        strokePaint.setColor(Skia.Color("white"));
+        strokePaint.setStyle(PaintStyle.Stroke);
+        strokePaint.setAntiAlias(true);
+        canvas?.drawPath(path, strokePaint);
+        const sticker = surface?.makeImageSnapshot();
+        console.log("Sticker: ", sticker?.encodeToBase64());
       }
     }
   }
@@ -78,9 +81,10 @@ export default function useImageProcessing(
   async function resizeImage(
     context: ImageManipulatorContext,
     width: number | undefined,
-    height?: number
+    height: number | undefined
   ) {
     try {
+      if (!height || !width) return;
       context.resize({ width, height }); //resizes the image to the specified width and height
       const contextImg = await context.renderAsync(); //renders the image to a base64 string
       const contextResult = await contextImg.saveAsync({
@@ -112,16 +116,6 @@ export default function useImageProcessing(
         const orgPixels = originalImage?.readPixels();
         const maskedImage = Skia.Image.MakeImageFromEncoded(mask); //creates a skia image object
         const maskPixels = maskedImage?.readPixels();
-        console.log(
-          "Original Image: ",
-          originalImage?.width(),
-          originalImage?.height()
-        );
-        console.log(
-          "Mask Image: ",
-          maskedImage?.width(),
-          maskedImage?.height()
-        );
         if (
           maskPixels instanceof Uint8Array &&
           orgPixels instanceof Uint8Array
@@ -155,13 +149,17 @@ export default function useImageProcessing(
           const finalImgContext = ImageManipulator.manipulate(
             "data:image/png;base64," + finalOrgImg.encodeToBase64()
           );
-          // const finalWidth = 200;
-          // const aspectRatio =
-          //   (originalImage?.height() || 256) / (originalImage?.width() || 256);
-          // const finalHeight = Math.round(finalWidth * aspectRatio);
-          const finalImg64 = await resizeImage(finalImgContext, 100);
+          const finalWidth = 300;
+          const aspectRatio =
+            (originalImage?.height() || 256) / (originalImage?.width() || 256);
+          const finalHeight = Math.round(finalWidth * aspectRatio);
+          const finalImg64 = await resizeImage(
+            finalImgContext,
+            finalWidth,
+            finalHeight
+          ); //resizes the image to the specified width and height
           const final = Skia.Data.fromBase64(finalImg64 ?? ""); //check what happens if it is string
-          const finalObj = Skia.Image.MakeImageFromEncoded(org);
+          const finalObj = Skia.Image.MakeImageFromEncoded(final);
           const finalPixels = finalObj?.readPixels();
           applyingStickerEffect(
             finalObj,
