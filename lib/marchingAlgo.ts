@@ -1,4 +1,34 @@
 import { Skia } from "@shopify/react-native-skia";
+function smoothPointsChaikin(
+  points: [number, number][],
+  iterations = 2
+): [number, number][] {
+  for (let iter = 0; iter < iterations; iter++) {
+    const newPoints: [number, number][] = [];
+
+    for (let i = 0; i < points.length - 1; i++) {
+      const p0 = points[i];
+      const p1 = points[i + 1];
+
+      const Q: [number, number] = [
+        0.75 * p0[0] + 0.25 * p1[0],
+        0.75 * p0[1] + 0.25 * p1[1],
+      ];
+
+      const R: [number, number] = [
+        0.25 * p0[0] + 0.75 * p1[0],
+        0.25 * p0[1] + 0.75 * p1[1],
+      ];
+
+      newPoints.push(Q);
+      newPoints.push(R);
+    }
+
+    points = newPoints;
+  }
+
+  return points;
+}
 function isAlpha(
   x: number,
   y: number,
@@ -8,10 +38,10 @@ function isAlpha(
 ) {
   if (x < 0 || x >= width || y < 0 || y >= height) return 0;
   const index = (y * width + x) * 4 + 3; // Alpha channel index
-  return pixels[index]; // Check if the alpha value is greater than 0
+  return pixels[index] > 0 ? 1 : 0; // Check if the alpha value is greater than 0
 }
-
-function traceOutline(
+let tx: number, ty: number;
+export function traceOutline(
   pixels:
     | Float32Array<ArrayBufferLike>
     | Uint8Array<ArrayBufferLike>
@@ -30,9 +60,13 @@ function traceOutline(
       const right = isAlpha(x + 1, y, width, height, pixels);
       const down = isAlpha(x, y + 1, width, height, pixels);
       const diag = isAlpha(x + 1, y + 1, width, height, pixels);
-      const sum = current + right + down + diag;
-      if (sum > 0 && sum < 255 * 4) {
+      const sum = right + down + diag;
+      if (sum > 0 && sum < 3 && current === 1) {
+        console.log("Sum: ", sum);
         path.push([x, y]);
+        console.log("First edge pixel found at: ", x, y);
+        tx = x;
+        ty = y;
         break outer;
       }
     }
@@ -41,36 +75,62 @@ function traceOutline(
   let [x, y] = path[0];
   const dx = [0, 1, 0, -1];
   const dy = [-1, 0, 1, 0];
+  let loopCounter = 0;
+  const MAX_LOOPS = 10000;
   do {
+    loopCounter++;
+    if (loopCounter > MAX_LOOPS) break;
     isChecked.add(`${x},${y}`);
     for (let i = 0; i < 4; i++) {
       const ndir = (dir + i) % 4;
       const ny = y + dy[ndir];
-      const nx = x + dy[ndir];
-      if (isAlpha(nx, ny, width, height, pixels)) {
-        const neighbors = [
-          ny > 0 && !isAlpha(nx, ny - 1, width, height, pixels), // Top
-          ny < height - 1 && !isAlpha(nx, ny + 1, width, height, pixels), // Bottom
-          nx > 0 && !isAlpha(nx - 1, ny, width, height, pixels), // Left
-          nx < width - 1 && !isAlpha(nx + 1, ny, width, height, pixels), // Right
-        ];
-        if (neighbors.some((n) => n)) {
-          path.push([x, y]);
+      const nx = x + dx[ndir];
+      if (
+        isAlpha(nx, ny, width, height, pixels) &&
+        !isChecked.has(`${nx},${ny}`)
+      ) {
+        const hasTransparentNeighbor =
+          (ny > 0 && !isAlpha(nx, ny - 1, width, height, pixels)) || // Top
+          (ny < height - 1 && !isAlpha(nx, ny + 1, width, height, pixels)) || // Bottom
+          (nx > 0 && !isAlpha(nx - 1, ny, width, height, pixels)) || // Left
+          (nx < width - 1 && !isAlpha(nx + 1, ny, width, height, pixels)) || // Right
+          (nx > 0 &&
+            ny > 0 &&
+            !isAlpha(nx - 1, ny - 1, width, height, pixels)) || // Top-left
+          (nx < width - 1 &&
+            ny > 0 &&
+            !isAlpha(nx + 1, ny - 1, width, height, pixels)) || // Top-right
+          (nx > 0 &&
+            ny < height - 1 &&
+            !isAlpha(nx - 1, ny + 1, width, height, pixels)) || // Bottom-left
+          (nx < width - 1 &&
+            ny < height - 1 &&
+            !isAlpha(nx + 1, ny + 1, width, height, pixels)); // Bottom-right
+
+        if (hasTransparentNeighbor) {
+          path.push([nx, ny]);
           dir = ndir;
           x = nx;
           y = ny;
+          break;
         }
       }
     }
-  } while (x !== path[0][0] || y !== path[0][1]);
-
+  } while ((x !== path[0][0] || y !== path[0][1]) && path.length < 100000); // Loop until we return to the starting point
+  console.log("Path: ", path.length);
+  console.log("Path work completed");
   const outline = Skia.Path.Make();
+  path = smoothPointsChaikin(path, 1); // Smooth the path using Chaikin's algorithm
   outline.moveTo(path[0][0], path[0][1]);
-  for (let i = 1; i < path.length; i++) {
-    outline.lineTo(path[i][0], path[i][1]);
-    outline.offset(3, 3); // Move the path slightly outward (a stroke effect)
+  for (let i = 0; i < path.length - 2; i += 3) {
+    const p0 = path[i];
+    const p1 = path[i + 1];
+    const p2 = path[i + 2];
+    outline.cubicTo(p0[0], p0[1], p1[0], p1[1], p2[0], p2[1]);
   }
+
   outline.close();
-  outline.offset(3, 3);
+  outline.offset(-1.5, 1.5); // Offset the path to create a border effect
+
   return outline;
 }
