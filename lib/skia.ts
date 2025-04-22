@@ -7,7 +7,11 @@ import {
   ImageInfo,
   PaintStyle,
   StrokeCap,
+  Blur,
+  BlendMode,
+  StrokeJoin,
 } from "@shopify/react-native-skia";
+import { traceOutline } from "./marchingAlgo";
 import {
   ImageManipulatorContext,
   ImageManipulator,
@@ -37,33 +41,19 @@ export default function useImageProcessing(
       };
       const pixels = canvas?.readPixels(0, 0, imageInfo); //reads the pixels from the canvas
       if (pixels) {
-        const path = Skia.Path.Make(); //creates a path to draw on
-        for (let x = 0; x < width; x++) {
-          for (let y = 0; y < height; y++) {
-            const index = (y * width + x) * 4;
+        //CHECK THIS METHOD await makeImageFromView(ref);
 
-            if (pixels[index + 3] > 0) {
-              // Check if this pixel has any transparent neighbor
-              const neighbors = [
-                y > 0 && pixels[((y - 1) * width + x) * 4 + 3] === 0, // Top
-                y < height - 1 && pixels[((y + 1) * width + x) * 4 + 3] === 0, // Bottom
-                x > 0 && pixels[(y * width + (x - 1)) * 4 + 3] === 0, // Left
-                x < width - 1 && pixels[(y * width + (x + 1)) * 4 + 3] === 0, // Right
-              ];
-
-              if (neighbors.some((n) => n)) {
-                path.addCircle(x, y, 1.5); // Draw a circle at the pixel position
-              }
-            }
-          }
-        }
-        path.close();
-
+        const outline = traceOutline(pixels, width, height); //traces the outline of the image
+        if (!outline) return;
         const strokePaint = Skia.Paint();
-        strokePaint.setColor(Skia.Color("white"));
+        strokePaint.setColor(Skia.Color("#ffffff")); //white color
         strokePaint.setStyle(PaintStyle.Stroke);
         strokePaint.setAntiAlias(true);
-        canvas?.drawPath(path, strokePaint);
+        strokePaint.setBlendMode(BlendMode.SrcOver); // X, Y offsets, blur radius
+        strokePaint.setStrokeCap(StrokeCap.Round);
+        strokePaint.setStrokeJoin(StrokeJoin.Round);
+        strokePaint.setStrokeWidth(10);
+        canvas?.drawPath(outline, strokePaint);
         const sticker = surface?.makeImageSnapshot();
         console.log("Sticker: ", sticker?.encodeToBase64());
       }
@@ -146,27 +136,11 @@ export default function useImageProcessing(
         }
         if (finalOrgImg) {
           console.log("Image Segmentation Done");
-          const finalImgContext = ImageManipulator.manipulate(
-            "data:image/png;base64," + finalOrgImg.encodeToBase64()
-          );
-          const finalWidth = 300;
-          const aspectRatio =
-            (originalImage?.height() || 256) / (originalImage?.width() || 256);
-          const finalHeight = Math.round(finalWidth * aspectRatio);
-          const finalImg64 = await resizeImage(
-            finalImgContext,
-            finalWidth,
-            finalHeight
-          ); //resizes the image to the specified width and height
-          const final = Skia.Data.fromBase64(finalImg64 ?? ""); //check what happens if it is string
-          const finalObj = Skia.Image.MakeImageFromEncoded(final);
-          const finalPixels = finalObj?.readPixels();
           applyingStickerEffect(
-            finalObj,
-            finalObj?.width() ?? null,
-            finalObj?.height() ?? null
+            finalOrgImg,
+            finalOrgImg?.width() ?? null,
+            finalOrgImg?.height() ?? null
           );
-          // console.log("Final Image: ", finalImg64, finalObj?.width(), finalObj?.height());
         } //check what happens if it is string
       }
     } catch (error) {
