@@ -1,7 +1,6 @@
-import resetPassword from "@/app/(auth)/forgot-password";
-import OtpVerify from "@/components/OtpVerify";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Constants from "expo-constants";
+console.log("Backend URL: ", Constants.expoConfig?.extra?.EXPO_BACKEND_URL);
 type userData = {
   name?: string;
   email: string;

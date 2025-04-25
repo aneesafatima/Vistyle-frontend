@@ -18,10 +18,9 @@ import {
   SaveFormat,
   useImageManipulator,
 } from "expo-image-manipulator";
-export default function useImageProcessing(
-  maskBase64: string | null,
-  orgURL: string
-) {
+export default function useImageProcessing(maskUrl: string, orgURL: string) {
+  const orgUriImg = useImage(orgURL); //loads the image from the url and returns an object containing the image and its properties
+  const maskUriImg = useImage(maskUrl);
   function applyingStickerEffect(
     img: SkImage | null,
     width: number | null,
@@ -29,7 +28,6 @@ export default function useImageProcessing(
   ) {
     console.log("In sticker effect function");
     if (img && width && height) {
-      console.log("Image: ", width, height);
       const surface = Skia.Surface.Make(width, height); //creates a surface to draw on
       const canvas = surface?.getCanvas(); //gets the canvas from the surface
       canvas?.drawImage(img, 0, 0); //draws the image on the canvas
@@ -41,10 +39,12 @@ export default function useImageProcessing(
       };
       const pixels = canvas?.readPixels(0, 0, imageInfo); //reads the pixels from the canvas
       if (pixels) {
-        //CHECK THIS METHOD await makeImageFromView(ref);
-
+        console.log("Pixels length: ", pixels.length);
         const outline = traceOutline(pixels, width, height); //traces the outline of the image
-        if (!outline) return;
+        if (!outline) {
+          console.log("No outline found");
+          return;
+        }
         const strokePaint = Skia.Paint();
         strokePaint.setColor(Skia.Color("#ffffff")); //white color
         strokePaint.setStyle(PaintStyle.Stroke);
@@ -52,7 +52,7 @@ export default function useImageProcessing(
         strokePaint.setBlendMode(BlendMode.SrcOver); // X, Y offsets, blur radius
         strokePaint.setStrokeCap(StrokeCap.Round);
         strokePaint.setStrokeJoin(StrokeJoin.Round);
-        strokePaint.setStrokeWidth(10);
+        strokePaint.setStrokeWidth(8);
         canvas?.drawPath(outline, strokePaint);
         const sticker = surface?.makeImageSnapshot();
         console.log("Sticker: ", sticker?.encodeToBase64());
@@ -60,13 +60,11 @@ export default function useImageProcessing(
     }
   }
 
-  const orgUriImg = useImage(orgURL); //loads the image from the url and returns an object containing the image and its properties
-
   //check for repeated consoles of the final image + this hook running
 
-  const maskImgContext = useImageManipulator(
-    `data:image/png;base64,${maskBase64}`
-  ); // It initializes an image manipulation context object that provides chainable methods for performing tasks like resizing, cropping, and flipping.
+  // const maskImgContext = useImageManipulator(
+  //   `data:image/png;base64,${maskBase64}`
+  // ); // It initializes an image manipulation context object that provides chainable methods for performing tasks like resizing, cropping, and flipping.
 
   async function resizeImage(
     context: ImageManipulatorContext,
@@ -93,53 +91,53 @@ export default function useImageProcessing(
     let finalOrgImg;
 
     try {
-      const mask64Resized = await resizeImage(
-        maskImgContext,
-        orgUriImg?.width(),
-        orgUriImg?.height()
-      ); //resizes the mask image to the same width as the original image
+      // const mask64Resized = await resizeImage(
+      //   maskImgContext,
+      //   orgUriImg?.width(),
+      //   orgUriImg?.height()
+      // ); //resizes the mask image to the same width as the original image
 
-      if (orgUriImg && mask64Resized) {
-        const org = Skia.Data.fromBase64(orgUriImg.encodeToBase64()); //check what happens if it is string
-        const mask = Skia.Data.fromBase64(mask64Resized); //check what happens if it is string
-        const originalImage = Skia.Image.MakeImageFromEncoded(org);
-        const orgPixels = originalImage?.readPixels();
-        const maskedImage = Skia.Image.MakeImageFromEncoded(mask); //creates a skia image object
-        const maskPixels = maskedImage?.readPixels();
-        if (
-          maskPixels instanceof Uint8Array &&
-          orgPixels instanceof Uint8Array
-        ) {
-          for (let i = 0; i <= maskPixels.length - 4; i += 4) {
-            if (
-              maskPixels[i] == 0 &&
-              maskPixels[i + 1] == 0 &&
-              maskPixels[i + 2] == 0
-            ) {
-              orgPixels[i + 3] = 0; //sets the alpha value of the pixel to 0
-            }
-          }
-          // const maskData = Skia.Data.fromBytes(maskPixels);
+      if (orgUriImg && maskUriImg) {
+        // const org = Skia.Data.fromBase64(orgUriImg.encodeToBase64()); //check what happens if it is string
+        // const mask = Skia.Data.fromBase64(maskUriImg.encodeToBase64()); //check what happens if it is string
+        // const originalImage = Skia.Image.MakeImageFromEncoded(org);
+        // const orgPixels = originalImage?.readPixels();
+        // const maskedImage = Skia.Image.MakeImageFromEncoded(mask); //creates a skia image object
+        // const maskPixels = maskedImage?.readPixels();
+        // if (
+        //   maskPixels instanceof Uint8Array &&
+        //   orgPixels instanceof Uint8Array
+        // ) {
+        //   for (let i = 0; i <= maskPixels.length - 4; i += 4) {
+        //     if (
+        //       maskPixels[i] == 0 &&
+        //       maskPixels[i + 1] == 0 &&
+        //       maskPixels[i + 2] == 0
+        //     ) {
+        //       orgPixels[i + 3] = 0; //sets the alpha value of the pixel to 0
+        //     }
+        //   }
+        //   // const maskData = Skia.Data.fromBytes(maskPixels);
 
-          const orgData = Skia.Data.fromBytes(orgPixels);
+        //   const orgData = Skia.Data.fromBytes(orgPixels);
 
-          finalOrgImg = Skia.Image.MakeImage(
-            {
-              width: originalImage?.width() || 256,
-              height: originalImage?.height() || 256,
-              alphaType: AlphaType.Unpremul,
-              colorType: ColorType.RGBA_8888,
-            },
-            orgData,
-            (originalImage?.width() || 256) * 4
-          );
-        }
-        if (finalOrgImg) {
+        //   finalOrgImg = Skia.Image.MakeImage(
+        //     {
+        //       width: originalImage?.width() || 256,
+        //       height: originalImage?.height() || 256,
+        //       alphaType: AlphaType.Unpremul,
+        //       colorType: ColorType.RGBA_8888,
+        //     },
+        //     orgData,
+        //     (originalImage?.width() || 256) * 4
+        //   );
+        // }
+        if (maskUriImg) {
           console.log("Image Segmentation Done");
           applyingStickerEffect(
-            finalOrgImg,
-            finalOrgImg?.width() ?? null,
-            finalOrgImg?.height() ?? null
+            maskUriImg,
+            maskUriImg?.width() ?? null,
+            maskUriImg?.height() ?? null
           );
         } //check what happens if it is string
       }

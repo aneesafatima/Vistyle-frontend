@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, Pressable } from "react-native";
-import { useMaskedImageQuery } from "../query/features/imageApi";
+import { useRemoveBackgroundQuery } from "../query/features/imageApi";
 import useImageProcessing from "@/lib/skia";
 
 type ItemProps = {
@@ -10,20 +10,18 @@ type ItemProps = {
 };
 const ShoppingItemCard = ({ item }: { item: ItemProps }) => {
   const [stickerStatus, setStickerStatus] = useState(false);
-  const {
-    data: maskedImage,
-    isLoading,
-  } = useMaskedImageQuery(item.image, {
-    skip: !stickerStatus,
-  });
-
-  const { segmentItem } = useImageProcessing(
-    maskedImage?.data.result[0],
-    item.image, 
-  );
+  // const {
+  //   data: itemImage,
+  //   isLoading,
+  // } = useRemoveBackgroundQuery(item.image, {
+  //   skip: !stickerStatus,
+  // });
+  const itemImage =
+    "https://res.cloudinary.com/dhjykjehw/image/upload/v1745602651/vistyl/test-img2.png";
+  const { segmentItem } = useImageProcessing(itemImage, item.image);
   useEffect(() => {
     const doSegmentation = async () => {
-      if (maskedImage.data.result[0]) {
+      if (itemImage && stickerStatus) {
         //create sticker with the masked image
         console.log("In use effect");
         setStickerStatus(false);
@@ -31,18 +29,15 @@ const ShoppingItemCard = ({ item }: { item: ItemProps }) => {
       }
     };
     doSegmentation();
-  }, [maskedImage]);
+  }, [itemImage, stickerStatus]);
 
   const createSticker = () => {
     //give a loader to show the creation of sticker
     // if(maskedImage) refetch();
+    console.log("In create sticker function");
     setStickerStatus(true);
   };
-  return isLoading ? (
-    <View>
-      <Text>Loading...</Text>
-    </View>
-  ) : (
+  return (
     <View className="bg-white rounded-xl shadow-md p-4 m-2 w-60">
       <Image
         source={{ uri: item.image }}

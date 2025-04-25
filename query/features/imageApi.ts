@@ -17,7 +17,18 @@ export const imageApi = createApi({
         };
       },
     }),
+    removeBackground: builder.query({
+      query: (imgURL: string) => {
+        return {
+          url: "/remove-bg",
+          method: "GET",
+          params: {
+            imgURL,
+          }, 
+        };
+      },
+    }),
   }),
 });
 
-export const { useMaskedImageQuery } = imageApi;
+export const { useMaskedImageQuery, useRemoveBackgroundQuery } = imageApi;

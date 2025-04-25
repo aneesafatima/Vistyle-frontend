@@ -1,6 +1,6 @@
 import { FlatList } from "react-native";
 import { Canvas, Image, useImage } from "@shopify/react-native-skia";
-import HMdata from "../demo-data/H&M.json";
+import HMdata from "../demo-data/HM.json";
 import ClothingItemCard from "./ClothingItemCard";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useContext, useEffect } from "react";
