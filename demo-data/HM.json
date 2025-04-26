@@ -2,415 +2,147 @@
     "status": "success",
     "results": [
         {
-            "code": "0967955_group_124",
-            "name": "Loose Fit Printed T-shirt",
+            "code": "1217576_group_013",
+            "name": "Tie-belt shirt dress",
             "stock": {
                 "stockLevel": 1
             },
             "price": {
                 "currencyIso": "INR",
-                "value": 699,
+                "value": 1899,
                 "priceType": "BUY",
-                "formattedValue": "Rs.699.00",
+                "formattedValue": "Rs.1,899.00",
                 "type": "WHITE"
             },
             "images": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/style]",
-                    "baseUrl": "https://image.hm.com/assets/hm/e7/cf/e7cf702da2da6cbd1cbd75a58e85720734131980.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg"
                 }
             ],
             "categories": [],
-            "pk": "9425074290689",
-            "sellingAttributes": [
-                "New Arrival"
-            ],
+            "pk": "9424564289537",
             "whitePrice": {
                 "currencyIso": "INR",
-                "value": 699,
+                "value": 1899,
                 "priceType": "BUY",
-                "formattedValue": "Rs.699.00",
+                "formattedValue": "Rs.1,899.00",
                 "type": "WHITE"
+            },
+            "yellowPrice": {
+                "currencyIso": "INR",
+                "value": 1399,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,399.00",
+                "type": "YELLOW"
             },
             "articles": [
                 {
-                    "code": "0967955124",
-                    "name": "Loose Fit Printed T-shirt",
+                    "code": "1217576013",
+                    "name": "Tie-belt shirt dress",
                     "images": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/style]",
-                            "baseUrl": "https://image.hm.com/assets/hm/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg"
                         }
                     ],
-                    "pk": "9411300261889",
-                    "sellingAttributes": [
-                        "New Arrival"
-                    ],
+                    "pk": "9399065083905",
                     "whitePrice": {
                         "currencyIso": "INR",
-                        "value": 699,
+                        "value": 1899,
                         "priceType": "BUY",
-                        "formattedValue": "Rs.699.00",
+                        "formattedValue": "Rs.1,899.00",
                         "type": "WHITE"
+                    },
+                    "yellowPrice": {
+                        "currencyIso": "INR",
+                        "value": 1399,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,399.00",
+                        "type": "YELLOW"
                     },
                     "logoPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg"
                         }
                     ],
                     "normalPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg"
                         }
                     ],
                     "visible": false,
                     "numbersOfPieces": 0,
-                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2Nzk1NV9ncm91cF8xMjRfZW5faW47MDk2Nzk1NTEyNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
-                    "dummy": false,
-                    "ecoTaxValue": 0,
-                    "redirectToPdp": false,
-                    "comingSoon": false,
-                    "color": {
-                        "code": "0000FF",
-                        "text": "Light blue/Grand Lake",
-                        "filterName": "Blue_0000FF",
-                        "hybrisCode": "74"
-                    },
-                    "rgbColor": "#AFBFDF",
-                    "damStyleWith": [
-                        "1029317001",
-                        "1275327002"
-                    ],
-                    "turnToSku": "0967955124001"
-                }
-            ],
-            "visible": false,
-            "numbersOfPieces": 0,
-            "defaultArticle": {
-                "code": "0967955124",
-                "name": "Loose Fit Printed T-shirt",
-                "images": [
-                    {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/style]",
-                        "baseUrl": "https://image.hm.com/assets/hm/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg"
-                    }
-                ],
-                "pk": "9411300261889",
-                "sellingAttributes": [
-                    "New Arrival"
-                ],
-                "whitePrice": {
-                    "currencyIso": "INR",
-                    "value": 699,
-                    "priceType": "BUY",
-                    "formattedValue": "Rs.699.00",
-                    "type": "WHITE"
-                },
-                "logoPicture": [
-                    {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
-                    }
-                ],
-                "normalPicture": [
-                    {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/65/82/65822a1a5267c02a34652c0830ce86c6cec3e793.jpg"
-                    }
-                ],
-                "visible": false,
-                "numbersOfPieces": 0,
-                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2Nzk1NV9ncm91cF8xMjRfZW5faW47MDk2Nzk1NTEyNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
-                "dummy": false,
-                "ecoTaxValue": 0,
-                "redirectToPdp": false,
-                "comingSoon": false,
-                "color": {
-                    "code": "0000FF",
-                    "text": "Light blue/Grand Lake",
-                    "filterName": "Blue_0000FF",
-                    "hybrisCode": "74"
-                },
-                "rgbColor": "#AFBFDF",
-                "damStyleWith": [
-                    "1029317001",
-                    "1275327002"
-                ],
-                "turnToSku": "0967955124001"
-            },
-            "sale": false,
-            "variantSizes": [
-                {
-                    "orderFilter": 370,
-                    "filterCode": "L"
-                },
-                {
-                    "orderFilter": 375,
-                    "filterCode": "XXL"
-                },
-                {
-                    "orderFilter": 363,
-                    "filterCode": "XS"
-                },
-                {
-                    "orderFilter": 369,
-                    "filterCode": "M"
-                },
-                {
-                    "orderFilter": 366,
-                    "filterCode": "S"
-                },
-                {
-                    "orderFilter": 372,
-                    "filterCode": "XL"
-                }
-            ],
-            "swatches": [],
-            "articleCodes": [
-                "0967955124",
-                "0967955081",
-                "0967955102",
-                "0967955104"
-            ],
-            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk2Nzk1NV9ncm91cF8xMjRfZW5faW47MDk2Nzk1NTEyNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
-            "searchEngineProductId": "0967955_group_124_en_in",
-            "dummy": false,
-            "linkPdp": "/en_in/productpage.0967955124.html",
-            "categoryName": "Men",
-            "rgbColors": [
-                "#AFBFDF",
-                "#FFFFFF",
-                "#DED8C5",
-                "#FFFFFF"
-            ],
-            "articleColorNames": [
-                "Light blue/Grand Lake",
-                "White/Valencia",
-                "Light beige/Better Than Ever",
-                "White/Cologne",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc"
-            ],
-            "ecoTaxValue": 0,
-            "swatchesTotal": 11,
-            "showPriceMarker": false,
-            "redirectToPdp": false,
-            "mainCategoryCode": "men_tshirtstanks_printed",
-            "comingSoon": false,
-            "brandName": "H&M",
-            "galleryImages": [
-                {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/a5/1e/a51e5012c468646ac12444a252522dffc3e0a432.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/a5/1e/a51e5012c468646ac12444a252522dffc3e0a432.jpg"
-                },
-                {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/17/2a/172a29e4922b06d6ff00dbf6ec01a2d978336b31.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVEDETAIL],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/17/2a/172a29e4922b06d6ff00dbf6ec01a2d978336b31.jpg"
-                },
-                {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/08/80/0880d3c5518078201f2b196fd36ab065d47f4d14.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVEDETAIL],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/f8/70/f87091a6f6d27c43678f1dcc7fbfe4d680291003.jpg"
-                },
-                {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/f8/70/f87091a6f6d27c43678f1dcc7fbfe4d680291003.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/08/80/0880d3c5518078201f2b196fd36ab065d47f4d14.jpg"
-                }
-            ],
-            "allArticleCodes": [
-                "0967955124",
-                "0967955081",
-                "0967955102",
-                "0967955104",
-                "0967955106",
-                "0967955107",
-                "0967955108",
-                "0967955110",
-                "0967955111",
-                "0967955112",
-                "0967955115"
-            ],
-            "allArticleImages": [
-                "https://lp2.hm.com/hmgoepprod?set=source[/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/e4/17/e41738e7548bcf19ae2ec5be5a39e507c4e2ecd1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/d3/5c/d35c622819e98c67f3442c9e4dc46771a189a9ea.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/1d/02/1d024bb67a4d6701809e9776c2a80797c206563d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/61/78/6178fb24a07d11efb17e026398840cccb2ab0cea.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/5c/d5/5cd55da81b4cda8fd32f807e145f949d1d96e8c5.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/d5/b1/d5b15e116234490c8bd7f4466d10287676201f8a.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/fc/6f/fc6ff3a8dca6af7bac8f30024f173a84a315f802.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/2b/10/2b10a12aaf772d103978ae4b16c6a05fbdebf7d9.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[1]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/f9/b3/f9b36fd4312726a80b6b86b34ec991431bd2fa42.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/71/93/71933f98061e99f201935b283bbf9ec5448e2a63.jpg],origin[dam],category[men_tshirtstanks_printed],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
-            ],
-            "allArticleBaseImages": [
-                "https://image.hm.com/assets/hm/4c/a8/4ca84578db9251a3beb888a68ac5b35d6cd57aa9.jpg",
-                "https://image.hm.com/assets/hm/e4/17/e41738e7548bcf19ae2ec5be5a39e507c4e2ecd1.jpg",
-                "https://image.hm.com/assets/hm/d3/5c/d35c622819e98c67f3442c9e4dc46771a189a9ea.jpg",
-                "https://image.hm.com/assets/hm/1d/02/1d024bb67a4d6701809e9776c2a80797c206563d.jpg",
-                "https://image.hm.com/assets/hm/61/78/6178fb24a07d11efb17e026398840cccb2ab0cea.jpg",
-                "https://image.hm.com/assets/hm/5c/d5/5cd55da81b4cda8fd32f807e145f949d1d96e8c5.jpg",
-                "https://image.hm.com/assets/hm/d5/b1/d5b15e116234490c8bd7f4466d10287676201f8a.jpg",
-                "https://image.hm.com/assets/hm/fc/6f/fc6ff3a8dca6af7bac8f30024f173a84a315f802.jpg",
-                "https://image.hm.com/assets/hm/2b/10/2b10a12aaf772d103978ae4b16c6a05fbdebf7d9.jpg",
-                "https://image.hm.com/assets/hm/f9/b3/f9b36fd4312726a80b6b86b34ec991431bd2fa42.jpg",
-                "https://image.hm.com/assets/hm/71/93/71933f98061e99f201935b283bbf9ec5448e2a63.jpg"
-            ]
-        },
-        {
-            "code": "0685816_group_002",
-            "name": "Regular Fit T-shirt",
-            "stock": {
-                "stockLevel": 1
-            },
-            "price": {
-                "currencyIso": "INR",
-                "value": 399,
-                "priceType": "BUY",
-                "formattedValue": "Rs.399.00",
-                "type": "WHITE"
-            },
-            "images": [
-                {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                    "baseUrl": "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg"
-                }
-            ],
-            "categories": [],
-            "pk": "8952201216001",
-            "whitePrice": {
-                "currencyIso": "INR",
-                "value": 399,
-                "priceType": "BUY",
-                "formattedValue": "Rs.399.00",
-                "type": "WHITE"
-            },
-            "articles": [
-                {
-                    "code": "0685816002",
-                    "name": "Regular Fit T-shirt",
-                    "images": [
-                        {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                            "baseUrl": "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg"
-                        }
-                    ],
-                    "pk": "8944077799425",
-                    "whitePrice": {
-                        "currencyIso": "INR",
-                        "value": 399,
-                        "priceType": "BUY",
-                        "formattedValue": "Rs.399.00",
-                        "type": "WHITE"
-                    },
-                    "logoPicture": [
-                        {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
-                        }
-                    ],
-                    "normalPicture": [
-                        {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
-                        }
-                    ],
-                    "visible": false,
-                    "numbersOfPieces": 0,
-                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8wMDJfZW5faW47MDY4NTgxNjAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTNfZW5faW47MTIxNzU3NjAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                     "dummy": false,
                     "ecoTaxValue": 0,
                     "redirectToPdp": false,
                     "comingSoon": false,
                     "color": {
                         "code": "000000",
-                        "text": "Black",
-                        "filterName": "Black_000000",
+                        "text": "Cream/Black patterned",
+                        "filterName": "Black_000000,Multi_000000,White_FFFFFF",
                         "hybrisCode": "09"
                     },
-                    "campaignMedia": {
-                        "url": "https://photorankmedia-a.akamaihd.net/media/o/e/4/oe46jk4/mobile.jpg",
-                        "id": "3307680012",
-                        "author": "luisferarvizu",
-                        "type": "CAMPAIGN"
-                    },
                     "rgbColor": "#272628",
-                    "damStyleWith": [
-                        "0538358019",
-                        "0664647036",
-                        "1251621001",
-                        "1251692001"
-                    ],
-                    "turnToSku": "0685816002001"
+                    "turnToSku": "1217576013001"
                 }
             ],
             "visible": false,
-            "concept": [
-                "BASICS"
-            ],
             "numbersOfPieces": 0,
             "defaultArticle": {
-                "code": "0685816002",
-                "name": "Regular Fit T-shirt",
+                "code": "1217576013",
+                "name": "Tie-belt shirt dress",
                 "images": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                        "baseUrl": "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg"
                     }
                 ],
-                "pk": "8944077799425",
+                "pk": "9399065083905",
                 "whitePrice": {
                     "currencyIso": "INR",
-                    "value": 399,
+                    "value": 1899,
                     "priceType": "BUY",
-                    "formattedValue": "Rs.399.00",
+                    "formattedValue": "Rs.1,899.00",
                     "type": "WHITE"
+                },
+                "yellowPrice": {
+                    "currencyIso": "INR",
+                    "value": 1399,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,399.00",
+                    "type": "YELLOW"
                 },
                 "logoPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg"
                     }
                 ],
                 "normalPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/5e/7c/5e7c4848697a1d5a24563421e9a55c2038d23026.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/cf/85/cf85f077439c09fa7d83dd76b02431aef5687b47.jpg"
                     }
                 ],
                 "visible": false,
                 "numbersOfPieces": 0,
-                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8wMDJfZW5faW47MDY4NTgxNjAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTNfZW5faW47MTIxNzU3NjAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                 "dummy": false,
                 "ecoTaxValue": 0,
                 "redirectToPdp": false,
                 "comingSoon": false,
                 "color": {
                     "code": "000000",
-                    "text": "Black",
-                    "filterName": "Black_000000",
+                    "text": "Cream/Black patterned",
+                    "filterName": "Black_000000,Multi_000000,White_FFFFFF",
                     "hybrisCode": "09"
                 },
-                "campaignMedia": {
-                    "url": "https://photorankmedia-a.akamaihd.net/media/o/e/4/oe46jk4/mobile.jpg",
-                    "id": "3307680012",
-                    "author": "luisferarvizu",
-                    "type": "CAMPAIGN"
-                },
                 "rgbColor": "#272628",
-                "damStyleWith": [
-                    "0538358019",
-                    "0664647036",
-                    "1251621001",
-                    "1251692001"
-                ],
-                "turnToSku": "0685816002001"
+                "turnToSku": "1217576013001"
             },
             "sale": false,
             "variantSizes": [
@@ -419,12 +151,24 @@
                     "filterCode": "S"
                 },
                 {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
                     "orderFilter": 375,
                     "filterCode": "XXL"
                 },
                 {
-                    "orderFilter": 369,
-                    "filterCode": "M"
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
                 },
                 {
                     "orderFilter": 370,
@@ -433,27 +177,28 @@
             ],
             "swatches": [],
             "articleCodes": [
-                "0685816002",
-                "0685816001",
-                "0685816053",
-                "0685816178"
+                "1217576013",
+                "1217576001",
+                "1217576002",
+                "1217576003"
             ],
-            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8wMDJfZW5faW47MDY4NTgxNjAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
-            "searchEngineProductId": "0685816_group_002_en_in",
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTNfZW5faW47MTIxNzU3NjAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1217576_group_013_en_in",
             "dummy": false,
-            "linkPdp": "/en_in/productpage.0685816002.html",
-            "categoryName": "Men",
+            "linkPdp": "/en_in/productpage.1217576013.html",
+            "categoryName": "Ladies",
             "rgbColors": [
                 "#272628",
-                "#FFFFFF",
-                "#AFAFAF",
-                "#C0BBAD"
+                "#272628",
+                "#57564B",
+                "#272628"
             ],
             "articleColorNames": [
+                "Cream/Black patterned",
                 "Black",
-                "White",
-                "Grey marl",
-                "Light beige",
+                "Dark khaki green",
+                "Black/Patterned",
+                "dc",
                 "dc",
                 "dc",
                 "dc",
@@ -465,222 +210,657 @@
                 "dc"
             ],
             "ecoTaxValue": 0,
-            "swatchesTotal": 13,
+            "swatchesTotal": 14,
             "showPriceMarker": false,
             "redirectToPdp": false,
-            "mainCategoryCode": "men_tshirtstanks_shortsleeve",
+            "mainCategoryCode": "ladies_dresses_mididresses",
             "comingSoon": false,
             "brandName": "H&M",
             "galleryImages": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/87/4b/874b8ab7378d7eef57fec49100904b8b04285cb5.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/bd/df/bddf2d435d2f48af8ca30a3f93360f59a092372d.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/ac/8b/ac8b4119307bbf7c0bd8eca45f73e8617b2fcf28.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/ac/8b/ac8b4119307bbf7c0bd8eca45f73e8617b2fcf28.jpg"
                 },
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/e0/12/e01276d51a07d5f881173bd3c64521b85845dabb.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/87/4b/874b8ab7378d7eef57fec49100904b8b04285cb5.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/a1/7c/a17c39b6915ffb78ec21446a4e7a7c8ee1484052.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/4c/ff/4cff8cd839198f24ffa0b9a8ab9424c9b492a57d.jpg"
                 },
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/bd/df/bddf2d435d2f48af8ca30a3f93360f59a092372d.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/e0/12/e01276d51a07d5f881173bd3c64521b85845dabb.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/0c/6e/0c6eacafb8be7031ef4dd5d6332335447585cac3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/0c/6e/0c6eacafb8be7031ef4dd5d6332335447585cac3.jpg"
                 },
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/16/e5/16e52de63457c54cfb7777d1ea3007029e79094f.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/16/e5/16e52de63457c54cfb7777d1ea3007029e79094f.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/4c/ff/4cff8cd839198f24ffa0b9a8ab9424c9b492a57d.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/a1/7c/a17c39b6915ffb78ec21446a4e7a7c8ee1484052.jpg"
                 }
             ],
             "allArticleCodes": [
-                "0685816002",
-                "0685816001",
-                "0685816053",
-                "0685816178",
-                "0685816185",
-                "0685816229",
-                "0685816252",
-                "0685816254",
-                "0685816257",
-                "0685816264",
-                "0685816265",
-                "0685816266",
-                "0685816271"
+                "1217576013",
+                "1217576001",
+                "1217576002",
+                "1217576003",
+                "1217576004",
+                "1217576006",
+                "1217576011",
+                "1217576012",
+                "1217576014",
+                "1217576015",
+                "1217576016",
+                "1217576017",
+                "1217576019",
+                "1217576023"
             ],
             "allArticleImages": [
-                "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/38/06/380609a19cfd897b634bfea723a83df777092531.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+                "https://lp2.hm.com/hmgoepprod?set=source[/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
             ],
             "allArticleBaseImages": [
-                "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg",
-                "https://image.hm.com/assets/hm/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg",
-                "https://image.hm.com/assets/hm/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg",
-                "https://image.hm.com/assets/hm/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg",
-                "https://image.hm.com/assets/hm/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg",
-                "https://image.hm.com/assets/hm/38/06/380609a19cfd897b634bfea723a83df777092531.jpg",
-                "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg",
-                "https://image.hm.com/assets/hm/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg",
-                "https://image.hm.com/assets/hm/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg",
-                "https://image.hm.com/assets/hm/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg",
-                "https://image.hm.com/assets/hm/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg",
-                "https://image.hm.com/assets/hm/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg",
-                "https://image.hm.com/assets/hm/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg"
+                "https://image.hm.com/assets/hm/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg",
+                "https://image.hm.com/assets/hm/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg",
+                "https://image.hm.com/assets/hm/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg",
+                "https://image.hm.com/assets/hm/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg",
+                "https://image.hm.com/assets/hm/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg",
+                "https://image.hm.com/assets/hm/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg",
+                "https://image.hm.com/assets/hm/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg",
+                "https://image.hm.com/assets/hm/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg",
+                "https://image.hm.com/assets/hm/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg",
+                "https://image.hm.com/assets/hm/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg",
+                "https://image.hm.com/assets/hm/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg",
+                "https://image.hm.com/assets/hm/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg",
+                "https://image.hm.com/assets/hm/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg",
+                "https://image.hm.com/assets/hm/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg"
             ]
         },
         {
-            "code": "0945531_group_057",
-            "name": "3-pack Regular Fit T-shirts",
+            "code": "1282930_group_001",
+            "name": "Strappy dress",
             "stock": {
                 "stockLevel": 1
             },
             "price": {
                 "currencyIso": "INR",
-                "value": 1199,
+                "value": 2299,
                 "priceType": "BUY",
-                "formattedValue": "Rs.1,199.00",
+                "formattedValue": "Rs.2,299.00",
                 "type": "WHITE"
             },
             "images": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                    "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg"
                 }
             ],
             "categories": [],
-            "pk": "9421532037121",
+            "pk": "9429314797569",
             "sellingAttributes": [
                 "New Arrival"
             ],
             "whitePrice": {
                 "currencyIso": "INR",
-                "value": 1199,
+                "value": 2299,
                 "priceType": "BUY",
-                "formattedValue": "Rs.1,199.00",
+                "formattedValue": "Rs.2,299.00",
                 "type": "WHITE"
             },
             "articles": [
                 {
-                    "code": "0945531057",
-                    "name": "3-pack Regular Fit T-shirts",
+                    "code": "1282930001",
+                    "name": "Strappy dress",
                     "images": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                            "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg"
                         }
                     ],
-                    "pk": "9412329078785",
+                    "pk": "9424846749697",
                     "sellingAttributes": [
                         "New Arrival"
                     ],
                     "whitePrice": {
                         "currencyIso": "INR",
-                        "value": 1199,
+                        "value": 2299,
                         "priceType": "BUY",
-                        "formattedValue": "Rs.1,199.00",
+                        "formattedValue": "Rs.2,299.00",
                         "type": "WHITE"
                     },
                     "logoPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg"
                         }
                     ],
                     "normalPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg"
                         }
                     ],
                     "visible": false,
                     "numbersOfPieces": 0,
-                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk0NTUzMV9ncm91cF8wNTdfZW5faW47MDk0NTUzMTA1N19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI4MjkzMF9ncm91cF8wMDFfZW5faW47MTI4MjkzMDAwMV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                     "dummy": false,
                     "ecoTaxValue": 0,
                     "redirectToPdp": false,
                     "comingSoon": false,
                     "color": {
-                        "code": "F5F5DC",
-                        "text": "Beige/Brown/Grey",
-                        "filterName": "Beige_F5F5DC",
-                        "hybrisCode": "12"
+                        "code": "FFC0CB",
+                        "text": "Dark pink/Patterned",
+                        "filterName": "Multi_000000,Pink_FFC0CB",
+                        "hybrisCode": "56"
                     },
-                    "rgbColor": "#C0BBAD",
-                    "comparativePrice": {
-                        "formattedPrice": "Rs.399.67",
-                        "multipack": true
-                    },
-                    "quantity": "3",
-                    "turnToSku": "0945531057001"
+                    "rgbColor": "#784F60",
+                    "turnToSku": "1282930001002"
                 }
             ],
             "visible": false,
             "concept": [
-                "BASICS"
+                "DIVIDED"
             ],
             "numbersOfPieces": 0,
             "defaultArticle": {
-                "code": "0945531057",
-                "name": "3-pack Regular Fit T-shirts",
+                "code": "1282930001",
+                "name": "Strappy dress",
                 "images": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                        "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg"
                     }
                 ],
-                "pk": "9412329078785",
+                "pk": "9424846749697",
                 "sellingAttributes": [
                     "New Arrival"
                 ],
                 "whitePrice": {
                     "currencyIso": "INR",
-                    "value": 1199,
+                    "value": 2299,
                     "priceType": "BUY",
-                    "formattedValue": "Rs.1,199.00",
+                    "formattedValue": "Rs.2,299.00",
                     "type": "WHITE"
                 },
                 "logoPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg"
                     }
                 ],
                 "normalPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/a4/9f/a49f5f95a131dde51243a42b434a88c156737697.jpg"
                     }
                 ],
                 "visible": false,
                 "numbersOfPieces": 0,
-                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk0NTUzMV9ncm91cF8wNTdfZW5faW47MDk0NTUzMTA1N19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI4MjkzMF9ncm91cF8wMDFfZW5faW47MTI4MjkzMDAwMV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                 "dummy": false,
                 "ecoTaxValue": 0,
                 "redirectToPdp": false,
                 "comingSoon": false,
                 "color": {
-                    "code": "F5F5DC",
-                    "text": "Beige/Brown/Grey",
-                    "filterName": "Beige_F5F5DC",
-                    "hybrisCode": "12"
+                    "code": "FFC0CB",
+                    "text": "Dark pink/Patterned",
+                    "filterName": "Multi_000000,Pink_FFC0CB",
+                    "hybrisCode": "56"
                 },
-                "rgbColor": "#C0BBAD",
-                "comparativePrice": {
-                    "formattedPrice": "Rs.399.67",
-                    "multipack": true
-                },
-                "quantity": "3",
-                "turnToSku": "0945531057001"
+                "rgbColor": "#784F60",
+                "turnToSku": "1282930001002"
             },
             "sale": false,
             "variantSizes": [
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "1282930001"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI4MjkzMF9ncm91cF8wMDFfZW5faW47MTI4MjkzMDAwMV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1282930_group_001_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.1282930001.html",
+            "categoryName": "Ladies",
+            "rgbColors": [
+                "#784F60"
+            ],
+            "articleColorNames": [
+                "Dark pink/Patterned"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 1,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "ladies_dresses_shortdresses",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/c7/f9/c7f9354d85184f230adddd263864db467658e494.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/14/01/1401473cf100a4e05be14689c7ad27640e3c4f47.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/43/eb/43eb282fd245f92bb52ca99a3b7c50ee76d98445.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/d7/3b/d73b45a817da11d39fe5df0ae22477450e6ff32b.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/d7/3b/d73b45a817da11d39fe5df0ae22477450e6ff32b.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/1f/b0/1fb0cc81697cb7f2103a0cb1bcef4f22ea834a7b.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/14/01/1401473cf100a4e05be14689c7ad27640e3c4f47.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/c7/f9/c7f9354d85184f230adddd263864db467658e494.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/1f/b0/1fb0cc81697cb7f2103a0cb1bcef4f22ea834a7b.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/43/eb/43eb282fd245f92bb52ca99a3b7c50ee76d98445.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "1282930001"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/2d/ec/2dec825941c5cd0614e9a2cd9687aaf69ba4d331.jpg"
+            ]
+        },
+        {
+            "code": "1275771_group_004",
+            "name": "Draped slip dress",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 799,
+                "priceType": "BUY",
+                "formattedValue": "Rs.799.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9428187381761",
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 799,
+                "priceType": "BUY",
+                "formattedValue": "Rs.799.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "1275771004",
+                    "name": "Draped slip dress",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg"
+                        }
+                    ],
+                    "pk": "9413039194113",
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 799,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.799.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI3NTc3MV9ncm91cF8wMDRfZW5faW47MTI3NTc3MTAwNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "FF0000",
+                        "text": "Red",
+                        "filterName": "Red_FF0000",
+                        "hybrisCode": "45"
+                    },
+                    "rgbColor": "#C1002F",
+                    "turnToSku": "1275771004001"
+                }
+            ],
+            "visible": false,
+            "concept": [
+                "DIVIDED"
+            ],
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "1275771004",
+                "name": "Draped slip dress",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg"
+                    }
+                ],
+                "pk": "9413039194113",
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 799,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.799.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/1a/d6/1ad624d432a595438a2a2d1e7a5128b3a7e33df0.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI3NTc3MV9ncm91cF8wMDRfZW5faW47MTI3NTc3MTAwNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "FF0000",
+                    "text": "Red",
+                    "filterName": "Red_FF0000",
+                    "hybrisCode": "45"
+                },
+                "rgbColor": "#C1002F",
+                "turnToSku": "1275771004001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "1275771004",
+                "1275771002",
+                "1275771005"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI3NTc3MV9ncm91cF8wMDRfZW5faW47MTI3NTc3MTAwNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1275771_group_004_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.1275771004.html",
+            "categoryName": "Ladies",
+            "rgbColors": [
+                "#C1002F",
+                "#3B312B",
+                "#272627"
+            ],
+            "articleColorNames": [
+                "Red",
+                "Dark brown",
+                "Black"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 3,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "ladies_dresses_shortdresses",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/09/d2/09d281759e074695f0aa61b16335da460441376c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/ff/92/ff92911e7d6fefd92c23658fabb507739008b18a.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/13/62/1362b3760a64333a968eaa637c2cda61049bf13f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/3f/e4/3fe4a5ff6125abeb42526b16962ed5aa04039634.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/06/f5/06f5b42f85b5d402ba239fc083307004622dfd6d.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/06/f5/06f5b42f85b5d402ba239fc083307004622dfd6d.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/3f/e4/3fe4a5ff6125abeb42526b16962ed5aa04039634.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/09/d2/09d281759e074695f0aa61b16335da460441376c.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/ff/92/ff92911e7d6fefd92c23658fabb507739008b18a.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/13/62/1362b3760a64333a968eaa637c2cda61049bf13f.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "1275771004",
+                "1275771002",
+                "1275771005"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/8b/fa/8bfa95c32c4eb0ad355dfbf49b3ea968dad8c8db.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/d2/9b/d29bcece15750ac6c14a901180a0d17936281424.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/27/84/27844892cb9e700953b8e1468ffee469c6bfaa41.jpg",
+                "https://image.hm.com/assets/hm/8b/fa/8bfa95c32c4eb0ad355dfbf49b3ea968dad8c8db.jpg",
+                "https://image.hm.com/assets/hm/d2/9b/d29bcece15750ac6c14a901180a0d17936281424.jpg"
+            ]
+        },
+        {
+            "code": "1217576_group_014",
+            "name": "Tie-belt shirt dress",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 1899,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,899.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9423820259329",
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 1899,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,899.00",
+                "type": "WHITE"
+            },
+            "yellowPrice": {
+                "currencyIso": "INR",
+                "value": 1399,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,399.00",
+                "type": "YELLOW"
+            },
+            "articles": [
+                {
+                    "code": "1217576014",
+                    "name": "Tie-belt shirt dress",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg"
+                        }
+                    ],
+                    "pk": "9400070176769",
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 1899,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,899.00",
+                        "type": "WHITE"
+                    },
+                    "yellowPrice": {
+                        "currencyIso": "INR",
+                        "value": 1399,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,399.00",
+                        "type": "YELLOW"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTRfZW5faW47MTIxNzU3NjAxNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "0000FF",
+                        "text": "Bright blue/White patterned",
+                        "filterName": "Blue_0000FF,Multi_000000",
+                        "hybrisCode": "76"
+                    },
+                    "rgbColor": "#374083",
+                    "turnToSku": "1217576014001"
+                }
+            ],
+            "visible": false,
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "1217576014",
+                "name": "Tie-belt shirt dress",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg"
+                    }
+                ],
+                "pk": "9400070176769",
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 1899,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,899.00",
+                    "type": "WHITE"
+                },
+                "yellowPrice": {
+                    "currencyIso": "INR",
+                    "value": 1399,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,399.00",
+                    "type": "YELLOW"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/39/dd/39dd68d9e4468815e1bd08a9dd153b1fe29558be.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTRfZW5faW47MTIxNzU3NjAxNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "0000FF",
+                    "text": "Bright blue/White patterned",
+                    "filterName": "Blue_0000FF,Multi_000000",
+                    "hybrisCode": "76"
+                },
+                "rgbColor": "#374083",
+                "turnToSku": "1217576014001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
+                },
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
                 {
                     "orderFilter": 372,
                     "filterCode": "XL"
@@ -688,6 +868,475 @@
                 {
                     "orderFilter": 370,
                     "filterCode": "L"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "1217576014",
+                "1217576001",
+                "1217576002",
+                "1217576003"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTRfZW5faW47MTIxNzU3NjAxNF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1217576_group_014_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.1217576014.html",
+            "categoryName": "Ladies",
+            "rgbColors": [
+                "#374083",
+                "#272628",
+                "#57564B",
+                "#272628"
+            ],
+            "articleColorNames": [
+                "Bright blue/White patterned",
+                "Black",
+                "Dark khaki green",
+                "Black/Patterned",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 14,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "ladies_dresses_mididresses",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/8e/35/8e353bd279a0eadd6f94a3582258ea4618675f6a.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/8e/35/8e353bd279a0eadd6f94a3582258ea4618675f6a.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/2d/10/2d10f99f43dc8e3d322b2148748de9cba60a36b4.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/aa/4c/aa4ced5fd9f8bd79727f57bb67279a7aabc751d0.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/aa/4c/aa4ced5fd9f8bd79727f57bb67279a7aabc751d0.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/2d/10/2d10f99f43dc8e3d322b2148748de9cba60a36b4.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "1217576014",
+                "1217576001",
+                "1217576002",
+                "1217576003",
+                "1217576004",
+                "1217576006",
+                "1217576011",
+                "1217576012",
+                "1217576013",
+                "1217576015",
+                "1217576016",
+                "1217576017",
+                "1217576019",
+                "1217576023"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg",
+                "https://image.hm.com/assets/hm/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg",
+                "https://image.hm.com/assets/hm/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg",
+                "https://image.hm.com/assets/hm/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg",
+                "https://image.hm.com/assets/hm/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg",
+                "https://image.hm.com/assets/hm/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg",
+                "https://image.hm.com/assets/hm/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg",
+                "https://image.hm.com/assets/hm/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg",
+                "https://image.hm.com/assets/hm/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg",
+                "https://image.hm.com/assets/hm/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg",
+                "https://image.hm.com/assets/hm/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg",
+                "https://image.hm.com/assets/hm/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg",
+                "https://image.hm.com/assets/hm/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg",
+                "https://image.hm.com/assets/hm/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg"
+            ]
+        },
+        {
+            "code": "1282611_group_002",
+            "name": "Embroidered shift dress",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 2999,
+                "priceType": "BUY",
+                "formattedValue": "Rs.2,999.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9429321973761",
+            "sellingAttributes": [
+                "New Arrival"
+            ],
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 2999,
+                "priceType": "BUY",
+                "formattedValue": "Rs.2,999.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "1282611002",
+                    "name": "Embroidered shift dress",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg"
+                        }
+                    ],
+                    "pk": "9412688674817",
+                    "sellingAttributes": [
+                        "New Arrival"
+                    ],
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 2999,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.2,999.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI4MjYxMV9ncm91cF8wMDJfZW5faW47MTI4MjYxMTAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "000000",
+                        "text": "Black/White",
+                        "filterName": "Black_000000,Multi_000000",
+                        "hybrisCode": "09"
+                    },
+                    "rgbColor": "#272628",
+                    "damStyleWith": [
+                        "1289995002"
+                    ],
+                    "turnToSku": "1282611002001",
+                    "videoId": "39dc772d7d7cd2260c8990603c871335a0e6eb69",
+                    "plpVideo": true
+                }
+            ],
+            "visible": false,
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "1282611002",
+                "name": "Embroidered shift dress",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg"
+                    }
+                ],
+                "pk": "9412688674817",
+                "sellingAttributes": [
+                    "New Arrival"
+                ],
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 2999,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.2,999.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/de/dd/dedd06b6a178b6aef64f5e70235acdd1b38ca77d.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI4MjYxMV9ncm91cF8wMDJfZW5faW47MTI4MjYxMTAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "000000",
+                    "text": "Black/White",
+                    "filterName": "Black_000000,Multi_000000",
+                    "hybrisCode": "09"
+                },
+                "rgbColor": "#272628",
+                "damStyleWith": [
+                    "1289995002"
+                ],
+                "turnToSku": "1282611002001",
+                "videoId": "39dc772d7d7cd2260c8990603c871335a0e6eb69",
+                "plpVideo": true
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                },
+                {
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "1282611002",
+                "1282611001"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI4MjYxMV9ncm91cF8wMDJfZW5faW47MTI4MjYxMTAwMl9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1282611_group_002_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.1282611002.html",
+            "categoryName": "Ladies",
+            "rgbColors": [
+                "#272628",
+                "#FFFFFF"
+            ],
+            "articleColorNames": [
+                "Black/White",
+                "White/Black"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 2,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "ladies_dresses_aline",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/f5/72/f572a105b494e6b245c005f772b27cc15c026d4b.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/8e/38/8e3842f0a89441ef353b485bce0d821c23c0ebf3.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/9f/e4/9fe45d5f94e452ed5c996e955f2dd9c9f84bc157.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/43/9d/439d4b78f9b37040953bb690505dfa1a4ae7ef9a.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/8e/38/8e3842f0a89441ef353b485bce0d821c23c0ebf3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/9f/e4/9fe45d5f94e452ed5c996e955f2dd9c9f84bc157.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/43/9d/439d4b78f9b37040953bb690505dfa1a4ae7ef9a.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/f5/72/f572a105b494e6b245c005f772b27cc15c026d4b.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "1282611002",
+                "1282611001"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/c3/35/c335c4c44b085b8e62faae3b44a8ccde00614226.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/95/87/9587598654c7600a715e706e8a2d95c23143bd36.jpg",
+                "https://image.hm.com/assets/hm/c3/35/c335c4c44b085b8e62faae3b44a8ccde00614226.jpg"
+            ]
+        },
+        {
+            "code": "1290952_group_003",
+            "name": "Tie-detail satin slip dress",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 1299,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,299.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9435457814529",
+            "sellingAttributes": [
+                "New Arrival"
+            ],
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 1299,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,299.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "1290952003",
+                    "name": "Tie-detail satin slip dress",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg"
+                        }
+                    ],
+                    "pk": "9426100256769",
+                    "sellingAttributes": [
+                        "New Arrival"
+                    ],
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 1299,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,299.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI5MDk1Ml9ncm91cF8wMDNfZW5faW47MTI5MDk1MjAwM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "FF0000",
+                        "text": "Bright red",
+                        "filterName": "Red_FF0000",
+                        "hybrisCode": "45"
+                    },
+                    "rgbColor": "#BD022F",
+                    "turnToSku": "1290952003001"
+                }
+            ],
+            "visible": false,
+            "concept": [
+                "DIVIDED"
+            ],
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "1290952003",
+                "name": "Tie-detail satin slip dress",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg"
+                    }
+                ],
+                "pk": "9426100256769",
+                "sellingAttributes": [
+                    "New Arrival"
+                ],
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 1299,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,299.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI5MDk1Ml9ncm91cF8wMDNfZW5faW47MTI5MDk1MjAwM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "FF0000",
+                    "text": "Bright red",
+                    "filterName": "Red_FF0000",
+                    "hybrisCode": "45"
+                },
+                "rgbColor": "#BD022F",
+                "turnToSku": "1290952003001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
                 },
                 {
                     "orderFilter": 366,
@@ -698,73 +1347,61 @@
                     "filterCode": "M"
                 },
                 {
-                    "orderFilter": 363,
-                    "filterCode": "XS"
+                    "orderFilter": 370,
+                    "filterCode": "L"
                 },
                 {
-                    "orderFilter": 375,
-                    "filterCode": "XXL"
+                    "orderFilter": 363,
+                    "filterCode": "XS"
                 }
             ],
             "swatches": [],
             "articleCodes": [
-                "0945531057",
-                "0945531001",
-                "0945531012",
-                "0945531052"
+                "1290952003",
+                "1290952001"
             ],
-            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDk0NTUzMV9ncm91cF8wNTdfZW5faW47MDk0NTUzMTA1N19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
-            "searchEngineProductId": "0945531_group_057_en_in",
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI5MDk1Ml9ncm91cF8wMDNfZW5faW47MTI5MDk1MjAwM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1290952_group_003_en_in",
             "dummy": false,
-            "linkPdp": "/en_in/productpage.0945531057.html",
-            "categoryName": "Men",
+            "linkPdp": "/en_in/productpage.1290952003.html",
+            "categoryName": "Ladies",
             "rgbColors": [
-                "#C0BBAD",
-                "#FFFFFF",
-                "#272628",
-                "#FFFFFF"
+                "#BD022F",
+                "#272627"
             ],
             "articleColorNames": [
-                "Beige/Brown/Grey",
-                "White",
-                "Black",
-                "Grey marl/Navy blue"
+                "Bright red",
+                "Black"
             ],
             "ecoTaxValue": 0,
-            "swatchesTotal": 4,
+            "swatchesTotal": 2,
             "showPriceMarker": false,
             "redirectToPdp": false,
-            "mainCategoryCode": "men_tshirtstanks_multipacks",
+            "mainCategoryCode": "ladies_dresses_party",
             "comingSoon": false,
             "brandName": "H&M",
             "galleryImages": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/b6/42/b642823f9c591a11dfa2fc3937974261b4dd3b1c.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/b6/42/b642823f9c591a11dfa2fc3937974261b4dd3b1c.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/c9/21/c921821e363c9225187b32faac061c01eb2d93ba.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/c9/21/c921821e363c9225187b32faac061c01eb2d93ba.jpg"
                 }
             ],
             "allArticleCodes": [
-                "0945531057",
-                "0945531001",
-                "0945531012",
-                "0945531052"
+                "1290952003",
+                "1290952001"
             ],
             "allArticleImages": [
-                "https://lp2.hm.com/hmgoepprod?set=source[/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/70/06/7006e71e95a2f1d848b6f96366fd75ac2d031d38.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/19/10/19108b8f7717f2afbeb05c645a5fe6640b961445.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/ed/ba/edba2cccccaef6290d488b95ba7443ae6bbc0125.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+                "https://lp2.hm.com/hmgoepprod?set=source[/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/67/52/67527edc8515f80d332a14b944cedca88dae9d84.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
             ],
             "allArticleBaseImages": [
-                "https://image.hm.com/assets/hm/e4/89/e48924ece823f919263814643ee0aa14e5557bee.jpg",
-                "https://image.hm.com/assets/hm/70/06/7006e71e95a2f1d848b6f96366fd75ac2d031d38.jpg",
-                "https://image.hm.com/assets/hm/19/10/19108b8f7717f2afbeb05c645a5fe6640b961445.jpg",
-                "https://image.hm.com/assets/hm/ed/ba/edba2cccccaef6290d488b95ba7443ae6bbc0125.jpg"
+                "https://image.hm.com/assets/hm/7d/68/7d683fa9e2c68872fc2456224036bc0b04aec811.jpg",
+                "https://image.hm.com/assets/hm/67/52/67527edc8515f80d332a14b944cedca88dae9d84.jpg"
             ]
         },
         {
-            "code": "1216851_group_013",
-            "name": "5-pack Regular Fit T-shirts",
+            "code": "1217048_group_009",
+            "name": "Strappy midi dress",
             "stock": {
                 "stockLevel": 1
             },
@@ -777,15 +1414,12 @@
             },
             "images": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                    "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg"
                 }
             ],
             "categories": [],
-            "pk": "9427798228993",
-            "sellingAttributes": [
-                "New Arrival"
-            ],
+            "pk": "9426123915265",
             "whitePrice": {
                 "currencyIso": "INR",
                 "value": 1999,
@@ -795,18 +1429,15 @@
             },
             "articles": [
                 {
-                    "code": "1216851013",
-                    "name": "5-pack Regular Fit T-shirts",
+                    "code": "1217048009",
+                    "name": "Strappy midi dress",
                     "images": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                            "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg"
                         }
                     ],
-                    "pk": "9416352235521",
-                    "sellingAttributes": [
-                        "New Arrival"
-                    ],
+                    "pk": "9410350645249",
                     "whitePrice": {
                         "currencyIso": "INR",
                         "value": 1999,
@@ -816,56 +1447,45 @@
                     },
                     "logoPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg"
                         }
                     ],
                     "normalPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg"
                         }
                     ],
                     "visible": false,
                     "numbersOfPieces": 0,
-                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNjg1MV9ncm91cF8wMTNfZW5faW47MTIxNjg1MTAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzA0OF9ncm91cF8wMDlfZW5faW47MTIxNzA0ODAwOV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                     "dummy": false,
                     "ecoTaxValue": 0,
                     "redirectToPdp": false,
                     "comingSoon": false,
                     "color": {
-                        "code": "0000FF",
-                        "text": "Pink/Light blue/Brown",
-                        "filterName": "Blue_0000FF",
-                        "hybrisCode": "76"
+                        "code": "008000",
+                        "text": "Green/Patterned",
+                        "filterName": "Green_008000,Multi_000000",
+                        "hybrisCode": "96"
                     },
-                    "rgbColor": "#23263B",
-                    "comparativePrice": {
-                        "formattedPrice": "Rs.399.80",
-                        "multipack": true
-                    },
-                    "quantity": "5",
-                    "turnToSku": "1216851013001"
+                    "rgbColor": "#346347",
+                    "turnToSku": "1217048009001"
                 }
             ],
             "visible": false,
-            "concept": [
-                "BASICS"
-            ],
             "numbersOfPieces": 0,
             "defaultArticle": {
-                "code": "1216851013",
-                "name": "5-pack Regular Fit T-shirts",
+                "code": "1217048009",
+                "name": "Strappy midi dress",
                 "images": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                        "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg"
                     }
                 ],
-                "pk": "9416352235521",
-                "sellingAttributes": [
-                    "New Arrival"
-                ],
+                "pk": "9410350645249",
                 "whitePrice": {
                     "currencyIso": "INR",
                     "value": 1999,
@@ -875,42 +1495,252 @@
                 },
                 "logoPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg"
                     }
                 ],
                 "normalPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/c2/94/c2946ae20467534ab36ae65056f9b02a5465ace2.jpg"
                     }
                 ],
                 "visible": false,
                 "numbersOfPieces": 0,
-                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNjg1MV9ncm91cF8wMTNfZW5faW47MTIxNjg1MTAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzA0OF9ncm91cF8wMDlfZW5faW47MTIxNzA0ODAwOV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "008000",
+                    "text": "Green/Patterned",
+                    "filterName": "Green_008000,Multi_000000",
+                    "hybrisCode": "96"
+                },
+                "rgbColor": "#346347",
+                "turnToSku": "1217048009001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 375,
+                    "filterCode": "XXL"
+                },
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "1217048009",
+                "1217048007",
+                "1217048008"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzA0OF9ncm91cF8wMDlfZW5faW47MTIxNzA0ODAwOV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1217048_group_009_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.1217048009.html",
+            "categoryName": "Ladies",
+            "rgbColors": [
+                "#346347",
+                "#EEEDE1",
+                "#EEEDE1"
+            ],
+            "articleColorNames": [
+                "Green/Patterned",
+                "White/Floral",
+                "Cream/Floral"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 3,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "ladies_dresses_mididresses",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/2a/37/2a37973b3262973cd4b7ae86d7a73b93075c580e.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/8c/02/8c0248d89af5f4deed22c7ae4d809f29633db853.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/fa/b3/fab3d38cd2850dd18721916cb81ad41692a0b71d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/2a/37/2a37973b3262973cd4b7ae86d7a73b93075c580e.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/8c/02/8c0248d89af5f4deed22c7ae4d809f29633db853.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/fa/b3/fab3d38cd2850dd18721916cb81ad41692a0b71d.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "1217048009",
+                "1217048007",
+                "1217048008"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/59/bb/59bbfb3828aa6eab46e50d34ef86d0b57884e9d6.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/fc/2c/fc2cc4523788c36a6d06f66fce4a1c248ef39d40.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/78/cc/78ccc1af9f0d43a2d3197e52c2ee93ca9d7c3215.jpg",
+                "https://image.hm.com/assets/hm/59/bb/59bbfb3828aa6eab46e50d34ef86d0b57884e9d6.jpg",
+                "https://image.hm.com/assets/hm/fc/2c/fc2cc4523788c36a6d06f66fce4a1c248ef39d40.jpg"
+            ]
+        },
+        {
+            "code": "1217576_group_017",
+            "name": "Tie-belt shirt dress",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 1899,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,899.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9427881787393",
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 1899,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,899.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "1217576017",
+                    "name": "Tie-belt shirt dress",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg"
+                        }
+                    ],
+                    "pk": "9405022633985",
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 1899,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,899.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTdfZW5faW47MTIxNzU3NjAxN19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "0000FF",
+                        "text": "Navy blue",
+                        "filterName": "Blue_0000FF",
+                        "hybrisCode": "76"
+                    },
+                    "rgbColor": "#393B47",
+                    "turnToSku": "1217576017001"
+                }
+            ],
+            "visible": false,
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "1217576017",
+                "name": "Tie-belt shirt dress",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg"
+                    }
+                ],
+                "pk": "9405022633985",
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 1899,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,899.00",
+                    "type": "WHITE"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/37/0f/370fc4c5154048a26541cf6801a5c71ba14fa47c.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTdfZW5faW47MTIxNzU3NjAxN19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                 "dummy": false,
                 "ecoTaxValue": 0,
                 "redirectToPdp": false,
                 "comingSoon": false,
                 "color": {
                     "code": "0000FF",
-                    "text": "Pink/Light blue/Brown",
+                    "text": "Navy blue",
                     "filterName": "Blue_0000FF",
                     "hybrisCode": "76"
                 },
-                "rgbColor": "#23263B",
-                "comparativePrice": {
-                    "formattedPrice": "Rs.399.80",
-                    "multipack": true
-                },
-                "quantity": "5",
-                "turnToSku": "1216851013001"
+                "rgbColor": "#393B47",
+                "turnToSku": "1217576017001"
             },
             "sale": false,
             "variantSizes": [
                 {
-                    "orderFilter": 369,
-                    "filterCode": "M"
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
+                },
+                {
+                    "orderFilter": 375,
+                    "filterCode": "XXL"
                 },
                 {
                     "orderFilter": 363,
@@ -925,8 +1755,8 @@
                     "filterCode": "S"
                 },
                 {
-                    "orderFilter": 375,
-                    "filterCode": "XXL"
+                    "orderFilter": 369,
+                    "filterCode": "M"
                 },
                 {
                     "orderFilter": 372,
@@ -935,153 +1765,472 @@
             ],
             "swatches": [],
             "articleCodes": [
-                "1216851013",
-                "1216851001",
-                "1216851002",
-                "1216851005"
+                "1217576017",
+                "1217576001",
+                "1217576002",
+                "1217576003"
             ],
-            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNjg1MV9ncm91cF8wMTNfZW5faW47MTIxNjg1MTAxM19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
-            "searchEngineProductId": "1216851_group_013_en_in",
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMTdfZW5faW47MTIxNzU3NjAxN19lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1217576_group_017_en_in",
             "dummy": false,
-            "linkPdp": "/en_in/productpage.1216851013.html",
-            "categoryName": "Men",
+            "linkPdp": "/en_in/productpage.1217576017.html",
+            "categoryName": "Ladies",
             "rgbColors": [
-                "#23263B",
+                "#393B47",
                 "#272628",
-                "#FFFFFF",
-                "#5C595B"
+                "#57564B",
+                "#272628"
             ],
             "articleColorNames": [
-                "Pink/Light blue/Brown",
+                "Navy blue",
                 "Black",
-                "White",
-                "Grey marl",
+                "Dark khaki green",
+                "Black/Patterned",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
                 "dc",
                 "dc",
                 "dc",
                 "dc"
             ],
             "ecoTaxValue": 0,
-            "swatchesTotal": 8,
+            "swatchesTotal": 14,
             "showPriceMarker": false,
             "redirectToPdp": false,
-            "mainCategoryCode": "men_tshirtstanks_multipacks",
+            "mainCategoryCode": "ladies_dresses_mididresses",
             "comingSoon": false,
             "brandName": "H&M",
             "galleryImages": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/88/d7/88d715b17ca991a72809b77f104c854d35553612.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/88/d7/88d715b17ca991a72809b77f104c854d35553612.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/09/58/09589525fdfe2c7b755c0db044bca14d73267cc6.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/f2/90/f2907c114e9a50dd263dfa84d009c7c08ccf76c5.jpg"
                 },
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/46/0c/460cc9f9cf787574816f2d6b0b4912e88aef56b1.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/46/0c/460cc9f9cf787574816f2d6b0b4912e88aef56b1.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/d1/0b/d10bad36648a29a881e7033184b19b0d36a03592.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/09/58/09589525fdfe2c7b755c0db044bca14d73267cc6.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/f2/90/f2907c114e9a50dd263dfa84d009c7c08ccf76c5.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/d1/0b/d10bad36648a29a881e7033184b19b0d36a03592.jpg"
                 }
             ],
             "allArticleCodes": [
-                "1216851013",
-                "1216851001",
-                "1216851002",
-                "1216851005",
-                "1216851008",
-                "1216851010",
-                "1216851011",
-                "1216851016"
+                "1217576017",
+                "1217576001",
+                "1217576002",
+                "1217576003",
+                "1217576004",
+                "1217576006",
+                "1217576011",
+                "1217576012",
+                "1217576013",
+                "1217576014",
+                "1217576015",
+                "1217576016",
+                "1217576019",
+                "1217576023"
             ],
             "allArticleImages": [
-                "https://lp2.hm.com/hmgoepprod?set=source[/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg],origin[dam],category[men_tshirtstanks_multipacks],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/c3/47/c347b61f215b45029c6ae267c1a65ab9dc950c39.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/6e/9c/6e9c0efc0a5d67f4149bde8b813d63594366c1fd.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/f8/4c/f84cf610391015cb33024f88c0e7d1c8ebe08587.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/c3/f0/c3f0c9c8aa53c21830d104561a2dee53f1dff490.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/92/f0/92f086b261b3944ca0f13afe73dee25f1deaf5dd.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/23/0d/230d25c3d0a7e81992b1c1ec551a17cb32ef5326.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/e8/3c/e83ca7d7837fbf96bddacb337cb99e162680e5bd.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+                "https://lp2.hm.com/hmgoepprod?set=source[/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
             ],
             "allArticleBaseImages": [
-                "https://image.hm.com/assets/hm/50/60/50606a3f49178bc02b46a6973c91d3828a84b604.jpg",
-                "https://image.hm.com/assets/hm/c3/47/c347b61f215b45029c6ae267c1a65ab9dc950c39.jpg",
-                "https://image.hm.com/assets/hm/6e/9c/6e9c0efc0a5d67f4149bde8b813d63594366c1fd.jpg",
-                "https://image.hm.com/assets/hm/f8/4c/f84cf610391015cb33024f88c0e7d1c8ebe08587.jpg",
-                "https://image.hm.com/assets/hm/c3/f0/c3f0c9c8aa53c21830d104561a2dee53f1dff490.jpg",
-                "https://image.hm.com/assets/hm/92/f0/92f086b261b3944ca0f13afe73dee25f1deaf5dd.jpg",
-                "https://image.hm.com/assets/hm/23/0d/230d25c3d0a7e81992b1c1ec551a17cb32ef5326.jpg",
-                "https://image.hm.com/assets/hm/e8/3c/e83ca7d7837fbf96bddacb337cb99e162680e5bd.jpg"
+                "https://image.hm.com/assets/hm/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg",
+                "https://image.hm.com/assets/hm/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg",
+                "https://image.hm.com/assets/hm/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg",
+                "https://image.hm.com/assets/hm/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg",
+                "https://image.hm.com/assets/hm/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg",
+                "https://image.hm.com/assets/hm/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg",
+                "https://image.hm.com/assets/hm/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg",
+                "https://image.hm.com/assets/hm/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg",
+                "https://image.hm.com/assets/hm/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg",
+                "https://image.hm.com/assets/hm/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg",
+                "https://image.hm.com/assets/hm/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg",
+                "https://image.hm.com/assets/hm/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg",
+                "https://image.hm.com/assets/hm/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg",
+                "https://image.hm.com/assets/hm/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg"
             ]
         },
         {
-            "code": "0685816_group_252",
-            "name": "Regular Fit T-shirt",
+            "code": "1217576_group_018",
+            "name": "Tie-belt shirt dress",
             "stock": {
                 "stockLevel": 1
             },
             "price": {
                 "currencyIso": "INR",
-                "value": 399,
+                "value": 1899,
                 "priceType": "BUY",
-                "formattedValue": "Rs.399.00",
+                "formattedValue": "Rs.1,899.00",
                 "type": "WHITE"
             },
             "images": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                    "baseUrl": "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg"
                 }
             ],
             "categories": [],
-            "pk": "9416604942337",
+            "pk": "9426089705473",
             "whitePrice": {
                 "currencyIso": "INR",
-                "value": 399,
+                "value": 1899,
                 "priceType": "BUY",
-                "formattedValue": "Rs.399.00",
+                "formattedValue": "Rs.1,899.00",
                 "type": "WHITE"
+            },
+            "yellowPrice": {
+                "currencyIso": "INR",
+                "value": 1399,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,399.00",
+                "type": "YELLOW"
             },
             "articles": [
                 {
-                    "code": "0685816252",
-                    "name": "Regular Fit T-shirt",
+                    "code": "1217576018",
+                    "name": "Tie-belt shirt dress",
                     "images": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                            "baseUrl": "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg"
                         }
                     ],
-                    "pk": "9400278253569",
+                    "pk": "9402793033729",
                     "whitePrice": {
                         "currencyIso": "INR",
-                        "value": 399,
+                        "value": 1899,
                         "priceType": "BUY",
-                        "formattedValue": "Rs.399.00",
+                        "formattedValue": "Rs.1,899.00",
                         "type": "WHITE"
+                    },
+                    "yellowPrice": {
+                        "currencyIso": "INR",
+                        "value": 1399,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,399.00",
+                        "type": "YELLOW"
                     },
                     "logoPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg"
                         }
                     ],
                     "normalPicture": [
                         {
-                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                            "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg"
                         }
                     ],
                     "visible": false,
                     "numbersOfPieces": 0,
-                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8yNTJfZW5faW47MDY4NTgxNjI1Ml9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMThfZW5faW47MTIxNzU3NjAxOF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                     "dummy": false,
                     "ecoTaxValue": 0,
                     "redirectToPdp": false,
                     "comingSoon": false,
                     "color": {
-                        "code": "F5F5DC",
-                        "text": "Brown",
-                        "filterName": "Beige_F5F5DC",
-                        "hybrisCode": "15"
+                        "code": "008000",
+                        "text": "Green/Patterned",
+                        "filterName": "Green_008000",
+                        "hybrisCode": "96"
                     },
-                    "rgbColor": "#594C43",
-                    "turnToSku": "0685816252001"
+                    "rgbColor": "#346347",
+                    "turnToSku": "1217576018001"
+                }
+            ],
+            "visible": false,
+            "numbersOfPieces": 0,
+            "defaultArticle": {
+                "code": "1217576018",
+                "name": "Tie-belt shirt dress",
+                "images": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg"
+                    }
+                ],
+                "pk": "9402793033729",
+                "whitePrice": {
+                    "currencyIso": "INR",
+                    "value": 1899,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,899.00",
+                    "type": "WHITE"
+                },
+                "yellowPrice": {
+                    "currencyIso": "INR",
+                    "value": 1399,
+                    "priceType": "BUY",
+                    "formattedValue": "Rs.1,399.00",
+                    "type": "YELLOW"
+                },
+                "logoPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg"
+                    }
+                ],
+                "normalPicture": [
+                    {
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/60/6a/606aa3f82d52f1fe62148377ce488dca17080535.jpg"
+                    }
+                ],
+                "visible": false,
+                "numbersOfPieces": 0,
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMThfZW5faW47MTIxNzU3NjAxOF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                "dummy": false,
+                "ecoTaxValue": 0,
+                "redirectToPdp": false,
+                "comingSoon": false,
+                "color": {
+                    "code": "008000",
+                    "text": "Green/Patterned",
+                    "filterName": "Green_008000",
+                    "hybrisCode": "96"
+                },
+                "rgbColor": "#346347",
+                "turnToSku": "1217576018001"
+            },
+            "sale": false,
+            "variantSizes": [
+                {
+                    "orderFilter": 369,
+                    "filterCode": "M"
+                },
+                {
+                    "orderFilter": 357,
+                    "filterCode": "XXS"
+                },
+                {
+                    "orderFilter": 363,
+                    "filterCode": "XS"
+                },
+                {
+                    "orderFilter": 366,
+                    "filterCode": "S"
+                },
+                {
+                    "orderFilter": 372,
+                    "filterCode": "XL"
+                },
+                {
+                    "orderFilter": 370,
+                    "filterCode": "L"
+                }
+            ],
+            "swatches": [],
+            "articleCodes": [
+                "1217576018",
+                "1217576001",
+                "1217576002",
+                "1217576003"
+            ],
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTIxNzU3Nl9ncm91cF8wMThfZW5faW47MTIxNzU3NjAxOF9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1217576_group_018_en_in",
+            "dummy": false,
+            "linkPdp": "/en_in/productpage.1217576018.html",
+            "categoryName": "Ladies",
+            "rgbColors": [
+                "#346347",
+                "#272628",
+                "#57564B",
+                "#272628"
+            ],
+            "articleColorNames": [
+                "Green/Patterned",
+                "Black",
+                "Dark khaki green",
+                "Black/Patterned",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc",
+                "dc"
+            ],
+            "ecoTaxValue": 0,
+            "swatchesTotal": 16,
+            "showPriceMarker": false,
+            "redirectToPdp": false,
+            "mainCategoryCode": "ladies_dresses_mididresses",
+            "comingSoon": false,
+            "brandName": "H&M",
+            "galleryImages": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/5f/a3/5fa3e3356bd83f392ec004911fefd5de37a60053.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/80/a3/80a39ac7e8aee1350dcf6c6efccfd3d7f99551e8.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/80/a3/80a39ac7e8aee1350dcf6c6efccfd3d7f99551e8.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/5f/a3/5fa3e3356bd83f392ec004911fefd5de37a60053.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/00/96/00966a605e5c67e1ec38b7529b40a0cd3152434c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/29/3f/293fd1416e3042ba5d2a92d1564ac749403dd708.jpg"
+                },
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/29/3f/293fd1416e3042ba5d2a92d1564ac749403dd708.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/00/96/00966a605e5c67e1ec38b7529b40a0cd3152434c.jpg"
+                }
+            ],
+            "allArticleCodes": [
+                "1217576018",
+                "1217576001",
+                "1217576002",
+                "1217576003",
+                "1217576004",
+                "1217576005",
+                "1217576006",
+                "1217576011",
+                "1217576012",
+                "1217576013",
+                "1217576014",
+                "1217576015",
+                "1217576016",
+                "1217576017",
+                "1217576019",
+                "1217576023"
+            ],
+            "allArticleImages": [
+                "https://lp2.hm.com/hmgoepprod?set=source[/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/b0/48/b048ece6fc77f1d4c5644fe3cbac5f73d7fbaae8.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg],origin[dam],category[ladies_dresses_mididresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
+                "https://lp2.hm.com/hmgoepprod?set=source[/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+            ],
+            "allArticleBaseImages": [
+                "https://image.hm.com/assets/hm/6d/33/6d333a18f9c7a92c7cf23010d7fe08e4b00121f5.jpg",
+                "https://image.hm.com/assets/hm/20/a9/20a9493421d97b0adae2cc76297cbb83da153104.jpg",
+                "https://image.hm.com/assets/hm/98/0c/980c6b5375021f3f2bc32fe8ae29bb3688eb9274.jpg",
+                "https://image.hm.com/assets/hm/30/50/3050744f706d8ffe3f86b4f336b73e4b11820a0c.jpg",
+                "https://image.hm.com/assets/hm/e5/be/e5be839de6c30a3d4773b367098a6ec4111f80ac.jpg",
+                "https://image.hm.com/assets/hm/b0/48/b048ece6fc77f1d4c5644fe3cbac5f73d7fbaae8.jpg",
+                "https://image.hm.com/assets/hm/a5/5d/a55d8199d541cf4bf0014b9e5ac79849a1f01918.jpg",
+                "https://image.hm.com/assets/hm/06/38/06382597138c90f64f87d912d310591fc0bc20a2.jpg",
+                "https://image.hm.com/assets/hm/3d/24/3d243c941717ab956815a81bd58550dba8fca5cf.jpg",
+                "https://image.hm.com/assets/hm/eb/21/eb218e1532e6fbee3de39fc5f6cfc28e6d96dcd4.jpg",
+                "https://image.hm.com/assets/hm/30/73/307314948ee2eb77cf96a518b9a30f7a81bf3611.jpg",
+                "https://image.hm.com/assets/hm/d5/9e/d59ee6a9b6dc60a1671020abd35c128c11554e6b.jpg",
+                "https://image.hm.com/assets/hm/08/f2/08f27a8e3f824e48a24dbe2f634d1bf5df0eb3fd.jpg",
+                "https://image.hm.com/assets/hm/be/88/be8824b115e8e73bd91eb32926b7dcbc1eb377f3.jpg",
+                "https://image.hm.com/assets/hm/a7/e3/a7e3fe9c7414ab22f96e600620e7c6b3a15d2da7.jpg",
+                "https://image.hm.com/assets/hm/3e/f9/3ef9e4dab010630919b637668bd253b5526b547b.jpg"
+            ]
+        },
+        {
+            "code": "1240241_group_001",
+            "name": "3-pack jersey strappy dresses",
+            "stock": {
+                "stockLevel": 1
+            },
+            "price": {
+                "currencyIso": "INR",
+                "value": 1999,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,999.00",
+                "type": "WHITE"
+            },
+            "images": [
+                {
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg],origin[dam],category[ladies_dresses_shortdresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                    "baseUrl": "https://image.hm.com/assets/hm/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg"
+                }
+            ],
+            "categories": [],
+            "pk": "9382665027585",
+            "whitePrice": {
+                "currencyIso": "INR",
+                "value": 1999,
+                "priceType": "BUY",
+                "formattedValue": "Rs.1,999.00",
+                "type": "WHITE"
+            },
+            "articles": [
+                {
+                    "code": "1240241001",
+                    "name": "3-pack jersey strappy dresses",
+                    "images": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg],origin[dam],category[ladies_dresses_shortdresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                            "baseUrl": "https://image.hm.com/assets/hm/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg"
+                        }
+                    ],
+                    "pk": "9369787465729",
+                    "whitePrice": {
+                        "currencyIso": "INR",
+                        "value": 1999,
+                        "priceType": "BUY",
+                        "formattedValue": "Rs.1,999.00",
+                        "type": "WHITE"
+                    },
+                    "logoPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg"
+                        }
+                    ],
+                    "normalPicture": [
+                        {
+                            "url": "https://lp2.hm.com/hmgoepprod?set=source[/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                            "baseUrl": "https://image.hm.com/assets/hm/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg"
+                        }
+                    ],
+                    "visible": false,
+                    "numbersOfPieces": 0,
+                    "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI0MDI0MV9ncm91cF8wMDFfZW5faW47MTI0MDI0MTAwMV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+                    "dummy": false,
+                    "ecoTaxValue": 0,
+                    "redirectToPdp": false,
+                    "comingSoon": false,
+                    "color": {
+                        "code": "A52A2A",
+                        "text": "Light beige/White/Black",
+                        "filterName": "Beige_F5F5DC,Black_000000,White_FFFFFF",
+                        "hybrisCode": "16"
+                    },
+                    "rgbColor": "#9F978F",
+                    "comparativePrice": {
+                        "formattedPrice": "Rs.666.33",
+                        "multipack": true
+                    },
+                    "quantity": "3",
+                    "turnToSku": "1240241001002"
                 }
             ],
             "visible": false,
@@ -1090,179 +2239,118 @@
             ],
             "numbersOfPieces": 0,
             "defaultArticle": {
-                "code": "0685816252",
-                "name": "Regular Fit T-shirt",
+                "code": "1240241001",
+                "name": "3-pack jersey strappy dresses",
                 "images": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
-                        "baseUrl": "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg],origin[dam],category[ladies_dresses_shortdresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+                        "baseUrl": "https://image.hm.com/assets/hm/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg"
                     }
                 ],
-                "pk": "9400278253569",
+                "pk": "9369787465729",
                 "whitePrice": {
                     "currencyIso": "INR",
-                    "value": 399,
+                    "value": 1999,
                     "priceType": "BUY",
-                    "formattedValue": "Rs.399.00",
+                    "formattedValue": "Rs.1,999.00",
                     "type": "WHITE"
                 },
                 "logoPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg"
                     }
                 ],
                 "normalPicture": [
                     {
-                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                        "baseUrl": "https://image.hm.com/assets/hm/95/b2/95b26c6ec290ad5eaf70e60d68865f85d88783b3.jpg"
+                        "url": "https://lp2.hm.com/hmgoepprod?set=source[/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                        "baseUrl": "https://image.hm.com/assets/hm/b8/5b/b85b7e5388f9e5ae83019af1a70b407f57d680ac.jpg"
                     }
                 ],
                 "visible": false,
                 "numbersOfPieces": 0,
-                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8yNTJfZW5faW47MDY4NTgxNjI1Ml9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
+                "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI0MDI0MV9ncm91cF8wMDFfZW5faW47MTI0MDI0MTAwMV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
                 "dummy": false,
                 "ecoTaxValue": 0,
                 "redirectToPdp": false,
                 "comingSoon": false,
                 "color": {
-                    "code": "F5F5DC",
-                    "text": "Brown",
-                    "filterName": "Beige_F5F5DC",
-                    "hybrisCode": "15"
+                    "code": "A52A2A",
+                    "text": "Light beige/White/Black",
+                    "filterName": "Beige_F5F5DC,Black_000000,White_FFFFFF",
+                    "hybrisCode": "16"
                 },
-                "rgbColor": "#594C43",
-                "turnToSku": "0685816252001"
+                "rgbColor": "#9F978F",
+                "comparativePrice": {
+                    "formattedPrice": "Rs.666.33",
+                    "multipack": true
+                },
+                "quantity": "3",
+                "turnToSku": "1240241001002"
             },
             "sale": false,
             "variantSizes": [
                 {
-                    "orderFilter": 370,
-                    "filterCode": "L"
-                },
-                {
-                    "orderFilter": 372,
-                    "filterCode": "XL"
+                    "orderFilter": 363,
+                    "filterCode": "XS"
                 },
                 {
                     "orderFilter": 366,
                     "filterCode": "S"
                 },
                 {
-                    "orderFilter": 375,
-                    "filterCode": "XXL"
-                },
-                {
                     "orderFilter": 369,
                     "filterCode": "M"
-                },
-                {
-                    "orderFilter": 363,
-                    "filterCode": "XS"
                 }
             ],
             "swatches": [],
             "articleCodes": [
-                "0685816252",
-                "0685816001",
-                "0685816002",
-                "0685816053"
+                "1240241001"
             ],
-            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MDY4NTgxNl9ncm91cF8yNTJfZW5faW47MDY4NTgxNjI1Ml9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTs5MTs",
-            "searchEngineProductId": "0685816_group_252_en_in",
+            "ticket": "Oy9wbHAvcHJvZHVjdC1saXN0LXdpdGgtY291bnQvcHJvZHVjdC1saXN0OyM7cHJvZHVjdF9rZXk7MTI0MDI0MV9ncm91cF8wMDFfZW5faW47MTI0MDI0MTAwMV9lbl9pbjtPQkpFQ1RJVkUkO05PTkU6Tk9ORTszNzs",
+            "searchEngineProductId": "1240241_group_001_en_in",
             "dummy": false,
-            "linkPdp": "/en_in/productpage.0685816252.html",
-            "categoryName": "Men",
+            "linkPdp": "/en_in/productpage.1240241001.html",
+            "categoryName": "Ladies",
             "rgbColors": [
-                "#594C43",
-                "#FFFFFF",
-                "#272628",
-                "#AFAFAF"
+                "#9F978F"
             ],
             "articleColorNames": [
-                "Brown",
-                "White",
-                "Black",
-                "Grey marl",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc",
-                "dc"
+                "Light beige/White/Black"
             ],
             "ecoTaxValue": 0,
-            "swatchesTotal": 13,
+            "swatchesTotal": 1,
             "showPriceMarker": false,
             "redirectToPdp": false,
-            "mainCategoryCode": "men_tshirtstanks_shortsleeve",
+            "mainCategoryCode": "ladies_basics_dressesskirts",
             "comingSoon": false,
             "brandName": "H&M",
             "galleryImages": [
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/68/69/6869a2502b691f3ffcf4251b5f59df0ecbe5cf78.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/2b/c0/2bc002af1a2b2b25bc9abb085fd8d2cf16e1d21f.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/5c/03/5c03b31059d6174116a2c398d1cb23d9dc00b797.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/5c/03/5c03b31059d6174116a2c398d1cb23d9dc00b797.jpg"
                 },
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/2b/c0/2bc002af1a2b2b25bc9abb085fd8d2cf16e1d21f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/68/69/6869a2502b691f3ffcf4251b5f59df0ecbe5cf78.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/99/2e/992ede387a7677998fee58b320bfc0bf82745e27.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/99/2e/992ede387a7677998fee58b320bfc0bf82745e27.jpg"
                 },
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/ed/e3/ede376565f53b7e3836b3dec4d7c1f55c586d514.jpg],origin[dam],category[],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/ed/e3/ede376565f53b7e3836b3dec4d7c1f55c586d514.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/90/d4/90d4b96ade5183a7f4f03456429c606aa93905e1.jpg],origin[dam],category[ladies_dresses_shortdresses],type[DESCRIPTIVEDETAIL],res[m],hmver[2]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/90/d4/90d4b96ade5183a7f4f03456429c606aa93905e1.jpg"
                 },
                 {
-                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/01/ab/01ab01c67cfd2707df231e0211ded57469e8c9c1.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
-                    "baseUrl": "https://image.hm.com/assets/hm/01/ab/01ab01c67cfd2707df231e0211ded57469e8c9c1.jpg"
+                    "url": "https://lp2.hm.com/hmgoepprod?set=source[/2b/42/2b42e50423a04b660afa18e77abd5fda66e1a782.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+                    "baseUrl": "https://image.hm.com/assets/hm/2b/42/2b42e50423a04b660afa18e77abd5fda66e1a782.jpg"
                 }
             ],
             "allArticleCodes": [
-                "0685816252",
-                "0685816001",
-                "0685816002",
-                "0685816053",
-                "0685816178",
-                "0685816185",
-                "0685816229",
-                "0685816254",
-                "0685816257",
-                "0685816264",
-                "0685816265",
-                "0685816266",
-                "0685816271"
+                "1240241001"
             ],
             "allArticleImages": [
-                "https://lp2.hm.com/hmgoepprod?set=source[/27/37/27371510657af76474658acf192817bd8632ae8c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/38/06/380609a19cfd897b634bfea723a83df777092531.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
-                "https://lp2.hm.com/hmgoepprod?set=source[/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
+                "https://lp2.hm.com/hmgoepprod?set=source[/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg],origin[dam],category[ladies_dresses_shortdresses],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]"
             ],
             "allArticleBaseImages": [
-                "https://image.hm.com/assets/hm/27/37/27371510657af76474658acf192817bd8632ae8c.jpg",
-                "https://image.hm.com/assets/hm/bd/e4/bde4ef42f917ccb678c4ff1d218520ce2f10ff6d.jpg",
-                "https://image.hm.com/assets/hm/44/42/4442fbac4e3080ec20b2f14e353fea267249b0dd.jpg",
-                "https://image.hm.com/assets/hm/ea/19/ea19a648bc21d0624d04da8df11418980f1bed07.jpg",
-                "https://image.hm.com/assets/hm/e9/0c/e90c297b5b49be36fe399581aac68387f6f8c2bb.jpg",
-                "https://image.hm.com/assets/hm/7a/0f/7a0fdcdf33a2c4f3e5193cd3663af9107590329d.jpg",
-                "https://image.hm.com/assets/hm/38/06/380609a19cfd897b634bfea723a83df777092531.jpg",
-                "https://image.hm.com/assets/hm/56/cd/56cd0c194b1c459d915e86f2b2759fc6e62939a2.jpg",
-                "https://image.hm.com/assets/hm/f1/99/f19952bb78c35cea14068d7bb7afaa52e8699b88.jpg",
-                "https://image.hm.com/assets/hm/c7/74/c774ea7dba02279eb3d1b95dd60830767536bc9f.jpg",
-                "https://image.hm.com/assets/hm/e8/ba/e8bae3e7486011144bb647b08e86a43cf5621df2.jpg",
-                "https://image.hm.com/assets/hm/90/d0/90d0db1270451ba97d209bf1261f7b721a0dec98.jpg",
-                "https://image.hm.com/assets/hm/4b/f3/4bf392fa414787dc9a9c2f75d662c6bbb1b26ea9.jpg"
+                "https://image.hm.com/assets/hm/0a/d2/0ad209757737c924b54895e215c6a076871645e9.jpg"
             ]
         }
     ]
