@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { View, Text, Image, Pressable } from "react-native";
 import { useRemoveBackgroundQuery } from "../query/features/imageApi";
 import useImageProcessing from "@/lib/skia";
+import { GlobalContext } from "@/context/GlobalProvider";
 
 type ItemProps = {
   name: string;
@@ -9,35 +10,35 @@ type ItemProps = {
   image: string;
 };
 const ShoppingItemCard = ({ item }: { item: ItemProps }) => {
+  const { userData } = useContext(GlobalContext)!;
   const [stickerStatus, setStickerStatus] = useState(false);
-  // const {
-  //   data: itemImage,
-  //   isLoading,
-  // } = useRemoveBackgroundQuery(item.image, {
-  //   skip: !stickerStatus,
-  // });
-  const itemImage =
-    "https://res.cloudinary.com/dhjykjehw/image/upload/v1745602651/vistyl/test-img2.png";
-  const { segmentItem } = useImageProcessing(itemImage, item.image);
+  const { data } = useRemoveBackgroundQuery(
+    { imgURL: item.image, email: userData?.email || "" },
+    {
+      skip: !stickerStatus,
+    }
+  );
+  const { segmentItem } = useImageProcessing(data?.imgUrl || "", setStickerStatus);//change its structure
+
   useEffect(() => {
-    const doSegmentation = async () => {
-      if (itemImage && stickerStatus) {
-        //create sticker with the masked image
-        console.log("In use effect");
-        setStickerStatus(false);
-        await segmentItem();
-      }
-    };
-    doSegmentation();
-  }, [itemImage, stickerStatus]);
+    // const doSegmentation = () => {
+    //   if (stickerStatus && data?.imgUrl) {
+    //     console.log("In useEffect: ", data.imgUrl);
+    //     segmentItem();
+    //     setStickerStatus(false);
+    //   }
+    // };
+    // doSegmentation();
+  }, [stickerStatus, data]);
 
   const createSticker = () => {
-    //give a loader to show the creation of sticker
-    // if(maskedImage) refetch();
-    console.log("In create sticker function");
     setStickerStatus(true);
   };
-  return (
+  return stickerStatus ? (
+    <View>
+      <Text>Loading...</Text>
+    </View>
+  ) : (
     <View className="bg-white rounded-xl shadow-md p-4 m-2 w-60">
       <Image
         source={{ uri: item.image }}

@@ -7,42 +7,75 @@ import {
   ImageInfo,
   PaintStyle,
   StrokeCap,
-  Blur,
   BlendMode,
   StrokeJoin,
 } from "@shopify/react-native-skia";
 import { traceOutline } from "./marchingAlgo";
-import {
-  ImageManipulatorContext,
-  ImageManipulator,
-  SaveFormat,
-  useImageManipulator,
-} from "expo-image-manipulator";
-export default function useImageProcessing(maskUrl: string, orgURL: string) {
-  const orgUriImg = useImage(orgURL); //loads the image from the url and returns an object containing the image and its properties
-  const maskUriImg = useImage(maskUrl);
+import { useEffect } from "react";
+
+export default function useImageProcessing(
+  orgURL: string,
+  setStickerStatus: React.Dispatch<React.SetStateAction<boolean>>
+) {
+  const orgUriImg = useImage(orgURL);
+  const maskUriImg = useImage(orgURL);
+  useEffect(() => {
+    if (orgUriImg && maskUriImg) {
+      segmentItem();
+      setStickerStatus(false);
+    } else {
+      console.log("Image not loaded yet");
+    }
+  }, [orgUriImg, maskUriImg]);
+
   function applyingStickerEffect(
-    img: SkImage | null,
+    img: SkImage,
+    mask: SkImage,
     width: number | null,
     height: number | null
   ) {
-    console.log("In sticker effect function");
+    console.log("In stixcker effect");
     if (img && width && height) {
       const surface = Skia.Surface.Make(width, height); //creates a surface to draw on
       const canvas = surface?.getCanvas(); //gets the canvas from the surface
       canvas?.drawImage(img, 0, 0); //draws the image on the canvas
+      // const imagePixels = img.readPixels(); //reads the pixels from the image
+      // const maskPixels = mask.readPixels(); //reads the pixels from the mask
       const imageInfo: ImageInfo = {
         width,
         height,
         colorType: ColorType.RGBA_8888, // RGBA format
         alphaType: AlphaType.Unpremul,
       };
-      const pixels = canvas?.readPixels(0, 0, imageInfo); //reads the pixels from the canvas
+      const pixels = canvas?.readPixels(0, 0, imageInfo); //reads the pixels from the image
+      // if (maskPixels && imagePixels) {
+      //   for (let i = 3; i < imagePixels.length; i += 4) {
+      //     if (imagePixels[i] > 128) {
+      //       maskPixels[i] = 255;
+      //       maskPixels[i - 1] = 255;
+      //       maskPixels[i - 2] = 255;
+      //       maskPixels[i - 3] = 255;
+      //     }
+      //   }
+      // }
+      // const newMaskImage = Skia.Image.MakeImage(
+      //   {
+      //     width,
+      //     height,
+      //     colorType: ColorType.RGBA_8888,
+      //     alphaType: AlphaType.Unpremul,
+      //   },
+      //   Skia.Data.fromBytes(maskPixels as Uint8Array),
+      //   width * 4
+      // );
+
+      // if (newMaskImage) {
+      //   canvas?.drawImage(newMaskImage, 0, 0);
+      // }
+
       if (pixels) {
-        console.log("Pixels length: ", pixels.length);
         const outline = traceOutline(pixels, width, height); //traces the outline of the image
         if (!outline) {
-          console.log("No outline found");
           return;
         }
         const strokePaint = Skia.Paint();
@@ -52,97 +85,23 @@ export default function useImageProcessing(maskUrl: string, orgURL: string) {
         strokePaint.setBlendMode(BlendMode.SrcOver); // X, Y offsets, blur radius
         strokePaint.setStrokeCap(StrokeCap.Round);
         strokePaint.setStrokeJoin(StrokeJoin.Round);
-        strokePaint.setStrokeWidth(8);
-        canvas?.drawPath(outline, strokePaint);
+        strokePaint.setStrokeWidth(2);
+        canvas?.drawPath(outline, strokePaint); //draws the outline on the canvas
         const sticker = surface?.makeImageSnapshot();
         console.log("Sticker: ", sticker?.encodeToBase64());
       }
     }
   }
 
-  //check for repeated consoles of the final image + this hook running
-
-  // const maskImgContext = useImageManipulator(
-  //   `data:image/png;base64,${maskBase64}`
-  // ); // It initializes an image manipulation context object that provides chainable methods for performing tasks like resizing, cropping, and flipping.
-
-  async function resizeImage(
-    context: ImageManipulatorContext,
-    width: number | undefined,
-    height: number | undefined
-  ) {
-    try {
-      if (!height || !width) return;
-      context.resize({ width, height }); //resizes the image to the specified width and height
-      const contextImg = await context.renderAsync(); //renders the image to a base64 string
-      const contextResult = await contextImg.saveAsync({
-        format: SaveFormat.PNG,
-        base64: true,
-        compress: 1,
-      }); //saves the image to a base64 string
-      return contextResult.base64; //returns the base64 string of the image
-    } catch (error) {
-      console.error("Error in resizing image: ", error);
-    }
-  }
-
-  const segmentItem = async () => {
-    console.log("IN SEGMENTATION FUNCTION");
-    let finalOrgImg;
-
-    try {
-      // const mask64Resized = await resizeImage(
-      //   maskImgContext,
-      //   orgUriImg?.width(),
-      //   orgUriImg?.height()
-      // ); //resizes the mask image to the same width as the original image
-
-      if (orgUriImg && maskUriImg) {
-        // const org = Skia.Data.fromBase64(orgUriImg.encodeToBase64()); //check what happens if it is string
-        // const mask = Skia.Data.fromBase64(maskUriImg.encodeToBase64()); //check what happens if it is string
-        // const originalImage = Skia.Image.MakeImageFromEncoded(org);
-        // const orgPixels = originalImage?.readPixels();
-        // const maskedImage = Skia.Image.MakeImageFromEncoded(mask); //creates a skia image object
-        // const maskPixels = maskedImage?.readPixels();
-        // if (
-        //   maskPixels instanceof Uint8Array &&
-        //   orgPixels instanceof Uint8Array
-        // ) {
-        //   for (let i = 0; i <= maskPixels.length - 4; i += 4) {
-        //     if (
-        //       maskPixels[i] == 0 &&
-        //       maskPixels[i + 1] == 0 &&
-        //       maskPixels[i + 2] == 0
-        //     ) {
-        //       orgPixels[i + 3] = 0; //sets the alpha value of the pixel to 0
-        //     }
-        //   }
-        //   // const maskData = Skia.Data.fromBytes(maskPixels);
-
-        //   const orgData = Skia.Data.fromBytes(orgPixels);
-
-        //   finalOrgImg = Skia.Image.MakeImage(
-        //     {
-        //       width: originalImage?.width() || 256,
-        //       height: originalImage?.height() || 256,
-        //       alphaType: AlphaType.Unpremul,
-        //       colorType: ColorType.RGBA_8888,
-        //     },
-        //     orgData,
-        //     (originalImage?.width() || 256) * 4
-        //   );
-        // }
-        if (maskUriImg) {
-          console.log("Image Segmentation Done");
-          applyingStickerEffect(
-            maskUriImg,
-            maskUriImg?.width() ?? null,
-            maskUriImg?.height() ?? null
-          );
-        } //check what happens if it is string
-      }
-    } catch (error) {
-      console.error("Error in segmentation: ", error);
+  const segmentItem = () => {
+    if (orgUriImg && maskUriImg) {
+      console.log("In segment Item");
+      applyingStickerEffect(
+        orgUriImg,
+        maskUriImg,
+        orgUriImg?.width() ?? null,
+        orgUriImg?.height() ?? null
+      );
     }
   };
   return { segmentItem };

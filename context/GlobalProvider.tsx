@@ -9,6 +9,7 @@ type GlobalContextType = {
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   token: string | null;
   setToken: React.Dispatch<React.SetStateAction<string | null>>;
+
 };
 
 type userDataType = {
@@ -22,6 +23,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [userData, setUserData] = useState<null | userDataType>(null);
   const [email, setEmail] = useState("");
   const [token, setToken] = useState<string | null>(null);
+
   return (
     <GlobalContext.Provider
       value={{
@@ -33,6 +35,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         setEmail,
         token,
         setToken,
+
       }}
     >
       {children}

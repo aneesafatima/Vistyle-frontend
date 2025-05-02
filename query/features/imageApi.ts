@@ -13,18 +13,21 @@ export const imageApi = createApi({
           method: "GET",
           params: {
             imgURL,
-          }, 
+          },
         };
       },
     }),
     removeBackground: builder.query({
-      query: (imgURL: string) => {
+      query: ({ imgURL, email }: { imgURL: string; email: string }) => {
+        console.log("Image URL: ", imgURL);
+        console.log("Email: ", email);
         return {
           url: "/remove-bg",
           method: "GET",
           params: {
             imgURL,
-          }, 
+            email,
+          },
         };
       },
     }),

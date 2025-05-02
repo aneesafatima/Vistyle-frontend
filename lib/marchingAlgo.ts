@@ -1,4 +1,5 @@
 import { Skia } from "@shopify/react-native-skia";
+import simplify from "simplify-js";
 function smoothPointsChaikin(
   points: [number, number][],
   iterations = 2
@@ -38,7 +39,7 @@ function isAlpha(
 ) {
   if (x < 0 || x >= width || y < 0 || y >= height) return 0;
   const index = (y * width + x) * 4 + 3; // Alpha channel index
-  return pixels[index] > 128 ? 1 : 0; // Check if the alpha value is greater than 0
+  return pixels[index] > 10 ? 1 : 0; // Check if the alpha value is greater than 0
 }
 let tx: number, ty: number;
 export function traceOutline(
@@ -53,13 +54,12 @@ export function traceOutline(
   console.log("Tracing outline...");
   console.log("Width: ", width, " Height: ", height);
   let isChecked = new Set<string>();
-  let path: [number, number][] = []; //here [number, number] is a tuple of x and y coordinates
+  let path: { x: number; y: number }[] = []; //here [number, number] is a tuple of x and y coordinates
   let dir = 0; // Start direction (0: right, 1: down, 2: left, 3: up)
   if (!(pixels instanceof Uint8Array)) {
     console.log("No pixels found");
     return;
   }
-  // console.log("pixels first thousand: ", pixels.slice(1300000, 1350000));
   outer: for (let y = 0; y < height - 1; y++) {
     for (let x = 0; x < width - 1; x++) {
       const current = isAlpha(x, y, width, height, pixels);
@@ -69,15 +69,7 @@ export function traceOutline(
       const sum = right + down + diag;
       if (sum > 0 && sum < 3 && current === 1) {
         console.log("Sum: ", sum);
-        const index = (y * width + x) * 4;
-        console.log(
-          pixels[index],
-          pixels[index + 1],
-          pixels[index + 2],
-          pixels[index + 3]
-        );
-        // Check if the pixel is not transparent (alpha > 0)
-        path.push([x, y]);
+        path.push({ x, y });
         console.log("First edge pixel found at: ", x, y);
         tx = x;
         ty = y;
@@ -87,18 +79,16 @@ export function traceOutline(
   }
   if (path.length === 0) {
     console.log("No edge pixel found");
-    console.log(pixels[0], pixels[1], pixels[2], pixels[3]);
     return;
   }
-  let [x, y] = path[0];
+  let { x, y } = path[0];
   const dx = [0, 1, 0, -1];
   const dy = [-1, 0, 1, 0];
   let loopCounter = 0;
   const MAX_LOOPS = width * height; // Maximum number of loops to prevent infinite loop
   do {
-    // console.log("Looping...");
-    loopCounter++;
     if (loopCounter > MAX_LOOPS) break;
+    loopCounter++;
     isChecked.add(`${x},${y}`);
     for (let i = 0; i < 4; i++) {
       const ndir = (dir + i) % 4;
@@ -127,7 +117,7 @@ export function traceOutline(
             !isAlpha(nx + 1, ny + 1, width, height, pixels)); // Bottom-right
 
         if (hasTransparentNeighbor) {
-          path.push([nx, ny]);
+          path.push({ x: nx, y: ny });
           dir = ndir;
           x = nx;
           y = ny;
@@ -135,21 +125,21 @@ export function traceOutline(
         }
       }
     }
-  } while (x !== path[0][0] || y !== path[0][1]); // Loop until we return to the starting point
-  console.log("Path: ", path.length);
+  } while (x !== path[0].x || y !== path[0].y);
   console.log("Path work completed");
   const outline = Skia.Path.Make();
-  path = smoothPointsChaikin(path, 2); // Smooth the path using Chaikin's algorithm
-  outline.moveTo(path[0][0], path[0][1]);
-  for (let i = 0; i < path.length - 2; i += 3) {
+  // path = smoothPointsChaikin(path, 2); // Smooth the path using Chaikin's algorithm
+  path = simplify(path, 1.0, true); // Simplify the path using the simplify-js library
+  outline.moveTo(path[0].x, path[0].y);
+  for (let i = 0; i < path.length - 2; i += 2) {
     const p0 = path[i];
     const p1 = path[i + 1];
     const p2 = path[i + 2];
-    outline.cubicTo(p0[0], p0[1], p1[0], p1[1], p2[0], p2[1]);
+    outline.cubicTo(p0.x, p0.y, p1.x, p1.y, p2.x, p2.y);
   }
 
   outline.close();
-  outline.offset(-1.5, 1.5); // Offset the path to create a border effect
+  // outline.offset(-1.5, -1.1); // Offset the path to create a border effect
 
   return outline;
 }
