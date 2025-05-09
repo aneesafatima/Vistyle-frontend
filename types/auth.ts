@@ -3,5 +3,6 @@ export type LoginResponseType = {
     user: {
       name: string;
       email: string;
+      interests: string[];  
     };
   };

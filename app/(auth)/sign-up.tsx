@@ -45,6 +45,7 @@ const SignUp = () => {
       setUserData({
         name: result["user"].name,
         email: result["user"].email,
+        interests: result["user"].interests,
       });
       router.replace("/(user)/home");
     } catch (error: any) {

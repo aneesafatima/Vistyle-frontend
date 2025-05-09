@@ -11,10 +11,12 @@ const useAuth = () => {
   // Function (optional)
   const loggingUserIn = async (result: LoginResponseType) => {
     await saveToken(result["token"]);
+    console.log("result", result);
     setIsLoggedIn(true);
     setUserData({
       name: result.user.name,
       email: result.user.email,
+      interests: result.user.interests,
     });
     router.replace("/(user)/home");
   };

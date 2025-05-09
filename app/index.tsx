@@ -26,6 +26,7 @@ const HomePage = () => {
       setUserData({
         name: data.user.name,
         email: data.user.email,
+        interests: data.user.interests,
       });
       setIsLoggedIn(true);
       router.navigate("/(user)/home");

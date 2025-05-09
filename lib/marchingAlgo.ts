@@ -39,7 +39,7 @@ function isAlpha(
 ) {
   if (x < 0 || x >= width || y < 0 || y >= height) return 0;
   const index = (y * width + x) * 4 + 3; // Alpha channel index
-  return pixels[index] > 10 ? 1 : 0; // Check if the alpha value is greater than 0
+  return pixels[index] > 25 ? 1 : 0; // Check if the alpha value is greater than 0
 }
 let tx: number, ty: number;
 export function traceOutline(
@@ -82,16 +82,20 @@ export function traceOutline(
     return;
   }
   let { x, y } = path[0];
-  const dx = [0, 1, 0, -1];
-  const dy = [-1, 0, 1, 0];
+  console.log("Starting point: ", x, y);
+  const dx = [0, 1, 0, -1, 1];
+  const dy = [-1, 0, 1, 0, 1];
   let loopCounter = 0;
+  console.log("width: ", width, " height: ", height);
   const MAX_LOOPS = width * height; // Maximum number of loops to prevent infinite loop
   do {
     if (loopCounter > MAX_LOOPS) break;
     loopCounter++;
     isChecked.add(`${x},${y}`);
-    for (let i = 0; i < 4; i++) {
-      const ndir = (dir + i) % 4;
+    for (let i = 0; i < 5; i++) {
+      let ndir;
+      if ((dir + i) / 4 === 1) ndir = 4;
+      else ndir = (dir + i) % 4;
       const ny = y + dy[ndir];
       const nx = x + dx[ndir];
       if (

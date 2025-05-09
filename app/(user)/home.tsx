@@ -14,11 +14,11 @@ const HomePage = () => {
       <SafeAreaView className="flex-1 items-start bg-white">
         <View className="text-center mt-[1rem] p-4">
           <Text className="text-4xl font-semibold">Hello {userData?.name}</Text>
-          {/* <Pressable
+          <Pressable
             onPress={loggingUserOut}
           >
             <Text className="text-blue-500">Logout</Text>
-          </Pressable> */}
+          </Pressable>
         </View>
     
       </SafeAreaView>
