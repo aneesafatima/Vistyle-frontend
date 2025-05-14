@@ -5,7 +5,14 @@ import {
   TouchableOpacity,
   Pressable,
   Image,
+  Dimensions,
 } from "react-native";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from "react-native-reanimated";
 import { ScrollView } from "react-native";
 //make a different import file for icons\
 //REFACTOR
@@ -18,31 +25,127 @@ import { useContext, useState } from "react";
 import { fashionInterestColors } from "../../assets/ui-data/colors";
 import { InterestsModal } from "@/components";
 import { GlobalContext } from "@/context/GlobalProvider";
+import Entypo from "@expo/vector-icons/Entypo";
+import { UserSettings } from "@/components";
+
+///////////////////////////////////////////////////////////////////////////////////
 
 const Profile = () => {
   const [fontsLoaded] = useFonts({
     "poppins-medium": require("../../assets/fonts/Poppins-Medium.ttf"),
   });
+  const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
+  const width = useSharedValue(64);
+  const height = useSharedValue(64);
+  const borderRadius = useSharedValue(32);
+  const marginTop = useSharedValue(40);
+  const marginLeft = useSharedValue(20);
+  const marginRight = useSharedValue(20);
+  const animatedStyles = useAnimatedStyle(() => ({
+    width: width.value,
+    height: height.value,
+    borderRadius: borderRadius.value,
+    backgroundColor: "black",
+    marginTop: marginTop.value,
+    marginLeft: marginLeft.value,
+    marginRight: marginRight.value,
+  }));
+  const toggleAnimation = () => {
+    const newEditingProfile = !isEditingProfile;
+    setIsEditingProfile(newEditingProfile);
+    width.value = withTiming(newEditingProfile ? Math.round(screenWidth) : 64, {
+      duration: 300,
+      easing: Easing.linear,
+    });
+    height.value = withTiming(
+      newEditingProfile ? Math.round(screenHeight) : 64,
+      {
+        duration: 300,
+        easing: Easing.linear,
+      }
+    );
+    borderRadius.value = withTiming(newEditingProfile ? 0 : 32, {
+      duration: 300,
+      easing: Easing.linear,
+    });
+    marginTop.value = withTiming(newEditingProfile ? 0 : 40, {
+      duration: 300,
+      easing: Easing.linear,
+    });
+    marginLeft.value = withTiming(newEditingProfile ? 0 : 20, {
+      duration: 300,
+      easing: Easing.linear,
+    });
+    marginRight.value = withTiming(newEditingProfile ? 0 : 20, {
+      duration: 300,
+      easing: Easing.linear,
+    });
+    // position.value = position.value === "static" ? "absolute" : "static";
+  };
   const [showCollections, setShowCollections] = useState(false);
   const [showAllCreations, setshowAllCreations] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const {userData} = useContext(GlobalContext)!;
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const { userData } = useContext(GlobalContext)!;
   if (!fontsLoaded) return;
-  // let defaultTags = ["casual", "minimalist", "formal", "grunge"];
   let defaultCollections = ["C-1", "C-2", "C-3", "C-4"];
   let defaultCreations = ["A-1"];
   return (
     <SafeAreaView className="bg-white h-fit">
       <InterestsModal showModal={showModal} setShowModal={setShowModal} />
-      <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
-        <View className="flex flex-row justify-between items-center mt-">
-          <TouchableOpacity className=" bg-[#ececec] rounded-full flex items-center justify-center  w-16 h-16 mt-10 mx-5">
+      <ScrollView
+        contentContainerStyle={{ paddingBottom: 30 }}
+        scrollEnabled={!isEditingProfile}
+      >
+        <View
+          className={`${
+            !isEditingProfile && "flex flex-row justify-between items-center"
+          }`}
+        >
+          <TouchableOpacity
+            className={` bg-[#ececec] rounded-full w-16 h-16 mt-10 mx-5  ${
+              isEditingProfile ? "hidden" : "flex items-center justify-center"
+            }`}
+          >
             <AntDesign name="arrowleft" size={24} color="black" />
           </TouchableOpacity>
-          <Text className="text-3xl text-center mt-10 font-bold">Profile</Text>
-          <TouchableOpacity className="bg-black rounded-full flex items-center justify-center  w-16 h-16 mt-10 mx-5">
-            <FontAwesome name="pencil" size={24} color="white" />
-          </TouchableOpacity>
+          <Text
+            className={`text-3xl text-center mt-10 font-bold ${
+              isEditingProfile ? "hidden " : "flex items-center justify-center"
+            }`}
+          >
+            Profile
+          </Text>
+          <View
+            className="w-fit relative"
+            style={{
+              ...(isEditingProfile && {
+                zIndex: 10,
+              }),
+            }}
+          >
+            <Animated.View style={animatedStyles}>
+              {isEditingProfile ? (
+                <Pressable
+                  className="absolute top-6 right-6"
+                  onPress={toggleAnimation}
+                >
+                  <Entypo name="cross" size={34} color="white" />
+                </Pressable>
+              ) : (
+                <Pressable className="justify-center items-center flex h-full">
+                  {" "}
+                  <FontAwesome
+                    name="pencil"
+                    size={24}
+                    color="white"
+                    onPress={toggleAnimation}
+                  />
+                </Pressable>
+              )}
+              {isEditingProfile && <UserSettings />}
+            </Animated.View>
+          </View>
         </View>
         <View className="flex flex-row relative justify-center  mt-5 ">
           <Image className="w-52 top-1/2 -translate-y-1/2 absolute -left-[70px] bg-yellow-100 h-52  rounded-2xl my-2 rotate-[20deg]"></Image>

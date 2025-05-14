@@ -17,6 +17,7 @@ const useAuth = () => {
       name: result.user.name,
       email: result.user.email,
       interests: result.user.interests,
+      username: result.user.username,
     });
     router.replace("/(user)/home");
   };

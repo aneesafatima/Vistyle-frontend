@@ -15,6 +15,7 @@ type userDataType = {
   name: "string";
   email: "string";
   interests: string[];
+  username: string;
 };
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
 
