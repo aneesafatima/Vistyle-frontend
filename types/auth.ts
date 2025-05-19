@@ -7,5 +7,6 @@ export type LoginResponseType = {
       username: string; 
       description: string;
       designHouse: DesignHouse;
+      id: string;
     };
   };

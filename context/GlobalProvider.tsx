@@ -15,18 +15,7 @@ type GlobalContextType = {
   >;
 };
 
-type userDataType = {
-  name: string;
-  email: string;
-  interests: string[];
-  username: string;
-  description: string;
-  designHouse: DesignHouse;
-};
-type updatedUserDataType = Pick<
-  userDataType,
-  "name" | "description" | "designHouse"
->;
+
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {

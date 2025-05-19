@@ -26,7 +26,6 @@ import { fashionInterestColors } from "../../assets/ui-data/colors";
 import { InterestsModal } from "@/components";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { UserSettings } from "@/components";
-import { set } from "react-hook-form";
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -87,6 +86,7 @@ const Profile = () => {
   if (!fontsLoaded) return;
   let defaultCollections = ["C-1", "C-2", "C-3", "C-4"];
   let defaultCreations = ["A-1"];
+
   return (
     <SafeAreaView className="bg-white h-fit">
       <InterestsModal showModal={showModal} setShowModal={setShowModal} />
@@ -135,10 +135,10 @@ const Profile = () => {
                     />
                   </Pressable>
                   <Pressable
-                    className="absolute top-7 right-6"
+                    className="absolute top-7 right-6 w-32 h-32"
                     onPress={() => setIsEditingProfile(false)}
                   >
-                    <Feather name="check" size={26} color="green" />
+                    {/* <Feather name="check" size={26} color="green" /> */}
                   </Pressable>
                 </>
               ) : (
