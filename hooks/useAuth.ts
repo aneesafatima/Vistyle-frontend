@@ -18,6 +18,8 @@ const useAuth = () => {
       email: result.user.email,
       interests: result.user.interests,
       username: result.user.username,
+      description: result.user.description,
+      designHouse: result.user.designHouse,
     });
     router.replace("/(user)/home");
   };

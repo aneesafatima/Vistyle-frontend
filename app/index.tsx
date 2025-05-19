@@ -28,6 +28,8 @@ const HomePage = () => {
         email: data.user.email,
         interests: data.user.interests,
         username: data.user.username,
+        description: data.user.description,
+        designHouse: data.user.designHouse,
       });
       setIsLoggedIn(true);
       router.navigate("/(user)/home");

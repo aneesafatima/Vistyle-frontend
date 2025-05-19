@@ -5,5 +5,7 @@ export type LoginResponseType = {
       email: string;
       interests: string[]; 
       username: string; 
+      description: string;
+      designHouse: DesignHouse;
     };
   };

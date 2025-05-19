@@ -9,14 +9,24 @@ type GlobalContextType = {
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   token: string | null;
   setToken: React.Dispatch<React.SetStateAction<string | null>>;
+  updatedUserData: updatedUserDataType | null;
+  setUpdatedUserData: React.Dispatch<
+    React.SetStateAction<updatedUserDataType | null>
+  >;
 };
 
 type userDataType = {
-  name: "string";
-  email: "string";
+  name: string;
+  email: string;
   interests: string[];
   username: string;
+  description: string;
+  designHouse: DesignHouse;
 };
+type updatedUserDataType = Pick<
+  userDataType,
+  "name" | "description" | "designHouse"
+>;
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
@@ -24,6 +34,8 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [userData, setUserData] = useState<null | userDataType>(null);
   const [email, setEmail] = useState("");
   const [token, setToken] = useState<string | null>(null);
+  const [updatedUserData, setUpdatedUserData] =
+    useState<null | updatedUserDataType>(null);
 
   return (
     <GlobalContext.Provider
@@ -36,6 +48,8 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         setEmail,
         token,
         setToken,
+        updatedUserData,
+        setUpdatedUserData,
       }}
     >
       {children}

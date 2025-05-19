@@ -25,8 +25,8 @@ import { useContext, useState } from "react";
 import { fashionInterestColors } from "../../assets/ui-data/colors";
 import { InterestsModal } from "@/components";
 import { GlobalContext } from "@/context/GlobalProvider";
-import Entypo from "@expo/vector-icons/Entypo";
 import { UserSettings } from "@/components";
+import { set } from "react-hook-form";
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -45,25 +45,23 @@ const Profile = () => {
     width: width.value,
     height: height.value,
     borderRadius: borderRadius.value,
-    backgroundColor: "black",
+    backgroundColor: "#F5F4F0",
     marginTop: marginTop.value,
     marginLeft: marginLeft.value,
     marginRight: marginRight.value,
   }));
   const toggleAnimation = () => {
+    console.log("toggleAnimation");
     const newEditingProfile = !isEditingProfile;
     setIsEditingProfile(newEditingProfile);
-    width.value = withTiming(newEditingProfile ? Math.round(screenWidth) : 64, {
+    width.value = withTiming(newEditingProfile ? screenWidth : 64, {
       duration: 300,
       easing: Easing.linear,
     });
-    height.value = withTiming(
-      newEditingProfile ? Math.round(screenHeight) : 64,
-      {
-        duration: 300,
-        easing: Easing.linear,
-      }
-    );
+    height.value = withTiming(newEditingProfile ? screenHeight : 64, {
+      duration: 300,
+      easing: Easing.linear,
+    });
     borderRadius.value = withTiming(newEditingProfile ? 0 : 32, {
       duration: 300,
       easing: Easing.linear,
@@ -80,7 +78,6 @@ const Profile = () => {
       duration: 300,
       easing: Easing.linear,
     });
-    // position.value = position.value === "static" ? "absolute" : "static";
   };
   const [showCollections, setShowCollections] = useState(false);
   const [showAllCreations, setshowAllCreations] = useState(true);
@@ -98,7 +95,7 @@ const Profile = () => {
         scrollEnabled={!isEditingProfile}
       >
         <View
-          className={`${
+          className={`bg-[#F5F4F0] ${
             !isEditingProfile && "flex flex-row justify-between items-center"
           }`}
         >
@@ -124,27 +121,39 @@ const Profile = () => {
               }),
             }}
           >
-            <Animated.View style={animatedStyles}>
+            <View >
               {isEditingProfile ? (
-                <Pressable
-                  className="absolute top-6 right-6"
-                  onPress={toggleAnimation}
-                >
-                  <Entypo name="cross" size={34} color="white" />
-                </Pressable>
+                <>
+                  <Pressable
+                    className="absolute top-7 left-6"
+                    onPress={() => setIsEditingProfile(true)}
+                  >
+                    <MaterialIcons
+                      name="arrow-back-ios-new"
+                      size={24}
+                      color="red"
+                    />
+                  </Pressable>
+                  <Pressable
+                    className="absolute top-7 right-6"
+                    onPress={() => setIsEditingProfile(false)}
+                  >
+                    <Feather name="check" size={26} color="green" />
+                  </Pressable>
+                </>
               ) : (
                 <Pressable className="justify-center items-center flex h-full">
                   {" "}
                   <FontAwesome
                     name="pencil"
                     size={24}
-                    color="white"
-                    onPress={toggleAnimation}
+                    color="black"
+                    onPress={() => setIsEditingProfile(true)}
                   />
                 </Pressable>
               )}
               {isEditingProfile && <UserSettings />}
-            </Animated.View>
+            </View>
           </View>
         </View>
         <View className="flex flex-row relative justify-center  mt-5 ">
