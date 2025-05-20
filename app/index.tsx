@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { Pressable, Text, View } from "react-native";
+import { Pressable, StatusBar, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 import { Link, router } from "expo-router";
-
+import * as Font from "expo-font";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useTokenStatusQuery } from "@/query/features/authApi";
 import { getToken } from "@/utils/storage";
@@ -19,6 +19,14 @@ const HomePage = () => {
     skip: !token,
   });
   useEffect(() => {
+    const loadFonts = async () => {
+      await Font.loadAsync({
+        "poppins-medium": require("../assets/fonts/Poppins-Medium.ttf"),
+        "interTight-bold": require("../assets/fonts/InterTight-Bold.ttf"),
+        "interTight-medium": require("../assets/fonts/InterTight-Medium.ttf"),
+        "interTight-regular": require("../assets/fonts/InterTight-Regular.ttf"),
+      });
+    };
     getToken().then((val) => {
       val && setToken(val);
     });
@@ -37,9 +45,15 @@ const HomePage = () => {
     } else {
       setIsLoading(false);
     }
+    loadFonts();
   }, [data]);
   return (
     <SafeAreaView className="flex-1 justify-center items-center bg-white">
+      <StatusBar
+        barStyle="dark-content"
+        translucent={true}
+        backgroundColor="transparent"
+      />
       {isLoading ? (
         <View className="flex-1 justify-center items-center bg-white">
           <Text>LOADING...</Text>

@@ -12,7 +12,7 @@ export const userApi = createApi({
         data,
       }: {
         userId: string;
-        data: updatedUserDataType;
+        data: updatedUserDataType | null;
       }) => {
         return {
           url: `/${userId}`,

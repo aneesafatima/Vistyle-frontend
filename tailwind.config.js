@@ -10,6 +10,10 @@ module.exports = {
     extend: {
       fontFamily: {
         "poppins-medium": ["poppins-medium"],
+        "interTight-bold": ["interTight-bold"],
+        "interTight-medium": ["interTight-medium"],
+        "interTight-regular": ["interTight-regular"],
+   
       },
     },
   },
