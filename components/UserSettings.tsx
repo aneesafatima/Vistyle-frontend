@@ -23,6 +23,7 @@ import Animated, {
   Easing,
 } from "react-native-reanimated";
 import { Controller, useForm } from "react-hook-form";
+import { bottomRight, topLeft } from "@shopify/react-native-skia";
 const userDetailsSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -107,7 +108,7 @@ const UserSettings = ({
 
   return (
     <Animated.View style={animatedStyles}>
-      <View className="px-10 absolute top-0 pt-2 bottom-0 h-screen bg-white z-20">
+      <View className="px-10 absolute top-0 pt-2 bottom-0 h-screen bg-[#fcd9be88] z-20">
         {/* Header */}
         <View className="mt-16 flex flex-row justify-between">
           <Pressable onPress={() => setIsEditingProfile(false)}>
@@ -123,8 +124,10 @@ const UserSettings = ({
 
         {/* Avatar */}
         <View className="flex flex-row relative justify-center">
-          <Image className="w-44 bg-pink-100 h-44 rounded-3xl my-2 self-center" />
-          <Image className="w-40 top-1/2 -translate-y-1/2 absolute pt-5 -right-[100px] bg-yellow-100 h-40 rounded-2xl my-2 rotate-[20deg]" />
+          <Image
+            className="w-44 bg-pink-100 h-44 rounded-3xl my-2 self-center shadow-md"
+            source={require("../assets/images/pfp-demo-1.jpg")}
+          />
         </View>
         <Text className="text-center text-gray-800 mb-5">@johndoe</Text>
 
@@ -138,24 +141,24 @@ const UserSettings = ({
             paintInside={false}
             style={{ borderRadius: 12 }}
           >
-            <View className="relative">
-              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-white z-20 text-[#7F56D9] mb-1">
+            <View className="relative border-t-[1px] border-r-4 border-b-4 border-l-[1px]  border-[#8c9dff69] rounded-xl   w-[320px]">
+              <Text className="text-lg font-interTight-medium absolute left-6   -translate-y-1/2 bg-transparent z-20 text-[#8c9dffc5] font-bold mb-1">
                 Name
               </Text>
-              <View className="relative w-[320px]">
+              <View className="relative w-[320px] rounded-xl">
                 <Controller
                   control={control}
                   name="name"
                   render={({ field: { onChange, value } }) => (
                     <TextInput
-                      className="focus:border border-[#FFF8E7] focus:border-[#7F56D9] text-base text-[#444444] px-4 py-3 rounded-xl pr-10"
+                      className=" focus:border-[#7F56D9]  text-base text-[#444444] px-4 py-3 pr-10"
                       editable
                       value={value}
                       onChangeText={onChange}
                     />
                   )}
                 />
-                <TouchableOpacity className="absolute right-3 top-1/2 -translate-y-1/2">
+                <TouchableOpacity className="absolute right-3 top-1/2 -translate-y-1/2 mr-3">
                   <FontAwesome name="pencil" size={20} color="#000" />
                 </TouchableOpacity>
               </View>
@@ -178,8 +181,8 @@ const UserSettings = ({
             paintInside={false}
             style={{ borderRadius: 12 }}
           >
-            <View>
-              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-white z-20 text-[#7F56D9] mb-1">
+            <View className="border-t-[1px] border-r-4 border-b-4 border-l-[1px]  border-[#8c9dff69] rounded-xl ">
+              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-transparent font-bold z-20 text-[#8c9dffa7] mb-1">
                 Description
               </Text>
               <View className="relative w-[320px]">
@@ -188,7 +191,7 @@ const UserSettings = ({
                   name="description"
                   render={({ field: { onChange, value } }) => (
                     <TextInput
-                      className="border-[1px] focus:border-[#A28EFF] border-[#FFF8E7] min-h-20 text-base text-gray-800 px-4 py-3 rounded-xl pr-10"
+                      className=" focus:border-[#A28EFF]  min-h-20 text-base text-gray-800 px-4 py-3 rounded-xl pr-10"
                       editable
                       multiline
                       value={value}
@@ -211,17 +214,17 @@ const UserSettings = ({
         </View>
 
         {/* Design House (untouched) */}
-        <View className="my-6 w-[200px] flex justify-center">
+        <View className="my-6 w-[200px] flex justify-center border-t-[1px] border-r-4 border-b-4 border-l-[1px]  border-[#8c9dff69] rounded-xl ">
           <Shadow
-            distance={9}
-            offset={[0, 0]}
-            startColor="rgba(162, 142, 255, 0.1)"
-            endColor="rgba(162, 142, 255, 0)"
+            startColor="rgba(162, 142, 255, 0.2)" // A28EFF at 20%
+            offset={[0, 1]} // like X: 1, Y: 1
+            
+            distance={5}
             paintInside={false}
             style={{ borderRadius: 12 }}
           >
             <View>
-              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-white z-20 text-[#7F56D9] mb-1">
+              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2  bg-transparent font-bold z-20 text-[#8c9dffa7]  mb-1">
                 Design House
               </Text>
               <CustomDropdown />
