@@ -80,7 +80,7 @@ const CustomDropdown = () => {
   return (
     <View>
       <TouchableOpacity
-        className="flex-row justify-between items-center  focus:border-[#8c9dffa7] bg-transparent font-bold z-20 text-[#8c9dffa7]  px-4 py-3 rounded-t-xl w-full"
+        className="flex-row justify-between items-center  border-[1px]  border-[#8c9dff69] focus:border-[#8c9dffa7] bg-transparent font-bold z-20 text-[#8c9dffa7]  px-4 py-3 rounded-t-xl w-full"
         onPress={() => toggleAnimation()}
       >
         <Text className="text-base text-gray-700">
@@ -92,7 +92,7 @@ const CustomDropdown = () => {
       {showOptions && (
         <View>
           <Animated.View style={animatedStyles}>
-            <View className="rounded-b-xl    w-[200px]">
+            <View className="rounded-b-xl border-[1px]  border-[#8c9dff69] border-t-0   w-[200px]">
               <ScrollView>
                 {designHouses.map((item) => (
                   <TouchableOpacity

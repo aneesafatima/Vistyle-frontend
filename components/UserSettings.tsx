@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   Pressable,
   Dimensions,
+  ScrollView,
+  StatusBar,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useContext, useEffect } from "react";
@@ -23,7 +25,6 @@ import Animated, {
   Easing,
 } from "react-native-reanimated";
 import { Controller, useForm } from "react-hook-form";
-import { bottomRight, topLeft } from "@shopify/react-native-skia";
 const userDetailsSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -39,7 +40,6 @@ const userDetailsSchema = z
     message: "Passwords do not match",
     path: ["passwordConfirm"],
   });
-// ...imports remain unchanged...
 
 const UserSettings = ({
   setIsEditingProfile,
@@ -62,9 +62,9 @@ const UserSettings = ({
     defaultValues: {
       name: userData?.name || "",
       description: userData?.description || "",
-      // password: "",
-      // newpassword: "",
-      // passwordConfirm: "",
+      password: "........",
+      newpassword: "........",
+      passwordConfirm: ".........",
       designHouse: userData?.designHouse || "theminimalist",
     },
   });
@@ -105,12 +105,55 @@ const UserSettings = ({
       setIsEditingProfile(false);
     }
   };
+  if (!isEditingProfile) return null; // Prevent rendering if not editing profile
+  const EditableElements: EditProfileType[] = [
+    {
+      label: "Name",
+      name: "name",
+      placeholder: "Enter your name",
+      type: "text",
+    },
+    {
+      label: "Description",
+      name: "description",
+      placeholder: "Your fashion mantra",
+      type: "text",
+    },
+    {
+      label: "Design House",
+      name: "designHouse",
+      type: "text",
+    },
+    {
+      label: "Password",
+      name: "password",
+      placeholder: "Enter your current password",
+      type: "password",
+    },
+    {
+      label: "New Password",
+      name: "newpassword",
+      placeholder: "Enter a new password",
+      type: "password",
+    },
+    {
+      label: "Confirm New Password",
+      name: "passwordConfirm",
+      placeholder: "Confirm your new password",
+      type: "password",
+    },
+  ];
 
   return (
     <Animated.View style={animatedStyles}>
-      <View className="px-10 absolute top-0 pt-2 bottom-0 h-screen bg-[#fcd9be88] z-20">
+      <StatusBar
+        barStyle="dark-content"
+        translucent={true}
+        backgroundColor="#fcd9be88"
+      />
+      <View className="px-10 absolute top-0 pt-2 bottom-0 h-screen flex-1 w-screen bg-[#fcd9be88] z-20">
         {/* Header */}
-        <View className="mt-16 flex flex-row justify-between">
+        <View className="mt-12 flex flex-row justify-between">
           <Pressable onPress={() => setIsEditingProfile(false)}>
             <Ionicons name="chevron-back-outline" size={24} color="black" />
           </Pressable>
@@ -130,148 +173,54 @@ const UserSettings = ({
           />
         </View>
         <Text className="text-center text-gray-800 mb-5">@johndoe</Text>
-
-        {/* Name */}
-        <View className="flex flex-col items-center my-6 mb-9">
-          <Shadow
-            distance={9}
-            offset={[0, 0]}
-            startColor="rgba(162, 142, 255, 0.1)"
-            endColor="rgba(162, 142, 255, 0)"
-            paintInside={false}
-            style={{ borderRadius: 12 }}
-          >
-            <View className="relative border-t-[1px] border-r-4 border-b-4 border-l-[1px]  border-[#8c9dff69] rounded-xl   w-[320px]">
-              <Text className="text-lg font-interTight-medium absolute left-6   -translate-y-1/2 bg-transparent z-20 text-[#8c9dffc5] font-bold mb-1">
-                Name
-              </Text>
-              <View className="relative w-[320px] rounded-xl">
-                <Controller
-                  control={control}
-                  name="name"
-                  render={({ field: { onChange, value } }) => (
-                    <TextInput
-                      className=" focus:border-[#7F56D9]  text-base text-[#444444] px-4 py-3 pr-10"
-                      editable
-                      value={value}
-                      onChangeText={onChange}
-                    />
-                  )}
-                />
-                <TouchableOpacity className="absolute right-3 top-1/2 -translate-y-1/2 mr-3">
-                  <FontAwesome name="pencil" size={20} color="#000" />
-                </TouchableOpacity>
+        {EditableElements.map((element, index) => {
+          if (element.name == "designHouse")
+            return (
+              <View
+                className="my-6 w-[200px] flex justify-centerborder-[1px]  border-[#8c9dff69] rounded-xl "
+                key={index}
+              >
+                <View>
+                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2  bg-transparent font-bold z-20 text-[#8c9dffa7]">
+                    Design House
+                  </Text>
+                  <CustomDropdown />
+                </View>
               </View>
-              {errors.name && (
-                <Text className="absolute top-14 left-3 text-red-500 font-interTight-medium">
-                  {errors.name.message}
-                </Text>
-              )}
-            </View>
-          </Shadow>
-        </View>
+            );
 
-        {/* Description */}
-        <View className="flex flex-col items-center my-3">
-          <Shadow
-            distance={9}
-            offset={[0, 0]}
-            startColor="rgba(162, 142, 255, 0.1)"
-            endColor="rgba(162, 142, 255, 0)"
-            paintInside={false}
-            style={{ borderRadius: 12 }}
-          >
-            <View className="border-t-[1px] border-r-4 border-b-4 border-l-[1px]  border-[#8c9dff69] rounded-xl ">
-              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-transparent font-bold z-20 text-[#8c9dffa7] mb-1">
-                Description
-              </Text>
-              <View className="relative w-[320px]">
-                <Controller
-                  control={control}
-                  name="description"
-                  render={({ field: { onChange, value } }) => (
-                    <TextInput
-                      className=" focus:border-[#A28EFF]  min-h-20 text-base text-gray-800 px-4 py-3 rounded-xl pr-10"
-                      editable
-                      multiline
-                      value={value}
-                      onChangeText={onChange}
-                      placeholder="Your fashion mantra"
-                    />
-                  )}
-                />
-                <TouchableOpacity className="absolute right-3 top-1/2 -translate-y-1/2">
-                  <FontAwesome name="pencil" size={20} color="#000" />
-                </TouchableOpacity>
-              </View>
-              {errors.description && (
-                <Text className="text-red-500 text-sm px-1 mt-1">
-                  {errors.description.message}
-                </Text>
-              )}
-            </View>
-          </Shadow>
-        </View>
-
-        {/* Design House (untouched) */}
-        <View className="my-6 w-[200px] flex justify-center border-t-[1px] border-r-4 border-b-4 border-l-[1px]  border-[#8c9dff69] rounded-xl ">
-          <Shadow
-            startColor="rgba(162, 142, 255, 0.2)" // A28EFF at 20%
-            offset={[0, 1]} // like X: 1, Y: 1
-            
-            distance={5}
-            paintInside={false}
-            style={{ borderRadius: 12 }}
-          >
-            <View>
-              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2  bg-transparent font-bold z-20 text-[#8c9dffa7]  mb-1">
-                Design House
-              </Text>
-              <CustomDropdown />
-            </View>
-          </Shadow>
-        </View>
-
-        {/* Password Fields */}
-        {/* {["password", "newpassword", "passwordConfirm"].map((field, i) => {
-          const labels = {
-            password: "Current Password",
-            newpassword: "New Password",
-            passwordConfirm: "Confirm Password",
-          };
           return (
-            <View className="my-6" key={field}>
-              <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-white z-20 text-[#7F56D9] mb-1">
-                {labels[field]}
-              </Text>
-              <Shadow distance={9} offset={[0, 0]} startColor="rgba(162, 142, 255, 0.1)" endColor="rgba(162, 142, 255, 0)" paintInside={false} style={{ borderRadius: 12 }}>
-                <View className="relative w-[320px]">
+            <View key={index} className="flex flex-col items-center my-6">
+              /
+              <View className="relative border-[1px] border-[#8c9dff69] rounded-xl h-16 w-[320px]">
+                <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-transparent z-20 text-[#8c9dffc5] font-bold mb-1">
+                  {element.label}
+                </Text>
+                <View className="relative w-[320px] rounded-xl flex justify-center h-full px-4">
                   <Controller
                     control={control}
-                    name={field as keyof updatedUserDataType}
+                    name={element.name}
                     render={({ field: { onChange, value } }) => (
                       <TextInput
-                        className="border-[1px] focus:border-[#A28EFF] border-[#FFF8E7] text-base text-gray-800 px-4 py-3 rounded-xl pr-10"
-                        secureTextEntry
+                        className="focus:border-[#7F56D9] text-base text-[#444444] px-4 py-3 pr-10"
+                        editable
                         value={value}
                         onChangeText={onChange}
-                        placeholder="••••••••"
+                        placeholder={element.placeholder}
+                        secureTextEntry={element.type === "password"}
                       />
                     )}
                   />
-                  <TouchableOpacity className="absolute right-3 top-1/2 -translate-y-1/2">
-                    <FontAwesome name="pencil" size={20} color="#000" />
-                  </TouchableOpacity>
-                  {errors[field] && (
-                    <Text className="text-red-500 text-sm px-1 mt-1 absolute -bottom-6 left-1">
-                      {errors[field]?.message}
-                    </Text>
-                  )}
                 </View>
-              </Shadow>
+                {errors[element.name] && (
+                  <Text className="absolute top-14 left-3 my-3 text-[#f467409a] font-interTight-medium">
+                    {errors[element.name]?.message}
+                  </Text>
+                )}
+              </View>
             </View>
           );
-        })} */}
+        })}
       </View>
     </Animated.View>
   );

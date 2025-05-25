@@ -12,11 +12,21 @@ type userDataType = {
   email: string;
   interests: string[];
   username: string;
-  description: string;
+  description?: string;
   designHouse: DesignHouse;
   id: string;
 };
 type updatedUserDataType = Pick<
   userDataType,
   "name" | "description" | "designHouse"
->;
+> & {
+  password?: string;
+  passwordConfirm?: string;
+  newpassword?: string;
+};
+type EditProfileType = {
+  label: string;
+  placeholder?: string;
+  type: "text" | "password";
+  name: keyof updatedUserDataType;
+}

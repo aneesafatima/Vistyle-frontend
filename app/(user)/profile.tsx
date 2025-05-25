@@ -6,6 +6,7 @@ import {
   Pressable,
   Image,
   Dimensions,
+  StatusBar,
 } from "react-native";
 import Animated, {
   useSharedValue,
@@ -53,17 +54,24 @@ const Profile = () => {
   let defaultCollections = ["C-1", "C-2", "C-3", "C-4"];
   let defaultCreations = ["A-1"];
   return (
-    <SafeAreaView className="bg-white h-screen pt-8">
+    <SafeAreaView className="bg-white flex-1 pt-8 px-6">
+      <StatusBar
+        barStyle="dark-content"
+        translucent={true}
+        backgroundColor="transparent"
+      />
       <InterestsModal showModal={showModal} setShowModal={setShowModal} />
       <ScrollView
-        contentContainerStyle={{ paddingBottom: 30 }}
+        contentContainerStyle={{ paddingBottom: 30, flexGrow: 1 }}
         scrollEnabled={!isEditingProfile}
         className="relative "
       >
-        <UserSettings
-          setIsEditingProfile={setIsEditingProfile}
-          isEditingProfile={isEditingProfile}
-        />
+        
+          <UserSettings
+            setIsEditingProfile={setIsEditingProfile}
+            isEditingProfile={isEditingProfile}
+          />
+  
         <Animated.View style={animatedStyles}>
           <View className="flex flex-row justify-between items-center ">
             <TouchableOpacity
@@ -73,7 +81,7 @@ const Profile = () => {
               <AntDesign name="arrowleft" size={24} color="black" />
             </TouchableOpacity>
             <Text
-              className={`text-3xl text-center mt-10 font-bold font-inter-medium `}
+              className={`text-3xl text-center mt-10 mb-6 font-bold font-inter-medium `}
             >
               Profile
             </Text>
@@ -85,26 +93,27 @@ const Profile = () => {
               <FontAwesome name="pencil" size={24} color="black" />
             </Pressable>
           </View>
-          <View className="flex flex-row relative justify-center  mt-5 ">
-            {/* <Image className="w-40 top-1/2 -translate-y-1/2 absolute -left-[70px] bg-yellow-100 h-40  rounded-2xl my-2 rotate-[20deg]"></Image> */}
+          <View className="flex flex-row relative items-center  mt-5 ">
+    
             <Image
-              className="w-44 bg-pink-100 h-44 rounded-3xl my-2 self-center shadow-md"
+              className="w-36 bg-pink-100 h-36 rounded-3xl m-2 mr-4 self-center shadow-md"
               source={require("../../assets/images/pfp-demo-1.jpg")}
             />
-            {/* <Image className="w-40 top-1/2 -translate-y-1/2  absolute -right-[70px] bg-blue-100 h-40 rounded-2xl my-2 -rotate-[20deg]"></Image> */}
-          </View>
-          <View>
-            <Text className="text-4xl font-bold text-center mt-8 font-poppins-medium mb-2">
+            <View className="ml-5 ont-interTight-regular">
+            <Text className="text-4xl font-bold text-center  mb-2">
               John Doe
             </Text>
-            <Text className="text-center text-md text-gray-500 mb-2">
-              #TheMinimalist
-            </Text>
-            <Text className="text-center font-interTight-regular italic">
+          
+            <Text className="text-center  italic">
               {userData?.description}
             </Text>
+              <Text className="text-center text-sm text-md w-36 border-[1px] border-[#3f4f84] font-medium text-[#3f4f84]s self-center rounded-full bg-[#c9d3f53b]  my-3 py-2 ">
+              #TheMinimalist
+            </Text>
           </View>
-          <View className="mx-8">
+          </View>
+
+          <View className="px-4">
             <View className="flex flex-row justify-between mt-5">
               <Text className="text-xl font-medium">Interests</Text>
               <TouchableOpacity onPress={() => setShowModal(true)}>
@@ -115,11 +124,11 @@ const Profile = () => {
               {userData?.interests?.map((item, index) => (
                 <TouchableOpacity
                   key={index}
-                  className={` rounded-full px-4 py-2 mr-2 mb-2 bg-[#fcd9be88]  border-2 text-[#FCD9BE] border-[#FCD9BE]`}
+                  className={` rounded-full px-4 py-2 mr-2 mb-2 bg-[#fbe1cd88]  border-[1px]  border-[#a3693c]`}
                 >
                   <Text
-                    className="font-interTight-medium  text-center"
-                    style={{ color: fashionInterestColors[item].text }}
+                    className="font-interTight-medium text-[#a3693c] text-center"
+                   
                   >
                     {item}
                   </Text>
@@ -144,18 +153,18 @@ const Profile = () => {
           </View> */}
 
           <View className="flex-row justify-between flex-wrap gap-3 px-4">
-            <View className="flex-1 bg-[#8c9dff81] rounded-xl p-4">
+            <View className=" bg-[#a9b5f781] border-[1px] border-[#6279ff] rounded-xl p-4 w-44">
               <AntDesign name="hearto" size={24} color="#000" />
               <Text className="text-xl font-bold">45</Text>
               <Text>Liked Posts</Text>
             </View>
 
-            <View className="flex-1 bg-[#afc94766] rounded-xl p-4">
+            <View className=" bg-[#bdd07166] rounded-xl w-44 p-4">
               <Feather name="lock" size={24} color="#000" />
               <Text className="text-xl font-bold">10</Text>
               <Text>Saved Posts</Text>
             </View>
-            <View className="flex-1 bg-[#f467406c] rounded-xl p-4">
+            <View className=" bg-[#f3886a6c] rounded-xl w-44 p-4">
               <MaterialIcons name="drafts" size={24} color="#000" />
               <Text className="text-xl font-bold">5</Text>
               <Text>Drafts</Text>
