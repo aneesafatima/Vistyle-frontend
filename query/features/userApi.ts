@@ -21,7 +21,23 @@ export const userApi = createApi({
         };
       },
     }),
+    updateUserPassword: builder.mutation({
+      query: ({
+        data,
+        userId,
+      }: {
+        data: { password: string; newpassword: string };
+        userId: string;
+      }) => {
+        return {
+          url: `/update-password/${userId}`,
+          method: "PATCH",
+          body: data,
+        };
+      },
+    }),
   }),
 });
 
-export const { useUpdateUserDetailsMutation } = userApi;
+export const { useUpdateUserDetailsMutation, useUpdateUserPasswordMutation } =
+  userApi;

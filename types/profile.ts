@@ -20,13 +20,13 @@ type updatedUserDataType = Pick<
   userDataType,
   "name" | "description" | "designHouse"
 > & {
-  password?: string;
-  passwordConfirm?: string;
-  newpassword?: string;
+  password?: string | undefined;
+  passwordConfirm?: string | undefined;
+  newpassword?: string | undefined;
 };
 type EditProfileType = {
   label: string;
   placeholder?: string;
   type: "text" | "password";
   name: keyof updatedUserDataType;
-}
+};

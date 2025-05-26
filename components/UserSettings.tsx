@@ -11,11 +11,12 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useContext, useEffect } from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { GlobalContext } from "@/context/GlobalProvider";
-import { Shadow } from "react-native-shadow-2";
 import CustomDropdown from "./customDropdown";
-import { useUpdateUserDetailsMutation } from "@/query/features/userApi";
+import {
+  useUpdateUserDetailsMutation,
+  useUpdateUserPasswordMutation,
+} from "@/query/features/userApi";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Animated, {
@@ -25,21 +26,38 @@ import Animated, {
   Easing,
 } from "react-native-reanimated";
 import { Controller, useForm } from "react-hook-form";
+import { SafeAreaView } from "react-native-safe-area-context";
 const userDetailsSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
-    description: z.string(),
-    password: z.string().min(8, "Password must be at least 8 characters"),
-    newpassword: z.string().min(8, "Password must be at least 8 characters"),
+    description: z.string().optional(),
+    password: z
+      .string()
+      .min(8, "Password must be at least 8 characters")
+      .optional(),
+    newpassword: z
+      .string()
+      .min(8, "Password must be at least 8 characters")
+      .optional(),
     passwordConfirm: z
       .string()
-      .min(8, "Password must be at least 8 characters"),
+      .min(8, "Password must be at least 8 characters")
+      .optional(),
     designHouse: z.string().nonempty("Design House is required"),
   })
-  .refine((data) => data.newpassword === data.passwordConfirm, {
-    message: "Passwords do not match",
-    path: ["passwordConfirm"],
-  });
+  .refine(
+    (data) => {
+      // Only validate if any password field is filled
+      if (data.password || data.newpassword || data.passwordConfirm) {
+        return data.newpassword === data.passwordConfirm;
+      }
+      return true;
+    },
+    {
+      message: "Passwords must match",
+      path: ["passwordConfirm"],
+    }
+  );
 
 const UserSettings = ({
   setIsEditingProfile,
@@ -48,11 +66,10 @@ const UserSettings = ({
   setIsEditingProfile: React.Dispatch<React.SetStateAction<boolean>>;
   isEditingProfile: boolean;
 }) => {
-  const { userData, updatedUserData, setUpdatedUserData } =
-    useContext(GlobalContext)!;
+  const { userData, setUserData } = useContext(GlobalContext)!;
 
-  const [updateUserDetails, { isLoading }] = useUpdateUserDetailsMutation();
-
+  const [updateUserDetails] = useUpdateUserDetailsMutation();
+  const [updateUserPassword] = useUpdateUserPasswordMutation();
   const {
     control,
     handleSubmit,
@@ -62,9 +79,6 @@ const UserSettings = ({
     defaultValues: {
       name: userData?.name || "",
       description: userData?.description || "",
-      password: "........",
-      newpassword: "........",
-      passwordConfirm: ".........",
       designHouse: userData?.designHouse || "theminimalist",
     },
   });
@@ -76,14 +90,6 @@ const UserSettings = ({
   }));
 
   useEffect(() => {
-    setUpdatedUserData({
-      name: userData?.name || "",
-      description: userData?.description || "",
-      designHouse: userData?.designHouse || "theminimalist",
-    });
-  }, []);
-
-  useEffect(() => {
     translate.value = withTiming(isEditingProfile ? 0 : screenWidth, {
       duration: 300,
       easing: Easing.inOut(Easing.ease),
@@ -91,13 +97,29 @@ const UserSettings = ({
   }, [isEditingProfile]);
 
   const handleUpdationResult = async (data: updatedUserDataType) => {
-    console.log("In handleUpdationResult");
+    const excludedFields = ["password", "newpassword", "passwordConfirm"];
+    console.log("In handleUpdationResult", data);
+    const generalData = Object.fromEntries(
+      Object.entries(data).filter(([key]) => !excludedFields.includes(key))
+    ) as updatedUserDataType;
     try {
+      console.log("Nornmal user data being updated");
       const result = await updateUserDetails({
         userId: userData?.id ?? "",
-        data,
+        data: generalData,
       }).unwrap();
       console.log(result);
+      if (data.password && data.newpassword && data.passwordConfirm) {
+        console.log("Updating password");
+        await updateUserPassword({
+          userId: userData?.id ?? "",
+          data: {
+            password: data.password,
+            newpassword: data.newpassword,
+          },
+        }).unwrap();
+      }
+      setUserData(result.data);
       setIsEditingProfile(false);
     } catch (error: any) {
       console.log(error);
@@ -145,84 +167,88 @@ const UserSettings = ({
   ];
 
   return (
-    <Animated.View style={animatedStyles}>
-      <StatusBar
-        barStyle="dark-content"
-        translucent={true}
-        backgroundColor="#fcd9be88"
-      />
-      <View className="px-10 absolute top-0 pt-2 bottom-0 h-screen flex-1 w-screen bg-[#fcd9be88] z-20">
-        {/* Header */}
-        <View className="mt-12 flex flex-row justify-between">
-          <Pressable onPress={() => setIsEditingProfile(false)}>
-            <Ionicons name="chevron-back-outline" size={24} color="black" />
-          </Pressable>
-          <Text className="text-black font-interTight-bold font-semibold text-2xl mb-3 text-center">
-            Edit Profile
-          </Text>
-          <TouchableOpacity onPress={handleSubmit(handleUpdationResult)}>
-            <Ionicons name="checkmark" size={24} color="black" />
-          </TouchableOpacity>
-        </View>
+    <SafeAreaView>
+      <Animated.View style={animatedStyles}>
+        <StatusBar
+          barStyle="dark-content"
+          translucent={false}
+          animated={true}
+          backgroundColor="#fcd9be88"
+        />
+        <View className="px-10   flex-1 w-screen bg-[#fcd9be88] z-20 ">
+          {/* Header */}
+          <View className="mt-12 flex flex-row justify-between">
+            <Pressable onPress={() => setIsEditingProfile(false)}>
+              <Ionicons name="chevron-back-outline" size={24} color="black" />
+            </Pressable>
+            <Text className="text-black font-interTight-bold font-semibold text-2xl mb-3 text-center">
+              Edit Profile
+            </Text>
+            <TouchableOpacity
+              onPress={handleSubmit(handleUpdationResult, (errors) =>
+                console.log(errors)
+              )}
+            >
+              <Ionicons name="checkmark" size={24} color="black" />
+            </TouchableOpacity>
+          </View>
 
-        {/* Avatar */}
-        <View className="flex flex-row relative justify-center">
-          <Image
-            className="w-44 bg-pink-100 h-44 rounded-3xl my-2 self-center shadow-md"
-            source={require("../assets/images/pfp-demo-1.jpg")}
-          />
-        </View>
-        <Text className="text-center text-gray-800 mb-5">@johndoe</Text>
-        {EditableElements.map((element, index) => {
-          if (element.name == "designHouse")
-            return (
-              <View
-                className="my-6 w-[200px] flex justify-centerborder-[1px]  border-[#8c9dff69] rounded-xl "
-                key={index}
-              >
-                <View>
-                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2  bg-transparent font-bold z-20 text-[#8c9dffa7]">
+          {/* Avatar */}
+          <View className="flex flex-row relative justify-center">
+            <Image
+              className="w-36 bg-pink-100 h-36 rounded-full my-2 self-center shadow-md"
+              source={require("../assets/images/pfp-demo-1.jpg")}
+            />
+          </View>
+          <Text className="text-center text-gray-800 mb-5">@johndoe</Text>
+          {EditableElements.map((element, index) => {
+            if (element.name == "designHouse")
+              return (
+                <View
+                  className={`my-6 w-[200px] flex  rounded-xl relative`}
+                  key={index}
+                >
+                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2  bg-[#feeae2]  font-bold z-20 text-[#8c9dffa7]">
                     Design House
                   </Text>
                   <CustomDropdown />
                 </View>
+              );
+
+            return (
+              <View key={index} className="flex flex-col  my-6">
+                <View className="relative    h-16 mx-2">
+                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-[#feeae2]  z-20 text-[#8c9dffbe]  font-bold mb-1">
+                    {element.label}
+                  </Text>
+                  <View className="relative flex justify-center  ">
+                    <Controller
+                      control={control}
+                      name={element.name}
+                      render={({ field: { onChange, value } }) => (
+                        <TextInput
+                          className="border-[1px] w-full h-full rounded-xl border-[#8c9dff69] focus:border-[#8c9dffc2] text-base text-[#444444] px-4 py-3 pr-10"
+                          editable={true}
+                          value={value || ""}
+                          onChangeText={onChange}
+                          placeholder={element.placeholder}
+                          secureTextEntry={element.type === "password"}
+                        />
+                      )}
+                    />
+                  </View>
+                  {errors[element.name] && (
+                    <Text className="absolute top-14 left-3 my-3 text-[#f467409a] font-interTight-medium">
+                      {errors[element.name]?.message}
+                    </Text>
+                  )}
+                </View>
               </View>
             );
-
-          return (
-            <View key={index} className="flex flex-col items-center my-6">
-              /
-              <View className="relative border-[1px] border-[#8c9dff69] rounded-xl h-16 w-[320px]">
-                <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-transparent z-20 text-[#8c9dffc5] font-bold mb-1">
-                  {element.label}
-                </Text>
-                <View className="relative w-[320px] rounded-xl flex justify-center h-full px-4">
-                  <Controller
-                    control={control}
-                    name={element.name}
-                    render={({ field: { onChange, value } }) => (
-                      <TextInput
-                        className="focus:border-[#7F56D9] text-base text-[#444444] px-4 py-3 pr-10"
-                        editable
-                        value={value}
-                        onChangeText={onChange}
-                        placeholder={element.placeholder}
-                        secureTextEntry={element.type === "password"}
-                      />
-                    )}
-                  />
-                </View>
-                {errors[element.name] && (
-                  <Text className="absolute top-14 left-3 my-3 text-[#f467409a] font-interTight-medium">
-                    {errors[element.name]?.message}
-                  </Text>
-                )}
-              </View>
-            </View>
-          );
-        })}
-      </View>
-    </Animated.View>
+          })}
+        </View>
+      </Animated.View>
+    </SafeAreaView>
   );
 };
 

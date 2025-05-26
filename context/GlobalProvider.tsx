@@ -25,6 +25,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [updatedUserData, setUpdatedUserData] =
     useState<null | updatedUserDataType>(null);
+   
 
   return (
     <GlobalContext.Provider
