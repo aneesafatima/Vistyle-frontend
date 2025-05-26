@@ -8,6 +8,7 @@ import {
   Dimensions,
   ScrollView,
   StatusBar,
+  Alert,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useContext, useEffect } from "react";
@@ -27,27 +28,36 @@ import Animated, {
 } from "react-native-reanimated";
 import { Controller, useForm } from "react-hook-form";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { EditableElements } from "@/assets/ui-data/data";
 const userDetailsSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
     description: z.string().optional(),
     password: z
       .string()
-      .min(8, "Password must be at least 8 characters")
-      .optional(),
+      .transform((val) => (val === "" ? undefined : val))
+      .optional()
+      .refine((val) => !val || val.length >= 8, {
+        message: "Password must be at least 8 characters",
+      }),
     newpassword: z
       .string()
-      .min(8, "Password must be at least 8 characters")
-      .optional(),
+      .transform((val) => (val === "" ? undefined : val))
+      .optional()
+      .refine((val) => !val || val.length >= 8, {
+        message: "Password must be at least 8 characters",
+      }),
     passwordConfirm: z
       .string()
-      .min(8, "Password must be at least 8 characters")
-      .optional(),
+      .transform((val) => (val === "" ? undefined : val))
+      .optional()
+      .refine((val) => !val || val.length >= 8, {
+        message: "Password must be at least 8 characters",
+      }),
     designHouse: z.string().nonempty("Design House is required"),
   })
   .refine(
     (data) => {
-      // Only validate if any password field is filled
       if (data.password || data.newpassword || data.passwordConfirm) {
         return data.newpassword === data.passwordConfirm;
       }
@@ -98,20 +108,20 @@ const UserSettings = ({
 
   const handleUpdationResult = async (data: updatedUserDataType) => {
     const excludedFields = ["password", "newpassword", "passwordConfirm"];
-    console.log("In handleUpdationResult", data);
     const generalData = Object.fromEntries(
       Object.entries(data).filter(([key]) => !excludedFields.includes(key))
     ) as updatedUserDataType;
+    console.log("General Data:", generalData);
     try {
       console.log("Nornmal user data being updated");
       const result = await updateUserDetails({
         userId: userData?.id ?? "",
         data: generalData,
       }).unwrap();
-      console.log(result);
       if (data.password && data.newpassword && data.passwordConfirm) {
         console.log("Updating password");
-        await updateUserPassword({
+
+        const passwordData = await updateUserPassword({
           userId: userData?.id ?? "",
           data: {
             password: data.password,
@@ -122,49 +132,12 @@ const UserSettings = ({
       setUserData(result.data);
       setIsEditingProfile(false);
     } catch (error: any) {
-      console.log(error);
+      Alert.alert("Error", error?.data?.message || "Failed to update profile"); // use a toast
     } finally {
       setIsEditingProfile(false);
     }
   };
   if (!isEditingProfile) return null; // Prevent rendering if not editing profile
-  const EditableElements: EditProfileType[] = [
-    {
-      label: "Name",
-      name: "name",
-      placeholder: "Enter your name",
-      type: "text",
-    },
-    {
-      label: "Description",
-      name: "description",
-      placeholder: "Your fashion mantra",
-      type: "text",
-    },
-    {
-      label: "Design House",
-      name: "designHouse",
-      type: "text",
-    },
-    {
-      label: "Password",
-      name: "password",
-      placeholder: "Enter your current password",
-      type: "password",
-    },
-    {
-      label: "New Password",
-      name: "newpassword",
-      placeholder: "Enter a new password",
-      type: "password",
-    },
-    {
-      label: "Confirm New Password",
-      name: "passwordConfirm",
-      placeholder: "Confirm your new password",
-      type: "password",
-    },
-  ];
 
   return (
     <SafeAreaView>

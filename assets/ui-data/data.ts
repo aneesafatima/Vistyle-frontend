@@ -42,4 +42,40 @@ export const fashionInterestColors: Record<
   grunge: { bg: "#C3C78F", text: "#3D4022" },       // Dirty olive-green, softened
   chic: { bg: "#F0D8A8", text: "#6A5A3F" },         // Refined golden beige
 };
-
+export const EditableElements: EditProfileType[] = [
+    {
+      label: "Name",
+      name: "name",
+      placeholder: "Enter your name",
+      type: "text",
+    },
+    {
+      label: "Description",
+      name: "description",
+      placeholder: "Your fashion mantra",
+      type: "text",
+    },
+    {
+      label: "Design House",
+      name: "designHouse",
+      type: "text",
+    },
+    {
+      label: "Password",
+      name: "password",
+      placeholder: "Enter your current password",
+      type: "password",
+    },
+    {
+      label: "New Password",
+      name: "newpassword",
+      placeholder: "Enter a new password",
+      type: "password",
+    },
+    {
+      label: "Confirm New Password",
+      name: "passwordConfirm",
+      placeholder: "Confirm your new password",
+      type: "password",
+    },
+  ];

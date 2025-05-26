@@ -6,7 +6,7 @@ import { GlobalContext } from "@/context/GlobalProvider";
 import {
   FashionInterest,
   fashionInterestColors,
-} from "@/assets/ui-data/colors";
+} from "@/assets/ui-data/data";
 
 const InterestsModal = ({
   showModal,
@@ -40,10 +40,12 @@ const InterestsModal = ({
       style={{
         margin: 0,
         display: "flex",
+        alignItems: "center",
+        flex: 1,
         justifyContent: "flex-end",
       }}
     >
-      <View className="bg-white rounded-lg p-4 pb-6">
+      <View className="bg-white rounded-lg p-4 pb-6  w-full">
         {userData?.interests && userData.interests.length >= 3 && (
           <Pressable
             className="absolute top-4 right-4"

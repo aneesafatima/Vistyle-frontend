@@ -23,7 +23,7 @@ import Feather from "@expo/vector-icons/Feather";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useFonts } from "expo-font";
 import { useContext, useEffect, useState } from "react";
-import { fashionInterestColors } from "../../assets/ui-data/colors";
+import { fashionInterestColors } from "../../assets/ui-data/data";
 import { InterestsModal } from "@/components";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { UserSettings } from "@/components";
@@ -57,7 +57,7 @@ const Profile = () => {
     console.log("User Data:", userData);
   }, [userData])
   return (
-    <SafeAreaView className="bg-white flex-1 ">
+    <SafeAreaView className="bg-white flex-1 relative">
       <StatusBar
         barStyle="dark-content"
         translucent={false}
@@ -66,7 +66,6 @@ const Profile = () => {
       <InterestsModal showModal={showModal} setShowModal={setShowModal} />
       <ScrollView
         contentContainerStyle={{ paddingBottom: 10}}
-        // scrollEnabled={!isEditingProfile}
         showsVerticalScrollIndicator={false}
         className="relative "
       >
@@ -99,7 +98,7 @@ const Profile = () => {
           </View>
 
 
-    <View className="mt-7 mx-2 flex flex-row relative items-center py-2 rounded-xl shadow-md shadow-zinc-400 bg-white">
+    <View className="mt-7 mx-2 flex flex-row relative items-center py-10 justify-center rounded-xl shadow-md shadow-zinc-400 bg-white">
       <Image
         className="w-32 h-32 rounded-full bg-pink-100 m-2 self-center"
         source={require("../../assets/images/pfp-demo-1.jpg")}
