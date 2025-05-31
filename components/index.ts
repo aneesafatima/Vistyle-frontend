@@ -5,3 +5,4 @@ export { default as ProductsList } from "./ProductsList";
 export { default as InterestsModal } from "./InterestsModal";
 export { default as UserSettings } from "./UserSettings";
 export { default as Alert } from "./Alert";
+export { default as StickerItems } from "./StickerItems";

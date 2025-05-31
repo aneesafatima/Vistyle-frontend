@@ -51,6 +51,7 @@
     "react-native": "^0.76.8",
     "react-native-canvas": "^0.1.40",
     "react-native-dropdown-picker": "^5.4.6",
+    "react-native-gesture-handler": "^2.25.0",
     "react-native-iconify": "^2.0.3",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-modal": "^14.0.0-rc.1",

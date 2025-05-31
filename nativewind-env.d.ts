@@ -29,7 +29,7 @@ declare module "react-native" {
   interface ImageProps {
     className?: string;
   }
-  interface IconifyProps {
+  interface CanvasProps {
     className?: string;
   }
 }
