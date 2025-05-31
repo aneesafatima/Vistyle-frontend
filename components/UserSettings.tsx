@@ -59,12 +59,12 @@ const userDetailsSchema = z
   .refine(
     (data) => {
       if (data.password || data.newpassword || data.passwordConfirm) {
-        return data.newpassword === data.passwordConfirm;
+        return data.password && data.newpassword === data.passwordConfirm;
       }
       return true;
     },
     {
-      message: "Passwords must match",
+      message: "Passwords must match and all password fields must be filled",
       path: ["passwordConfirm"],
     }
   );

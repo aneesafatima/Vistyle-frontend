@@ -98,10 +98,10 @@ const Profile = () => {
           </View>
 
 
-    <View className="mt-7 mx-2 flex flex-row relative items-center py-10 justify-center rounded-xl shadow-md shadow-zinc-400 bg-white">
+    <View className="mt-7 mx-2 flex flex-row relative items-center py-5 justify-center rounded-xl shadow-md shadow-zinc-400 bg-white">
       <Image
-        className="w-32 h-32 rounded-full bg-pink-100 m-2 self-center"
-        source={require("../../assets/images/pfp-demo-1.jpg")}
+        className="w-32 h-32 rounded-full bg-pink-100 m-2 bg-contain self-center"
+        source={require("../../assets/images/avatar-pfp.jpg")}
       />
       <View className="ml-5 font-interTight-regular flex flex-col justify-center">
         <Text className="text-2xl font-bold text-center mb-2">{userData?.name}</Text>

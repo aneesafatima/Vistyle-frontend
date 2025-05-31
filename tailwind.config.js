@@ -13,11 +13,11 @@ module.exports = {
         "interTight-bold": ["interTight-bold"],
         "interTight-medium": ["interTight-medium"],
         "interTight-regular": ["interTight-regular"],
-   
+        "freckle-face-regular": ["freckle-face"],
       },
     },
   },
-    corePlugins: {
+  corePlugins: {
     backgroundOpacity: true,
   },
   plugins: [],

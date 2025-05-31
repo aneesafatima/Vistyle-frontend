@@ -25,8 +25,10 @@ const HomePage = () => {
         "interTight-bold": require("../assets/fonts/InterTight-Bold.ttf"),
         "interTight-medium": require("../assets/fonts/InterTight-Medium.ttf"),
         "interTight-regular": require("../assets/fonts/InterTight-Regular.ttf"),
+        "freckle-face": require("../assets/fonts/FreckleFace-Regular.ttf"),
       });
     };
+
     getToken().then((val) => {
       val && setToken(val);
     });

@@ -39,7 +39,7 @@ function isAlpha(
 ) {
   if (x < 0 || x >= width || y < 0 || y >= height) return 0;
   const index = (y * width + x) * 4 + 3; // Alpha channel index
-  return pixels[index] > 25 ? 1 : 0; // Check if the alpha value is greater than 0
+  return pixels[index] > 125 ? 1 : 0; // Check if the alpha value is greater than 0
 }
 let tx: number, ty: number;
 export function traceOutline(
@@ -55,7 +55,7 @@ export function traceOutline(
   console.log("Width: ", width, " Height: ", height);
   let isChecked = new Set<string>();
   let path: { x: number; y: number }[] = []; //here [number, number] is a tuple of x and y coordinates
-  let dir = 0; // Start direction (0: right, 1: down, 2: left, 3: up)
+  let dir = 0;
   if (!(pixels instanceof Uint8Array)) {
     console.log("No pixels found");
     return;
@@ -67,7 +67,7 @@ export function traceOutline(
       const down = isAlpha(x, y + 1, width, height, pixels);
       const diag = isAlpha(x + 1, y + 1, width, height, pixels);
       const sum = right + down + diag;
-      if (sum > 0 && sum < 3 && current === 1) {
+      if (sum < 3 && current === 1) {
         console.log("Sum: ", sum);
         path.push({ x, y });
         console.log("First edge pixel found at: ", x, y);
@@ -89,15 +89,14 @@ export function traceOutline(
   console.log("width: ", width, " height: ", height);
   const MAX_LOOPS = width * height; // Maximum number of loops to prevent infinite loop
   do {
-    if (loopCounter > MAX_LOOPS) break;
     loopCounter++;
     isChecked.add(`${x},${y}`);
     for (let i = 0; i < 5; i++) {
-      let ndir;
-      if ((dir + i) / 4 === 1) ndir = 4;
-      else ndir = (dir + i) % 4;
-      const ny = y + dy[ndir];
-      const nx = x + dx[ndir];
+      // let ndir;
+      // if ((dir + i) === 4) ndir = 4;
+      // else ndir = (dir + i) % 4;
+      const ny = y + dy[i];
+      const nx = x + dx[i];
       if (
         isAlpha(nx, ny, width, height, pixels) &&
         !isChecked.has(`${nx},${ny}`)
@@ -122,14 +121,15 @@ export function traceOutline(
 
         if (hasTransparentNeighbor) {
           path.push({ x: nx, y: ny });
-          dir = ndir;
+          // console.log("Next edge pixel found at: ", nx, ny);
+          dir = 0;
           x = nx;
           y = ny;
           break;
         }
       }
     }
-  } while (x !== path[0].x || y !== path[0].y);
+  } while ((x !== path[0].x || y !== path[0].y) && loopCounter < MAX_LOOPS);
   console.log("Path work completed");
   const outline = Skia.Path.Make();
   // path = smoothPointsChaikin(path, 2); // Smooth the path using Chaikin's algorithm

@@ -18,7 +18,8 @@ const ShoppingItemCard = ({ item }: { item: ItemProps }) => {
       skip: !stickerStatus,
     }
   );
-  const { segmentItem } = useImageProcessing(data?.imgUrl || "", setStickerStatus);//change its structure
+  // const { segmentItem } = useImageProcessing(data?.imgUrl || "", setStickerStatus);//change its structure
+  const { segmentItem } = useImageProcessing("https://res.cloudinary.com/dhjykjehw/image/upload/v1748521687/vistyl/test-img2.png" || "", setStickerStatus);//change its structure
 
   useEffect(() => {
     // const doSegmentation = () => {
