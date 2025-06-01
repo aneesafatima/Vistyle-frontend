@@ -24,7 +24,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useFonts } from "expo-font";
 import { useContext, useEffect, useState } from "react";
 import { fashionInterestColors } from "../../assets/ui-data/data";
-import { InterestsModal } from "@/components";
+import { Modal } from "@/components";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { UserSettings } from "@/components";
 
@@ -63,7 +63,7 @@ const Profile = () => {
         translucent={false}
         backgroundColor="transparent"
       />
-      <InterestsModal showModal={showModal} setShowModal={setShowModal} />
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <ScrollView
         contentContainerStyle={{ paddingBottom: 10}}
         showsVerticalScrollIndicator={false}

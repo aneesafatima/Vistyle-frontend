@@ -15,7 +15,6 @@ type GlobalContextType = {
   >;
 };
 
-
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
@@ -25,7 +24,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [updatedUserData, setUpdatedUserData] =
     useState<null | updatedUserDataType>(null);
-   
+
 
   return (
     <GlobalContext.Provider

@@ -23,7 +23,7 @@ const Alert = ({
       {/* Info Row */}
       <View className="flex-row p-5 bg-white w-80  rounded-[25px] shadow-lg">
        <View>
-        <Iconify icon="ic:round-info" size={30} color="#9eadffd9" />
+        <Iconify icon="ic:round-info" size={30} color="#ffb677" />
         </View> 
         <View className="flex flex-col ml-2">
           <Text className="font-bold text-black text-lg uppercase ">
@@ -41,7 +41,7 @@ const Alert = ({
               </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={onAccept}>
-              <Text className="text-base text-white bg-[#9eadffd9] px-4 py-1 rounded-full font-medium">
+              <Text className="text-base text-white bg-[#ffb677] px-4 py-1 rounded-full font-medium">
                 {onAcceptText}
               </Text>
             </TouchableOpacity>

@@ -18,27 +18,28 @@ const StickerItems = ({
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [{ scale: scale.value }],
   }));
+
   React.useEffect(() => {
-    scale.value = withSpring(isSelected ? 1.15 : 1, { damping: 10 });
+    scale.value = withSpring(isSelected ? 1.12 : 1, { damping: 10 });
   }, [isSelected]);
 
   return (
-    <Animated.View style={[animatedStyle]}>
+    <>
       <TouchableOpacity
         onPress={() => {
           setIsSelected(!isSelected);
           setSelected(item);
         }}
         activeOpacity={1}
-        className="py-4 "
+        className={`w-40 border-[#222831] border-r-2 flex justify-center items-center ${
+          isSelected && "bg-[#e3e2e2] relative"
+        }`}
       >
-        <Image
-          source={item}
-          resizeMode="contain"
-          className="w-32 h-full mx-3"
-        />
+        <Animated.View style={[animatedStyle]}>
+          <Image source={item} resizeMode="contain" className="w-32 h-full " />
+        </Animated.View>
       </TouchableOpacity>
-    </Animated.View>
+    </>
   );
 };
 
