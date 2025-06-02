@@ -33,7 +33,7 @@ type selectedType = {
 const CustomDropdown = () => {
   const { userData, updatedUserData, setUpdatedUserData } =
     useContext(GlobalContext)!;
-    const [showOptions, setShowOptions] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const [selected, setSelected] = useState<selectedType>();
   // const [showOptions, setShowOptions] = useState(false);
   const height = useSharedValue(0);
@@ -80,27 +80,33 @@ const CustomDropdown = () => {
   return (
     <View>
       <TouchableOpacity
-        className={`flex-row ml-2 justify-between items-center  border-[1px] h-16  ${showOptions ? "border-[#8c9dffc2] " : "border-[#8c9dff69]"}  bg-transparent font-bold  text-[#8c9dffa7]  px-4 py-3 rounded-xl w-full`}
+        className={`flex-row ml-2 justify-between items-center  border-[1px] h-16  ${
+          showOptions ? "border-[#8c9dffc2] " : "border-[#8c9dff69]"
+        }  bg-transparent font-bold  text-[#8c9dffa7]  px-4 py-3 rounded-xl w-full`}
         onPress={() => toggleAnimation()}
       >
-        <Text className="text-base text-gray-700">
+        <Text className="text-base text-[#f2f2f2] ">
           {selected ? selected.label : "The Minimalist"}
         </Text>
         <AntDesign name="down" size={16} color="#4B5563" />
       </TouchableOpacity>
 
       {showOptions && (
-        <View className={`rounded-xl border-[1px]   ${showOptions ? "border-[#8c9dffc2] " : "border-[#8c9dff69]"}    ml-2    w-[200px] mt-4`}>
+        <View
+          className={`rounded-xl border-[1px]   ${
+            showOptions ? "border-[#8c9dffc2] " : "border-[#8c9dff69]"
+          }    ml-2    w-[200px] mt-4`}
+        >
           <Animated.View style={animatedStyles}>
             <View className="">
               <ScrollView>
                 {designHouses.map((item) => (
                   <TouchableOpacity
                     key={item.value}
-                    className="px-4 py-3 border-b border-gray-200"
+                    className="px-4 py-3 border-b border-[#181818bd]"
                     onPress={() => handleSelect(item)}
                   >
-                    <Text className="text-base text-gray-700">
+                    <Text className="text-base text-[#f2f2f2a2] ">
                       {item.label}
                     </Text>
                   </TouchableOpacity>

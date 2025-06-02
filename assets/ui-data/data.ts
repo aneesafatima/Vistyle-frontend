@@ -80,14 +80,4 @@ export const EditableElements: EditProfileType[] = [
   },
 ];
 
-export const demoClothes: number[] = [
-  require("@/assets/images/top-1.png"),
-  require("@/assets/images/top-2.png"),
-  require("@/assets/images/top-3.png"),
-  require("@/assets/images/bottom-1.png"),
-  require("@/assets/images/bottom-2.png"),
-  require("@/assets/images/bottom-3.png"),
-  require("@/assets/images/shoes-1.png"),
-  require("@/assets/images/shoes-2.png"),
-  require("@/assets/images/shoes-3.png"),
-];
+

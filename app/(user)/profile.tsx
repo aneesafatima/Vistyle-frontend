@@ -23,7 +23,6 @@ import Feather from "@expo/vector-icons/Feather";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useFonts } from "expo-font";
 import { useContext, useEffect, useState } from "react";
-import { fashionInterestColors } from "../../assets/ui-data/data";
 import { Modal } from "@/components";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { UserSettings } from "@/components";
@@ -89,11 +88,11 @@ const Profile = () => {
               Profile
             </Text>
             <Pressable
-              className={`bg-[#f2f2f2] rounded-full w-16 h-16  mx-5 flex items-center justify-center
+              className={`bg-[#222831] rounded-full w-16 h-16  mx-5 flex items-center justify-center
             `}
               onPress={() => setIsEditingProfile(true)}
             >
-              <FontAwesome name="pencil" size={24} color="black" />
+              <FontAwesome name="pencil" size={24} color="#f2f2f2" />
             </Pressable>
           </View>
 

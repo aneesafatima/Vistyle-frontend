@@ -31,12 +31,26 @@ const StickerItems = ({
           setSelected(item);
         }}
         activeOpacity={1}
-        className={`w-40 border-[#222831] border-r-2 flex justify-center items-center ${
+        className={`w-40 border-[#222831] border-r-2  ${
           isSelected && "bg-[#e3e2e2] relative"
         }`}
       >
-        <Animated.View style={[animatedStyle]}>
-          <Image source={item} resizeMode="contain" className="w-32 h-full " />
+        <Animated.View
+          style={[
+            animatedStyle,
+            {
+              display: "flex",
+              height: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+            },
+          ]}
+        >
+          <Image
+            source={item}
+            resizeMode="contain"
+            className="w-32 h-32"
+          />
         </Animated.View>
       </TouchableOpacity>
     </>

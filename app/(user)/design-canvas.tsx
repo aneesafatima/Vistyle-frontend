@@ -16,11 +16,21 @@ import {
   PostsModal,
 } from "@/components";
 import { FlatList } from "react-native-gesture-handler";
-import { demoClothes } from "@/assets/ui-data/data";
 
 const { width, height } = Dimensions.get("window");
 
 const DesignCanvas = () => {
+  const [demoClothes, setDemoClothes] = useState<number[]>([
+    require("@/assets/images/top-1.png"),
+    require("@/assets/images/top-2.png"),
+    require("@/assets/images/top-3.png"),
+    require("@/assets/images/bottom-1.png"),
+    require("@/assets/images/bottom-2.png"),
+    require("@/assets/images/bottom-3.png"),
+    require("@/assets/images/shoes-1.png"),
+    require("@/assets/images/shoes-2.png"),
+    require("@/assets/images/shoes-3.png"),
+  ]);
   const [showAlert, setShowAlert] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
   const [stickers, setStickers] = useState<Sticker[]>([]);
@@ -28,6 +38,7 @@ const DesignCanvas = () => {
 
   const handleItemInsertion = (event: any) => {
     if (selected == null) return; // No item selected
+    setDemoClothes((prev) => prev.filter((item) => item !== selected)); // Remove the selected item from the list
     setStickers([
       ...stickers,
       {
@@ -65,7 +76,6 @@ const DesignCanvas = () => {
         <View className="h-full bg-[#222831] relative">
           {/* Canvas Container */}
           <View
-            pointerEvents="box-none"
             className="bg-[#F9F9FB] flex-grow mb-2 m-3 rounded-[24px] relative z-10"
             onTouchStart={handleItemInsertion}
           >

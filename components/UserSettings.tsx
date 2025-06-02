@@ -140,30 +140,30 @@ const UserSettings = ({
   if (!isEditingProfile) return null; // Prevent rendering if not editing profile
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1 bg-[#222831]">
       <Animated.View style={animatedStyles}>
         <StatusBar
-          barStyle="dark-content"
+          barStyle="light-content"
           translucent={false}
           animated={true}
-          backgroundColor="#fcd9be88"
+          backgroundColor="#222831"
         />
-        <View className="px-10   flex-1 w-screen bg-[#fcd9be88] z-20 ">
+        <View className="px-10    w-screen  z-20 ">
           {/* Header */}
           <View className="mt-12 flex flex-row justify-between">
             <Pressable onPress={() => setIsEditingProfile(false)}>
-              <Ionicons name="chevron-back-outline" size={24} color="black" />
+              <Ionicons name="chevron-back-outline" size={24} color="#f2f2f2" />
             </Pressable>
-            <Text className="text-black font-interTight-bold font-semibold text-2xl mb-3 text-center">
+            <Text className="text-[#f2f2f2] font-interTight-bold font-semibold text-2xl mb-3 text-center">
               Edit Profile
             </Text>
-            <TouchableOpacity
+            <Pressable
               onPress={handleSubmit(handleUpdationResult, (errors) =>
                 console.log(errors)
               )}
             >
-              <Ionicons name="checkmark" size={24} color="black" />
-            </TouchableOpacity>
+              <Ionicons name="checkmark" size={24} color="#f2f2f2" />
+            </Pressable>
           </View>
 
           {/* Avatar */}
@@ -181,7 +181,7 @@ const UserSettings = ({
                   className={`my-6 w-[200px] flex  rounded-xl relative`}
                   key={index}
                 >
-                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2  bg-[#feeae2]  font-bold z-20 text-[#8c9dffa7]">
+                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2  bg-[#222831]  font-bold z-20 text-[#9eadffd9]">
                     Design House
                   </Text>
                   <CustomDropdown />
@@ -191,7 +191,7 @@ const UserSettings = ({
             return (
               <View key={index} className="flex flex-col  my-6">
                 <View className="relative    h-16 mx-2">
-                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-[#feeae2]  z-20 text-[#8c9dffbe]  font-bold mb-1">
+                  <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-[#222831]  z-20 text-[#9eadffd9]  font-bold mb-1">
                     {element.label}
                   </Text>
                   <View className="relative flex justify-center  ">
@@ -200,10 +200,11 @@ const UserSettings = ({
                       name={element.name}
                       render={({ field: { onChange, value } }) => (
                         <TextInput
-                          className="border-[1px] w-full h-full rounded-xl border-[#8c9dff69] focus:border-[#8c9dffc2] text-base text-[#444444] px-4 py-3 pr-10"
+                          className="border-[1px] w-full h-full rounded-xl border-[#8c9dff69] focus:border-[#8c9dffc2] text-base text-[#f2f2f2] px-4 py-3 pr-10"
                           editable={true}
                           value={value || ""}
                           onChangeText={onChange}
+                          placeholderTextColor={"#f2f2f2a2"}
                           placeholder={element.placeholder}
                           secureTextEntry={element.type === "password"}
                         />
