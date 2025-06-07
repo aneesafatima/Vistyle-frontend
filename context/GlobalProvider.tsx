@@ -13,6 +13,8 @@ type GlobalContextType = {
   setUpdatedUserData: React.Dispatch<
     React.SetStateAction<updatedUserDataType | null>
   >;
+  showAlert: boolean;
+  setShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
@@ -24,7 +26,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [updatedUserData, setUpdatedUserData] =
     useState<null | updatedUserDataType>(null);
-
+const [showAlert, setShowAlert] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -39,6 +41,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         setToken,
         updatedUserData,
         setUpdatedUserData,
+        showAlert, setShowAlert
       }}
     >
       {children}

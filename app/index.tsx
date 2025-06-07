@@ -26,7 +26,7 @@ const HomePage = () => {
         "interTight-medium": require("../assets/fonts/InterTight-Medium.ttf"),
         "interTight-regular": require("../assets/fonts/InterTight-Regular.ttf"),
         "freckle-face": require("../assets/fonts/FreckleFace-Regular.ttf"),
-        "georgia": require("../assets/fonts/NotoSansGeorgian-VariableFont_wdth,wght.ttf"),
+        georgia: require("../assets/fonts/NotoSansGeorgian-VariableFont_wdth,wght.ttf"),
       });
     };
 
@@ -48,6 +48,7 @@ const HomePage = () => {
     } else {
       setIsLoading(false);
     }
+
     loadFonts();
   }, [data]);
   return (

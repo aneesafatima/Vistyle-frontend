@@ -7,4 +7,5 @@ export { default as UserSettings } from "./UserSettings";
 export { default as Alert } from "./Alert";
 export { default as StickerItems } from "./StickerItems";
 export { default as DraggableSticker } from "./DraggableSticker";
-export { default as PostsModal } from "./postModal";
+export { default as PostsModal } from "./PostModal";
+export { default as PostSticker } from "./PostSticker";

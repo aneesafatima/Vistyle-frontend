@@ -82,7 +82,7 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
       <Animated.View style={[animatedStyles, { position: "absolute" }]}>
         <Image
           source={sticker.src}
-          className="w-40 h-40 bg-slate-600"
+          className="w-40 h-40 "
           resizeMode="contain"
         />
         {isLongPressed && (
