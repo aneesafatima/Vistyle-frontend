@@ -29,6 +29,7 @@ const InterestsModal = ({
   };
 
   return (
+    <View className="flex-1">
     <Modal
       isVisible={showModal}
       coverScreen
@@ -37,15 +38,15 @@ const InterestsModal = ({
       backdropOpacity={0.7}
       animationIn="slideInUp"
       animationOut="slideOutDown"
+      animationInTiming={300}
+      animationOutTiming={300}
       style={{
-        margin: 0,
         display: "flex",
         alignItems: "center",
-        flex: 1,
         justifyContent: "flex-end",
       }}
     >
-      <View className="bg-white rounded-lg p-4 pb-6  w-full">
+      <View className="bg-white rounded-3xl p-4 pb-6  w-full">
         {userData?.interests && userData.interests.length >= 3 && (
           <Pressable
             className="absolute top-4 right-4"
@@ -54,7 +55,7 @@ const InterestsModal = ({
             <Entypo name="cross" size={24} color="black" />
           </Pressable>
         )}
-        <Text className="mt-4 px-7 py-3 font-poppins-medium font-bold text-2xl text-center text-gray-800">
+        <Text className="mt-6 px-7 py-3 font-poppins-medium font-bold text-2xl text-center text-gray-800">
           Choose Styles which scream you!
         </Text>
         <Text className="text-center text-gray-500 mb-2">
@@ -85,6 +86,7 @@ const InterestsModal = ({
         </View>
       </View>
     </Modal>
+    </View>
   );
 };
 

@@ -1,6 +1,6 @@
-import { View, Text } from "react-native";
+
 import React, { useEffect } from "react";
-import { Image, Group, useImage } from "@shopify/react-native-skia";
+import { Image, Group, SkImage } from "@shopify/react-native-skia";
 import {
   useDerivedValue,
   useSharedValue,
@@ -12,7 +12,7 @@ const PostSticker = ({
   len,
   i,
 }: {
-  img: number;
+  img: SkImage | null;
   len: number;
   i: number;
 }) => {
@@ -31,7 +31,7 @@ const PostSticker = ({
   const offset = i - centerIndex;
   const rotation = offset * 12;
   const x = canvasWidth / 2 - imageSize / 2 + offset * (imageSize - overlap);
-  const y = 10;
+  const y = 0;
 
   const transform = useDerivedValue(() => {
     return [
@@ -43,12 +43,9 @@ const PostSticker = ({
       { translateY: -imageSize / 2 },
     ];
   }, [animatedScale.value]); // Add dependency
-  const skImage = useImage(img);
-  if (!skImage) return null; // Ensure image is loaded before rendering
-
   return (
-    <Group transform={transform}>
-      <Image image={skImage} width={imageSize} height={imageSize} />
+    <Group transform={transform} >
+      <Image image={img} width={imageSize} height={imageSize} />
     </Group>
   );
 };

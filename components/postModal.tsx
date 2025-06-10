@@ -1,90 +1,67 @@
-import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Pressable } from "react-native";
 import Modal from "react-native-modal";
-import {
-  Canvas,
-} from "@shopify/react-native-skia";
-import { PostSticker, Alert } from ".";
+import { Canvas, useImage } from "@shopify/react-native-skia";
+import { PostSticker } from ".";
+import { router } from "expo-router";
 
 const PostsModal = ({
   stickers,
-  showPostsModal,
-  setShowPostsModal,
+  onClose,
 }: {
   stickers: Sticker[];
-  showPostsModal: boolean;
-  setShowPostsModal: React.Dispatch<React.SetStateAction<boolean>>;
+  onClose: () => void;
 }) => {
-  const [alertDetails, setAlertDetails] = useState<{
-    text: string;
-    description: string;
-  } | null>(null);
-
-  useEffect(() => {
-    if (showPostsModal) {
-      if (stickers.length === 0) {
-        setAlertDetails({
-          text: "No Stickers",
-          description: "Please add some stickers to share your style board.",
-        });
-        setShowPostsModal(false);
-      } else if (stickers.length < 3) {
-        setAlertDetails({
-          text: "Not Enough Stickers",
-          description: "Please add at least 3 stickers to share your style board.",
-        });
-        setShowPostsModal(false);
-      } else if (stickers.length > 5) {
-        setAlertDetails({
-          text: "Too Many Stickers",
-          description: "There can be a maximum of 5 stickers on a style board.",
-        });
-        setShowPostsModal(false);
-      }
-    }
-  }, [showPostsModal]);
-
+  console.log("In post modal");
+  const [shouldNavigate, setShouldNavigate] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const images = stickers.map((sticker) => useImage(sticker.src));
   const imageSize = 130;
   const overlap = 85;
-  const canvasWidth = imageSize + (stickers.length - 1) * (imageSize - overlap) + 50;
-  const canvasHeight = 170;
-
-  // If an alert should be shown, render the alert
-  if (alertDetails) {
-    return (
-      <Alert
-        text={alertDetails.text}
-        description={alertDetails.description}
-        onAcceptText="Dismiss"
-        onAccept={() => setAlertDetails(null)} // Clear alert on dismiss
-      />
-    );
+  const canvasWidth =
+    imageSize + (stickers.length - 1) * (imageSize - overlap) + 50;
+  if (images.every(Boolean) === false) {
+    return null;
   }
 
   return (
     <View className="flex-1">
       <Modal
-        isVisible={showPostsModal}
-        onBackdropPress={() => setShowPostsModal(false)}
-        onBackButtonPress={() => setShowPostsModal(false)}
+        isVisible={isVisible}
+        onBackdropPress={() => setIsVisible(false)}
+        onBackButtonPress={() => setIsVisible(false)}
         backdropColor="black"
         backdropOpacity={0.7}
         animationIn="slideInUp"
         animationOut="slideOutDown"
+        animationInTiming={300}
+        animationOutTiming={700}
         useNativeDriver
         hideModalContentWhileAnimating
         style={{ margin: 0, justifyContent: "flex-end" }}
+        onModalWillHide={() => {
+          console.log("Modal has been hidden");
+
+          setTimeout(() => {
+            onClose();
+            if (shouldNavigate) {
+              router.push("/(user)/post-upload");
+              setShouldNavigate(false);
+            }
+          }, 400);
+        }}
       >
-        <View className="bg-white rounded-t-3xl p-4 pb-6 w-screen h-[400px] justify-center items-center">
+        <View className="bg-white rounded-t-3xl p-4 pb-6 pt-2 w-screen h-[370px] justify-center items-center">
           <Canvas
             style={{
               width: canvasWidth,
-              height: canvasHeight,
-              marginBottom: 5,
+              height: 120,
+              marginBottom: 3,
+              backgroundColor: "#F0F0F0",
             }}
           >
-            {stickers.map((sticker, i) => (
-              <PostSticker img={sticker.src} len={stickers.length} i={i} key={i} />
+            {images.map((sticker, i) => (
+              <PostSticker img={sticker} len={stickers.length} i={i} key={i} />
             ))}
           </Canvas>
 
@@ -92,27 +69,40 @@ const PostsModal = ({
             Share this style board with your friends
           </Text>
           <Text className="mt-2 mb-4 px-6 leading-7 text-center text-[#393E46]">
-            Styleboards can be viewed by your friends. They will not be able to edit.
+            Styleboards can be viewed by your friends. They will not be able to
+            edit.
           </Text>
 
-          <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 12 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 12,
+            }}
+          >
             <View style={{ flex: 1, marginRight: 8 }}>
-              <Text
-                className="bg-orange-300 text-white text-center py-3 rounded-lg font-bold"
-                onPress={() => setShowPostsModal(false)}
+              <Pressable
+                className="bg-orange-300 rounded-lg"
+                onPress={() => setIsVisible(false)}
               >
-                Cancel
-              </Text>
+                <Text className=" text-white text-center py-3  font-bold">
+                  Cancel
+                </Text>
+              </Pressable>
             </View>
             <View style={{ flex: 1, marginLeft: 8 }}>
-              <Text
-                className="bg-orange-300 text-white text-center py-3 rounded-lg font-bold"
+              <Pressable
+                className="bg-orange-300 rounded-lg"
                 onPress={() => {
-                  // Add share logic here
+                  console.log("Share button pressed");
+                  setShouldNavigate(true);
+                  setIsVisible(false);
                 }}
               >
-                Share
-              </Text>
+                <Text className=" text-white text-center py-3  font-bold">
+                  Share
+                </Text>
+              </Pressable>
             </View>
           </View>
         </View>

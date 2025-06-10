@@ -20,6 +20,7 @@ const _layout = () => {
             tabBarStyle: { display: "none" }, 
           }}
         />
+        <Tabs.Screen name="post-upload" options={{ title: "upload" }} />
       </Tabs>
     </>
   );
