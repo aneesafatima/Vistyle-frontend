@@ -27,6 +27,7 @@ const HomePage = () => {
         "interTight-regular": require("../assets/fonts/InterTight-Regular.ttf"),
         "freckle-face": require("../assets/fonts/FreckleFace-Regular.ttf"),
         georgia: require("../assets/fonts/NotoSansGeorgian-VariableFont_wdth,wght.ttf"),
+        "arial-rounded" : require("../assets/fonts/Arial-rounded.ttf")
       });
     };
 

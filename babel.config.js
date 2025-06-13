@@ -22,7 +22,11 @@ module.exports = function (api) {
             "gridicons:cross-small",
             "icomoon-free:enlarge2",
             "lets-icons:done-round-fill",
-            "ic:round-info"
+            "ic:round-info",
+            "mdi-light:magnify",
+            "material-symbols-light:emoji-people",
+            "material-symbols-light:info-i-rounded",
+            "tabler:stack-forward"
             // Add more icons here
           ],
         },

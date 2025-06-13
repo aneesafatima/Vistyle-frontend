@@ -14,7 +14,7 @@ module.exports = {
         "interTight-medium": ["interTight-medium"],
         "interTight-regular": ["interTight-regular"],
         "freckle-face-regular": ["freckle-face"],
-        "georgia": ["georgia"],
+        "arial-rounded" : ["arial-rounded"]
       },
     },
   },

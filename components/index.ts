@@ -9,3 +9,8 @@ export { default as StickerItems } from "./StickerItems";
 export { default as DraggableSticker } from "./DraggableSticker";
 export { default as PostsModal } from "./PostModal";
 export { default as PostSticker } from "./PostSticker";
+export { default as FeatureBox } from "./FeatureBox";
+export { default as Header } from "./Header";
+export { default as HomeContent } from "./HomeContent";
+export { default as ShopContent } from "./ShopContent";
+export { default as ItemCard } from "./ItemCard";
