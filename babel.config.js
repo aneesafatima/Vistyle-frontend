@@ -26,7 +26,8 @@ module.exports = function (api) {
             "mdi-light:magnify",
             "material-symbols-light:emoji-people",
             "material-symbols-light:info-i-rounded",
-            "tabler:stack-forward"
+            "tabler:stack-forward",
+            "material-symbols-light:done",
             // Add more icons here
           ],
         },

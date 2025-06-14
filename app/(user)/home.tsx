@@ -9,6 +9,8 @@ const HomePage = () => {
   const { isLoggedIn, userData } = useContext(GlobalContext)!;
   const { loggingUserOut } = useAuth();
   const [isSearching, setIsSearching] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  //add shopping categories to the home page
   return (
     isLoggedIn && (
       <SafeAreaView className="flex-1 bg-white">
@@ -17,14 +19,14 @@ const HomePage = () => {
           translucent={false}
           backgroundColor="white"
         />
-        <Header isSearching={isSearching} setIsSearching={setIsSearching} />
-        {
-          isSearching ? (
-            <ShopContent />
-          ) : (
-            <HomeContent />
-          )
-        }
+        <Header
+          isSearching={isSearching}
+          setIsSearching={setIsSearching}
+          searchText={searchText}
+          setSearchText={setSearchText}
+        />
+        {isSearching ? <ShopContent   searchText={searchText}
+          setSearchText={setSearchText}/> : <HomeContent />}
       </SafeAreaView>
     )
   );
