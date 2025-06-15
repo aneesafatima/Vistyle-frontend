@@ -25,8 +25,11 @@ const HomePage = () => {
           searchText={searchText}
           setSearchText={setSearchText}
         />
-        {isSearching ? <ShopContent   searchText={searchText}
-          setSearchText={setSearchText}/> : <HomeContent />}
+        {isSearching ? (
+          <ShopContent searchText={searchText} />
+        ) : (
+          <HomeContent />
+        )}
       </SafeAreaView>
     )
   );

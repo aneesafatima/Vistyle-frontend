@@ -11,6 +11,7 @@ import {
 import React, { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "@/context/GlobalProvider";
 import Iconify from "react-native-iconify";
+import { set } from "react-hook-form";
 
 const Header = ({
   isSearching,
@@ -38,7 +39,7 @@ const Header = ({
   const animatedStyle = {
     width: widthAnim,
   };
-  const { userData } = useContext(GlobalContext)!;
+  const { userData, setMakeSearch } = useContext(GlobalContext)!;
   return (
     <View className="relative  pt-6 flex flex-row items-center justify-between px-4">
       {!isSearching && (
@@ -89,7 +90,11 @@ const Header = ({
         )}
 
         <Pressable
-          onPress={() => setIsSearching((prev) => !prev)}
+          onPress={() => {
+            if (searchText.length == 0) setIsSearching((prev) => !prev);
+            else
+            setMakeSearch(true);
+          }}
           className="absolute right-[13px]"
         >
           <Iconify

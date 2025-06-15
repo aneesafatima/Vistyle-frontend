@@ -15,6 +15,8 @@ type GlobalContextType = {
   >;
   showAlert: boolean;
   setShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
+  makeSearch: boolean;
+  setMakeSearch: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
@@ -26,7 +28,8 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [updatedUserData, setUpdatedUserData] =
     useState<null | updatedUserDataType>(null);
-const [showAlert, setShowAlert] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [makeSearch, setMakeSearch] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -41,7 +44,10 @@ const [showAlert, setShowAlert] = useState(false);
         setToken,
         updatedUserData,
         setUpdatedUserData,
-        showAlert, setShowAlert
+        showAlert,
+        setShowAlert,
+        makeSearch,
+        setMakeSearch,
       }}
     >
       {children}

@@ -3,21 +3,34 @@ import Constants from "expo-constants";
 export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${Constants.expoConfig?.extra?.EXPO_BACKEND_URL}api/v1/products`,
+    baseUrl: "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/",
+    prepareHeaders: (headers) => {
+      headers.set(
+        "x-rapidapi-key",
+        Constants.expoConfig?.extra?.EXPO_RAPID_API_KEY
+      );
+      headers.set(
+        "x-rapidapi-host",
+        Constants.expoConfig?.extra?.EXPO_RAPID_API_HOST
+      );
+      return headers;
+    },
   }),
   endpoints: (builder) => ({
-    productList: builder.query({
-      query: (store: string) => {
-        return {
-          url: "/",
-          method: "GET",
-          params: {
-            store,
-          },
-        };
-      },
+    productListByText: builder.query({
+      query: (searchText: string) => ({
+        url: "list",
+        method: "GET",
+        params: {
+          country: "in",
+          lang: "en",
+          currentpage: "0",
+          pagesize: "30",
+          query: searchText,
+        },
+      }),
     }),
   }),
 });
 
-export const { useProductListQuery } = productsApi;
+export const { useProductListByTextQuery } = productsApi;

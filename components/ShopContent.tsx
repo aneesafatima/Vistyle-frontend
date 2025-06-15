@@ -1,46 +1,60 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, Pressable } from "react-native";
+import React, { useContext, useState, useEffect } from "react";
 import { ItemCard } from ".";
+import Modal from "react-native-modal";
+import { LinearGradient } from "react-native-linear-gradient";
+import { TextInput } from "react-native-gesture-handler";
+import Iconify from "react-native-iconify";
+import { GlobalContext } from "@/context/GlobalProvider";
+import { useProductListByTextQuery } from "@/query/features/productApi";
 
-const ShopContent = ({
-  searchText,
-  setSearchText,
-}: {
-  searchText: string;
-  setSearchText: React.Dispatch<React.SetStateAction<string>>;
-}) => {
+const ShopContent = ({ searchText }: { searchText: string }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [category, setCategory] = useState("");
+  const [position, setPosition] = useState<
+    "top" | "middle" | "bottom" | null
+  >();
+  const { makeSearch } = useContext(GlobalContext)!;
+  const { data, isLoading, error } = useProductListByTextQuery(searchText, {
+    skip: !makeSearch,
+  });
+
   return (
     <View
       className="flex-1 "
       style={
         searchText == ""
           ? { justifyContent: "center", alignItems: "center" }
-          : {
-              marginTop: 96,
-            }
+          : { marginTop: 96 }
       }
     >
-      {searchText == "" ? (
+      {searchText == "" && !makeSearch ? (
         <View>
           <Text className="text-xl font-semibold">Shop Content</Text>
           <Text className="text-gray-500">Coming soon...</Text>
         </View>
+      ) : isLoading ? (
+        <Text className="text-center text-gray-500">Loading...</Text>
+      ) : error ? (
+        <Text className="text-center text-red-500">
+          Error loading products. {error.message}
+        </Text>
       ) : (
         <View className="flex-row flex-wrap px-4 gap-4">
-          <ItemCard
-            imageUrl="https://image.hm.com/assets/hm/c1/e8/c1e855f6b2d64349d8567e2f56f807182d95e766.jpg?imwidth=1260"
-            brand="Nike"
-            title="Air Max 270"
-            price="$150"
-          />
-          <ItemCard
-            imageUrl="https://image.hm.com/assets/hm/70/05/700541531ca762398b8b0fb1d3a075533665b1ed.jpg?imwidth=1260"
-            brand="Adidas"
-            title="Ultraboost 22"
-            price="$180"
-          />
+          {data?.results.map((product: any, i: number) => (
+            <ItemCard
+              key={product.code || i}
+              imageUrl={product.normalPicture?.[0]?.url || ""}
+              brand="H&M"
+              title={product.name || ""}
+              price={product.price?.formattedValue || ""}
+              setShowModal={setShowModal}
+            />
+          ))}
         </View>
       )}
+
+      {/* ...your Modal code remains unchanged... */}
     </View>
   );
 };

@@ -7,7 +7,9 @@ export default {
     ...appJson.expo,
     extra: {
       ...appJson.expo.extra,
-      EXPO_BACKEND_URL: process.env.EXPO_BACKEND_URL, // ✅ Loaded from .env
+      EXPO_BACKEND_URL: process.env.EXPO_BACKEND_URL,
+      EXPO_RAPID_API_KEY: process.env.EXPO_RAPID_API_KEY,
+      EXPO_RAPID_API_HOST: process.env.EXPO_RAPID_API_HOST,
     },
   },
 };
