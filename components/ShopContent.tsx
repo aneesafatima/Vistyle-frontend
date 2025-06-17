@@ -1,23 +1,25 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text } from "react-native";
 import React, { useContext, useState, useEffect } from "react";
-import { ItemCard } from ".";
-import Modal from "react-native-modal";
-import { LinearGradient } from "react-native-linear-gradient";
-import { TextInput } from "react-native-gesture-handler";
-import Iconify from "react-native-iconify";
+import { ItemCard, StudioModal } from ".";
+import { ScrollView } from "react-native-gesture-handler";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useProductListByTextQuery } from "@/query/features/productApi";
 
 const ShopContent = ({ searchText }: { searchText: string }) => {
   const [showModal, setShowModal] = useState(false);
   const [category, setCategory] = useState("");
-  const [position, setPosition] = useState<
-    "top" | "middle" | "bottom" | null
-  >();
-  const { makeSearch } = useContext(GlobalContext)!;
+  const [position, setPosition] = useState<"top" | "middle" | "bottom">();
+  const { makeSearch, setMakeSearch } = useContext(GlobalContext)!;
   const { data, isLoading, error } = useProductListByTextQuery(searchText, {
     skip: !makeSearch,
   });
+
+  useEffect(() => {
+    if (data && makeSearch) {
+      // Reset after successful fetch
+      setMakeSearch(false);
+    }
+  }, [data]);
 
   return (
     <View
@@ -40,21 +42,36 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
           Error loading products. {error.message}
         </Text>
       ) : (
-        <View className="flex-row flex-wrap px-4 gap-4">
+        <ScrollView
+          contentContainerStyle={{
+            paddingHorizontal: 16,
+            rowGap: 16,
+            flexDirection: "row",
+            flexWrap: "wrap",
+          }}
+          showsVerticalScrollIndicator={false}
+        >
           {data?.results.map((product: any, i: number) => (
             <ItemCard
               key={product.code || i}
-              imageUrl={product.normalPicture?.[0]?.url || ""}
+              imageUrl={product.articles[0].normalPicture?.[0]?.url || ""}
               brand="H&M"
               title={product.name || ""}
               price={product.price?.formattedValue || ""}
               setShowModal={setShowModal}
+              showModal={showModal}
             />
           ))}
-        </View>
+        </ScrollView>
       )}
-
-      {/* ...your Modal code remains unchanged... */}
+      <StudioModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        setCategory={setCategory}
+        category={category}
+        setPosition={setPosition}
+        position={position}
+      />
     </View>
   );
 };

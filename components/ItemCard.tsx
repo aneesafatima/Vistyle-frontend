@@ -9,31 +9,41 @@ import {
 } from "react-native";
 import Iconify from "react-native-iconify";
 
+
 interface ItemCardProps {
   imageUrl: string;
   title: string;
   price: string;
   brand: string;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showModal: boolean;
 }
 const { width } = Dimensions.get("window");
 const cardWidth = (width - 48) / 2;
 
-const ItemCard = ({ imageUrl, title, price, brand, setShowModal }: ItemCardProps) => {
-
-
+const ItemCard = ({
+  imageUrl,
+  title,
+  price,
+  brand,
+  setShowModal,
+  showModal,
+}: ItemCardProps) => {
   return (
-    <View style={{ width: cardWidth }} className="mb-4 font-interTight-regular">
+    <View
+      style={{ width: cardWidth }}
+      className="mb-4 font-interTight-regular mx-1 relative"
+    >
       <View className="bg-white rounded-2xl overflow-hidden shadow-sm">
         <Image
           source={{ uri: imageUrl }}
-          className="w-full h-48 rounded-t-2xl bg-top"
+          className="w-full h-[199px] rounded-t-2xl bg-top"
           resizeMode="cover"
         />
         <View className="p-3 flex flex-row justify-between">
           <View>
             <Text className="text-gray-500 text-xs mb-1">{brand}</Text>
-            <Text className="text-gray-800 font-medium mb-1" numberOfLines={2}>
+            <Text className="text-gray-800 font-medium mb-2" numberOfLines={1}>
               {title}
             </Text>
             <Text className="text-gray-900 text-lg font-arial-rounded">
@@ -41,16 +51,13 @@ const ItemCard = ({ imageUrl, title, price, brand, setShowModal }: ItemCardProps
             </Text>
           </View>
           <TouchableOpacity
-            className="bg-[#f6f6f6] rounded-full h-10 w-10 p-1 flex items-center justify-center self-end"
+            className="bg-[#f6f6f6] rounded-full h-9 w-9 p-1 flex items-center justify-center self-end absolute right-3 bottom-3"
             onPress={() => setShowModal(true)}
           >
-            <Iconify icon="tabler:stack-forward" size={24} color="#ffb677" />
+            <Iconify icon="tabler:stack-forward" size={22} color="#ffb677" />
           </TouchableOpacity>
         </View>
       </View>
-
-      {/* Modal */}
-
     </View>
   );
 };

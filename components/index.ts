@@ -14,3 +14,4 @@ export { default as Header } from "./Header";
 export { default as HomeContent } from "./HomeContent";
 export { default as ShopContent } from "./ShopContent";
 export { default as ItemCard } from "./ItemCard";
+export { default as StudioModal } from "./StudioModal";

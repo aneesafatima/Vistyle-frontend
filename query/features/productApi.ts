@@ -18,7 +18,10 @@ export const productsApi = createApi({
   }),
   endpoints: (builder) => ({
     productListByText: builder.query({
-      query: (searchText: string) => ({
+      query: (searchText: string) => {
+        console.log("searchText", searchText);
+        
+        return ({
         url: "list",
         method: "GET",
         params: {
@@ -28,7 +31,7 @@ export const productsApi = createApi({
           pagesize: "30",
           query: searchText,
         },
-      }),
+      })},
     }),
   }),
 });
