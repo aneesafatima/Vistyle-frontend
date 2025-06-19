@@ -9,6 +9,11 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
   const [showModal, setShowModal] = useState(false);
   const [category, setCategory] = useState("");
   const [position, setPosition] = useState<"top" | "middle" | "bottom">();
+  const [selectedProduct, setSelectedProduct] = useState({
+    pirce: 0,
+    code: "",
+    url: "",
+  });
   const { makeSearch, setMakeSearch } = useContext(GlobalContext)!;
   const { data, isLoading, error } = useProductListByTextQuery(searchText, {
     skip: !makeSearch,
@@ -55,11 +60,14 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
             <ItemCard
               key={product.code || i}
               imageUrl={product.articles[0].normalPicture?.[0]?.url || ""}
+              baseUrl={product.images[0]?.baseUrl || ""}
+              code={product.code || ""}
               brand="H&M"
               title={product.name || ""}
               price={product.price?.formattedValue || ""}
               setShowModal={setShowModal}
               showModal={showModal}
+              setSelectedProduct={setSelectedProduct}
             />
           ))}
         </ScrollView>
@@ -71,6 +79,7 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
         category={category}
         setPosition={setPosition}
         position={position}
+        selectedProduct={selectedProduct}
       />
     </View>
   );

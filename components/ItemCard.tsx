@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import Iconify from "react-native-iconify";
 
-
 interface ItemCardProps {
   imageUrl: string;
   title: string;
@@ -17,6 +16,15 @@ interface ItemCardProps {
   brand: string;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   showModal: boolean;
+  code: string;
+  baseUrl: string;
+  setSelectedProduct: React.Dispatch<
+    React.SetStateAction<{
+      pirce: number;
+      code: string;
+      url: string;
+    }>
+  >;
 }
 const { width } = Dimensions.get("window");
 const cardWidth = (width - 48) / 2;
@@ -27,7 +35,10 @@ const ItemCard = ({
   price,
   brand,
   setShowModal,
+  code,
+  baseUrl,
   showModal,
+  setSelectedProduct,
 }: ItemCardProps) => {
   return (
     <View
@@ -52,7 +63,14 @@ const ItemCard = ({
           </View>
           <TouchableOpacity
             className="bg-[#f6f6f6] rounded-full h-9 w-9 p-1 flex items-center justify-center self-end absolute right-3 bottom-3"
-            onPress={() => setShowModal(true)}
+            onPress={() => {
+              setShowModal(true);
+              setSelectedProduct({
+                pirce: parseFloat(price.replace(/[^0-9.-]+/g, "")),
+                code,
+                url: baseUrl
+              });
+            }}
           >
             <Iconify icon="tabler:stack-forward" size={22} color="#ffb677" />
           </TouchableOpacity>

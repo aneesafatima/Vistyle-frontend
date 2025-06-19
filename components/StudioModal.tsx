@@ -1,9 +1,11 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, ActivityIndicator } from "react-native";
 import React from "react";
 import Modal from "react-native-modal";
 import { LinearGradient } from "react-native-linear-gradient";
 import { TextInput } from "react-native-gesture-handler";
 import Iconify from "react-native-iconify";
+import { useCreateStickerMutation } from "../query/features/designStdApi";
+import { GlobalContext } from "@/context/GlobalProvider";
 type StudioModalProps = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,6 +15,11 @@ type StudioModalProps = {
     React.SetStateAction<"top" | "middle" | "bottom" | undefined>
   >;
   position: "top" | "middle" | "bottom" | undefined;
+  selectedProduct: {
+    pirce: number;
+    code: string;
+    url: string;
+  };
 };
 
 const StudioModal = ({
@@ -22,7 +29,29 @@ const StudioModal = ({
   category,
   setPosition,
   position,
+  selectedProduct,
 }: StudioModalProps) => {
+  const [createDesign, { isLoading }] = useCreateStickerMutation();
+  const { userData } = React.useContext(GlobalContext)!;
+  const handleStickerCreation = async () => {
+    if (!category || !position) {
+      return;
+    }
+    try {
+      const response = await createDesign({
+        category,
+        position,
+        code: selectedProduct.code,
+        price: selectedProduct.pirce,
+        url: selectedProduct.url,
+        email: userData?.email || "",
+      }).unwrap();
+      console.log("Sticker created successfully:", response);
+      setShowModal(false);
+    } catch (error) {
+      console.error("Error creating sticker:", error);
+    }
+  };
   return (
     <Modal
       isVisible={showModal}
@@ -32,9 +61,12 @@ const StudioModal = ({
       backdropOpacity={0.2}
       coverScreen={true}
       animationInTiming={300}
-      // animationOutTiming={300}
-      onBackButtonPress={() => setShowModal(false)}
-      onBackdropPress={() => setShowModal(false)}
+      onBackButtonPress={() => {
+        if (!isLoading) setShowModal(false);
+      }}
+      onBackdropPress={() => {
+        if (!isLoading) setShowModal(false);
+      }}
       useNativeDriver
       hideModalContentWhileAnimating={true}
       style={{ margin: 0, justifyContent: "center", alignItems: "center" }}
@@ -58,9 +90,17 @@ const StudioModal = ({
                 {" "}
                 Enter Category
               </Text>
-              <Pressable className="-mt-8">
-                <Iconify icon="hugeicons:plus-sign" size={20} color="#c1c1c1" />
-              </Pressable>
+              {isLoading ? (
+                <ActivityIndicator size="small" color="#c1c1c1" />
+              ) : (
+                <Pressable className="-mt-8" onPress={handleStickerCreation}>
+                  <Iconify
+                    icon="hugeicons:plus-sign"
+                    size={20}
+                    color="#c1c1c1"
+                  />
+                </Pressable>
+              )}
             </View>
             <View className="w-full h-10 relative mb-2">
               <TextInput
