@@ -10,8 +10,15 @@ const StickerItems = ({
   item,
   setSelected,
 }: {
-  item: number;
-  setSelected: React.Dispatch<React.SetStateAction<number | null>>;
+  item: { url: string; price: number; code: string ; _id: string  };
+  setSelected: React.Dispatch<
+    React.SetStateAction<{
+      url: string;
+      price: number;
+      code: string;
+      _id : string;
+    } | null>
+  >;
 }) => {
   const [isSelected, setIsSelected] = useState(false);
   const scale = useSharedValue(1);
@@ -28,7 +35,12 @@ const StickerItems = ({
       <TouchableOpacity
         onPress={() => {
           setIsSelected(!isSelected);
-          setSelected(item);
+          setSelected({
+            url: item.url,
+            price: item.price,
+            code: item.code,
+            _id : item._id
+          });
         }}
         activeOpacity={1}
         className={`w-40 border-[#222831] border-r-2  ${
@@ -46,11 +58,7 @@ const StickerItems = ({
             },
           ]}
         >
-          <Image
-            source={item}
-            resizeMode="contain"
-            className="w-32 h-32"
-          />
+          <Image source={{uri : item.url}} resizeMode="contain" className="w-32 h-32" />
         </Animated.View>
       </TouchableOpacity>
     </>

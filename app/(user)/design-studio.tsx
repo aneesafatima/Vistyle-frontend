@@ -1,11 +1,20 @@
-import React, { useEffect } from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import React, { useContext, useEffect } from "react";
+import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
 import { useNavigation } from "expo-router";
 import { Iconify } from "react-native-iconify";
 import { router } from "expo-router";
+import { GlobalContext } from "@/context/GlobalProvider";
+import { useSharedValue } from "react-native-reanimated";
+// import Carousel, {
+//   ICarouselInstance,
+//   Pagination,
+// } from "react-native-reanimated-carousel";
+
 
 const DesignStudio = () => {
   const navigation = useNavigation();
+  const { userData } = useContext(GlobalContext)!;
+  console.log("User Data in Design Studio:", userData?.stickers);
 
   return (
     <View className="flex-1 bg-[#F9F9FB] flex-col pb-6  pt-10  px-4">

@@ -1,5 +1,5 @@
 import { View, TouchableOpacity, StatusBar } from "react-native";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Iconify from "react-native-iconify";
@@ -10,10 +10,11 @@ import {
   PostsModal,
 } from "@/components";
 import { FlatList } from "react-native-gesture-handler";
-import { set } from "react-hook-form";
+import { GlobalContext } from "@/context/GlobalProvider";
 
 const DesignCanvas = () => {
   console.log("In design canvas");
+  const { userData } = useContext(GlobalContext)!;
   const [demoClothes, setDemoClothes] = useState<number[]>([
     require("@/assets/images/top-1.png"),
     require("@/assets/images/top-2.png"),
@@ -26,42 +27,29 @@ const DesignCanvas = () => {
     require("@/assets/images/shoes-3.png"),
   ]);
 
-  const [selected, setSelected] = useState<number | null>(null);
-  const [stickers, setStickers] = useState<Sticker[]>([]);
+  const [selected, setSelected] = useState<{
+    url: string;
+    price: number;
+    code: string;
+    _id: string;
+  } | null>(null);
+  const [stickers, setStickers] = useState<Sticker[]>(userData?.stickers.map((s, index) => ({
+      x: 0,
+      y: 0,
+      src: s.url,
+      id: s._id,
+      price: s.price,
+      code: s.code,
+      scale: 1,
+      rotation: 0,
+    })) || []);
   const [showPostsModal, setShowPostsModal] = useState(false);
   const [alertDetails, setAlertDetails] = useState<{
     text: string;
     description: string;
   } | null>(null);
   const postStickers = useRef<Sticker[]>([]);
-  // useEffect(() => {
-  //   if (!showPostsModal) return;
-
-  //   let alert: { text: string; description: string } | null = null;
-
-  //   if (stickers.length === 0) {
-  //     alert = {
-  //       text: "No Stickers",
-  //       description: "Please add some stickers to share your style board.",
-  //     };
-  //   } else if (stickers.length < 3) {
-  //     alert = {
-  //       text: "Not Enough Stickers",
-  //       description:
-  //         "Please add at least 3 stickers to share your style board.",
-  //     };
-  //   } else if (stickers.length > 5) {
-  //     alert = {
-  //       text: "Too Many Stickers",
-  //       description: "There can be a maximum of 5 stickers on a style board.",
-  //     };
-  //   }
-
-  //   if (alert) {
-  //     setAlertDetails(alert);
-  //     setShowPostsModal(false);
-  //   }
-  // }, [showPostsModal]);
+  console.log("User Data in Design Studio:", userData?.stickers);
 
   const handlePostValidation = () => {
     let alert: { text: string; description: string } | null = null;
@@ -93,14 +81,16 @@ const DesignCanvas = () => {
 
   const handleItemInsertion = (event: any) => {
     if (selected == null) return; // No item selected
-    setDemoClothes((prev) => prev.filter((item) => item !== selected)); // Remove the selected item from the list
+
     setStickers([
       ...stickers,
       {
         x: event.nativeEvent.locationX, // Center the item
         y: event.nativeEvent.locationY, // Center the item
-        src: selected!,
-        id: Date.now() + Math.random(), // unique id
+        src: selected.url,
+        id: selected._id,
+        price: selected.price,
+        code: selected.code,
       },
     ]);
     setSelected(null); // Optionally deselect after placing
@@ -118,8 +108,6 @@ const DesignCanvas = () => {
             onClose={() => {
               setShowPostsModal(false);
             }}
-            // showPostsModal={showPostsModal}
-            // setShowPostsModal={setShowPostsModal}
           />
         )}
 
@@ -190,11 +178,16 @@ const DesignCanvas = () => {
             <FlatList
               horizontal
               className="flex-row "
-              data={demoClothes}
+              data={userData?.stickers}
               showsHorizontalScrollIndicator={false}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => (
-                <StickerItems item={item} setSelected={setSelected} />
+                <StickerItems item={{
+                  url: item.url,
+                  price: item.price,
+                  code: item.code,
+                  _id: item._id,
+                }} setSelected={setSelected} />
               )}
             />
           </View>
