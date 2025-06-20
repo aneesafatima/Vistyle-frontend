@@ -112,7 +112,9 @@ const StudioModal = ({
                 Enter Category
               </Text>
               {isLoading ? (
-                <ActivityIndicator size="small" color="#c1c1c1" />
+                <View className="-mt-8">
+                  <ActivityIndicator size="small" color="#c1c1c1" />{" "}
+                </View>
               ) : (
                 <Pressable className="-mt-8" onPress={handleStickerCreation}>
                   <Iconify
@@ -164,7 +166,7 @@ const StudioModal = ({
           </View>
         </View>
         <Text className="text-sm font-interTight-medium text-center  flex-1 py-3 text-[#b97031]">
-          design with the design studio
+          style with the design studio
         </Text>
       </LinearGradient>
     </Modal>
