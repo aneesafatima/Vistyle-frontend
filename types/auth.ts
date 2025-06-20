@@ -8,5 +8,6 @@ export type LoginResponseType = {
       description: string;
       designHouse: DesignHouse;
       id: string;
+      stickers: string[];
     };
   };

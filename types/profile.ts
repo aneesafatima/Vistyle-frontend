@@ -15,6 +15,14 @@ type userDataType = {
   description?: string;
   designHouse: DesignHouse;
   id: string;
+  stickers: {
+    category: string;
+    position: string;
+    price: number;
+    url: string;
+    code: string;
+    "_id" : string
+  }[];
 };
 type updatedUserDataType = Pick<
   userDataType,

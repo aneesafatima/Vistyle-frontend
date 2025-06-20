@@ -35,6 +35,7 @@ const HomePage = () => {
       val && setToken(val);
     });
     if (data) {
+      console.log("Token Status Data:", data);
       setUserData({
         name: data.user.name,
         email: data.user.email,
@@ -43,6 +44,7 @@ const HomePage = () => {
         description: data.user.description,
         designHouse: data.user.designHouse,
         id: data.user.id,
+        stickers: data.user.stickers
       });
       setIsLoggedIn(true);
       router.navigate("/(user)/home");

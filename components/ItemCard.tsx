@@ -18,9 +18,10 @@ interface ItemCardProps {
   showModal: boolean;
   code: string;
   baseUrl: string;
+  priceValue: number;
   setSelectedProduct: React.Dispatch<
     React.SetStateAction<{
-      pirce: number;
+      price: number;
       code: string;
       url: string;
     }>
@@ -39,6 +40,7 @@ const ItemCard = ({
   baseUrl,
   showModal,
   setSelectedProduct,
+  priceValue
 }: ItemCardProps) => {
   return (
     <View
@@ -66,9 +68,9 @@ const ItemCard = ({
             onPress={() => {
               setShowModal(true);
               setSelectedProduct({
-                pirce: parseFloat(price.replace(/[^0-9.-]+/g, "")),
+                price: priceValue,
                 code,
-                url: baseUrl
+                url: baseUrl,
               });
             }}
           >

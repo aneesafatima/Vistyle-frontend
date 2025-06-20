@@ -23,7 +23,7 @@ export const GlobalContext = createContext<GlobalContextType | null>(null)!;
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState<null | userDataType>(null);
+  const [userData, setUserData] = useState<userDataType | null>(null);
   const [email, setEmail] = useState("");
   const [token, setToken] = useState<string | null>(null);
   const [updatedUserData, setUpdatedUserData] =

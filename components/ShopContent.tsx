@@ -10,7 +10,7 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
   const [category, setCategory] = useState("");
   const [position, setPosition] = useState<"top" | "middle" | "bottom">();
   const [selectedProduct, setSelectedProduct] = useState({
-    pirce: 0,
+    price: 0,
     code: "",
     url: "",
   });
@@ -25,6 +25,9 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
       setMakeSearch(false);
     }
   }, [data]);
+  useEffect(() => {
+    console.log("Selected Product:", selectedProduct);
+  }, [selectedProduct]);
 
   return (
     <View
@@ -68,6 +71,7 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
               setShowModal={setShowModal}
               showModal={showModal}
               setSelectedProduct={setSelectedProduct}
+              priceValue={product.price?.value || 0}
             />
           ))}
         </ScrollView>
@@ -80,6 +84,7 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
         setPosition={setPosition}
         position={position}
         selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
       />
     </View>
   );

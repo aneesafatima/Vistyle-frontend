@@ -20,6 +20,13 @@ type StudioModalProps = {
     code: string;
     url: string;
   };
+  setSelectedProduct: React.Dispatch<
+    React.SetStateAction<{
+      price: number;
+      code: string;
+      url: string;
+    }>
+  >;
 };
 
 const StudioModal = ({
@@ -30,9 +37,10 @@ const StudioModal = ({
   setPosition,
   position,
   selectedProduct,
+  setSelectedProduct,
 }: StudioModalProps) => {
   const [createDesign, { isLoading }] = useCreateStickerMutation();
-  const { userData } = React.useContext(GlobalContext)!;
+  const { userData, setUserData } = React.useContext(GlobalContext)!;
   const handleStickerCreation = async () => {
     if (!category || !position) {
       return;
@@ -42,11 +50,24 @@ const StudioModal = ({
         category,
         position,
         code: selectedProduct.code,
-        price: selectedProduct.pirce,
+        price: selectedProduct.price,
         url: selectedProduct.url,
         email: userData?.email || "",
       }).unwrap();
       console.log("Sticker created successfully:", response);
+      setUserData((prev) => {
+        if (!prev) return null;
+        return {
+          ...prev,
+          stickers: response.stickers,
+        };
+      });
+      setSelectedProduct({
+        price: 0,
+        code: "",
+        url: "",
+      });
+
       setShowModal(false);
     } catch (error) {
       console.error("Error creating sticker:", error);
