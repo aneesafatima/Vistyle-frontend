@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  StatusBar,
+} from "react-native";
 import { useNavigation } from "expo-router";
 import { Iconify } from "react-native-iconify";
 import { router } from "expo-router";
@@ -11,7 +18,8 @@ import {
 } from "react-native-reanimated";
 import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
 import Animated from "react-native-reanimated";
-
+import Alert from "@/components/Alert";
+import { CategoryListModal } from "@/components";
 const { width: screenWidth } = Dimensions.get("window");
 
 const DesignStudio = () => {
@@ -19,16 +27,14 @@ const DesignStudio = () => {
   const { userData } = useContext(GlobalContext)!;
   const carouselRef = useRef<ICarouselInstance>(null);
   const progress = useSharedValue(0);
-
-  console.log("User Data in Design Studio:", userData?.stickers);
-
+  const [showModal, setShowModal] = React.useState(true);
   // Filter stickers for top category and position
   const topStickers =
     userData?.stickers?.filter((sticker) => sticker.position === "top") || [];
-  const bottomStickers =
+  const middleStickers =
     userData?.stickers?.filter((sticker) => sticker.position === "middle") ||
     [];
-  const shoesStickers =
+  const bottomStickers =
     userData?.stickers?.filter((sticker) => sticker.position === "bottom") ||
     [];
 
@@ -70,11 +76,18 @@ const DesignStudio = () => {
     return (
       <Animated.View
         style={[animatedStyle]}
-        className="justify-center bg-purple-300 items-center"
+        className="justify-center items-center"
       >
         <Image
           source={{ uri: item.url }}
-          className="w-[280px] h-[280px]"
+          className=""
+          style={{
+            ...(item.position === "top"
+              ? { width: 200, height: 200 }
+              : item.position === "middle"
+              ? { width: 250, height: 250 }
+              : { width: 130, height: 130 }),
+          }}
           resizeMode="contain"
         />
       </Animated.View>
@@ -82,9 +95,24 @@ const DesignStudio = () => {
   };
 
   return (
-    <View className="bg-white flex-1  pb-6">
+    <View className="bg-[#222831] flex-1">
+      {showModal && (
+        <CategoryListModal showModal={showModal} setShowModal={setShowModal} />
+      )}
+      <StatusBar
+        backgroundColor={"#222831"}
+        barStyle="light-content"
+        animated={true}
+      />
+      {userData?.stickers?.length === 0 && (
+        <Alert
+          text="No Stickers Found"
+          description="You haven't created any stickers yet. Please create some stickers to use in the design studio."
+          onAcceptText="Dismiss"
+        />
+      )}
       {/* Header */}
-      <View className="w-full flex-row justify-between items-center px-4 pt-6">
+      <View className="w-full flex-row justify-between items-center px-7 pt-6">
         <TouchableOpacity>
           <Iconify
             icon="icon-park-outline:back"
@@ -93,8 +121,8 @@ const DesignStudio = () => {
             className="text-2xl"
           />
         </TouchableOpacity>
-        <Text className="text-5xl text-[#9eadffd9] font-freckle-face-regular">
-          Design{"\n"}Studio
+        <Text className="text-3xl text-[#9eadffd9] font-interTight-regular">
+          Design Studio
         </Text>
         <TouchableOpacity onPress={() => router.push("/(user)/design-canvas")}>
           <Iconify
@@ -106,7 +134,7 @@ const DesignStudio = () => {
         </TouchableOpacity>
       </View>
 
-      <View className="bg-blue-200 ">
+      <View className="flex-grow items-center justify-center relative">
         {/* Tops Section with Carousel */}
         <View>
           {topStickers.length > 0 && (
@@ -115,7 +143,7 @@ const DesignStudio = () => {
               data={topStickers}
               renderItem={renderTopItem}
               width={screenWidth}
-              height={250}
+              height={180}
               style={{
                 width: screenWidth,
               }}
@@ -138,10 +166,10 @@ const DesignStudio = () => {
         </View>
 
         <View className="h-72">
-          {bottomStickers.length > 0 && (
+          {middleStickers.length > 0 && (
             <Carousel
               ref={carouselRef}
-              data={bottomStickers}
+              data={middleStickers}
               renderItem={renderTopItem}
               width={screenWidth}
               height={250}
@@ -165,15 +193,15 @@ const DesignStudio = () => {
             />
           )}
         </View>
-        {/* 
-                <View className="">
-          {topStickers.length > 0 && (
+
+        <View className="">
+          {bottomStickers.length > 0 && (
             <Carousel
               ref={carouselRef}
-              data={topStickers}
+              data={bottomStickers}
               renderItem={renderTopItem}
               width={screenWidth}
-              height={320}
+              height={130}
               style={{
                 width: screenWidth,
               }}
@@ -193,28 +221,15 @@ const DesignStudio = () => {
               scrollAnimationDuration={300}
             />
           )}
-        </View> */}
-
-        {/* Jeans - keeping original implementation */}
-        {/* <View className="flex-row justify-center items-center w-full bg-yellow-50">
-          <Image
-            source={require("../../assets/images/bottom-1.png")}
-            className="w-60 h-60"
-          />
-        </View> */}
-
-        {/* Shoes - keeping original implementation */}
-        {/* <View className="flex-row justify-center items-center w-full">
-          <Image
-            source={require("../../assets/images/shoes-1.png")}
-            className="w-28 h-28"
-          />
-        </View> */}
+        </View>
       </View>
 
       {/* Footer Buttons */}
-      <View className="flex-row justify-between w-full px-6 mt-4 place-self-end">
-        <TouchableOpacity className="bg-[#fde0ca] p-3 rounded-full">
+      <View className="flex-row justify-between w-full px-6 mt-4 absolute bottom-5">
+        <TouchableOpacity
+          className="bg-[#fde0ca] p-3 rounded-full"
+          onPress={() => setShowModal(true)}
+        >
           <Iconify
             icon="iconamoon:swap-light"
             size={30}

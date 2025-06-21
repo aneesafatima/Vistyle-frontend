@@ -6,6 +6,7 @@ import { TextInput } from "react-native-gesture-handler";
 import Iconify from "react-native-iconify";
 import { useCreateStickerMutation } from "../query/features/designStdApi";
 import { GlobalContext } from "@/context/GlobalProvider";
+import Alert from "./Alert";
 type StudioModalProps = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -54,7 +55,6 @@ const StudioModal = ({
         url: selectedProduct.url,
         email: userData?.email || "",
       }).unwrap();
-      console.log("Sticker created successfully:", response);
       setUserData((prev) => {
         if (!prev) return null;
         return {
@@ -73,7 +73,19 @@ const StudioModal = ({
       console.error("Error creating sticker:", error);
     }
   };
-  return (
+  let catergories: string[] = [];
+  userData?.stickers.map((sticker) => {
+    if (!catergories?.includes(sticker.category))
+      catergories.push(sticker.category);
+  });
+
+  return catergories.length > 10 ? (
+    <Alert
+      text="Category Limit Reached"
+      description="You've already created 10 categories. To add a new one, please delete an existing category from the Design Studio by tapping the 🔁 symbol."
+      onAcceptText="Dismiss"
+    />
+  ) : (
     <Modal
       isVisible={showModal}
       animationIn="fadeIn"
