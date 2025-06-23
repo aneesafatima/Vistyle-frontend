@@ -27,8 +27,8 @@ module.exports = function (api) {
             "material-symbols-light:emoji-people",
             "material-symbols-light:info-i-rounded",
             "tabler:stack-forward",
-           "hugeicons:plus-sign",
-            // Add more icons here
+            "hugeicons:plus-sign",
+            "mdi-light:delete",
           ],
         },
       ],

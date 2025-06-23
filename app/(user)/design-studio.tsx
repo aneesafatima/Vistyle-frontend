@@ -23,20 +23,32 @@ import { CategoryListModal } from "@/components";
 const { width: screenWidth } = Dimensions.get("window");
 
 const DesignStudio = () => {
-  const navigation = useNavigation();
   const { userData } = useContext(GlobalContext)!;
   const carouselRef = useRef<ICarouselInstance>(null);
   const progress = useSharedValue(0);
   const [showModal, setShowModal] = React.useState(true);
   // Filter stickers for top category and position
+  const [selelctedCategories, setSelectedCategories] = React.useState<string[]>(
+    []
+  );
   const topStickers =
-    userData?.stickers?.filter((sticker) => sticker.position === "top") || [];
+    userData?.stickers?.filter(
+      (sticker) =>
+        sticker.position === "top" &&
+        selelctedCategories.includes(sticker.category)
+    ) || [];
   const middleStickers =
-    userData?.stickers?.filter((sticker) => sticker.position === "middle") ||
-    [];
+    userData?.stickers?.filter(
+      (sticker) =>
+        sticker.position === "middle" &&
+        selelctedCategories.includes(sticker.category)
+    ) || [];
   const bottomStickers =
-    userData?.stickers?.filter((sticker) => sticker.position === "bottom") ||
-    [];
+    userData?.stickers?.filter(
+      (sticker) =>
+        sticker.position === "bottom" &&
+        selelctedCategories.includes(sticker.category)
+    ) || [];
 
   // Render item for carousel with animation
   const renderTopItem = ({
@@ -64,7 +76,7 @@ const DesignStudio = () => {
       const opacity = interpolate(
         animationValue.value,
         [-1, 0, 1],
-        [0.6, 1, 0.6]
+        [0.7, 1, 0.7]
       );
 
       return {
@@ -76,17 +88,17 @@ const DesignStudio = () => {
     return (
       <Animated.View
         style={[animatedStyle]}
-        className="justify-center items-center"
+        className="justify-center items-center "
       >
         <Image
           source={{ uri: item.url }}
           className=""
           style={{
             ...(item.position === "top"
-              ? { width: 200, height: 200 }
-              : item.position === "middle"
               ? { width: 250, height: 250 }
-              : { width: 130, height: 130 }),
+              : item.position === "middle"
+              ? { width: 350, height: 350 }
+              : { width: 180, height: 180 }),
           }}
           resizeMode="contain"
         />
@@ -95,13 +107,18 @@ const DesignStudio = () => {
   };
 
   return (
-    <View className="bg-[#222831] flex-1">
+    <View className="bg-white flex-1">
       {showModal && (
-        <CategoryListModal showModal={showModal} setShowModal={setShowModal} />
+        <CategoryListModal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          setSelectedCategories={setSelectedCategories}
+          selectedCategories={selelctedCategories}
+        />
       )}
       <StatusBar
-        backgroundColor={"#222831"}
-        barStyle="light-content"
+        backgroundColor={"white"}
+        barStyle="dark-content"
         animated={true}
       />
       {userData?.stickers?.length === 0 && (
@@ -112,7 +129,7 @@ const DesignStudio = () => {
         />
       )}
       {/* Header */}
-      <View className="w-full flex-row justify-between items-center px-7 pt-6">
+      <View className="w-full flex-row justify-between items-center px-7 pt-10 pb-3 ">
         <TouchableOpacity>
           <Iconify
             icon="icon-park-outline:back"
@@ -121,7 +138,7 @@ const DesignStudio = () => {
             className="text-2xl"
           />
         </TouchableOpacity>
-        <Text className="text-3xl text-[#9eadffd9] font-interTight-regular">
+        <Text className="text-3xl text-[#9eadffd9] font-arial-rounded font-bold">
           Design Studio
         </Text>
         <TouchableOpacity onPress={() => router.push("/(user)/design-canvas")}>
@@ -134,98 +151,125 @@ const DesignStudio = () => {
         </TouchableOpacity>
       </View>
 
-      <View className="flex-grow items-center justify-center relative">
-        {/* Tops Section with Carousel */}
-        <View>
-          {topStickers.length > 0 && (
-            <Carousel
-              ref={carouselRef}
-              data={topStickers}
-              renderItem={renderTopItem}
-              width={screenWidth}
-              height={180}
-              style={{
-                width: screenWidth,
-              }}
-              loop={true}
-              autoPlay={false}
-              snapEnabled={true}
-              onProgressChange={progress}
-              mode="horizontal-stack"
-              modeConfig={{
-                snapDirection: "left",
-                stackInterval: 30,
-                scaleInterval: 0.08,
-                rotateZDeg: 15,
-                moveSize: screenWidth * 0.6,
-              }}
-              customConfig={() => ({ type: "positive", viewCount: 3 })}
-              scrollAnimationDuration={300}
-            />
-          )}
-        </View>
+      {/* Main Content Area */}
+      <View className="flex-1 pb-20">
+        {selelctedCategories.length === 0 ? (
+          <View className="flex-1 items-center justify-center">
+            <View className="flex-row items-center">
+              <Text className="text-base text-[#b5b5b5] text-center">
+                Select categories to mix using the{" "}
+              </Text>
+              <Iconify
+                icon="iconamoon:swap-light"
+                size={20}
+                color="#b5b5b5"
+                className=""
+              />
+            </View>
+          </View>
+        ) : (
+          <View
+            className="flex-1 justify-start "
+            style={{
+              justifyContent:
+                selelctedCategories.length < 3  ? "center" : "space-between",
+            }}
+          >
+            {/* Top Stickers */}
+            {topStickers.length > 0 && (
+              <View className="">
+                <Carousel
+                  ref={carouselRef}
+                  data={topStickers}
+                  renderItem={renderTopItem}
+                  width={screenWidth}
+                  height={250}
+                  style={{
+                    width: screenWidth,
+                  }}
+                  loop={true}
+                  autoPlay={false}
+                  snapEnabled={true}
+                  onProgressChange={progress}
+                  mode="horizontal-stack"
+                  modeConfig={{
+                    snapDirection: "left",
+                    stackInterval: 30,
+                    scaleInterval: 0.08,
+                    rotateZDeg: 15,
+                    moveSize: screenWidth * 0.6,
+                  }}
+                  customConfig={() => ({ type: "positive", viewCount: 3 })}
+                  scrollAnimationDuration={300}
+                />
+              </View>
+            )}
 
-        <View className="h-72">
-          {middleStickers.length > 0 && (
-            <Carousel
-              ref={carouselRef}
-              data={middleStickers}
-              renderItem={renderTopItem}
-              width={screenWidth}
-              height={250}
-              style={{
-                width: screenWidth,
-              }}
-              loop={true}
-              autoPlay={false}
-              snapEnabled={true}
-              onProgressChange={progress}
-              mode="horizontal-stack"
-              modeConfig={{
-                snapDirection: "left",
-                stackInterval: 30,
-                scaleInterval: 0.08,
-                rotateZDeg: 15,
-                moveSize: screenWidth * 0.6,
-              }}
-              customConfig={() => ({ type: "positive", viewCount: 3 })}
-              scrollAnimationDuration={300}
-            />
-          )}
-        </View>
+            {/* Middle Stickers */}
+            {middleStickers.length > 0 && (
+              <View className="">
+                <Carousel
+                  ref={carouselRef}
+                  data={middleStickers}
+                  renderItem={renderTopItem}
+                  width={screenWidth}
+                  height={300}
+                  style={{
+                    width: screenWidth,
+                  }}
+                  loop={true}
+                  autoPlay={false}
+                  snapEnabled={true}
+                  onProgressChange={progress}
+                  mode="horizontal-stack"
+                  modeConfig={{
+                    snapDirection: "left",
+                    stackInterval: 30,
+                    scaleInterval: 0.08,
+                    rotateZDeg: 15,
+                    moveSize: screenWidth * 0.6,
+                  }}
+                  customConfig={() => ({ type: "positive", viewCount: 3 })}
+                  scrollAnimationDuration={300}
+                />
+              </View>
+            )}
 
-        <View className="">
-          {bottomStickers.length > 0 && (
-            <Carousel
-              ref={carouselRef}
-              data={bottomStickers}
-              renderItem={renderTopItem}
-              width={screenWidth}
-              height={130}
-              style={{
-                width: screenWidth,
-              }}
-              loop={true}
-              autoPlay={false}
-              snapEnabled={true}
-              onProgressChange={progress}
-              mode="horizontal-stack"
-              modeConfig={{
-                snapDirection: "left",
-                stackInterval: 30,
-                scaleInterval: 0.08,
-                rotateZDeg: 15,
-                moveSize: screenWidth * 0.6,
-              }}
-              customConfig={() => ({ type: "positive", viewCount: 3 })}
-              scrollAnimationDuration={300}
-            />
-          )}
-        </View>
+            {/* Bottom Stickers */}
+            {bottomStickers.length > 0 && (
+              <View>
+                <Carousel
+                  ref={carouselRef}
+                  data={bottomStickers}
+                  renderItem={renderTopItem}
+                  width={screenWidth}
+                  height={130}
+                  style={{
+                    width: screenWidth,
+                  }}
+                  loop={true}
+                  autoPlay={false}
+                  snapEnabled={true}
+                  onProgressChange={progress}
+                  mode="horizontal-stack"
+                  modeConfig={{
+                    snapDirection: "left",
+                    stackInterval: 30,
+                    scaleInterval: 0.08,
+                    rotateZDeg: 15,
+                    moveSize: screenWidth * 0.6,
+                  }}
+                  customConfig={() => ({ type: "positive", viewCount: 3 })}
+                  scrollAnimationDuration={300}
+                />
+              </View>
+            )}
+          </View>
+        )}
       </View>
 
       {/* Footer Buttons */}
-      <View className="flex-row justify-between w-full px-6 mt-4 absolute bottom-5">
+      <View className="flex-row justify-between w-full px-6 absolute bottom-5">
         <TouchableOpacity
           className="bg-[#fde0ca] p-3 rounded-full"
           onPress={() => setShowModal(true)}
