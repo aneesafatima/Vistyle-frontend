@@ -29,6 +29,8 @@ module.exports = function (api) {
             "tabler:stack-forward",
             "hugeicons:plus-sign",
             "mdi-light:delete",
+            "mdi:lock",
+            "mdi:minus",
           ],
         },
       ],
