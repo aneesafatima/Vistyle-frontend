@@ -26,7 +26,7 @@ const DesignStudio = () => {
   const { userData } = useContext(GlobalContext)!;
   const carouselRef = useRef<ICarouselInstance>(null);
   const progress = useSharedValue(0);
-  const [showModal, setShowModal] = React.useState(true);
+  const [showModal, setShowModal] = React.useState(false);
   // Filter stickers for top category and position
   const [selelctedCategories, setSelectedCategories] = React.useState<string[]>(
     []

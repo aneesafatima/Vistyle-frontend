@@ -41,11 +41,10 @@ const CategoryListModal = ({
       setSelectedCategories([...selectedCategories, category]);
     }
   };
-
   return (
     <View>
       <Modal
-        isVisible={true}
+        isVisible={showModal}
         animationIn="fadeIn"
         animationOut="fadeOut"
         backdropColor="black"
@@ -101,7 +100,7 @@ const CategoryListModal = ({
                     <Iconify
                       icon="mdi-light:delete"
                       size={20}
-                      color="#da5151"
+                      color="#2E2E2E"
                     />
                   </Pressable>
                 </TouchableOpacity>

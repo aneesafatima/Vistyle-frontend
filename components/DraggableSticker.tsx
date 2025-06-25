@@ -6,16 +6,16 @@ import Animated, {
   useAnimatedStyle,
 } from "react-native-reanimated";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import { Iconify } from "react-native-iconify";
+import { Dimensions } from "react-native";
 
 const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
+  const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
   const [stickerData, setStickerData] = useState({
     x: sticker.x,
     y: sticker.y,
     scale: sticker.scale || 1,
     rotation: sticker.rotation || 0,
   });
-
   const [isLongPressed, setIsLongPressed] = useState(false);
 
   const x = useSharedValue(stickerData.x);
@@ -23,19 +23,49 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
   const scale = useSharedValue(stickerData.scale);
   const rotation = useSharedValue(stickerData.rotation);
 
+  let otherUIHeight = 202;
   const panGesture = Gesture.Pan()
     .onUpdate((e) => {
-      x.value = stickerData.x + e.translationX;
-      y.value = stickerData.y + e.translationY;
+      const newX = stickerData.x + e.translationX;
+      const newY = stickerData.y + e.translationY;
+
+      const baseStickerSize = 5;
+      const actualStickerWidth = baseStickerSize * stickerData.scale;
+      const actualStickerHeight = baseStickerSize * stickerData.scale;
+
+      const canvasWidth = screenWidth - 24;
+      const canvasHeight = screenHeight - 202;
+
+      // Boundaries for top-left corner positioning
+      const minX = 15; // Left edge of canvas
+      const maxX = canvasWidth - actualStickerWidth; // Right edge minus sticker width
+      const minY = 15; // Top edge of canvas
+      const maxY = canvasHeight - actualStickerHeight; // Bottom edge minus sticker height
+
+      x.value = Math.max(minX, Math.min(maxX, newX));
+      y.value = Math.max(minY, Math.min(maxY, newY));
     })
     .onEnd((e) => {
       const newX = stickerData.x + e.translationX;
       const newY = stickerData.y + e.translationY;
-      x.value = newX;
-      y.value = newY;
-      runOnJS(setStickerData)({ ...stickerData, x: newX, y: newY });
+      const baseStickerSize = 5;
+      const actualStickerWidth = baseStickerSize * stickerData.scale;
+      const actualStickerHeight = baseStickerSize * stickerData.scale;
+      const canvasWidth = screenWidth - 24;
+      const canvasHeight = screenHeight - 202;
+      const minX = 15;
+      const maxX = canvasWidth - actualStickerWidth;
+      const minY = 15;
+      const maxY = canvasHeight - actualStickerHeight;
+      console.log("Max X:", maxX, "Min X:", minX);
+      console.log("Max Y:", maxY, "Min Y:", minY);
+      console.log("New X:", newX, "New Y:", newY);
+      const clampedX = Math.max(minX, Math.min(maxX, newX));
+      const clampedY = Math.max(minY, Math.min(maxY, newY));
+      x.value = clampedX;
+      y.value = clampedY;
+      runOnJS(setStickerData)({ ...stickerData, x: clampedX, y: clampedY });
     });
-
   const pinchGesture = Gesture.Pinch()
     .onUpdate((e) => {
       scale.value = Math.max(0.5, Math.min(2.0, e.scale * stickerData.scale));
@@ -71,7 +101,7 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
       { rotate: `${rotation.value}rad` },
     ],
     borderWidth: isLongPressed ? 2 : 0,
-    borderColor: isLongPressed ? "#38bdf8" : "transparent", // cyan-400
+    borderColor: isLongPressed ? "#38bdf8" : "transparent",
     shadowColor: isLongPressed ? "#000" : "transparent",
     shadowOpacity: isLongPressed ? 0.3 : 0,
     shadowRadius: 6,
@@ -81,11 +111,11 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
     <GestureDetector gesture={gesture}>
       <Animated.View style={[animatedStyles, { position: "absolute" }]}>
         <Image
-          source={sticker.src}
+          source={{ uri: sticker.src }}
           className="w-40 h-40 "
           resizeMode="contain"
         />
-        {isLongPressed && (
+        {/* {isLongPressed && (
           <View
             className="absolute  left-0 flex-row space-x-2"
             style={{
@@ -102,7 +132,7 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
               />
             </View>
           </View>
-        )}
+        )} */}
       </Animated.View>
     </GestureDetector>
   );

@@ -8,9 +8,11 @@ import { router } from "expo-router";
 const PostsModal = ({
   stickers,
   onClose,
+  onCloseStart,
 }: {
   stickers: Sticker[];
   onClose: () => void;
+  onCloseStart: () => void;
 }) => {
   console.log("In post modal");
   const [shouldNavigate, setShouldNavigate] = useState(false);
@@ -40,8 +42,7 @@ const PostsModal = ({
         hideModalContentWhileAnimating
         style={{ margin: 0, justifyContent: "flex-end" }}
         onModalWillHide={() => {
-          console.log("Modal has been hidden");
-
+          onCloseStart();
           setTimeout(() => {
             onClose();
             if (shouldNavigate) {
@@ -57,7 +58,6 @@ const PostsModal = ({
               width: canvasWidth,
               height: 120,
               marginBottom: 3,
-              backgroundColor: "#F0F0F0",
             }}
           >
             {images.map((sticker, i) => (
@@ -69,8 +69,8 @@ const PostsModal = ({
             Share this style board with your friends
           </Text>
           <Text className="mt-2 mb-4 px-6 leading-7 text-center text-[#393E46]">
-            Styleboards can be viewed by your friends. They will not be able to
-            edit.
+            Styleboards can be viewed in your profile. Currently they can't be
+            shared.
           </Text>
 
           <View
@@ -100,7 +100,7 @@ const PostsModal = ({
                 }}
               >
                 <Text className=" text-white text-center py-3  font-bold">
-                  Share
+                  Save
                 </Text>
               </Pressable>
             </View>

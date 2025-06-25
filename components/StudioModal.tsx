@@ -17,7 +17,7 @@ type StudioModalProps = {
   >;
   position: "top" | "middle" | "bottom" | undefined;
   selectedProduct: {
-    pirce: number;
+    price: number;
     code: string;
     url: string;
   };
@@ -125,7 +125,7 @@ const StudioModal = ({
               </Text>
               {isLoading ? (
                 <View className="-mt-8">
-                  <ActivityIndicator size="small" color="#c1c1c1" />{" "}
+                  <ActivityIndicator size="small" color="#c1c1c1" />
                 </View>
               ) : (
                 <Pressable className="-mt-8" onPress={handleStickerCreation}>
