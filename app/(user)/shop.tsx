@@ -1,4 +1,5 @@
-import React from "react";
+import { GlobalContext } from "@/context/GlobalProvider";
+import React, { useContext } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Iconify } from "react-native-iconify";
 
@@ -27,6 +28,7 @@ const cartItems = [
 ];
 
 export default function CartScreen() {
+  const {userData} = useContext(GlobalContext)!;
   return (
     <View className="flex-1 bg-white pt-10 px-6">
       {/* Header */}
@@ -44,21 +46,21 @@ export default function CartScreen() {
 
       {/* Cart Items */}
       <ScrollView className="flex-1 mb-6">
-        {cartItems.map((item) => (
+        {userData?.cart.map((item,i) => (
           <View
-            key={item.id}
+            key={i}
             className="flex-row items-center justify-between mb-6"
           >
             <View className="flex-row items-center gap-4">
               <Image
-                source={item.image}
+                source={{uri: item.url}}
                 className="w-16 h-16 rounded-lg"
                 resizeMode="cover"
               />
               <View>
                 <Text className="font-semibold">{item.title}</Text>
                 <Text className="text-sm text-gray-500 mt-1">
-                  SIZE: {item.sizes.join(" ")}
+                  SIZE: {item.size.join(" ")}
                 </Text>
                 <Text className="text-base mt-1">${item.price}</Text>
               </View>

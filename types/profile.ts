@@ -21,7 +21,14 @@ type userDataType = {
     price: number;
     url: string;
     code: string;
-    "_id" : string
+    _id: string;
+  }[];
+  cart: {
+    code: string;
+    title: string;
+    url: string;
+    price: number;
+    size: string[];
   }[];
 };
 type updatedUserDataType = Pick<

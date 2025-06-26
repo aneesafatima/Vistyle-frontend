@@ -50,7 +50,8 @@ const SignUp = () => {
         description: result["user"].description,
         designHouse: result["user"].designHouse,
         id: result["user"].id,
-        
+        stickers: result["user"].stickers,
+        cart: result["user"].cart,
       });
       router.replace("/(user)/home");
     } catch (error: any) {
