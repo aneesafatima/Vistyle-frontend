@@ -44,7 +44,8 @@ const HomePage = () => {
         description: data.user.description,
         designHouse: data.user.designHouse,
         id: data.user.id,
-        stickers: data.user.stickers
+        stickers: data.user.stickers,
+        cart: data.user.cart,
       });
       setIsLoggedIn(true);
       router.navigate("/(user)/home");

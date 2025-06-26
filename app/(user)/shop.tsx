@@ -28,66 +28,68 @@ const cartItems = [
 ];
 
 export default function CartScreen() {
-  const {userData} = useContext(GlobalContext)!;
+  const { userData } = useContext(GlobalContext)!;
   return (
-    <View className="flex-1 bg-white pt-10 px-6">
+    <View className="flex-1 bg-white ">
       {/* Header */}
-      <View className="flex-row justify-between items-center mb-6">
-        <Text className="text-xl font-bold">MY CART</Text>
-        <View className="flex-row gap-3 items-center">
-          <Iconify icon="mdi:lock" size={20} color="#222831" />
-          <View className="bg-yellow-400 px-2 py-1 rounded-full">
-            <Text className="text-xs font-bold text-white">3</Text>
-          </View>
+      <View className="flex-row justify-between items-center mb-4 pt-14 px-9">
+        <Text className="text-4xl font-medium font-arial-rounded">MY CART</Text>
+
+        <View className="bg-[#9eadffd9] px-3 py-1 rounded-full">
+          <Text className="text-lg font-bold text-white">
+            {userData?.cart?.length}
+          </Text>
         </View>
       </View>
 
-      <Text className="text-gray-500 mb-4">BEST COLLECTION!</Text>
+      <Text className="text-gray-500 mb-10 font-arial-rounded text-xl px-9">
+        BEST COLLECTION!
+      </Text>
 
       {/* Cart Items */}
-      <ScrollView className="flex-1 mb-6">
-        {userData?.cart.map((item,i) => (
-          <View
-            key={i}
-            className="flex-row items-center justify-between mb-6"
-          >
-            <View className="flex-row items-center gap-4">
+      <ScrollView className="flex-1 mb-6 px-9">
+        {userData?.cart?.map((item, i) => (
+          <View key={i} className="flex-row items-center justify-between mb-6">
+            <View className="flex-row items-center justify-between gap-4 w-full">
               <Image
-                source={{uri: item.url}}
-                className="w-16 h-16 rounded-lg"
+                source={{ uri: item.url }}
+                className="w-36 h-36 rounded-3xl"
                 resizeMode="cover"
+                alt={item.title}
               />
-              <View>
-                <Text className="font-semibold">{item.title}</Text>
-                <Text className="text-sm text-gray-500 mt-1">
+              <View className="flex justify-evenly h-full ">
+                <Text className="text-[#9b9b9b] font-arial-rounded">{`0${
+                  i + 1
+                }`}</Text>
+                <Text className="font-semibold font-arial-rounded  text-wrap">
+                  {item.title.toUpperCase()}
+                </Text>
+                <Text className="text-sm text-gray-500 mt-1 font-arial-rounded">
                   SIZE: {item.size.join(" ")}
                 </Text>
-                <Text className="text-base mt-1">${item.price}</Text>
+                <Text className="text-base mt-1 font-arial-rounded">
+                  Rs {item.price}
+                </Text>
               </View>
-            </View>
-
-            <View className="gap-2 items-center">
-              <Iconify icon="hugeicons:plus-sign" size={20} color="#222831" />
-              <Iconify icon="mdi:minus" size={20} color="#222831" />
+              <View className="items-center w-10">
+                <Iconify icon="mdi:minus" size={25} color="#222831" />
+              </View>
             </View>
           </View>
         ))}
       </ScrollView>
-
       {/* Footer */}
-      <View style={{ backgroundColor: "#222831" }} className="p-5 rounded-t-2xl">
-        <View className="flex-row justify-between mb-2">
-          <Text className="text-white text-base">SUBTOTAL</Text>
-          <Text className="text-white text-base">$2,040.00</Text>
-        </View>
-        <View className="flex-row justify-between mb-2">
-          <Text className="text-gray-400 text-base">DISCOUNT</Text>
-          <Text className="text-gray-400 text-base">- $80.00</Text>
-        </View>
-        <View className="flex-row justify-between border-t border-gray-600 pt-2 mt-2">
-          <Text className="text-lg text-white font-bold">TOTAL</Text>
-          <Text className="text-lg text-yellow-400 font-bold">
-            $1,960.00
+      <View
+        style={{ backgroundColor: "#222831" }}
+        className="p-5 rounded-t-[40px]"
+      >
+        <View className="flex-row justify-between items-center py-4 px-4">
+          <Text className="text-[#e3e3e387] text-base">SUBTOTAL</Text>
+          <Text className="text-[#f9f9f9] font-arial-rounded text-xl ">
+            Rs{" "}
+            {userData?.cart
+              ?.reduce((sum, item) => sum + item.price, 0)
+              .toFixed(2)}
           </Text>
         </View>
       </View>
