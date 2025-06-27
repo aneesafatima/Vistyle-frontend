@@ -12,7 +12,7 @@ const _layout = () => {
           options={{ title: "Design Studio", tabBarStyle: { display: "none" } }}
         />
         <Tabs.Screen name="profile" options={{ title: "Profile" }} />
-        <Tabs.Screen name="shop" options={{ title: "Shop" }} />
+        <Tabs.Screen name="cart" options={{ title: "Cart" }} />
         <Tabs.Screen
           name="design-canvas"
           options={{

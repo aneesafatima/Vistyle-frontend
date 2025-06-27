@@ -2,6 +2,7 @@ import { GlobalContext } from "@/context/GlobalProvider";
 import React, { useContext } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Iconify } from "react-native-iconify";
+import { CartItem } from "@/components";
 
 export default function CartScreen() {
   const { userData } = useContext(GlobalContext)!;
@@ -17,50 +18,22 @@ export default function CartScreen() {
           </Text>
         </View>
       </View>
-
       <Text className="text-gray-500 mb-10 font-arial-rounded text-xl px-9">
         BEST COLLECTION!
       </Text>
-
       {/* Cart Items */}
       <ScrollView className="flex-1 mb-6 px-9">
-        {userData?.cart?.map((item, i) => (
-          <View key={i} className="flex-row items-center justify-between mb-6">
-            <View className="flex-row items-center justify-between gap-4 w-full">
-              <Image
-                source={{ uri: item.url }}
-                className="w-36 h-36 rounded-3xl"
-                resizeMode="cover"
-                alt={item.title}
-              />
-              <View className="flex justify-evenly h-full ">
-                <Text className="text-[#9b9b9b] font-arial-rounded">{`0${
-                  i + 1
-                }`}</Text>
-                <Text className="font-semibold font-arial-rounded  text-wrap">
-                  {item.title.toUpperCase()}
-                </Text>
-                <Text className="text-sm text-gray-500 mt-1 font-arial-rounded">
-                  SIZE: {item.size.join(" ")}
-                </Text>
-                <Text className="text-base mt-1 font-arial-rounded">
-                  Rs {item.price}
-                </Text>
-              </View>
-              <View className="items-center w-10">
-                <Iconify icon="mdi:minus" size={25} color="#222831" />
-              </View>
-            </View>
-          </View>
+        {userData?.cart?.map((item,i) => (
+          <CartItem key={i} item={item} i={i} />
         ))}
       </ScrollView>
       {/* Footer */}
       <View
         style={{ backgroundColor: "#222831" }}
-        className="p-5 rounded-t-[40px]"
+        className="p-5 mx-10 mb-10 rounded-[40px]"
       >
         <View className="flex-row justify-between items-center py-4 px-4">
-          <Text className="text-[#e3e3e387] text-base">SUBTOTAL</Text>
+          <Text className="text-[#e3e3e387] text-base">TOTAL</Text>
           <Text className="text-[#f9f9f9] font-arial-rounded text-xl ">
             Rs{" "}
             {userData?.cart

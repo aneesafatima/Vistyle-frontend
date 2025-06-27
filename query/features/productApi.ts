@@ -12,7 +12,7 @@ interface Product {
 export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/",
+    baseUrl: `${Constants.expoConfig?.extra?.EXPO_BACKEND_URL}api/v1/products/`,
     prepareHeaders: (headers) => {
       headers.set(
         "x-rapidapi-key",
@@ -27,18 +27,22 @@ export const productsApi = createApi({
   }),
   endpoints: (builder) => ({
     addToCart: builder.mutation({
-      query: (product: Product) => ({
-        url: "add-to-cart",
-        method: "POST",
-        body: product,
-      }),
+      query: (product: Product) => {
+        return {
+          url: "add-to-cart",
+          method: "POST",
+          body: product,
+        };
+      },
     }),
     deleteFromCart: builder.mutation({
-      query: (product: { email: string; code: string }) => ({
-        url: "delete-from-cart",
-        method: "DELETE",
-        body: product,
-      }),
+      query: (product: { email: string; code: string }) => {
+        return {
+          url: "delete-from-cart",
+          method: "DELETE",
+          body: product,
+        };
+      },
     }),
   }),
 });
