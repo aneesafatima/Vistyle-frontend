@@ -7,8 +7,15 @@ import Animated, {
 } from "react-native-reanimated";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import { Dimensions } from "react-native";
+import Iconify from "react-native-iconify";
 
-const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
+const DraggableSticker = ({
+  sticker,
+  handleStickerRemove,
+}: {
+  sticker: Sticker;
+  handleStickerRemove: (id: string) => void;
+}) => {
   const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
   const [stickerData, setStickerData] = useState({
     x: sticker.x,
@@ -57,9 +64,6 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
       const maxX = canvasWidth - actualStickerWidth;
       const minY = 15;
       const maxY = canvasHeight - actualStickerHeight;
-      console.log("Max X:", maxX, "Min X:", minX);
-      console.log("Max Y:", maxY, "Min Y:", minY);
-      console.log("New X:", newX, "New Y:", newY);
       const clampedX = Math.max(minX, Math.min(maxX, newX));
       const clampedY = Math.max(minY, Math.min(maxY, newY));
       x.value = clampedX;
@@ -68,7 +72,7 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
     });
   const pinchGesture = Gesture.Pinch()
     .onUpdate((e) => {
-      scale.value = Math.max(0.5, Math.min(2.0, e.scale * stickerData.scale));
+      scale.value = Math.max(0.5, Math.min(3.0, e.scale * stickerData.scale));
     })
     .onEnd(() => {
       runOnJS(setStickerData)({ ...stickerData, scale: scale.value });
@@ -85,7 +89,7 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
   const longPressGesture = Gesture.LongPress()
     .minDuration(300) // milliseconds
     .onStart(() => {
-      runOnJS(setIsLongPressed)(true);
+      runOnJS(setIsLongPressed)(!isLongPressed);
     });
 
   const gesture = Gesture.Simultaneous(
@@ -101,38 +105,50 @@ const DraggableSticker = ({ sticker }: { sticker: Sticker }) => {
       { rotate: `${rotation.value}rad` },
     ],
     borderWidth: isLongPressed ? 2 : 0,
-    borderColor: isLongPressed ? "#38bdf8" : "transparent",
-    shadowColor: isLongPressed ? "#000" : "transparent",
-    shadowOpacity: isLongPressed ? 0.3 : 0,
-    shadowRadius: 6,
+    borderColor: isLongPressed ? "#eeeeee" : "transparent",
   }));
 
   return (
     <GestureDetector gesture={gesture}>
-      <Animated.View style={[animatedStyles, { position: "absolute" }]}>
+      <Animated.View
+        style={[
+          animatedStyles,
+          {
+            position: "absolute",
+            borderRadius: 8,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+        ]}
+      >
         <Image
           source={{ uri: sticker.src }}
-          className="w-40 h-40 "
+          className="w-40 h-40"
           resizeMode="contain"
         />
-        {/* {isLongPressed && (
+        {isLongPressed && (
           <View
-            className="absolute  left-0 flex-row space-x-2"
+            className="absolute  left-1 flex-row items-center top-3"
             style={{
-              transform: [{ translateY: -32 }], // equivalent of translate-y-1/2 if height is ~64
+              transform: [{ translateX: -50 }],
             }}
           >
-            <Iconify icon="ic:round-info" size={30} color="#ffb677" />
-            <View className="bg-[#ffb677] rounded-full justify-center items-center h-[29px] w-[29px]">
-              <Iconify
-                icon="gridicons:cross-small"
-                size={25}
-                color="white"
-                className="text-2xl"
-              />
-            </View>
+            <TouchableOpacity>
+              <Iconify icon="ic:round-info" size={22} color="#e2e2e2" />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => handleStickerRemove(sticker.id)}>
+              <View className="bg-[#e2e2e2] rounded-full justify-center items-center w-5 h-5">
+                <Iconify
+                  icon="gridicons:cross-small"
+                  size={17}
+                  color="white"
+                  className="text-2xl"
+                />
+              </View>
+            </TouchableOpacity>
           </View>
-        )} */}
+        )}
       </Animated.View>
     </GestureDetector>
   );

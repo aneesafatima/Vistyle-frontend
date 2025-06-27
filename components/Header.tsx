@@ -11,7 +11,6 @@ import {
 import React, { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "@/context/GlobalProvider";
 import Iconify from "react-native-iconify";
-import { set } from "react-hook-form";
 
 const Header = ({
   isSearching,

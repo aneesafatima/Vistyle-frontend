@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, TextInput, Pressable } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
-import { useProductListQuery } from "@/query/features/productApi";
+import { useProductListByTextQuery } from "@/query/features/hmApi"; // Adjust the import path as necessary
 import { useEffect, useState } from "react";
 const Shop = () => {
     const [open, setOpen] = useState(false);

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import {
   View,
   Text,
@@ -7,7 +7,7 @@ import {
   Dimensions,
   StatusBar,
 } from "react-native";
-import { useNavigation } from "expo-router";
+import { useFocusEffect, useNavigation } from "expo-router";
 import { Iconify } from "react-native-iconify";
 import { router } from "expo-router";
 import { GlobalContext } from "@/context/GlobalProvider";
@@ -27,9 +27,17 @@ const DesignStudio = () => {
   const carouselRef = useRef<ICarouselInstance>(null);
   const progress = useSharedValue(0);
   const [showModal, setShowModal] = React.useState(false);
+  const [showAlert, setShowAlert] = React.useState(false);
   // Filter stickers for top category and position
   const [selelctedCategories, setSelectedCategories] = React.useState<string[]>(
     []
+  );
+  useFocusEffect(
+    useCallback(() => {
+      if (userData?.stickers?.length === 0) {
+        setShowAlert(true);
+      }
+    }, [userData?.stickers])
   );
   const topStickers =
     userData?.stickers?.filter(
@@ -121,6 +129,17 @@ const DesignStudio = () => {
         barStyle="dark-content"
         animated={true}
       />
+      {showAlert && (
+        <Alert
+          text="No Stickers Found"
+          description="You haven't created any stickers yet. Please create some stickers to use in the design studio."
+          onAcceptText="Dismiss"
+          onAccept={() => {
+            router.push("/(user)/home");
+            setShowAlert(false);
+          }}
+        />
+      )}
 
       <View className="w-full flex-row justify-between items-center px-7 pt-10 pb-3 ">
         <TouchableOpacity>
@@ -144,21 +163,8 @@ const DesignStudio = () => {
         </TouchableOpacity>
       </View>
 
-      <View
-        style={{
-          ...(userData?.stickers?.length === 0
-            ? { position: "absolute", height: screenHeight }
-            : {flex: 1, position: "relative", paddingBottom: 80}),
-        }}
-      >
-        {userData?.stickers?.length === 0 ? (
-          <Alert
-            text="No Stickers Found"
-            description="You haven't created any stickers yet. Please create some stickers to use in the design studio."
-            onAcceptText="Dismiss"
-            onAccept={() => router.push("/(user)/home")}
-          />
-        ) : selelctedCategories.length === 0 ? (
+      <View className="flex-1 pb-20">
+        {selelctedCategories.length === 0 ? (
           <View className="flex-1 items-center justify-center">
             <View className="flex-row items-center">
               <Text className="text-base text-[#b5b5b5] text-center">

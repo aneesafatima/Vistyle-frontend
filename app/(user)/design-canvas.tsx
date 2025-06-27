@@ -56,7 +56,11 @@ const DesignCanvas = () => {
       setIsLoading(true);
     }
   };
-
+  const handleStickerRemove = (id: string) => {
+    setStickers((prevStickers) =>
+      prevStickers.filter((sticker) => sticker.id !== id)
+    );
+  };
   const handleItemInsertion = (event: any) => {
     if (selected == null) return; // No item selected
     setStickers([
@@ -114,7 +118,11 @@ const DesignCanvas = () => {
             {/* 🟦 Draggable Animated Circle */}
 
             {stickers?.map((sticker, i) => (
-              <DraggableSticker key={`${sticker.id}-${i}`} sticker={sticker} />
+              <DraggableSticker
+                key={`${sticker.id}-${i}`}
+                sticker={sticker}
+                handleStickerRemove={handleStickerRemove}
+              />
             ))}
 
             {/* UI Controls */}

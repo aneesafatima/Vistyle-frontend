@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { ItemCard, StudioModal } from ".";
 import { ScrollView } from "react-native-gesture-handler";
 import { GlobalContext } from "@/context/GlobalProvider";
-import { useProductListByTextQuery } from "@/query/features/productApi";
+import { useProductListByTextQuery } from "@/query/features/hmApi";
 
 const ShopContent = ({ searchText }: { searchText: string }) => {
   const [showModal, setShowModal] = useState(false);
@@ -18,10 +18,12 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
   const { data, isLoading, error } = useProductListByTextQuery(searchText, {
     skip: !makeSearch,
   });
+  useEffect(() => {
+   console.log("ERROR:", error);
+  }, [error]);
 
   useEffect(() => {
     if (data && makeSearch) {
-      // Reset after successful fetch
       setMakeSearch(false);
     }
   }, [data]);
@@ -47,7 +49,7 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
         <Text className="text-center text-gray-500">Loading...</Text>
       ) : error ? (
         <Text className="text-center text-red-500">
-          Error loading products. {error.message}
+          Error loading products. {error?.message}
         </Text>
       ) : (
         <ScrollView
