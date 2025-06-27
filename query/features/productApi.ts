@@ -1,5 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Constants from "expo-constants";
+interface Product {
+  email: string;
+  title: string;
+  price: number;
+  size: string[];
+  url: string;
+  code: string;
+}
+
 export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
@@ -17,23 +26,21 @@ export const productsApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    productListByText: builder.query({
-      query: (searchText: string) => {
-        console.log("searchText", searchText);
-        
-        return ({
-        url: "list",
-        method: "GET",
-        params: {
-          country: "in",
-          lang: "en",
-          currentpage: "0",
-          pagesize: "30",
-          query: searchText,
-        },
-      })},
+    addToCart: builder.mutation({
+      query: (product: Product) => ({
+        url: "add-to-cart",
+        method: "POST",
+        body: product,
+      }),
+    }),
+    deleteFromCart: builder.mutation({
+      query: (product: { email: string; code: string }) => ({
+        url: "delete-from-cart",
+        method: "DELETE",
+        body: product,
+      }),
     }),
   }),
 });
 
-export const { useProductListByTextQuery } = productsApi;
+export const { useAddToCartMutation, useDeleteFromCartMutation } = productsApi;

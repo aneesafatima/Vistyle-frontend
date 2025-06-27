@@ -3,30 +3,6 @@ import React, { useContext } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Iconify } from "react-native-iconify";
 
-const cartItems = [
-  {
-    id: 1,
-    title: "SNOWY FOR WOMAN",
-    price: 687,
-    sizes: ["S", "M", "L"],
-    image: require("../../assets/images/top-1.png"),
-  },
-  {
-    id: 2,
-    title: "YELLOW NEW HOODIE",
-    price: 563,
-    sizes: ["S", "XXL"],
-    image: require("../../assets/images/top-1.png"),
-  },
-  {
-    id: 3,
-    title: "RAINY NEW CLOTHE",
-    price: 790,
-    sizes: ["S", "M", "L", "XL"],
-    image: require("../../assets/images/top-1.png"),
-  },
-];
-
 export default function CartScreen() {
   const { userData } = useContext(GlobalContext)!;
   return (
