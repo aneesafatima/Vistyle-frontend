@@ -36,13 +36,12 @@ const DesignCanvas = () => {
     if (stickers.length === 0) {
       alert = {
         text: "No Stickers",
-        description: "Please add some stickers to share your style board.",
+        description: "Please add some stickers to your style board.",
       };
     } else if (stickers.length < 3) {
       alert = {
         text: "Not Enough Stickers",
-        description:
-          "Please add at least 3 stickers to share your style board.",
+        description: "Please add at least 3 stickers to your style board.",
       };
     } else if (stickers.length > 5) {
       alert = {
@@ -105,6 +104,7 @@ const DesignCanvas = () => {
           onAcceptText="Dismiss"
           onCancelText="Cancel"
         />
+
         <View className="h-full bg-[#222831] relative">
           {/* Canvas Container */}
           <View

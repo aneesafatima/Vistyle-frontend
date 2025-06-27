@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Constants from "expo-constants";
+
 interface CreateStickerRequest {
   email: string;
   category: string;
@@ -8,6 +9,7 @@ interface CreateStickerRequest {
   price: number;
   code: string;
 }
+
 interface CreateStickerResponse {
   success: boolean;
   stickers: {
@@ -19,16 +21,14 @@ interface CreateStickerResponse {
     _id: string;
   }[];
 }
+
 export const designStdApi = createApi({
   reducerPath: "designStdApi",
   baseQuery: fetchBaseQuery({
     baseUrl: `${Constants.expoConfig?.extra?.EXPO_BACKEND_URL}api/v1/design-studio`,
   }),
   endpoints: (builder) => ({
-    createSticker: builder.mutation<
-      CreateStickerResponse,
-      CreateStickerRequest
-    >({
+    createSticker: builder.mutation<CreateStickerResponse, CreateStickerRequest>({
       query: (body) => {
         console.log("Creating sticker with body:", body);
         return {
@@ -38,7 +38,14 @@ export const designStdApi = createApi({
         };
       },
     }),
+    deleteSticker: builder.mutation({
+      query: ({ id, email }: { id: string; email: string }) => ({
+        url: `/delete-sticker`,
+        method: "DELETE",
+        body: { email, stickerId: id },
+      }),
+    }),
   }),
 });
 
-export const { useCreateStickerMutation } = designStdApi;
+export const { useCreateStickerMutation, useDeleteStickerMutation } = designStdApi;

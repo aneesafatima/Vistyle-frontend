@@ -20,7 +20,7 @@ import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
 import Animated from "react-native-reanimated";
 import Alert from "@/components/Alert";
 import { CategoryListModal } from "@/components";
-const { width: screenWidth } = Dimensions.get("window");
+const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 const DesignStudio = () => {
   const { userData } = useContext(GlobalContext)!;
@@ -121,14 +121,7 @@ const DesignStudio = () => {
         barStyle="dark-content"
         animated={true}
       />
-      {userData?.stickers?.length === 0 && (
-        <Alert
-          text="No Stickers Found"
-          description="You haven't created any stickers yet. Please create some stickers to use in the design studio."
-          onAcceptText="Dismiss"
-        />
-      )}
-      {/* Header */}
+
       <View className="w-full flex-row justify-between items-center px-7 pt-10 pb-3 ">
         <TouchableOpacity>
           <Iconify
@@ -151,9 +144,21 @@ const DesignStudio = () => {
         </TouchableOpacity>
       </View>
 
-      {/* Main Content Area */}
-      <View className="flex-1 pb-20">
-        {selelctedCategories.length === 0 ? (
+      <View
+        style={{
+          ...(userData?.stickers?.length === 0
+            ? { position: "absolute", height: screenHeight }
+            : {flex: 1, position: "relative", paddingBottom: 80}),
+        }}
+      >
+        {userData?.stickers?.length === 0 ? (
+          <Alert
+            text="No Stickers Found"
+            description="You haven't created any stickers yet. Please create some stickers to use in the design studio."
+            onAcceptText="Dismiss"
+            onAccept={() => router.push("/(user)/home")}
+          />
+        ) : selelctedCategories.length === 0 ? (
           <View className="flex-1 items-center justify-center">
             <View className="flex-row items-center">
               <Text className="text-base text-[#b5b5b5] text-center">
@@ -172,10 +177,9 @@ const DesignStudio = () => {
             className="flex-1 justify-start "
             style={{
               justifyContent:
-                selelctedCategories.length < 3  ? "center" : "space-between",
+                selelctedCategories.length < 3 ? "center" : "space-between",
             }}
           >
-            {/* Top Stickers */}
             {topStickers.length > 0 && (
               <View className="">
                 <Carousel
@@ -205,7 +209,6 @@ const DesignStudio = () => {
               </View>
             )}
 
-            {/* Middle Stickers */}
             {middleStickers.length > 0 && (
               <View className="">
                 <Carousel
@@ -235,7 +238,6 @@ const DesignStudio = () => {
               </View>
             )}
 
-            {/* Bottom Stickers */}
             {bottomStickers.length > 0 && (
               <View>
                 <Carousel

@@ -5,13 +5,14 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import Iconify from "react-native-iconify"; 
+import Iconify from "react-native-iconify";
+import { GlobalContext } from "@/context/GlobalProvider";
+import { useDeleteStickerMutation } from "@/query/features/designStdApi";
 
 const StickerItems = ({
   item,
   setSelected,
   selected,
-  onDelete, // Add this prop if you want to handle delete action
 }: {
   item: {
     x: number;
@@ -25,8 +26,9 @@ const StickerItems = ({
   };
   setSelected: React.Dispatch<React.SetStateAction<Sticker | null>>;
   selected: Sticker | null;
-  onDelete?: (id: string) => void; // Optional delete handler
 }) => {
+  const { userData, setUserData } = React.useContext(GlobalContext)!;
+  const [deleteSticker] = useDeleteStickerMutation();
   const scale = useSharedValue(1);
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [{ scale: scale.value }],
@@ -38,6 +40,17 @@ const StickerItems = ({
     });
   }, [selected]);
 
+  const onDelete = (id: string) => {
+    setUserData((prev) => ({
+      ...prev!,
+      stickers: prev?.stickers.filter((sticker) => sticker._id !== id) || [],
+    }));
+    setSelected(null);
+    setTimeout(async () => {
+      await deleteSticker({ id, email: userData?.email || "" });
+    }, 2000);
+  };
+  
   return (
     <TouchableOpacity
       onPress={() => {
@@ -71,7 +84,7 @@ const StickerItems = ({
       >
         {selected?.id === item.id && (
           <TouchableOpacity
-            onPress={() => onDelete?.(item.id)}
+            onPress={() => onDelete(item.id)}
             style={{
               position: "absolute",
               top: 20,
@@ -84,12 +97,7 @@ const StickerItems = ({
             }}
             hitSlop={10}
           >
-            <Iconify
-              icon="mdi:minus"
-              color="#222831"
-              width={16}
-              height={16}
-            />
+            <Iconify icon="mdi:minus" color="#222831" width={16} height={16} />
           </TouchableOpacity>
         )}
         <Image
