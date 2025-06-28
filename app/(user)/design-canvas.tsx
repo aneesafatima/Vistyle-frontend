@@ -4,8 +4,8 @@ import {
   StatusBar,
   ActivityIndicator,
 } from "react-native";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { router } from "expo-router";
+import React, { useContext, useRef, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Iconify from "react-native-iconify";
 import {
@@ -16,9 +16,6 @@ import {
 } from "@/components";
 import { FlatList } from "react-native-gesture-handler";
 import { GlobalContext } from "@/context/GlobalProvider";
-import { useImage } from "@shopify/react-native-skia";
-import { set } from "react-hook-form";
-
 const DesignCanvas = () => {
   const { userData } = useContext(GlobalContext)!;
   const [selected, setSelected] = useState<Sticker | null>(null);
@@ -30,6 +27,15 @@ const DesignCanvas = () => {
   } | null>(null);
   const postStickers = useRef<Sticker[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  useFocusEffect(
+    React.useCallback(() => {
+      setSelected(null);
+      setStickers([]);
+      setShowPostsModal(false);
+      postStickers.current = [];
+    }, [])
+  );
   const handlePostValidation = () => {
     let alert: { text: string; description: string } | null = null;
 
@@ -99,16 +105,19 @@ const DesignCanvas = () => {
             onAccept={() => setAlertDetails(null)}
           />
         )}
-        <Alert
-          description="All your design work will be lost if not saved to drafts before exiting."
-          onAccept={() => {
-            setStickers([]);
-            router.push("/(user)/design-studio");
-          }}
-          onAcceptText="Dismiss"
-          onCancelText="Cancel"
-        />
-
+        {showAlert && (
+          <Alert
+            description="All your design work will be lost if not saved to drafts before exiting."
+            onAccept={() => {
+              setStickers([]);
+              router.push("/(user)/design-studio");
+              setShowAlert(false);
+            }}
+            onAcceptText="Dismiss"
+            onCancel={() => setShowAlert(false)}
+            onCancelText="Cancel"
+          />
+        )}
         <View className="h-full bg-[#222831] relative">
           {/* Canvas Container */}
           <View
@@ -127,7 +136,12 @@ const DesignCanvas = () => {
 
             {/* UI Controls */}
             <View className="flex flex-row justify-between items-center p-4 absolute top-0 left-0 right-0">
-              <TouchableOpacity className="bg-[#9eadffd9] p-[10px] rounded-full">
+              <TouchableOpacity
+                className="bg-[#9eadffd9] p-[10px] rounded-full"
+                onPress={() => {
+                  setShowAlert(true);
+                }}
+              >
                 <Iconify
                   icon="gridicons:cross-small"
                   size={30}

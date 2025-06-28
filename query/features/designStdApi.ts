@@ -45,7 +45,18 @@ export const designStdApi = createApi({
         body: { email, stickerId: id },
       }),
     }),
+    deleteCategory: builder.mutation({
+      query: ({ category, email }: { category: string; email: string }) => ({
+        url: `/delete-category`,
+        method: "DELETE",
+        body: { email, category },
+      }),
+    }),
   }),
 });
 
-export const { useCreateStickerMutation, useDeleteStickerMutation } = designStdApi;
+export const {
+  useCreateStickerMutation,
+  useDeleteStickerMutation,
+  useDeleteCategoryMutation,
+} = designStdApi;
