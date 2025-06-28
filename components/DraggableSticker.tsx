@@ -24,58 +24,47 @@ const DraggableSticker = ({
     rotation: sticker.rotation || 0,
   });
   const [isLongPressed, setIsLongPressed] = useState(false);
-
   const x = useSharedValue(stickerData.x);
   const y = useSharedValue(stickerData.y);
   const scale = useSharedValue(stickerData.scale);
   const rotation = useSharedValue(stickerData.rotation);
-
-  let otherUIHeight = 202;
+  const maxWidth = screenWidth - 160 * stickerData.scale;
+  const maxHeight = screenHeight - 160 * stickerData.scale - 176;
+  const minHeight = 0;
+  const minWidth = 0;
   const panGesture = Gesture.Pan()
+    .onStart((e) => {
+      const newX = stickerData.x + e.translationX;
+      const newY = stickerData.y + e.translationY;
+      console.log("Sticker Position at start:", newX, newY);
+    })
     .onUpdate((e) => {
       const newX = stickerData.x + e.translationX;
       const newY = stickerData.y + e.translationY;
-
-      const baseStickerSize = 5;
-      const actualStickerWidth = baseStickerSize * stickerData.scale;
-      const actualStickerHeight = baseStickerSize * stickerData.scale;
-
-      const canvasWidth = screenWidth - 24;
-      const canvasHeight = screenHeight - 202;
-
-      // Boundaries for top-left corner positioning
-      const minX = 15; // Left edge of canvas
-      const maxX = canvasWidth - actualStickerWidth; // Right edge minus sticker width
-      const minY = 15; // Top edge of canvas
-      const maxY = canvasHeight - actualStickerHeight; // Bottom edge minus sticker height
-
-      x.value = Math.max(minX, Math.min(maxX, newX));
-      y.value = Math.max(minY, Math.min(maxY, newY));
+      x.value = Math.max(minWidth, Math.min(maxWidth, newX));
+      y.value = Math.max(minHeight, Math.min(maxHeight, newY));
     })
     .onEnd((e) => {
       const newX = stickerData.x + e.translationX;
       const newY = stickerData.y + e.translationY;
-      const baseStickerSize = 5;
-      const actualStickerWidth = baseStickerSize * stickerData.scale;
-      const actualStickerHeight = baseStickerSize * stickerData.scale;
-      const canvasWidth = screenWidth - 24;
-      const canvasHeight = screenHeight - 202;
-      const minX = 15;
-      const maxX = canvasWidth - actualStickerWidth;
-      const minY = 15;
-      const maxY = canvasHeight - actualStickerHeight;
-      const clampedX = Math.max(minX, Math.min(maxX, newX));
-      const clampedY = Math.max(minY, Math.min(maxY, newY));
+      const clampedX = Math.max(minWidth, Math.min(maxWidth, newX));
+      const clampedY = Math.max(minHeight, Math.min(maxHeight, newY));
       x.value = clampedX;
       y.value = clampedY;
+      console.log("Sticker Position at end:", newX, newY);
       runOnJS(setStickerData)({ ...stickerData, x: clampedX, y: clampedY });
     });
   const pinchGesture = Gesture.Pinch()
     .onUpdate((e) => {
       scale.value = Math.max(0.5, Math.min(3.0, e.scale * stickerData.scale));
     })
-    .onEnd(() => {
-      runOnJS(setStickerData)({ ...stickerData, scale: scale.value });
+    .onEnd((e) => {
+      const clampedScale = Math.max(
+        0.5,
+        Math.min(3.0, e.scale * stickerData.scale)
+      );
+      scale.value = clampedScale;
+      runOnJS(setStickerData)({ ...stickerData, scale: clampedScale });
     });
 
   const rotateGesture = Gesture.Rotation()

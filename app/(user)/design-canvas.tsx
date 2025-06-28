@@ -118,7 +118,7 @@ const DesignCanvas = () => {
             onCancelText="Cancel"
           />
         )}
-        <View className="h-full bg-[#222831] relative">
+        <View className="h-full bg-[#222831]  relative">
           {/* Canvas Container */}
           <View
             className="bg-[#F9F9FB] flex-grow  m-3 rounded-[24px] relative overflow-hidden"
