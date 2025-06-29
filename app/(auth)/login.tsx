@@ -15,6 +15,7 @@ import { Link } from "expo-router";
 import { useLoginUserMutation } from "../../query/features/authApi";
 import useAuth from "@/hooks/useAuth";
 import { LoginResponseType } from "@/types/auth";
+
 const logInSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
@@ -33,7 +34,6 @@ const logIn = () => {
   });
 
   const [loginUser, { isLoading }] = useLoginUserMutation();
-  //put this the next two functions as a helper or in a custom hook
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
@@ -52,23 +52,21 @@ const logIn = () => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-100 justify-center px-6">
-      <Text className="text-2xl font-bold text-center mb-4">Log in</Text>
-
+    <SafeAreaView className="flex-1 bg-[#fafafa] justify-center px-6 pt-10">
       {/* Email Field */}
       <View className="mb-4">
-        <Text className="text-lg text-gray-800">Email</Text>
         <Controller
           control={control}
           name="email"
           render={({ field: { onChange, onBlur, value } }) => (
             <TextInput
-              className="border border-gray-300 rounded-lg px-4 py-4 mt-2 bg-white"
+              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4"
               placeholder="Enter your email"
               keyboardType="email-address"
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
+              placeholderTextColor={"#3f454f"}
             />
           )}
         />
@@ -79,18 +77,18 @@ const logIn = () => {
 
       {/* Password Field */}
       <View className="mb-4">
-        <Text className="text-lg text-gray-800">Password</Text>
         <Controller
           control={control}
           name="password"
           render={({ field: { onChange, onBlur, value } }) => (
             <TextInput
-              className="border border-gray-300 rounded-lg px-4 py-4 mt-2 bg-white"
+              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4 mt-2"
               placeholder="Enter your password"
               secureTextEntry
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
+              placeholderTextColor={"#3f454f"}
             />
           )}
         />
@@ -101,30 +99,19 @@ const logIn = () => {
 
       {/* Submit Button */}
       <Pressable
-        className={`bg-black py-3 rounded-lg flex-row justify-center items-center`}
+        className="py-3 rounded-lg bg-black"
         onPress={handleSubmit(onSubmit)}
         disabled={isLoading}
       >
-        {isLoading && (
-          <ActivityIndicator size="small" color="#ffffff" className="mr-2" />
-        )}
         <Text className="text-white text-center text-lg font-medium">
           {isLoading ? "Logging in..." : "Log in"}
         </Text>
       </Pressable>
 
       {/* Reset Password Link */}
-      <Text className="text-center mt-2 text-lg font-medium">
+      <Text className="text-center mt-4 text-lg font-medium">
         <Link href="/forgot-password">
-          <Text className="underline">Reset password</Text>
-        </Link>
-      </Text>
-
-      {/* Register Link */}
-      <Text className="text-center mt-2 text-lg font-medium">
-        Don't have an account?{" "}
-        <Link href="/sign-up">
-          <Text className="underline">Register</Text>
+          <Text className="underline text-[#222831]">Reset password</Text>
         </Link>
       </Text>
     </SafeAreaView>

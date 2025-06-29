@@ -1,36 +1,45 @@
 import { useContext, useEffect, useState } from "react";
-import { Pressable, StatusBar, Text, View } from "react-native";
+import {
+  Pressable,
+  StatusBar,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 import { Link, router } from "expo-router";
-import * as Font from "expo-font";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useTokenStatusQuery } from "@/query/features/authApi";
 import { getToken } from "@/utils/storage";
-
+import { Dimensions } from "react-native";
+import { shapeStyles, fontLoader } from "../assets/ui-data/data";
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
+import { ScrollView } from "react-native-gesture-handler";
+import SignUp from "./(auth)/sign-up";
+import LogIn from "./(auth)/login";
 const HomePage = () => {
   //fix styling in otp page
   //remove back button from some pages
-  console.log("In Main Page");
   const [isLoading, setIsLoading] = useState(true);
+  const [showAuthenticationScreen, setShowAuthenticationScreen] =
+    useState(false);
+  const [selectedScreen, setSelectedScreen] = useState("sign-up");
   const { setIsLoggedIn, setToken, token, setUserData } =
     useContext(GlobalContext)!;
   const { data } = useTokenStatusQuery(token as string, {
     skip: !token,
   });
+  const translate = useSharedValue(0);
   useEffect(() => {
     const loadFonts = async () => {
-      await Font.loadAsync({
-        "poppins-medium": require("../assets/fonts/Poppins-Medium.ttf"),
-        "interTight-bold": require("../assets/fonts/InterTight-Bold.ttf"),
-        "interTight-medium": require("../assets/fonts/InterTight-Medium.ttf"),
-        "interTight-regular": require("../assets/fonts/InterTight-Regular.ttf"),
-        "freckle-face": require("../assets/fonts/FreckleFace-Regular.ttf"),
-        georgia: require("../assets/fonts/NotoSansGeorgian-VariableFont_wdth,wght.ttf"),
-        "arial-rounded" : require("../assets/fonts/Arial-rounded.ttf")
-      });
+      await fontLoader();
     };
-
     getToken().then((val) => {
       val && setToken(val);
     });
@@ -52,41 +61,119 @@ const HomePage = () => {
     } else {
       setIsLoading(false);
     }
-
     loadFonts();
   }, [data]);
+  const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
+  const itemsWidth = screenWidth / 3 - 24;
+  const handleAuthenticationScreen = () => {
+    const authenticate = !showAuthenticationScreen;
+    translate.value = withTiming(
+      authenticate ? -((1 / 3) * screenHeight) - 50 : 0,
+      {
+        duration: 500,
+      }
+    );
+    setShowAuthenticationScreen(authenticate);
+  };
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{ translateY: translate.value }],
+    };
+  });
   return (
-    <SafeAreaView className="flex-1 justify-center items-center bg-white">
-      <StatusBar
-        barStyle="dark-content"
-        translucent={true}
-        backgroundColor="transparent"
-      />
-      {isLoading ? (
-        <View className="flex-1 justify-center items-center bg-white">
-          <Text>LOADING...</Text>
-        </View>
-      ) : (
-        <View className="text-center">
-          <Text className="text-4xl font-semibold text-center">ColorMind</Text>
-          <Text className="mt-4 text-lg font-medium text-center">
-            Welcome to ColorMind, your AI-powered space for personalized
-            clothing and accessory recommendations.
-          </Text>
-
-          {/* Explore Button */}
-          <View className="mx-auto mt-4">
-            <Pressable
-              className="bg-black rounded-lg"
-              onPress={() => router.replace("/(auth)/login")}
-            >
-              <Text className="text-white p-3  text-lg font-medium text-center">
-                Explore
-              </Text>
-            </Pressable>
+    <SafeAreaView className="flex-1 justify-center items-center bg-[#FAFAFA] relative">
+      <ScrollView>
+        <StatusBar
+          barStyle="dark-content"
+          translucent={true}
+          backgroundColor="#FAFAFA"
+        />
+        <Animated.View style={animatedStyle}>
+          <View className="flex-row flex-wrap justify-center p-4   rounded-3xl flex-grow ">
+            {shapeStyles.map((item, index) => (
+              <View
+                key={index}
+                style={{
+                  width: itemsWidth,
+                  height: itemsWidth,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                className={` m-2 ${item.style}`}
+              >
+                {item.path != "" && (
+                  <Image
+                    source={item.path}
+                    style={{ width: 90, height: 90 }}
+                    resizeMode="contain"
+                  />
+                )}
+              </View>
+            ))}
           </View>
-        </View>
-      )}
+          <View
+            className={`flex flex-col items-center justify-center `}
+            style={{
+              height: showAuthenticationScreen
+                ? (1 / 8) * screenHeight
+                : (1 / 4) * screenHeight,
+            }}
+          >
+            <Text className="text-6xl font-interTight-regular font-bold text-[#222831]">
+              vistyle<Text className="text-[#9eadffd9]">.</Text>
+            </Text>
+            {showAuthenticationScreen ? (
+              <View className="flex flex-row justify-center w-full pt-6">
+                <TouchableOpacity
+                  onPress={() => {
+                    setSelectedScreen("sign-up");
+                  }}
+                >
+                  <Text
+                    className="font-arial-rounded tracking-wider mt-3 mx-10"
+                    style={{
+                      color:
+                        selectedScreen === "sign-up" ? "#222831" : "#bebebe",
+                    }}
+                  >
+                    Sign Up
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    setSelectedScreen("log-in");
+                  }}
+                >
+                  <Text
+                    className="font-arial-rounded tracking-wider mt-3 mx-10"
+                    style={{
+                      color:
+                        selectedScreen === "log-in" ? "#222831" : "#bebebe",
+                    }}
+                  >
+                    Log In
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <Text className="text-[#bebebe] font-arial-rounded tracking-wider mt-3">
+                visualize.style.shop
+              </Text>
+            )}
+          </View>
+          {selectedScreen === "sign-up" ? <SignUp /> : <LogIn />}
+        </Animated.View>
+
+        <TouchableOpacity
+          className="absolute top-10 right-0 bg-[#9eadffd9] p-3 rounded-full"
+          onPress={() => {
+            handleAuthenticationScreen();
+          }}
+        >
+          <Text>Click me</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -1,3 +1,4 @@
+import * as Font from "expo-font";
 export const FashionInterest: string[] = [
   "casual",
   "formal",
@@ -80,4 +81,69 @@ export const EditableElements: EditProfileType[] = [
   },
 ];
 
+export const shapeStyles = [
+  {
+    style: "bg-[#d5eeff] rounded-t-full",
+    path: require("../images/1st-row-1.png"),
+  }, // 1st row
+  {
+    style: "bg-[#f2e9d0] rounded-full rounded-tr-none",
+    path: require("../images/1st-row-2.png"),
+  },
+  {
+    style: "bg-[#eaf6f6] rounded-r-full",
+    path: require("../images/1st-row-3.png"),
+  },
 
+  { style: "bg-[#ffebeb]", path: require("../images/2nd-row-1.png") }, // 2nd row
+  {
+    style: "bg-[#e3e3e3] rounded-full rounded-tr-none",
+    path: require("../images/2nd-row-2.png"),
+  },
+  {
+    style: "bg-sky-100 rounded-full",
+    path: require("../images/2nd-row-3.png"),
+  },
+
+  {
+    style: "bg-[#ffeee7] rounded-full rounded-tr-none",
+    path: require("../images/3rd-row-1.png"),
+  }, // 3rd row
+  { style: "bg-[#fff2be]", path: require("../images/3rd-row-2.png") },
+  {
+    style: "bg-[#f0ece2] rounded-l-full",
+    path: require("../images/3rd-row-3.png"),
+  },
+
+  {
+    style: "bg-[#eaf6f6] rounded-full rounded-bl-none",
+    path: require("../images/4th-row-1.png"),
+  }, // 4th row
+  {
+    style: "bg-[#ffebeb] rounded-full",
+    path: require("../images/4th-row-2.png"),
+  },
+  { style: "bg-[#d5eeff]", path: require("../images/4th-row-3.png") },
+
+  { style: "bg-yellow-100", path: require("../images/5th-row-1.png") }, // 5th row
+  {
+    style: "bg-[#d3f6d1] rounded-full rounded-tr-none",
+    path: require("../images/5th-row-2.png"),
+  },
+  {
+    style: "bg-rose-100 rounded-full",
+    path: require("../images/5th-row-3.png"),
+  },
+];
+
+export const fontLoader = async () => {
+   await Font.loadAsync({
+        "poppins-medium": require("../fonts/Poppins-Medium.ttf"),
+        "interTight-bold": require("../fonts/InterTight-Bold.ttf"),
+        "interTight-medium": require("../fonts/InterTight-Medium.ttf"),
+        "interTight-regular": require("../fonts/InterTight-Regular.ttf"),
+        "freckle-face": require("../fonts/FreckleFace-Regular.ttf"),
+        georgia: require("../fonts/NotoSansGeorgian-VariableFont_wdth,wght.ttf"),
+        "arial-rounded": require("../fonts/Arial-rounded.ttf"),
+      });
+}

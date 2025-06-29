@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, Touchable, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { GlobalContext } from "@/context/GlobalProvider";
 import useAuth from "@/hooks/useAuth";
@@ -30,6 +30,9 @@ const HomePage = () => {
         ) : (
           <HomeContent />
         )}
+        <TouchableOpacity
+          className="absolute bottom-4 right-4 bg-blue-500 p-3 rounded-full"
+          onPress={loggingUserOut} >Log out</TouchableOpacity>
       </SafeAreaView>
     )
   );
