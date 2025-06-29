@@ -17,3 +17,4 @@ export { default as ItemCard } from "./ItemCard";
 export { default as StudioModal } from "./StudioModal";
 export { default as CategoryListModal } from "./CategoryListModal";
 export { default as CartItem } from "./CartItem";
+export { default as ResetPassword } from "./ResetPassword";

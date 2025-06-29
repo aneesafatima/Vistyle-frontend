@@ -23,6 +23,7 @@ import Animated, {
 import { ScrollView } from "react-native-gesture-handler";
 import SignUp from "./(auth)/sign-up";
 import LogIn from "./(auth)/login";
+import ResetPassword from "./(auth)/forgot-password";
 const HomePage = () => {
   //fix styling in otp page
   //remove back button from some pages
@@ -68,7 +69,7 @@ const HomePage = () => {
   const handleAuthenticationScreen = () => {
     const authenticate = !showAuthenticationScreen;
     translate.value = withTiming(
-      authenticate ? -((1 / 3) * screenHeight) - 50 : 0,
+      authenticate ? -(screenHeight - (2 / 5) * screenHeight) : 10,
       {
         duration: 500,
       }
@@ -99,8 +100,10 @@ const HomePage = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  backgroundColor: item.background,
+                  ...item.rounded,
                 }}
-                className={` m-2 ${item.style}`}
+                className={` m-2`}
               >
                 {item.path != "" && (
                   <Image
@@ -117,14 +120,14 @@ const HomePage = () => {
             style={{
               height: showAuthenticationScreen
                 ? (1 / 8) * screenHeight
-                : (1 / 4) * screenHeight,
+                : (1 / 5) * screenHeight,
             }}
           >
             <Text className="text-6xl font-interTight-regular font-bold text-[#222831]">
               vistyle<Text className="text-[#9eadffd9]">.</Text>
             </Text>
             {showAuthenticationScreen ? (
-              <View className="flex flex-row justify-center w-full pt-6">
+              <View className="flex flex-row justify-center w-full">
                 <TouchableOpacity
                   onPress={() => {
                     setSelectedScreen("sign-up");
@@ -162,7 +165,13 @@ const HomePage = () => {
               </Text>
             )}
           </View>
-          {selectedScreen === "sign-up" ? <SignUp /> : <LogIn />}
+          {selectedScreen === "sign-up" ? (
+            <SignUp />
+          ) : selectedScreen === "forgot-password" ? (
+            <ResetPassword />
+          ) : (
+            <LogIn setSelectedScreen={setSelectedScreen} />
+          )}
         </Animated.View>
 
         <TouchableOpacity

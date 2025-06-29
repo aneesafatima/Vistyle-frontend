@@ -1,21 +1,28 @@
 import React, { useContext } from "react";
-import { View, Text, TextInput, Pressable, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Alert,
+  ActivityIndicator,
+  TouchableOpacity,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link, useRouter } from "expo-router"; // Import useRouter from expo-router
-import { useSignUpUserMutation } from "../../query/features/authApi"; // Import the mutation hook
+import { useRouter } from "expo-router";
+import { useSignUpUserMutation } from "../../query/features/authApi";
 import { GlobalContext } from "@/context/GlobalProvider";
-// import * as SecureStore from "expo-secure-store"; //for production
-import Dimensions from "react-native";
 import { saveToken } from "@/utils/storage";
+
 const signUpSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
     email: z.string().email("Invalid email address"),
     password: z.string().min(8, "Password must be at least 8 characters"),
     passwordConfirm: z.string(),
+    username: z.string().nonempty("Unique username is required"),
   })
   .refine((data) => data.password === data.passwordConfirm, {
     message: "Passwords do not match",
@@ -23,6 +30,7 @@ const signUpSchema = z
   });
 
 type LoginFormValues = z.infer<typeof signUpSchema>;
+
 const SignUp = () => {
   const { setUserData, setIsLoggedIn } = useContext(GlobalContext)!;
   const {
@@ -31,15 +39,20 @@ const SignUp = () => {
     formState: { errors },
   } = useForm<LoginFormValues>({
     resolver: zodResolver(signUpSchema),
-    defaultValues: { name: "", email: "", password: "", passwordConfirm: "" },
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+      passwordConfirm: "",
+      username: "",
+    },
   });
-  const [signUpUser, { isLoading }] = useSignUpUserMutation(); // RTK Query mutation hook
+  const [signUpUser, { isLoading }] = useSignUpUserMutation();
   const router = useRouter();
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
-      const result = await signUpUser(data).unwrap(); // Call the mutation and unwrap the result
-      //store the token
+      const result = await signUpUser(data).unwrap();
       await saveToken(result["token"]);
       setIsLoggedIn(true);
       setUserData({
@@ -58,107 +71,160 @@ const SignUp = () => {
       Alert.alert("Error", error?.data?.message || "Something went wrong");
     }
   };
+
   return (
-    <SafeAreaView className="flex-1 bg-[#fafafa] justify-center px-6 pt-10 h-">
-      {/* Name Field */}
+    <SafeAreaView className="bg-[#fafafa] justify-center px-10 pt-10">
+      {/* Name */}
       <View className="mb-4">
-        <Controller
-          control={control}
-          name="name"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4 "
-              placeholder="Enter your name"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholderTextColor={"#3f454f"}
-            />
-          )}
-        />
+        <View className="relative">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Name
+          </Text>
+          <Controller
+            control={control}
+            name="name"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Enter your name"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+              />
+            )}
+          />
+        </View>
         {errors.name && (
-          <Text className="mt-1 text-red-500">{errors.name.message}</Text>
+          <Text className="mt-1 text-[#F87171]">{errors.name.message}</Text>
         )}
       </View>
 
-      {/* Email Field */}
+      {/* Username */}
       <View className="mb-4">
-        <Controller
-          control={control}
-          name="email"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4 mt-2"
-              placeholder="Enter your email"
-              keyboardType="email-address"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholderTextColor={"#3f454f"}
-            />
-          )}
-        />
+        <View className="relative">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Username
+          </Text>
+          <Controller
+            control={control}
+            name="username"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Enter a unique username"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+              />
+            )}
+          />
+        </View>
+        {errors.username && (
+          <Text className="mt-1 text-[#F87171]">{errors.username.message}</Text>
+        )}
+      </View>
+
+      {/* Email */}
+      <View className="mb-4">
+        <View className="relative">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Email
+          </Text>
+          <Controller
+            control={control}
+            name="email"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Enter your email"
+                keyboardType="email-address"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+              />
+            )}
+          />
+        </View>
         {errors.email && (
-          <Text className="mt-1 text-red-500">{errors.email.message}</Text>
+          <Text className="mt-1 text-[#F87171]">{errors.email.message}</Text>
         )}
       </View>
 
-      {/* Password Field */}
+      {/* Password */}
       <View className="mb-4">
-        <Controller
-          control={control}
-          name="password"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4 mt-2"
-              secureTextEntry
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Enter your password"
-              placeholderTextColor={"#3f454f"}
-            />
-          )}
-        />
+        <View className="relative">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Password
+          </Text>
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Enter your password"
+                secureTextEntry
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+              />
+            )}
+          />
+        </View>
         {errors.password && (
-          <Text className="mt-1 text-red-500">{errors.password.message}</Text>
+          <Text className="mt-1 text-[#F87171]">{errors.password.message}</Text>
         )}
       </View>
 
-      {/* Confirm Password Field */}
+      {/* Confirm Password */}
       <View className="mb-4">
-        <Controller
-          control={control}
-          name="passwordConfirm"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4 mt-2 "
-              placeholder="Confirm your password"
-              secureTextEntry
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholderTextColor={"#3f454f"}
-            />
-          )}
-        />
+        <View className="relative">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Confirm Password
+          </Text>
+          <Controller
+            control={control}
+            name="passwordConfirm"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Confirm your password"
+                secureTextEntry
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+              />
+            )}
+          />
+        </View>
         {errors.passwordConfirm && (
-          <Text className="mt-1 text-red-500">
+          <Text className="mt-1 text-[#F87171]">
             {errors.passwordConfirm.message}
           </Text>
         )}
       </View>
 
       {/* Submit Button */}
-      <Pressable
-        className="py-3 rounded-lg bg-black"
+      <TouchableOpacity
+        className="py-4 rounded-lg bg-[#9eadffd9] tracking-wider mt-4"
         onPress={handleSubmit(onSubmit)}
-        disabled={isLoading} // Disable the button while loading
+        disabled={isLoading}
       >
         <Text className="text-white text-center text-lg font-medium">
-          {isLoading ? "Signing Up..." : "Sign Up"}
+          {isLoading ? (
+            <View className="-mt-8">
+              <ActivityIndicator size="small" color="#c1c1c1" />
+            </View>
+          ) : (
+            "Next"
+          )}
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

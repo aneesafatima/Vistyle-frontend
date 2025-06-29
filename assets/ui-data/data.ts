@@ -83,59 +83,85 @@ export const EditableElements: EditProfileType[] = [
 
 export const shapeStyles = [
   {
-    style: "bg-[#d5eeff] rounded-t-full",
+    background: "#d5eeff",
+    rounded: { borderTopLeftRadius: 999, borderTopRightRadius: 999 }, // rounded-t-full
     path: require("../images/1st-row-1.png"),
   }, // 1st row
   {
-    style: "bg-[#f2e9d0] rounded-full rounded-tr-none",
+    background: "#f2e9d0",
+    rounded: { borderRadius: 999, borderTopRightRadius: 0 }, // rounded-full rounded-tr-none
     path: require("../images/1st-row-2.png"),
   },
   {
-    style: "bg-[#eaf6f6] rounded-r-full",
+    background: "#eaf6f6",
+    rounded: { borderTopRightRadius: 999, borderBottomRightRadius: 999 }, // rounded-r-full
     path: require("../images/1st-row-3.png"),
   },
 
-  { style: "bg-[#ffebeb]", path: require("../images/2nd-row-1.png") }, // 2nd row
   {
-    style: "bg-[#e3e3e3] rounded-full rounded-tr-none",
+    background: "#ffebeb",
+    rounded: {}, // no rounding
+    path: require("../images/2nd-row-1.png")
+  }, // 2nd row
+  {
+    background: "#e3e3e3",
+    rounded: { borderRadius: 999, borderTopRightRadius: 0 }, // rounded-full rounded-tr-none
     path: require("../images/2nd-row-2.png"),
   },
   {
-    style: "bg-sky-100 rounded-full",
+    background: "#e0f2fe",
+    rounded: { borderRadius: 999 }, // rounded-full
     path: require("../images/2nd-row-3.png"),
   },
 
   {
-    style: "bg-[#ffeee7] rounded-full rounded-tr-none",
+    background: "#ffeee7",
+    rounded: { borderRadius: 999, borderTopRightRadius: 0 }, // rounded-full rounded-tr-none
     path: require("../images/3rd-row-1.png"),
   }, // 3rd row
-  { style: "bg-[#fff2be]", path: require("../images/3rd-row-2.png") },
   {
-    style: "bg-[#f0ece2] rounded-l-full",
+    background: "#fff2be",
+    rounded: {}, // no rounding
+    path: require("../images/3rd-row-2.png")
+  },
+  {
+    background: "#f0ece2",
+    rounded: { borderTopLeftRadius: 999, borderBottomLeftRadius: 999 }, // rounded-l-full
     path: require("../images/3rd-row-3.png"),
   },
 
   {
-    style: "bg-[#eaf6f6] rounded-full rounded-bl-none",
+    background: "#eaf6f6",
+    rounded: { borderRadius: 999, borderBottomLeftRadius: 0 }, // rounded-full rounded-bl-none
     path: require("../images/4th-row-1.png"),
   }, // 4th row
   {
-    style: "bg-[#ffebeb] rounded-full",
+    background: "#ffebeb",
+    rounded: { borderRadius: 999 }, // rounded-full
     path: require("../images/4th-row-2.png"),
   },
-  { style: "bg-[#d5eeff]", path: require("../images/4th-row-3.png") },
-
-  { style: "bg-yellow-100", path: require("../images/5th-row-1.png") }, // 5th row
   {
-    style: "bg-[#d3f6d1] rounded-full rounded-tr-none",
+    background: "#d5eeff",
+    rounded: {}, // no rounding
+    path: require("../images/4th-row-3.png")
+  },
+
+  {
+    background: "#fefce8",
+    rounded: {}, // no rounding
+    path: require("../images/5th-row-1.png")
+  }, // 5th row
+  {
+    background: "#d3f6d1",
+    rounded: { borderRadius: 999, borderTopRightRadius: 0 }, // rounded-full rounded-tr-none
     path: require("../images/5th-row-2.png"),
   },
   {
-    style: "bg-rose-100 rounded-full",
+    background: "#ffe4e6",
+    rounded: { borderRadius: 999 }, // rounded-full
     path: require("../images/5th-row-3.png"),
   },
 ];
-
 export const fontLoader = async () => {
    await Font.loadAsync({
         "poppins-medium": require("../fonts/Poppins-Medium.ttf"),

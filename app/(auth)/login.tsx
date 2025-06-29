@@ -5,6 +5,7 @@ import {
   Pressable,
   TextInput,
   ActivityIndicator,
+  TouchableOpacity,
 } from "react-native";
 import React, { useContext } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -22,7 +23,11 @@ const logInSchema = z.object({
 });
 type LoginFormValues = z.infer<typeof logInSchema>;
 
-const logIn = () => {
+const logIn = ({
+  setSelectedScreen,
+}: {
+  setSelectedScreen: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const { loggingUserIn } = useAuth();
   const {
     control,
@@ -52,67 +57,85 @@ const logIn = () => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-[#fafafa] justify-center px-6 pt-10">
+    <SafeAreaView className="bg-[#fafafa] justify-center px-10 pt-10 h-">
       {/* Email Field */}
       <View className="mb-4">
-        <Controller
-          control={control}
-          name="email"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4"
-              placeholder="Enter your email"
-              keyboardType="email-address"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholderTextColor={"#3f454f"}
-            />
-          )}
-        />
+        <View className="relative mt-2">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Email
+          </Text>
+          <Controller
+            control={control}
+            name="email"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Enter your email"
+                keyboardType="email-address"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+              />
+            )}
+          />
+        </View>
         {errors.email && (
-          <Text className="mt-1 text-red-500">{errors.email.message}</Text>
+          <Text className="mt-1 text-[#F87171]">{errors.email.message}</Text>
         )}
       </View>
 
       {/* Password Field */}
       <View className="mb-4">
-        <Controller
-          control={control}
-          name="password"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-4 mt-2"
-              placeholder="Enter your password"
-              secureTextEntry
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholderTextColor={"#3f454f"}
-            />
-          )}
-        />
+        <View className="relative mt-2">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Password
+          </Text>
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Enter your password"
+                secureTextEntry
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+              />
+            )}
+          />
+        </View>
         {errors.password && (
-          <Text className="mt-1 text-red-500">{errors.password.message}</Text>
+          <Text className="mt-1 text-[#F87171]">{errors.password.message}</Text>
         )}
       </View>
 
       {/* Submit Button */}
-      <Pressable
-        className="py-3 rounded-lg bg-black"
+      <TouchableOpacity
+        className="py-4 rounded-lg bg-[#9eadffd9] font-arial-rounded tracking-wider mt-4"
         onPress={handleSubmit(onSubmit)}
         disabled={isLoading}
       >
         <Text className="text-white text-center text-lg font-medium">
-          {isLoading ? "Logging in..." : "Log in"}
+          {isLoading ? (
+            <View className="-mt-8">
+              <ActivityIndicator size="small" color="#c1c1c1" />
+            </View>
+          ) : (
+            "Log in"
+          )}
         </Text>
-      </Pressable>
+      </TouchableOpacity>
 
       {/* Reset Password Link */}
-      <Text className="text-center mt-4 text-lg font-medium">
-        <Link href="/forgot-password">
-          <Text className="underline text-[#222831]">Reset password</Text>
-        </Link>
+      <Text className="text-center mt-4 text-sm font-medium">
+        <TouchableOpacity onPress={() => setSelectedScreen("forgot-password")}>
+          <Text className="underline text-[#a9a9a9] font-arial-rounded">
+            Reset password
+          </Text>
+        </TouchableOpacity>
       </Text>
     </SafeAreaView>
   );
