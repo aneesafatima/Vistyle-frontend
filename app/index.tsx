@@ -16,7 +16,9 @@ import Animated, {
 import SignUp from "./(auth)/sign-up";
 import LogIn from "./(auth)/login";
 import ResetPasswordScreen from "./(auth)/forgot-password";
-import { HouseSelector } from "@/components";
+import { HouseSelector, InterestsSelector } from "@/components";
+import Iconify from "react-native-iconify";
+import { AntDesign } from "@expo/vector-icons";
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showAuthenticationScreen, setShowAuthenticationScreen] =
@@ -60,7 +62,7 @@ const HomePage = () => {
   const handleAuthenticationScreen = () => {
     const authenticate = !showAuthenticationScreen;
     translate.value = withTiming(
-      authenticate ? -(screenHeight - (1 / 5) * screenHeight) : 0,
+      authenticate ? -(screenHeight - (1 / 4) * screenHeight) : 0,
       {
         duration: 500,
       }
@@ -74,7 +76,6 @@ const HomePage = () => {
   });
   return (
     <SafeAreaView className="justify-center items-center bg-[#FAFAFA] relative">
-      {/* <ScrollView> */}
       <StatusBar
         barStyle="dark-content"
         translucent={true}
@@ -91,7 +92,7 @@ const HomePage = () => {
       >
         <View
           className="flex-row flex-wrap justify-center p-4 "
-          style={{ height: screenHeight - (1 / 6) * screenHeight }}
+          style={{ height: screenHeight - (1 / 4) * screenHeight }}
         >
           {shapeStyles.map((item, index) => (
             <View
@@ -118,12 +119,13 @@ const HomePage = () => {
           ))}
         </View>
         <View
-          className={`flex flex-col items-center justify-center`}
+          className={`flex flex-col items-center justify-center `}
           style={{
             height: showAuthenticationScreen
               ? (1 / 8) * screenHeight
-              : (1 / 6) * screenHeight,
+              : (1 / 4) * screenHeight,
             paddingBottom: showAuthenticationScreen ? 10 : 0,
+            marginTop: showAuthenticationScreen ? 50 : 0,
           }}
         >
           <Text className="text-6xl font-interTight-regular font-bold text-[#222831]">
@@ -142,7 +144,7 @@ const HomePage = () => {
                     color:
                       selectedScreen === "sign-up" ||
                       selectedScreen == "house-selection" ||
-                      selectedScreen == "interest-selection"
+                      selectedScreen == "interests-selection"
                         ? "#222831"
                         : "#bebebe",
                   }}
@@ -183,21 +185,22 @@ const HomePage = () => {
           ) : selectedScreen === "log-in" ? (
             <LogIn setSelectedScreen={setSelectedScreen} />
           ) : selectedScreen === "house-selection" ? (
-            <HouseSelector />
+            <HouseSelector setSelectedScreen={setSelectedScreen} />
           ) : (
-            <Text>Screen yet to be made</Text>
+            <InterestsSelector />
           ))}
       </Animated.View>
 
       <TouchableOpacity
-        className="absolute top-10 right-0 bg-[#9eadffd9] p-3 rounded-full"
+        className={`absolute bottom-5 right-5 bg-[#222831] p-4 rounded-full -rotate-90 ${
+          showAuthenticationScreen && "rotate-90"
+        }`}
         onPress={() => {
           handleAuthenticationScreen();
         }}
       >
-        <Text>Click me</Text>
+        <AntDesign name="arrowleft" size={24} color="white" />
       </TouchableOpacity>
-      {/* </ScrollView> */}
     </SafeAreaView>
   );
 };
