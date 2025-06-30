@@ -21,7 +21,7 @@ const Alert = ({
   const [showAlert, setShowAlert] = useState(true);
   if (!showAlert) return null;
   return (
-    <View className="absolute inset-0 bg-black/60 z-10 items-center  h-full justify-center  ">
+    <View className="absolute inset-0 bg-black/60 z-20 items-center  h-full top-0 bottom-0 justify-center  ">
       {/* Info Row */}
       <View className="flex-row p-5 bg-white w-80  rounded-[25px] shadow-lg">
         <View>

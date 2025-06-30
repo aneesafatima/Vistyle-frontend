@@ -1,8 +1,6 @@
 import {
   View,
   Text,
-  Alert,
-  Pressable,
   TextInput,
   ActivityIndicator,
   TouchableOpacity,
@@ -13,14 +11,13 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForgotPasswordMutation } from "@/query/features/authApi";
 import { GlobalContext } from "@/context/GlobalProvider";
-
 interface UserEmailProps {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const UserEmail = ({ setStep }: UserEmailProps) => {
   const { setEmail } = useContext(GlobalContext)!;
-  const [forgotPassword, { isLoading }] = useForgotPasswordMutation();
+  const [forgotPassword, { isLoading, error }] = useForgotPasswordMutation();
   const logInSchema = z.object({
     email: z.string().email("Invalid email address"),
   });
@@ -36,22 +33,16 @@ const UserEmail = ({ setStep }: UserEmailProps) => {
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
-      await forgotPassword(data);
-      Alert.alert(
-        "Email sent",
-        "Please check your email to reset your password"
-      );
+      await forgotPassword(data.email).unwrap();
       setStep(2);
-    } catch (error: any) {
-      console.log(error);
-      Alert.alert("Error", error?.data?.message || "Something went wrong");
-    }
+    } catch (error: any) {}
   };
 
   return (
-    <View className="px-10 pt-10">
+    <View className="px-10 pt-14">
       {/* Email Field */}
-      <View className="mb-4">
+
+      <View className="mb-10">
         <View className="relative mt-2">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Email
@@ -75,21 +66,24 @@ const UserEmail = ({ setStep }: UserEmailProps) => {
             )}
           />
         </View>
-        {errors.email && (
-          <Text className="mt-1 text-[#F87171]">{errors.email.message}</Text>
-        )}
+        <Text className="mt-1 text-[#F87171]">
+          {" "}
+          {(errors.email || error) &&
+            (errors.email?.message ||
+              ((error as any).data.message ?? "Something went wrong"))}
+        </Text>
       </View>
 
       {/* Submit Button */}
       <TouchableOpacity
-        className="py-4 rounded-lg bg-[#9eadffd9] font-arial-rounded tracking-wider mt-4"
+        className="py-4 rounded-lg bg-[#9eadffd9] font-arial-rounded tracking-wider px-2 "
         onPress={handleSubmit(onSubmit)}
         disabled={isLoading}
       >
         <Text className="text-white text-center text-lg font-medium">
           {isLoading ? (
-            <View className="-mt-8">
-              <ActivityIndicator size="small" color="#c1c1c1" />
+            <View className="">
+              <ActivityIndicator size="small" color="white" />
             </View>
           ) : (
             "Submit"
@@ -101,3 +95,4 @@ const UserEmail = ({ setStep }: UserEmailProps) => {
 };
 
 export default UserEmail;
+

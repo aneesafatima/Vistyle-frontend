@@ -32,7 +32,7 @@ const useAuth = () => {
       setUserData(null);
       setIsLoggedIn(false);
       setToken(null);
-      router.replace("/login");
+      router.replace("/");
     });
   };
 

@@ -173,3 +173,25 @@ export const fontLoader = async () => {
         "arial-rounded": require("../fonts/Arial-rounded.ttf"),
       });
 }
+
+  export const houses = [
+    "The Dreamer",
+    "The Rebel",
+    "The Minimalist",
+    "The Iconic",
+    "The Trendsetter",
+    "The Vintage Soul",
+    "The Explorer",
+    "The Romantic",
+  ];
+
+  export const houseEmojis: Record<string, string> = {
+    "The Dreamer": "🌙",
+    "The Rebel": "🔥",
+    "The Minimalist": "⚪",
+    "The Iconic": "💫",
+    "The Trendsetter": "✨",
+    "The Vintage Soul": "📻",
+    "The Explorer": "🧭",
+    "The Romantic": "💖",
+  };

@@ -15,7 +15,6 @@ import { useRouter } from "expo-router";
 import { useSignUpUserMutation } from "../../query/features/authApi";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { saveToken } from "@/utils/storage";
-
 const signUpSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -31,7 +30,7 @@ const signUpSchema = z
 
 type LoginFormValues = z.infer<typeof signUpSchema>;
 
-const SignUp = () => {
+const SignUp = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.SetStateAction<string>>}) => {
   const { setUserData, setIsLoggedIn } = useContext(GlobalContext)!;
   const {
     control,
@@ -50,32 +49,32 @@ const SignUp = () => {
   const [signUpUser, { isLoading }] = useSignUpUserMutation();
   const router = useRouter();
 
-  const onSubmit = async (data: LoginFormValues) => {
-    try {
-      const result = await signUpUser(data).unwrap();
-      await saveToken(result["token"]);
-      setIsLoggedIn(true);
-      setUserData({
-        name: result["user"].name,
-        email: result["user"].email,
-        interests: result["user"].interests,
-        username: result["user"].username,
-        description: result["user"].description,
-        designHouse: result["user"].designHouse,
-        id: result["user"].id,
-        stickers: result["user"].stickers,
-        cart: result["user"].cart,
-      });
-      router.replace("/(user)/home");
-    } catch (error: any) {
-      Alert.alert("Error", error?.data?.message || "Something went wrong");
-    }
-  };
+  // const onSubmit = async (data: LoginFormValues) => {
+  //   try {
+  //     const result = await signUpUser(data).unwrap();
+  //     await saveToken(result["token"]);
+  //     setIsLoggedIn(true);
+  //     setUserData({
+  //       name: result["user"].name,
+  //       email: result["user"].email,
+  //       interests: result["user"].interests,
+  //       username: result["user"].username,
+  //       description: result["user"].description,
+  //       designHouse: result["user"].designHouse,
+  //       id: result["user"].id,
+  //       stickers: result["user"].stickers,
+  //       cart: result["user"].cart,
+  //     });
+  //     router.replace("/(user)/home");
+  //   } catch (error: any) {
+  //     Alert.alert("Error", error?.data?.message || "Something went wrong");
+  //   }
+  // };
 
   return (
-    <SafeAreaView className="bg-[#fafafa] justify-center px-10 pt-10">
+    <SafeAreaView className="bg-[#fafafa] justify-center px-10 mt-8">
       {/* Name */}
-      <View className="mb-4">
+      <View className="mb-6">
         <View className="relative">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Name
@@ -101,7 +100,7 @@ const SignUp = () => {
       </View>
 
       {/* Username */}
-      <View className="mb-4">
+      <View className="mb-6">
         <View className="relative">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Username
@@ -127,7 +126,7 @@ const SignUp = () => {
       </View>
 
       {/* Email */}
-      <View className="mb-4">
+      <View className="mb-6">
         <View className="relative">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Email
@@ -154,7 +153,7 @@ const SignUp = () => {
       </View>
 
       {/* Password */}
-      <View className="mb-4">
+      <View className="mb-6">
         <View className="relative">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Password
@@ -181,7 +180,7 @@ const SignUp = () => {
       </View>
 
       {/* Confirm Password */}
-      <View className="mb-4">
+      <View className="mb-6">
         <View className="relative">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Confirm Password
@@ -212,13 +211,13 @@ const SignUp = () => {
       {/* Submit Button */}
       <TouchableOpacity
         className="py-4 rounded-lg bg-[#9eadffd9] tracking-wider mt-4"
-        onPress={handleSubmit(onSubmit)}
+        onPress={() => setSelectedScreen("house-selection")}
         disabled={isLoading}
       >
         <Text className="text-white text-center text-lg font-medium">
           {isLoading ? (
             <View className="-mt-8">
-              <ActivityIndicator size="small" color="#c1c1c1" />
+              <ActivityIndicator size="small" color="white" />
             </View>
           ) : (
             "Next"

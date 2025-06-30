@@ -59,7 +59,7 @@ const logIn = ({
   return (
     <SafeAreaView className="bg-[#fafafa] justify-center px-10 pt-10 h-">
       {/* Email Field */}
-      <View className="mb-4">
+      <View className="mb-6">
         <View className="relative mt-2">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Email
@@ -86,7 +86,7 @@ const logIn = ({
       </View>
 
       {/* Password Field */}
-      <View className="mb-4">
+      <View className="mb-6">
         <View className="relative mt-2">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Password
@@ -121,7 +121,7 @@ const logIn = ({
         <Text className="text-white text-center text-lg font-medium">
           {isLoading ? (
             <View className="-mt-8">
-              <ActivityIndicator size="small" color="#c1c1c1" />
+              <ActivityIndicator size="small" color="white" />
             </View>
           ) : (
             "Log in"

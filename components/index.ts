@@ -18,3 +18,4 @@ export { default as StudioModal } from "./StudioModal";
 export { default as CategoryListModal } from "./CategoryListModal";
 export { default as CartItem } from "./CartItem";
 export { default as ResetPassword } from "./ResetPassword";
+export { default as HouseSelector } from "./HouseSelector";

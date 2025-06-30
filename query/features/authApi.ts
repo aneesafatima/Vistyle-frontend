@@ -42,12 +42,11 @@ export const authApi = createApi({
       },
     }),
     forgotPassword: builder.mutation({
-      query: (userData: userData) => {
-        console.log("Data in forgot password", userData);
+      query: (email: string) => {
         return {
           url: "/forgot-password",
           method: "POST",
-          body: userData, //change this as needed
+          body: {email}, //change this as needed
         };
       },
     }),
