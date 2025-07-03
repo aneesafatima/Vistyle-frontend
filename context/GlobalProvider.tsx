@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import { SkImage } from "@shopify/react-native-skia";
 type GlobalContextType = {
   isLoggedIn: boolean;
@@ -17,6 +17,17 @@ type GlobalContextType = {
   setShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
   makeSearch: boolean;
   setMakeSearch: React.Dispatch<React.SetStateAction<boolean>>;
+  signUpData: React.MutableRefObject<{
+    name: string;
+    email: string;
+    password: string;
+    passwordConfirm: string;
+    username: string;
+    interests: string[];
+    cart: never[];
+    designHouse: string;
+    description: string;
+  }>;
 };
 
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
@@ -30,6 +41,17 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
     useState<null | updatedUserDataType>(null);
   const [showAlert, setShowAlert] = useState(false);
   const [makeSearch, setMakeSearch] = useState(false);
+  const signUpData = useRef({
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+    username: "",
+    interests: [],
+    cart: [],
+    designHouse: "" as DesignHouse,
+    description: "",
+  });
 
   return (
     <GlobalContext.Provider
@@ -48,6 +70,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         setShowAlert,
         makeSearch,
         setMakeSearch,
+        signUpData,
       }}
     >
       {children}

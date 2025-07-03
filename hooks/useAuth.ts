@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { saveToken } from "@/utils/storage";
+import { saveToken, removeToken } from "@/utils/storage";
 import { GlobalContext } from "@/context/GlobalProvider";
-import { useRouter } from "expo-router"; // Import useRouter from expo-router
+import { useRouter } from "expo-router";
 import { LoginResponseType } from "@/types/auth";
-import { removeToken } from "@/utils/storage";
 const useAuth = () => {
   const { setIsLoggedIn, setUserData, setToken } = useContext(GlobalContext)!;
   const router = useRouter();
@@ -11,7 +10,6 @@ const useAuth = () => {
   // Function (optional)
   const loggingUserIn = async (result: LoginResponseType) => {
     await saveToken(result["token"]);
-    console.log("result", result);
     setIsLoggedIn(true);
     setUserData({
       name: result.user.name,
@@ -36,8 +34,7 @@ const useAuth = () => {
     });
   };
 
-  // Return values (state & functions)
-  return { loggingUserIn,loggingUserOut };
+  return { loggingUserIn, loggingUserOut };
 };
 
 export default useAuth;

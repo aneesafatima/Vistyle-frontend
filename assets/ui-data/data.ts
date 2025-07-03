@@ -101,7 +101,7 @@ export const shapeStyles = [
   {
     background: "#ffebeb",
     rounded: {}, // no rounding
-    path: require("../images/2nd-row-1.png")
+    path: require("../images/2nd-row-1.png"),
   }, // 2nd row
   {
     background: "#e3e3e3",
@@ -122,7 +122,7 @@ export const shapeStyles = [
   {
     background: "#fff2be",
     rounded: {}, // no rounding
-    path: require("../images/3rd-row-2.png")
+    path: require("../images/3rd-row-2.png"),
   },
   {
     background: "#f0ece2",
@@ -143,13 +143,13 @@ export const shapeStyles = [
   {
     background: "#d5eeff",
     rounded: {}, // no rounding
-    path: require("../images/4th-row-3.png")
+    path: require("../images/4th-row-3.png"),
   },
 
   {
     background: "#fefce8",
     rounded: {}, // no rounding
-    path: require("../images/5th-row-1.png")
+    path: require("../images/5th-row-1.png"),
   }, // 5th row
   {
     background: "#d3f6d1",
@@ -163,35 +163,45 @@ export const shapeStyles = [
   },
 ];
 export const fontLoader = async () => {
-   await Font.loadAsync({
-        "poppins-medium": require("../fonts/Poppins-Medium.ttf"),
-        "interTight-bold": require("../fonts/InterTight-Bold.ttf"),
-        "interTight-medium": require("../fonts/InterTight-Medium.ttf"),
-        "interTight-regular": require("../fonts/InterTight-Regular.ttf"),
-        "freckle-face": require("../fonts/FreckleFace-Regular.ttf"),
-        georgia: require("../fonts/NotoSansGeorgian-VariableFont_wdth,wght.ttf"),
-        "arial-rounded": require("../fonts/Arial-rounded.ttf"),
-      });
-}
+  await Font.loadAsync({
+    "poppins-medium": require("../fonts/Poppins-Medium.ttf"),
+    "interTight-bold": require("../fonts/InterTight-Bold.ttf"),
+    "interTight-medium": require("../fonts/InterTight-Medium.ttf"),
+    "interTight-regular": require("../fonts/InterTight-Regular.ttf"),
+    "freckle-face": require("../fonts/FreckleFace-Regular.ttf"),
+    georgia: require("../fonts/NotoSansGeorgian-VariableFont_wdth,wght.ttf"),
+    "arial-rounded": require("../fonts/Arial-rounded.ttf"),
+  });
+};
 
-  export const houses = [
-    "The Dreamer",
-    "The Rebel",
-    "The Minimalist",
-    "The Iconic",
-    "The Trendsetter",
-    "The Vintage Soul",
-    "The Explorer",
-    "The Romantic",
-  ];
+export const houses = [
+  "The Dreamer",
+  "The Rebel",
+  "The Minimalist",
+  "The Iconic",
+  "The Trendsetter",
+  "The Vintage Soul",
+  "The Explorer",
+  "The Romantic",
+];
 
-  export const houseEmojis: Record<string, string> = {
-    "The Dreamer": "🌙",
-    "The Rebel": "🔥",
-    "The Minimalist": "⚪",
-    "The Iconic": "💫",
-    "The Trendsetter": "✨",
-    "The Vintage Soul": "📻",
-    "The Explorer": "🧭",
-    "The Romantic": "💖",
-  };
+export const houseEmojis: Record<string, string> = {
+  "The Dreamer": "🌙",
+  "The Rebel": "🔥",
+  "The Minimalist": "⚪",
+  "The Iconic": "💫",
+  "The Trendsetter": "✨",
+  "The Vintage Soul": "📻",
+  "The Explorer": "🧭",
+  "The Romantic": "💖",
+};
+
+type DesignHouse =
+  | "theminimalist"
+  | "thedreamer"
+  | "therebel"
+  | "theiconic"
+  | "thetrendsetter"
+  | "thevintagesoul"
+  | "theexplorer"
+  | "theromantic";

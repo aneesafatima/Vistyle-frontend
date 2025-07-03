@@ -1,8 +1,6 @@
 import { Tabs } from "expo-router";
 
 const _layout = () => {
-  //make request to the server
-  //protect this route and all under it
   return (
     <>
       <Tabs screenOptions={{ headerShown: false }}>
@@ -17,10 +15,10 @@ const _layout = () => {
           name="design-canvas"
           options={{
             tabBarButton: () => null,
-            tabBarStyle: { display: "none" }, 
+            tabBarStyle: { display: "none" },
           }}
         />
-        <Tabs.Screen name="post-upload" options={{ title: "upload" }} />
+
       </Tabs>
     </>
   );

@@ -32,7 +32,8 @@ module.exports = function (api) {
             "mdi:lock",
             "mdi:minus",
             "material-symbols-light:arrow-back-2-outline-rounded",
-            "material-symbols-light:more-vert"
+            "material-symbols-light:more-vert",
+            "mdi:link-variant"
           ],
         },
       ],

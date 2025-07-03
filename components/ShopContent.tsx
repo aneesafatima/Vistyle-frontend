@@ -66,7 +66,7 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
               key={product.code || i}
               imageUrl={product.articles[0].normalPicture?.[0]?.url || ""}
               baseUrl={product.images[0]?.baseUrl || ""}
-              code={product.code || ""}
+              code={product.articles[0].code || ""}
               brand="H&M"
               title={product.name || ""}
               price={product.price?.formattedValue || ""}

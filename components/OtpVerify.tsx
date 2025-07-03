@@ -43,7 +43,6 @@ export default function OtpVerify({ setStep }: UserEmailProps) {
       Alert.alert("Error", error?.data?.message || "Something went wrong");
     }
   };
-
   return (
     <View
       className="flex-1 justify-center items-center mt-10"

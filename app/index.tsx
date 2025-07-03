@@ -1,5 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { StatusBar, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StatusBar,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 import { router } from "expo-router";
@@ -20,15 +27,18 @@ import { HouseSelector, InterestsSelector } from "@/components";
 import Iconify from "react-native-iconify";
 import { AntDesign } from "@expo/vector-icons";
 const HomePage = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const [showAuthenticationScreen, setShowAuthenticationScreen] =
     useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedScreen, setSelectedScreen] = useState("sign-up");
   const { setIsLoggedIn, setToken, token, setUserData } =
     useContext(GlobalContext)!;
-  const { data } = useTokenStatusQuery(token as string, {
-    skip: !token,
-  });
+  const { data, isLoading: isDataLoading } = useTokenStatusQuery(
+    token as string,
+    {
+      skip: !token,
+    }
+  );
   const translate = useSharedValue(0);
   useEffect(() => {
     const loadFonts = async () => {
@@ -38,7 +48,6 @@ const HomePage = () => {
       val && setToken(val);
     });
     if (data) {
-      console.log("Token Status Data:", data);
       setUserData({
         name: data.user.name,
         email: data.user.email,
@@ -50,9 +59,10 @@ const HomePage = () => {
         stickers: data.user.stickers,
         cart: data.user.cart,
       });
+      setIsLoading(false);
       setIsLoggedIn(true);
       router.navigate("/(user)/home");
-    } else {
+    } else if (isLoading && !isDataLoading) {
       setIsLoading(false);
     }
     loadFonts();
@@ -198,8 +208,13 @@ const HomePage = () => {
         onPress={() => {
           handleAuthenticationScreen();
         }}
+        disabled={isLoading}
       >
-        <AntDesign name="arrowleft" size={24} color="white" />
+        {isLoading ? (
+          <ActivityIndicator size="small" color="white" />
+        ) : (
+          <AntDesign name="arrowleft" size={24} color="white" />
+        )}
       </TouchableOpacity>
     </SafeAreaView>
   );

@@ -1,18 +1,14 @@
 import {
   View,
   Text,
-  Alert,
-  Pressable,
   TextInput,
   ActivityIndicator,
   TouchableOpacity,
 } from "react-native";
-import React, { useContext } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "expo-router";
 import { useLoginUserMutation } from "../../query/features/authApi";
 import useAuth from "@/hooks/useAuth";
 import { LoginResponseType } from "@/types/auth";
@@ -38,7 +34,7 @@ const logIn = ({
     defaultValues: { email: "", password: "" },
   });
 
-  const [loginUser, { isLoading }] = useLoginUserMutation();
+  const [loginUser, { isLoading, error }] = useLoginUserMutation();
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
@@ -48,10 +44,6 @@ const logIn = ({
       }).unwrap();
       await loggingUserIn(result);
     } catch (error: any) {
-      Alert.alert(
-        "Login Failed",
-        error?.data?.message || "Something went wrong"
-      );
       console.error(error);
     }
   };
@@ -107,8 +99,12 @@ const logIn = ({
             )}
           />
         </View>
-        {errors.password && (
-          <Text className="mt-1 text-[#F87171]">{errors.password.message}</Text>
+        {(errors.password || (error as any)) && (
+          <Text className="mt-1 text-[#F87171]">
+            {errors?.password?.message ||
+              (error as any)?.data?.message ||
+              "Something went wrong"}
+          </Text>
         )}
       </View>
 
@@ -120,9 +116,7 @@ const logIn = ({
       >
         <Text className="text-white text-center text-lg font-medium">
           {isLoading ? (
-            <View className="-mt-8">
-              <ActivityIndicator size="small" color="white" />
-            </View>
+            <ActivityIndicator size="small" color="white" />
           ) : (
             "Log in"
           )}

@@ -8,7 +8,7 @@ import {
   Pressable,
 } from "react-native";
 import Iconify from "react-native-iconify";
-
+import { useRouter } from "expo-router";
 interface ItemCardProps {
   imageUrl: string;
   title: string;
@@ -40,10 +40,17 @@ const ItemCard = ({
   baseUrl,
   showModal,
   setSelectedProduct,
-  priceValue
+  priceValue,
 }: ItemCardProps) => {
+  const router = useRouter();
   return (
-    <View
+    <Pressable
+      onPress={() =>
+        router.push({
+          pathname: "/(user)/item-page/[code]",
+          params: { code },
+        })
+      }
       style={{ width: cardWidth }}
       className="mb-4 font-interTight-regular mx-1 relative"
     >
@@ -78,7 +85,7 @@ const ItemCard = ({
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

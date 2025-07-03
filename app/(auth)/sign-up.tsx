@@ -3,18 +3,15 @@ import {
   View,
   Text,
   TextInput,
-  Alert,
-  ActivityIndicator,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "expo-router";
-import { useSignUpUserMutation } from "../../query/features/authApi";
 import { GlobalContext } from "@/context/GlobalProvider";
-import { saveToken } from "@/utils/storage";
+import { useCheckAvailabilityMutation } from "@/query/features/authApi";
 const signUpSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -30,8 +27,14 @@ const signUpSchema = z
 
 type LoginFormValues = z.infer<typeof signUpSchema>;
 
-const SignUp = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.SetStateAction<string>>}) => {
-  const { setUserData, setIsLoggedIn } = useContext(GlobalContext)!;
+const SignUp = ({
+  setSelectedScreen,
+}: {
+  setSelectedScreen: React.Dispatch<React.SetStateAction<string>>;
+}) => {
+  const { signUpData } = useContext(GlobalContext)!;
+  const [checkAvailability, { isLoading: isChecking, error, data }] =
+    useCheckAvailabilityMutation();
   const {
     control,
     handleSubmit,
@@ -46,31 +49,21 @@ const SignUp = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.S
       username: "",
     },
   });
-  const [signUpUser, { isLoading }] = useSignUpUserMutation();
-  const router = useRouter();
-
-  // const onSubmit = async (data: LoginFormValues) => {
-  //   try {
-  //     const result = await signUpUser(data).unwrap();
-  //     await saveToken(result["token"]);
-  //     setIsLoggedIn(true);
-  //     setUserData({
-  //       name: result["user"].name,
-  //       email: result["user"].email,
-  //       interests: result["user"].interests,
-  //       username: result["user"].username,
-  //       description: result["user"].description,
-  //       designHouse: result["user"].designHouse,
-  //       id: result["user"].id,
-  //       stickers: result["user"].stickers,
-  //       cart: result["user"].cart,
-  //     });
-  //     router.replace("/(user)/home");
-  //   } catch (error: any) {
-  //     Alert.alert("Error", error?.data?.message || "Something went wrong");
-  //   }
-  // };
-
+  const onSubmit = async (data: LoginFormValues) => {
+    try {
+      const res = await checkAvailability({
+        username: data.username,
+        email: data.email,
+      }).unwrap();
+      setSelectedScreen("house-selection");
+      signUpData.current = {
+        ...signUpData.current,
+        ...data,
+      };
+    } catch (error: any) {
+      console.error("Error during sign up:", error);
+    }
+  };
   return (
     <SafeAreaView className="bg-[#fafafa] justify-center px-10 mt-8">
       {/* Name */}
@@ -100,6 +93,7 @@ const SignUp = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.S
       </View>
 
       {/* Username */}
+      {/*Check whther unique or not */}
       <View className="mb-6">
         <View className="relative">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
@@ -120,8 +114,10 @@ const SignUp = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.S
             )}
           />
         </View>
-        {errors.username && (
-          <Text className="mt-1 text-[#F87171]">{errors.username.message}</Text>
+        {(errors.username || (error as any)?.data?.type == "username") && (
+          <Text className="mt-1 text-[#F87171]">
+            {errors?.username?.message || (error as any)?.data?.message || ""}
+          </Text>
         )}
       </View>
 
@@ -147,8 +143,10 @@ const SignUp = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.S
             )}
           />
         </View>
-        {errors.email && (
-          <Text className="mt-1 text-[#F87171]">{errors.email.message}</Text>
+        {(errors.email || (error as any)?.data?.type == "email") && (
+          <Text className="mt-1 text-[#F87171]">
+            {errors?.email?.message || (error as any)?.data?.message || ""}
+          </Text>
         )}
       </View>
 
@@ -211,12 +209,11 @@ const SignUp = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.S
       {/* Submit Button */}
       <TouchableOpacity
         className="py-4 rounded-lg bg-[#9eadffd9] tracking-wider mt-4"
-        onPress={() => setSelectedScreen("house-selection")}
-        disabled={isLoading}
+        onPress={handleSubmit(onSubmit)}
       >
         <Text className="text-white text-center text-lg font-medium">
-          {isLoading ? (
-            <View className="-mt-8">
+          {isChecking ? (
+            <View>
               <ActivityIndicator size="small" color="white" />
             </View>
           ) : (

@@ -1,9 +1,8 @@
-
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import Constants from 'expo-constants';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import Constants from "expo-constants";
 
 export const hmApi = createApi({
-  reducerPath: 'hmApi',
+  reducerPath: "hmApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/",
     prepareHeaders: (headers) => {
@@ -21,17 +20,29 @@ export const hmApi = createApi({
   endpoints: (builder) => ({
     productListByText: builder.query<any, string>({
       query: (searchText: string) => {
-        console.log('searchText', searchText);
-
         return {
-          url: 'list',
-          method: 'GET',
+          url: "list",
+          method: "GET",
           params: {
-            country: 'in',
-            lang: 'en',
-            currentpage: '0',
-            pagesize: '30',
+            country: "in",
+            lang: "en",
+            currentpage: "0",
+            pagesize: "30",
             query: searchText,
+          },
+        };
+      },
+    }),
+    productDetail: builder.query({
+      query: (code: string) => {
+        console.log("Fetching product detail for code:", code);
+        return {
+          url: "detail",
+          method: "GET",
+          params: {
+            country: "in",
+            lang: "en",
+            productcode: code,
           },
         };
       },
@@ -39,4 +50,4 @@ export const hmApi = createApi({
   }),
 });
 
-export const { useProductListByTextQuery } = hmApi;
+export const { useProductListByTextQuery, useProductDetailQuery } = hmApi;

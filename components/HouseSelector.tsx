@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, Text, TouchableOpacity, Dimensions } from "react-native";
 import { houses, houseEmojis } from "@/assets/ui-data/data";
+import { GlobalContext } from "@/context/GlobalProvider";
 
-const HouseSelector = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<React.SetStateAction<string>>}) => {
+const HouseSelector = ({
+  setSelectedScreen,
+}: {
+  setSelectedScreen: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const [selectedHouse, setSelectedHouse] = useState("");
   const { width: screenWidth } = Dimensions.get("window");
-  const boxWidth = (screenWidth - 48) / 2; // 2 boxes per row with padding
+  const boxWidth = (screenWidth - 48) / 2;
+  const { signUpData } = useContext(GlobalContext)!;
   return (
     <View className="p-4">
       <Text className="text-sm font-semibold text-[#737373] mb-6 mt-4 text-center font-arial-rounded">
@@ -42,12 +48,12 @@ const HouseSelector = ({setSelectedScreen} : {setSelectedScreen: React.Dispatch<
       </View>
       <TouchableOpacity
         className="py-4 rounded-lg bg-[#9eadffd9] tracking-wider mt-4"
-        onPress={() => setSelectedScreen("interests-selection")}
-        // disabled={isLoading}
+        onPress={() => {
+          setSelectedScreen("interests-selection");
+          signUpData.current.designHouse = selectedHouse;
+        }}
       >
-        <Text className="text-white text-center text-lg font-medium">
-          Next
-        </Text>
+        <Text className="text-white text-center text-lg font-medium">Next</Text>
       </TouchableOpacity>
     </View>
   );
