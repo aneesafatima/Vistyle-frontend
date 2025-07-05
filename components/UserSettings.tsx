@@ -140,15 +140,15 @@ const UserSettings = ({
   if (!isEditingProfile) return null; // Prevent rendering if not editing profile
 
   return (
-    <SafeAreaView className="flex-1 bg-[#222831]">
-      <Animated.View style={animatedStyles}>
+    <SafeAreaView className="bg-[#222831]">
+      <Animated.ScrollView style={[animatedStyles, {paddingBottom: 200}]}>
         <StatusBar
           barStyle="light-content"
           translucent={false}
           animated={true}
           backgroundColor="#222831"
         />
-        <View className="px-10    w-screen  z-20 ">
+        <View className="px-10 w-screen z-20 ">
           {/* Header */}
           <View className="mt-12 flex flex-row justify-between">
             <Pressable onPress={() => setIsEditingProfile(false)}>
@@ -190,7 +190,7 @@ const UserSettings = ({
 
             return (
               <View key={index} className="flex flex-col  my-6">
-                <View className="relative    h-16 mx-2">
+                <View className="relative h-16 mx-2">
                   <Text className="text-lg font-interTight-medium absolute left-6 -translate-y-1/2 bg-[#222831]  z-20 text-[#9eadffd9]  font-bold mb-1">
                     {element.label}
                   </Text>
@@ -221,7 +221,7 @@ const UserSettings = ({
             );
           })}
         </View>
-      </Animated.View>
+      </Animated.ScrollView>
     </SafeAreaView>
   );
 };

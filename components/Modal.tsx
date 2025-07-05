@@ -3,10 +3,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import React, { useContext } from "react";
 import Modal from "react-native-modal";
 import { GlobalContext } from "@/context/GlobalProvider";
-import {
-  FashionInterest,
-  fashionInterestColors,
-} from "@/assets/ui-data/data";
+import { FashionInterest, fashionInterestColors } from "@/assets/ui-data/data";
 
 const InterestsModal = ({
   showModal,
@@ -30,62 +27,57 @@ const InterestsModal = ({
 
   return (
     <View className="flex-1">
-    <Modal
-      isVisible={showModal}
-      coverScreen
-      hasBackdrop={true}
-      backdropColor="black"
-      backdropOpacity={0.7}
-      animationIn="slideInUp"
-      animationOut="slideOutDown"
-      animationInTiming={300}
-      animationOutTiming={300}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end",
-      }}
-    >
-      <View className="bg-white rounded-3xl p-4 pb-6  w-full">
-        {userData?.interests && userData.interests.length >= 3 && (
-          <Pressable
-            className="absolute top-4 right-4"
-            onPress={() => setShowModal(false)}
-          >
-            <Entypo name="cross" size={24} color="black" />
-          </Pressable>
-        )}
-        <Text className="mt-6 px-7 py-3 font-poppins-medium font-bold text-2xl text-center text-gray-800">
-          Choose Styles which scream you!
-        </Text>
-        <Text className="text-center text-gray-500 mb-2">
-          You must select at least 3 styles to proceed.
-        </Text>
-
-        <View className="flex flex-row flex-wrap justify-center mt-4">
-          {FashionInterest.map((interest) => (
+      <Modal
+        isVisible={showModal}
+        coverScreen
+        hasBackdrop={true}
+        backdropColor="black"
+        backdropOpacity={0.7}
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
+        animationInTiming={300}
+        animationOutTiming={300}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+        }}
+      >
+        <View className="bg-white rounded-3xl p-4 pb-6  w-full">
+          {userData?.interests && userData.interests.length >= 3 && (
             <Pressable
-              onPress={() => handleTagPress(interest)}
-              key={interest}
-              className="bg-gray-200 rounded-full px-4 py-2 mr-2 mb-2"
-              style={{
-                backgroundColor: fashionInterestColors[interest].bg,
-                ...(userData?.interests?.includes(interest) && {
-                  borderColor: "black",
-                  borderWidth: 1,
-                  borderStyle: "solid",
-                  margin: -1,
-                }),
-              }}
+              className="absolute top-4 right-4"
+              onPress={() => setShowModal(false)}
             >
-              <Text style={{ color: fashionInterestColors[interest].text }}>
-                {interest}
-              </Text>
+              <Entypo name="cross" size={24} color="black" />
             </Pressable>
-          ))}
+          )}
+          <Text className="mt-6 px-7 py-3 font-arial-rounded  text-2xl text-center text-gray-800">
+            Choose Styles which scream you!
+          </Text>
+          <Text className="text-center text-gray-500 my-2 font-arial-rounded">
+            You must select at least 3 styles to proceed.
+          </Text>
+
+          <View className="flex flex-row flex-wrap justify-center mt-4">
+            {FashionInterest.map((interest) => (
+              <Pressable
+                onPress={() => handleTagPress(interest)}
+                key={interest}
+                className="rounded-full px-4 py-2 mr-2 mb-2 bg-[#fbe1cd88]  "
+                style={{
+                  borderColor: userData?.interests?.includes(interest)
+                    ? "#a3693c"
+                    : "#ccc",
+                  borderWidth: 1,
+                }}
+              >
+                <Text className="text-[#a3693c] ">{interest}</Text>
+              </Pressable>
+            ))}
+          </View>
         </View>
-      </View>
-    </Modal>
+      </Modal>
     </View>
   );
 };
