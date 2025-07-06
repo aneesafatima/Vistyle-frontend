@@ -3,7 +3,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import React, { useContext } from "react";
 import Modal from "react-native-modal";
 import { GlobalContext } from "@/context/GlobalProvider";
-import { FashionInterest, fashionInterestColors } from "@/assets/ui-data/data";
+import { FashionInterest } from "@/assets/ui-data/data";
 
 const InterestsModal = ({
   showModal,
@@ -24,7 +24,7 @@ const InterestsModal = ({
       } else return prev;
     });
   };
-
+ 
   return (
     <View className="flex-1">
       <Modal
@@ -52,10 +52,10 @@ const InterestsModal = ({
               <Entypo name="cross" size={24} color="black" />
             </Pressable>
           )}
-          <Text className="mt-6 px-7 py-3 font-arial-rounded  text-2xl text-center text-gray-800">
+          <Text className="mt-6 px-7 py-3 font-poppins-medium text-2xl text-center text-gray-800">
             Choose Styles which scream you!
           </Text>
-          <Text className="text-center text-gray-500 my-2 font-arial-rounded">
+          <Text className="text-center text-gray-500 my-2 font-poppins-medium text-xs">
             You must select at least 3 styles to proceed.
           </Text>
 

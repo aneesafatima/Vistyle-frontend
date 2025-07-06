@@ -23,12 +23,13 @@ import { useContext, useEffect, useState } from "react";
 import { Modal } from "@/components";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { UserSettings } from "@/components";
+import { useRouter } from "expo-router";
 
 const Profile = () => {
   const [fontsLoaded] = useFonts({
     "poppins-medium": require("../../assets/fonts/Poppins-Medium.ttf"),
   });
-  const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
+  const router = useRouter();
   const translate = useSharedValue(0);
   const animatedStyles = useAnimatedStyle(() => ({
     transform: [{ translateX: translate.value }],
@@ -42,6 +43,7 @@ const Profile = () => {
       easing: Easing.inOut(Easing.ease),
     });
   }, [isEditingProfile]);
+  const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
   if (!fontsLoaded) return;
 
   return (
@@ -74,6 +76,7 @@ const Profile = () => {
           <TouchableOpacity
             className={`rounded-full bg-[#9eadffd9] w-16 h-16  mx-5 flex items-center justify-center
             `}
+            onPress={() => router.back()}
           >
             <AntDesign name="arrowleft" size={24} color="#222831" />
           </TouchableOpacity>
@@ -100,9 +103,7 @@ const Profile = () => {
             </Text>
             <Text className="text-center italic">{userData?.description}</Text>
             <View className="flex flex-row justify-between mt-5">
-              <Text className="text-xl font-medium font-poppins-medium pl-6">
-                Interests
-              </Text>
+              <Text className="text-xl font-medium c pl-6">Interests</Text>
               <TouchableOpacity onPress={() => setShowModal(true)}>
                 <Text className="text-gray-500 underline pr-6">Edit</Text>
               </TouchableOpacity>
