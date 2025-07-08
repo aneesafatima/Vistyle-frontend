@@ -47,15 +47,15 @@ const Profile = () => {
   if (!fontsLoaded) return;
 
   return (
-    <SafeAreaView className="bg-[#222831] relative" style={{ flex: 1 }}>
+    <SafeAreaView className="bg-[#9eadffd9] relative" style={{ flex: 1 }}>
       <UserSettings
         setIsEditingProfile={setIsEditingProfile}
         isEditingProfile={isEditingProfile}
       />
       <StatusBar
-        barStyle="light-content"
+        barStyle="dark-content"
         translucent={false}
-        backgroundColor="#222831"
+        backgroundColor="#9eadffd9"
       />
 
       <Modal showModal={showModal} setShowModal={setShowModal} />
@@ -74,23 +74,23 @@ const Profile = () => {
       >
         <View className="flex flex-row justify-between mt-10 ">
           <TouchableOpacity
-            className={`rounded-full bg-[#9eadffd9] w-16 h-16  mx-5 flex items-center justify-center
+            className={`rounded-full bg-[#222831] w-16 h-16  mx-5 flex items-center justify-center
             `}
             onPress={() => router.back()}
           >
-            <AntDesign name="arrowleft" size={24} color="#222831" />
+            <AntDesign name="arrowleft" size={24} color="#9eadff" />
           </TouchableOpacity>
 
           <TouchableOpacity
-            className={`bg-[#9eadffd9] rounded-full w-16 h-16  mx-5 flex items-center justify-center
+            className={`bg-[#222831] rounded-full w-16 h-16  mx-5 flex items-center justify-center
             `}
             onPress={() => setIsEditingProfile(true)}
           >
-            <FontAwesome name="pencil" size={24} color="#222831" />
+            <FontAwesome name="pencil" size={24} color="#9eadff" />
           </TouchableOpacity>
         </View>
         <View
-          className={`bg-[#fafafa] relative top-20 mx-3 flex-grow rounded-[40px]`}
+          className={`bg-[#fafafa] relative top-20 mx-5 flex-grow mb-7 rounded-[40px]`}
         >
           <Image
             className="w-36 h-36 rounded-full bg-pink-100 bg-contain self-center absolute top-[-70px] shadow-lg"
@@ -103,7 +103,7 @@ const Profile = () => {
             </Text>
             <Text className="text-center italic">{userData?.description}</Text>
             <View className="flex flex-row justify-between mt-5">
-              <Text className="text-xl font-medium c pl-6">Interests</Text>
+              <Text className="text-xl font-medium  pl-6">Interests</Text>
               <TouchableOpacity onPress={() => setShowModal(true)}>
                 <Text className="text-gray-500 underline pr-6">Edit</Text>
               </TouchableOpacity>

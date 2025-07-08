@@ -13,11 +13,11 @@ const HomePage = () => {
   //add shopping categories to the home page
   return (
     isLoggedIn && (
-      <SafeAreaView className="flex-1 bg-white">
+      <SafeAreaView className="flex-1 bg-[#fafafa]">
         <StatusBar
           barStyle="dark-content"
           translucent={false}
-          backgroundColor="white"
+          backgroundColor="#fafafa"
         />
         <Header
           isSearching={isSearching}
@@ -28,7 +28,7 @@ const HomePage = () => {
         {isSearching ? (
           <ShopContent searchText={searchText} />
         ) : (
-          <HomeContent />
+          <HomeContent/>
         )}
         <TouchableOpacity
           className="absolute bottom-4 right-4 bg-blue-500 p-3 rounded-full"

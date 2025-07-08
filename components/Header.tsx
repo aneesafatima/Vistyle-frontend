@@ -65,7 +65,7 @@ const Header = ({
             borderRadius: 32,
             borderWidth: 1,
             borderColor: "#D1D5DB",
-            backgroundColor: "#fff",
+            backgroundColor: "#fafafa",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",

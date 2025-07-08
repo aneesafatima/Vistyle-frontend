@@ -2,21 +2,10 @@ import { Tabs, TabList, TabTrigger, TabSlot } from "expo-router/ui";
 import { Ionicons } from "@expo/vector-icons";
 import { View } from "react-native";
 import { usePathname } from "expo-router";
+import path from "path";
 
 export default function Layout() {
-
-function CustomTabIcon({ name, icon }: { name: string; icon: string }) {
   const pathname = usePathname();
-  const isActive = pathname === `/${name}`;
-  return (
-    <TabTrigger name={name} href="/home">
-      <View>
-        <Ionicons name={icon} size={25} color={isActive ? "#00ADB5" : "gray"} />
-      </View>
-    </TabTrigger>
-  );
-}
-
   return (
     <Tabs>
       <TabSlot />
@@ -26,7 +15,7 @@ function CustomTabIcon({ name, icon }: { name: string; icon: string }) {
           justifyContent: "space-around",
           backgroundColor: "#222831",
           height: 75,
-          margin: 20,
+          margin: 10,
           borderRadius: 40,
           paddingHorizontal: 10,
           alignItems: "center",
@@ -37,23 +26,34 @@ function CustomTabIcon({ name, icon }: { name: string; icon: string }) {
           alignSelf: "center",
         }}
       >
-          <CustomTabIcon name="home" icon="home-outline" />
-        <CustomTabIcon name="cart" icon="cart-outline" />
-        <CustomTabIcon name="design-studio" icon="layers-outline" />
-        <CustomTabIcon name="profile" icon="person-outline" />
-
-        {/* <TabTrigger name="home" href="/home" >
-          <Ionicons name="home-outline" size={25} color="black" />
+        <TabTrigger name="home" href="/home">
+          <Ionicons
+            name="home-outline"
+            size={25}
+            color={pathname == "/home" ? "#9eadff" : "black"}
+          />
         </TabTrigger>
         <TabTrigger name="cart" href="/cart">
-          <Ionicons name="cart-outline" size={25} color="black" />
+          <Ionicons
+            name="cart-outline"
+            size={25}
+            color={pathname == "/cart" ? "#9eadff" : "black"}
+          />
         </TabTrigger>
         <TabTrigger name="design-studio" href="/design-studio">
-          <Ionicons name="layers-outline" size={25} color="black" />
+          <Ionicons
+            name="layers-outline"
+            size={25}
+            color={pathname == "/design-studio" ? "#9eadff" : "black"}
+          />
         </TabTrigger>
         <TabTrigger name="profile" href="/profile">
-          <Ionicons name="person-outline" size={25} color="black" />
-        </TabTrigger> */}
+          <Ionicons
+            name="person-outline"
+            size={25}
+            color={pathname == "/profile" ? "#9eadff" : "black"}
+          />
+        </TabTrigger>
       </TabList>
     </Tabs>
   );
