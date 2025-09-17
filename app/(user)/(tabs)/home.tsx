@@ -26,7 +26,7 @@ const HomePage = () => {
           setSearchText={setSearchText}
         />
         {isSearching ? (
-          <ShopContent searchText={searchText} />
+          <ShopContent searchText={searchText} setSearchText={setSearchText} />
         ) : (
           <HomeContent/>
         )}

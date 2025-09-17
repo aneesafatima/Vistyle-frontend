@@ -27,7 +27,7 @@ import { useRouter } from "expo-router";
 
 const Profile = () => {
   const [fontsLoaded] = useFonts({
-    "poppins-medium": require("../../assets/fonts/Poppins-Medium.ttf"),
+    "poppins-medium": require("../../../assets/fonts/Poppins-Medium.ttf"),
   });
   const router = useRouter();
   const translate = useSharedValue(0);
@@ -94,7 +94,7 @@ const Profile = () => {
         >
           <Image
             className="w-36 h-36 rounded-full bg-pink-100 bg-contain self-center absolute top-[-70px] shadow-lg"
-            source={require("../../assets/images/avatar-pfp.jpg")}
+            source={require("../../../assets/images/avatar-pfp.jpg")}
           />
 
           <View className="px-2 mt-20">

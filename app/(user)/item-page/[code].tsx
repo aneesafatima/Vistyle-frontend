@@ -24,6 +24,8 @@ const ItemPage = () => {
   const { code: itemId } = useLocalSearchParams<{ code: string }>();
   // const { data, isLoading, error } = useProductDetailQuery(itemId);
 
+  console.log("In Item page")
+
   // Demo images array - using the same image 3 times as requested
   const demoImages = [
     require("../../../assets/images/item-img-demo.jpg"),

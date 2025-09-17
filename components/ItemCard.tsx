@@ -45,12 +45,13 @@ const ItemCard = ({
   const router = useRouter();
   return (
     <Pressable
-      onPress={() =>
+      onPress={() => {
+        console.log("Navigating to item page with code:", code);
         router.push({
           pathname: "/(user)/item-page/[code]",
           params: { code },
-        })
-      }
+        });
+      }}
       style={{ width: cardWidth }}
       className="mb-4 font-interTight-regular mx-1 relative"
     >

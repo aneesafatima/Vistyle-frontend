@@ -5,7 +5,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useProductListByTextQuery } from "@/query/features/hmApi";
 
-const ShopContent = ({ searchText }: { searchText: string }) => {
+const ShopContent = ({ searchText,setSearchText }: { searchText: string,setSearchText: React.Dispatch<React.SetStateAction<string>> }) => {
   const [showModal, setShowModal] = useState(false);
   const [category, setCategory] = useState("");
   const [position, setPosition] = useState<"top" | "middle" | "bottom">();
@@ -25,6 +25,7 @@ const ShopContent = ({ searchText }: { searchText: string }) => {
   useEffect(() => {
     if (data && makeSearch) {
       setMakeSearch(false);
+      setSearchText("");
     }
   }, [data]);
   useEffect(() => {

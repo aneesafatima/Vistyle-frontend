@@ -80,7 +80,7 @@ const InterestsSelector = () => {
       </View>
 
       <TouchableOpacity
-        disabled={selectedInterests.length < 5}
+        disabled={selectedInterests.length < 3}
         className={`mt-6 py-4 mx-5 rounded-lg ${
           selectedInterests.length >= 3 ? "bg-[#9eadffd9]" : "bg-gray-300"
         }`}
