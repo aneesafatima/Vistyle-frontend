@@ -22,7 +22,7 @@ const useAuth = () => {
       stickers: result.user.stickers,
       cart: result.user.cart,
     });
-    router.replace("/(user)/home");
+    router.replace("/(user)/(tabs)/home");
   };
 
   const loggingUserOut = () => {

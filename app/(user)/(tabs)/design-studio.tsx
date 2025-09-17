@@ -172,7 +172,7 @@ const DesignStudio = () => {
           description="You haven't created any stickers yet. Please create some stickers to use in the design studio."
           onAcceptText="Dismiss"
           onAccept={() => {
-            router.push("/(user)/home");
+            router.push("/(user)/(tabs)/home");
             setShowAlert(false);
           }}
         />
@@ -215,7 +215,7 @@ const DesignStudio = () => {
           <TouchableOpacity
             className="bg-[#eaeaea] p-3 rounded-xl"
             onPress={() => {
-              router.push("/(user)/design-canvas");
+              router.push("/(user)/(tabs)/design-canvas");
               setMenuVisible(false);
               menuOpacity.value = 0;
               menuTranslateX.value = 100;

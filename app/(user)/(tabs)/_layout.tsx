@@ -1,7 +1,6 @@
 import { Tabs, TabList, TabTrigger, TabSlot } from "expo-router/ui";
 import { Ionicons } from "@expo/vector-icons";
 import { usePathname } from "expo-router";
-import Stack from "expo-router";
 export default function Layout() {
   const pathname = usePathname();
   return (

@@ -110,7 +110,7 @@ const DesignCanvas = () => {
             description="All your design work will be lost if not saved to drafts before exiting."
             onAccept={() => {
               setStickers([]);
-              router.push("/(user)/design-studio");
+              router.push("/(user)/(tabs)/design-studio");
               setShowAlert(false);
             }}
             onAcceptText="Dismiss"

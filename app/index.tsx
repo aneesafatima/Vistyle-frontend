@@ -61,7 +61,7 @@ const HomePage = () => {
       });
       setIsLoading(false);
       setIsLoggedIn(true);
-      router.navigate("/(user)/home");
+      router.navigate("/(user)/(tabs)/home");
     } else if (isLoading && !isDataLoading) {
       setIsLoading(false);
     }

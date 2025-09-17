@@ -9,59 +9,45 @@ import {
   SafeAreaView,
   Dimensions,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import { useProductDetailQuery } from "@/query/features/hmApi";
-import { useLocalSearchParams } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 import Iconify from "react-native-iconify";
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 const ItemPage = () => {
-  const [selectedSize, setSelectedSize] = React.useState<string | null>(null);
   const [selectedColor, setSelectedColor] = React.useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { code: itemId } = useLocalSearchParams<{ code: string }>();
-  // const { data, isLoading, error } = useProductDetailQuery(itemId);
-
-  console.log("In Item page")
-
-  // Demo images array - using the same image 3 times as requested
-  const demoImages = [
-    require("../../../assets/images/item-img-demo.jpg"),
-    require("../../../assets/images/item-img-demo.jpg"),
-    require("../../../assets/images/item-img-demo.jpg"),
-  ];
-
-  // useEffect(() => {
-  //   if (data) {
-  //     console.log("Product Detail Data:", data);
-  //   }
-  // }, [data]);
-
-  const demoColors = [
-    "#FF5733", // Red
-    "#33FF57", // Green
-    "#3357FF", // Blue
-    "#F1C40F", // Yellow
-    "#9B59B6", // Purple
-  ];
+  const { data, isLoading, error } = useProductDetailQuery(itemId);
+  const [selectedSize, setSelectedSize] = React.useState<string | null>(null);
+  const images: string[] | null =
+    data?.product.articlesList
+      .find((item) => item.code === itemId)
+      ?.galleryDetails.map((img: any) => img.baseUrl) || null;
 
   const renderCarouselItem = ({
     item,
     index,
   }: {
-    item: number;
+    item: string;
     index: number;
   }) => (
     <View className="flex-1">
-      <Image source={item} className="w-full h-full" resizeMode="cover" />
+      <Image
+        source={{ uri: item }}
+        className="w-full h-full"
+        resizeMode="cover"
+      />
     </View>
   );
 
   const renderPaginationDots = () => (
     <View className="flex-row justify-center items-center absolute bottom-3 left-0 right-0">
-      {demoImages.map((_, index) => (
+      {images?.map((_, index) => (
         <View
           key={index}
           className={`w-2 h-2 rounded-full mx-1 ${
@@ -72,13 +58,13 @@ const ItemPage = () => {
     </View>
   );
 
-  // if (isLoading) {
-  //   return (
-  //     <View className="flex-1 items-center justify-center bg-[#FAFAFA]">
-  //       <Text className="text-xl font-semibold">Loading...</Text>
-  //     </View>
-  //   );
-  // }
+  if (isLoading) {
+    return (
+      <View className="flex-1 justify-center items-center">
+        <ActivityIndicator size="small" color="gray" />
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView className="flex-1 bg-[#FAFAFA]">
@@ -88,7 +74,7 @@ const ItemPage = () => {
           loop
           width={screenWidth}
           height={0.55 * screenHeight}
-          data={demoImages}
+          data={images || []}
           scrollAnimationDuration={500}
           renderItem={renderCarouselItem}
           onSnapToItem={(index) => setCurrentImageIndex(index)}
@@ -103,32 +89,33 @@ const ItemPage = () => {
       >
         <View className="flex-row items-center justify-between">
           <Text className="text-2xl font-arial-rounded font-semibold">
-            Strappy bodycon dress
+            {data.product.name}
           </Text>
           <Text className="text-[#737373] text-sm font-poppins-medium">
-            $49.99
+            {data.product.whitePrice.price} {data.product.whitePrice.currency}
           </Text>
         </View>
         <Text className="text-[#919191] text-xs font-poppins-medium my-4">
-          Elevate your space with the GlowMate Smart Lamp — a sleek, modern
-          lighting solution designed for comfort, style, and convenience.
-          Featuring customizable colors, touch-sensitive controls, and seamless
-          integration with smart home systems, the GlowMate adapts to your mood,
-          schedule, and lifestyle. Whether you're winding down for the night or
-          brightening up your workspace, this lamp offers the perfect ambiance
-          at the tap of a finger.
+          {data.product.description}
         </Text>
         <View>
           <TouchableOpacity className="bg-black px-4 py-2 rounded items-center active:opacity-80 w-1/2">
             <Text className="text-white text-sm">Add to Cart</Text>
           </TouchableOpacity>
-            <Pressable className="flex-row items-center px-4 py-2 rounded bg-transparent active:opacity-70">
-      <Text className="text-sm text-black mr-2">Visit</Text>
-      <Iconify icon="mdi:link-variant" width={18} height={18} color="#000" />
-    </Pressable>
+          <Pressable className="flex-row items-center px-4 py-2 rounded bg-transparent active:opacity-70">
+            <Link href={data.product.productUrl}>
+              <Text className="text-sm text-black mr-2">Visit</Text>
+              <Iconify
+                icon="mdi:link-variant"
+                width={18}
+                height={18}
+                color="#000"
+              />
+            </Link>
+          </Pressable>
         </View>
         <View className="">
-          <Text className="text-3xl font-arial-rounded font-semibold text-center pt-3 mb-5">
+          <Text className="text-3xl font-arial-rounded font-semibold text-center pt-0 mb-5">
             Filter
           </Text>
 
@@ -144,9 +131,14 @@ const ItemPage = () => {
               </Pressable>
             )}
             <View className="flex-row">
-              {["XS", "S", "M", "L"]
-                .filter((size) => size != selectedSize)
-                .map((size, index) => (
+              {(
+                data.product.articlesList
+                  .find((item) => item.code === itemId)
+                  ?.variantsList?.map((variant: any) => variant?.size?.name) ||
+                []
+              )
+                .filter((size: string) => size != selectedSize)
+                .map((size: string, index: number) => (
                   <Pressable
                     key={index}
                     onPress={() => setSelectedSize(size)}
@@ -169,7 +161,10 @@ const ItemPage = () => {
               <Text className="text-[#b6b6b6]">5 available</Text>
             </View>
             <FlatList
-              data={demoColors}
+              data={
+                data.product.articlesList.map((item) => item.color.rgbColor) ||
+                []
+              }
               horizontal
               keyExtractor={(item, index) => index.toString()}
               contentContainerStyle={{ gap: 16, marginTop: 12 }}
