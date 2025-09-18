@@ -4,9 +4,10 @@ interface Product {
   email: string;
   title: string;
   price: number;
-  size: string[];
+  size: string;
   url: string;
   code: string;
+  img:string
 }
 
 export const productsApi = createApi({

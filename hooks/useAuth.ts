@@ -4,7 +4,7 @@ import { GlobalContext } from "@/context/GlobalProvider";
 import { useRouter } from "expo-router";
 import { LoginResponseType } from "@/types/auth";
 const useAuth = () => {
-  const { setIsLoggedIn, setUserData, setToken } = useContext(GlobalContext)!;
+  const { setIsLoggedIn, setUserData, setToken, setCart } = useContext(GlobalContext)!;
   const router = useRouter();
 
   // Function (optional)
@@ -19,9 +19,9 @@ const useAuth = () => {
       description: result.user.description,
       designHouse: result.user.designHouse,
       id: result.user.id,
-      stickers: result.user.stickers,
-      cart: result.user.cart,
+      stickers: result.user.stickers
     });
+    setCart(result.user.cart || []);
     router.replace("/(user)/(tabs)/home");
   };
 

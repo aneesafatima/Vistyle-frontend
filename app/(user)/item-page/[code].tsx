@@ -10,11 +10,15 @@ import {
   Dimensions,
   TouchableOpacity,
   ActivityIndicator,
+  Alert,
 } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import { useProductDetailQuery } from "@/query/features/hmApi";
 import { Link, useLocalSearchParams } from "expo-router";
 import Iconify from "react-native-iconify";
+import { useAddToCartMutation } from "@/query/features/productApi";
+import { useContext } from "react";
+import { GlobalContext } from "@/context/GlobalProvider";
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
@@ -24,6 +28,10 @@ const ItemPage = () => {
   const { code: itemId } = useLocalSearchParams<{ code: string }>();
   const { data, isLoading, error } = useProductDetailQuery(itemId);
   const [selectedSize, setSelectedSize] = React.useState<string | null>(null);
+  const [addToCart, { isLoading: isAddingToCart, isSuccess }] =
+    useAddToCartMutation();
+  const { userData, cart, setCart } = useContext(GlobalContext)!;
+
   const images: string[] | null =
     data?.product.articlesList
       .find((item) => item.code === itemId)
@@ -66,6 +74,32 @@ const ItemPage = () => {
     );
   }
 
+  if (error || !data) {
+    return (
+      <View className="flex-1 justify-center items-center px-10">
+        <Text className="text-center text-gray-500">
+          Failed to load product details. Please try again later.
+        </Text>
+      </View>
+    );
+  }
+
+  const handleAddToCart = async (item: CartItemType) => {
+    try {
+      const data = await addToCart({
+        code: itemId,
+        email: userData?.email || "",
+        size: selectedSize!,
+        price: item.price,
+        title: item.title,
+        url: item.url,
+        img: item.img,
+      }).unwrap();
+      setCart([...cart, data.cart]);
+    } catch (error) {
+      Alert.alert("Error", "Failed to add item to cart. Please try again.");
+    }
+  };
   return (
     <SafeAreaView className="flex-1 bg-[#FAFAFA]">
       {/* Image Carousel */}
@@ -99,8 +133,27 @@ const ItemPage = () => {
           {data.product.description}
         </Text>
         <View>
-          <TouchableOpacity className="bg-black px-4 py-2 rounded items-center active:opacity-80 w-1/2">
-            <Text className="text-white text-sm">Add to Cart</Text>
+          <TouchableOpacity
+            className="bg-black px-4 py-2 rounded items-center active:opacity-80 w-1/2"
+            disabled={!selectedSize}
+            onPress={() =>
+              handleAddToCart({
+                code: data.product.code,
+                title: data.product.name,
+                url: data.product.productUrl,
+                price: data.product.whitePrice.price,
+                size: selectedSize!,
+                img: data.product.articlesList[0].galleryDetails[0].baseUrl,
+              })
+            }
+          >
+            <Text className="text-white text-sm">
+              {isAddingToCart ? (
+                <ActivityIndicator size="small" color="white" />
+              ) : (
+                "Add to Cart"
+              )}
+            </Text>
           </TouchableOpacity>
           <Pressable className="flex-row items-center px-4 py-2 rounded bg-transparent active:opacity-70">
             <Link href={data.product.productUrl}>

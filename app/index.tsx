@@ -31,7 +31,7 @@ const HomePage = () => {
     useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedScreen, setSelectedScreen] = useState("sign-up");
-  const { setIsLoggedIn, setToken, token, setUserData } =
+  const { setIsLoggedIn, setToken, token, setUserData, setCart } =
     useContext(GlobalContext)!;
   const { data, isLoading: isDataLoading } = useTokenStatusQuery(
     token as string,
@@ -57,8 +57,8 @@ const HomePage = () => {
         designHouse: data.user.designHouse,
         id: data.user.id,
         stickers: data.user.stickers,
-        cart: data.user.cart,
       });
+      setCart(data.user.cart || []);
       setIsLoading(false);
       setIsLoggedIn(true);
       router.navigate("/(user)/(tabs)/home");

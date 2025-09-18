@@ -21,7 +21,8 @@ export type LoginResponseType = {
       title: string;
       url: string;
       price: number;
-      size: string[];
+      size: string;
+      img:string;
     }[];
   };
 };

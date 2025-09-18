@@ -9,21 +9,25 @@ import Animated, {
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useDeleteFromCartMutation } from "@/query/features/productApi";
 import Iconify from "react-native-iconify";
+import { Link } from "expo-router";
+
+//connect item deletion to backend
 
 type CartItemProps = {
   item: {
     title: string;
     price: number;
-    size: string[];
+    size: string;
     url: string;
     code: string;
+    img: string;
   };
   i: number;
 };
 
 const CartItem = ({ item, i }: CartItemProps) => {
   const [deleteFromCart, { isLoading }] = useDeleteFromCartMutation();
-  const { userData, setUserData } = useContext(GlobalContext)!;
+  const { userData, setCart, cart } = useContext(GlobalContext)!;
   const [isDeleting, setIsDeleting] = useState(false);
   const scale = useSharedValue(1);
   const translateX = useSharedValue(0);
@@ -36,6 +40,10 @@ const CartItem = ({ item, i }: CartItemProps) => {
       opacity: opacity.value,
     };
   });
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
   useEffect(() => {
     const handleDelete = async () => {
@@ -54,13 +62,9 @@ const CartItem = ({ item, i }: CartItemProps) => {
         .then(() => {
           setTimeout(() => {
             setIsDeleting(false);
-            setUserData((prevData) => ({
-              ...prevData!,
-              cart:
-                prevData?.cart?.filter(
-                  (cartItem) => cartItem.code !== item.code
-                ) || [],
-            }));
+            setCart((prevData) =>
+              prevData ? prevData.filter((cartItem) => cartItem == item) : []
+            );
           }, 300);
         })
         .catch((error) => {
@@ -76,24 +80,35 @@ const CartItem = ({ item, i }: CartItemProps) => {
     <Animated.View
       style={[animatedStyle]}
       className="flex-row items-center justify-between mb-6 relative overflow-hidden"
+      key={i}
     >
-      <View className="flex-row items-center justify-between gap-4 w-full">
+      <View className="flex-row items-center justify-between  w-full">
         <Image
-          source={{ uri: item.url }}
+          source={{ uri: item.img }}
           className="w-36 h-36 rounded-3xl"
           resizeMode="cover"
           alt={item.title}
         />
-        <View className="flex justify-evenly h-full w-36">
+        <View className="flex justify-evenly w-36">
           <Text className="text-[#9b9b9b] font-arial-rounded">{`0${
             i + 1
           }`}</Text>
           <Text className="font-semibold font-arial-rounded flex-shrink">
             {item.title.toUpperCase()}
           </Text>
-          <Text className="text-sm text-gray-500 mt-1 font-arial-rounded">
-            SIZE: {item.size.join(" ")}
-          </Text>
+          <View className="flex-row items-center ">
+            <Text className="text-sm text-gray-500 mt-1 font-arial-rounded mr-4">
+              SIZE: {item.size}
+            </Text>
+            <Link href={item.url}>
+              <Iconify
+                icon="mdi:link-variant"
+                width={15}
+                height={15}
+                color="#6b7280"
+              />
+            </Link>
+          </View>
           <Text className="text-base mt-1 font-arial-rounded">
             Rs {item.price}
           </Text>

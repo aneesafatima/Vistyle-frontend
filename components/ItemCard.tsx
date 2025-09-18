@@ -46,7 +46,6 @@ const ItemCard = ({
   return (
     <Pressable
       onPress={() => {
-        console.log("Navigating to item page with code:", code);
         router.push({
           pathname: "/(user)/item-page/[code]",
           params: { code },

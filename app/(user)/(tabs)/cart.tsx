@@ -5,43 +5,44 @@ import { Iconify } from "react-native-iconify";
 import { CartItem } from "@/components";
 
 export default function CartScreen() {
-  const { userData } = useContext(GlobalContext)!;
+  const {  cart } = useContext(GlobalContext)!;
   return (
     <View className="flex-1 bg-white ">
       {/* Header */}
-      <View className="flex-row justify-between items-center mb-4 pt-14 px-9">
-        <Text className="text-4xl font-medium font-arial-rounded">MY CART</Text>
+      <View className="flex-row justify-between items-center h-40 px-9 mb-10">
+        <View className="flex-col ">
+          <Text className="text-4xl font-medium font-arial-rounded">
+            MY CART
+          </Text>
+          <Text className="text-gray-500 font-arial-rounded text-xl">
+            BEST COLLECTION!
+          </Text>
+        </View>
+        {/* <View className="bg-[#9eadffd9] px-3 py-1 rounded-full">
+          <Text className="text-lg font-bold text-white">{cart?.length}</Text>
+        </View> */}
+        <View
+          style={{ backgroundColor: "#9eadffd9" }}
+          className="w-20 h-20 rounded-full flex items-center justify-center"
+        >
+          <Text className="text-[#f9f9f9] text-center   font-arial-rounded text-sm ">
+            Rs {"\n"}{" "}
+            {cart?.reduce((sum, item) => sum + item.price, 0).toFixed(2)}
+          </Text>
+        </View>
+      </View>
 
-        <View className="bg-[#9eadffd9] px-3 py-1 rounded-full">
-          <Text className="text-lg font-bold text-white">
-            {userData?.cart?.length}
-          </Text>
+      {cart?.length === 0 ? (
+        <View className=" absolute w-screen h-screen flex items-center justify-center">
+          <Text className="font-arial-rounded text-lg text-gray-300">Your cart is empty</Text>
         </View>
-      </View>
-      <Text className="text-gray-500 mb-10 font-arial-rounded text-xl px-9">
-        BEST COLLECTION!
-      </Text>
-      {/* Cart Items */}
-      <ScrollView className="flex-1 mb-6 px-9">
-        {userData?.cart?.map((item,i) => (
-          <CartItem key={i} item={item} i={i} />
-        ))}
-      </ScrollView>
-      {/* Footer */}
-      <View
-        style={{ backgroundColor: "#222831" }}
-        className="p-5 mx-10 mb-10 rounded-[40px]"
-      >
-        <View className="flex-row justify-between items-center py-4 px-4">
-          <Text className="text-[#e3e3e387] text-base">TOTAL</Text>
-          <Text className="text-[#f9f9f9] font-arial-rounded text-xl ">
-            Rs{" "}
-            {userData?.cart
-              ?.reduce((sum, item) => sum + item.price, 0)
-              .toFixed(2)}
-          </Text>
-        </View>
-      </View>
+      ) : (
+        <ScrollView className="flex-1 mb-6 px-9">
+          {cart?.map((item, i) => (
+            <CartItem  item={item} i={i} />
+          ))}
+        </ScrollView>
+      )}
     </View>
   );
 }

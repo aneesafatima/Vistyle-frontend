@@ -23,13 +23,13 @@ type userDataType = {
     code: string;
     _id: string;
   }[];
-  cart: {
-    code: string;
-    title: string;
-    url: string;
-    price: number;
-    size: string[];
-  }[];
+  // cart: {
+  //   code: string;
+  //   title: string;
+  //   url: string;
+  //   price: number;
+  //   size: string;
+  // }[];
 };
 type updatedUserDataType = Pick<
   userDataType,
@@ -45,3 +45,12 @@ type EditProfileType = {
   type: "text" | "password";
   name: keyof updatedUserDataType;
 };
+
+type CartItemType = {
+  code: string;
+  title: string;
+  url: string;
+  price: number;
+  size: string;
+  img:string
+}
