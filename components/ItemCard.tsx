@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import Iconify from "react-native-iconify";
 import { useRouter } from "expo-router";
+
 interface ItemCardProps {
   imageUrl: string;
   title: string;
@@ -29,7 +30,6 @@ interface ItemCardProps {
 }
 const { width } = Dimensions.get("window");
 const cardWidth = (width - 48) / 2;
-
 const ItemCard = ({
   imageUrl,
   title,
@@ -43,6 +43,8 @@ const ItemCard = ({
   priceValue,
 }: ItemCardProps) => {
   const router = useRouter();
+  const [error, setError] = useState(false);
+
   return (
     <Pressable
       onPress={() => {
@@ -56,9 +58,11 @@ const ItemCard = ({
     >
       <View className="bg-white rounded-2xl overflow-hidden shadow-sm">
         <Image
-          source={{ uri: imageUrl }}
+          source={error ? require("../assets/images/hm.jpg") : { uri: imageUrl || baseUrl }}
           className="w-full h-[199px] rounded-t-2xl bg-top"
           resizeMode="cover"
+          defaultSource={require("../assets/images/hm.jpg")}
+          onError={() => setError(true)}
         />
         <View className="p-3 flex flex-row justify-between">
           <View>

@@ -29,6 +29,8 @@ type GlobalContextType = {
   }>;
   cart: CartItemType[];
   setCart: React.Dispatch<React.SetStateAction<CartItemType[]>>;
+  isEditingProfile: boolean;
+  setIsEditingProfile: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const GlobalContext = createContext<GlobalContextType | null>(null)!;
@@ -54,7 +56,7 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
     designHouse: "" as DesignHouse,
     description: "",
   });
-
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
   return (
     <GlobalContext.Provider
       value={{
@@ -75,6 +77,8 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         signUpData,
         cart,
         setCart,
+        isEditingProfile,
+        setIsEditingProfile,
       }}
     >
       {children}

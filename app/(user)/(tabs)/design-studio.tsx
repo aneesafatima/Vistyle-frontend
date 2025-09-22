@@ -215,7 +215,8 @@ const DesignStudio = () => {
           <TouchableOpacity
             className="bg-[#eaeaea] p-3 rounded-xl"
             onPress={() => {
-              router.push("/(user)/(tabs)/design-canvas");
+              router.push("/design-canvas");
+              console.log("pressed");
               setMenuVisible(false);
               menuOpacity.value = 0;
               menuTranslateX.value = 100;

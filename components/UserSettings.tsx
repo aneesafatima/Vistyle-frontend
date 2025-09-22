@@ -29,6 +29,7 @@ import Animated, {
 import { Controller, useForm } from "react-hook-form";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { EditableElements } from "@/assets/ui-data/data";
+import { router } from "expo-router";
 const userDetailsSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -140,8 +141,8 @@ const UserSettings = ({
   if (!isEditingProfile) return null; // Prevent rendering if not editing profile
 
   return (
-    <SafeAreaView className="bg-[#222831]">
-      <Animated.ScrollView style={[animatedStyles, {paddingBottom: 200}]}>
+    <SafeAreaView className="bg-[#222831] relative">
+      <Animated.ScrollView style={[animatedStyles, { paddingBottom: 200 }]}>
         <StatusBar
           barStyle="light-content"
           translucent={false}
@@ -151,7 +152,11 @@ const UserSettings = ({
         <View className="px-10 w-screen z-20 ">
           {/* Header */}
           <View className="mt-12 flex flex-row justify-between">
-            <Pressable onPress={() => setIsEditingProfile(false)}>
+            <Pressable
+              onPress={() => {
+                setIsEditingProfile(false);
+              }}
+            >
               <Ionicons name="chevron-back-outline" size={24} color="#f2f2f2" />
             </Pressable>
             <Text className="text-[#f2f2f2] font-interTight-bold font-semibold text-2xl mb-3 text-center">

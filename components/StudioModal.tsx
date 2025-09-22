@@ -40,6 +40,7 @@ const StudioModal = ({
   selectedProduct,
   setSelectedProduct,
 }: StudioModalProps) => {
+  console.log('Selected Product in StudioModal:', selectedProduct);
   const [createDesign, { isLoading }] = useCreateStickerMutation();
   const { userData, setUserData } = React.useContext(GlobalContext)!;
   const handleStickerCreation = async () => {

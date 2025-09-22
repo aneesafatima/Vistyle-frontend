@@ -24,22 +24,36 @@ import SignUp from "./(auth)/sign-up";
 import LogIn from "./(auth)/login";
 import ResetPasswordScreen from "./(auth)/forgot-password";
 import { HouseSelector, InterestsSelector } from "@/components";
-import Iconify from "react-native-iconify";
+// import * as Network from "expo-network";
 import { AntDesign } from "@expo/vector-icons";
 const HomePage = () => {
   const [showAuthenticationScreen, setShowAuthenticationScreen] =
     useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedScreen, setSelectedScreen] = useState("sign-up");
+  const [isConnected, setIsConnected] = useState<boolean>(true);
   const { setIsLoggedIn, setToken, token, setUserData, setCart } =
     useContext(GlobalContext)!;
   const { data, isLoading: isDataLoading } = useTokenStatusQuery(
     token as string,
     {
-      skip: !token,
+      skip: !token 
+      //|| !isConnected,
     }
   );
   const translate = useSharedValue(0);
+
+  // useEffect(() => {
+  //   const checkConnection = async () => {
+  //     const networkState = await Network.getNetworkStateAsync();
+  //     setIsConnected(
+  //       networkState.isConnected && networkState.isInternetReachable !== false ? true : false
+  //     );
+  //   };
+
+  //   checkConnection();
+  // }, []);
+
   useEffect(() => {
     const loadFonts = async () => {
       await fontLoader();
@@ -47,6 +61,7 @@ const HomePage = () => {
     getToken().then((val) => {
       val && setToken(val);
     });
+
     if (data) {
       setUserData({
         name: data.user.name,
@@ -61,7 +76,7 @@ const HomePage = () => {
       setCart(data.user.cart || []);
       setIsLoading(false);
       setIsLoggedIn(true);
-      router.navigate("/(user)/(tabs)/home");
+      router.replace("/(user)/(tabs)/home");
     } else if (isLoading && !isDataLoading) {
       setIsLoading(false);
     }
@@ -84,6 +99,7 @@ const HomePage = () => {
       transform: [{ translateY: translate.value }],
     };
   });
+
   return (
     <SafeAreaView className="justify-center items-center bg-[#FAFAFA] relative">
       <StatusBar
@@ -139,7 +155,10 @@ const HomePage = () => {
           }}
         >
           <Text className="text-6xl font-interTight-regular font-bold text-[#222831]">
-            vistyle<Text className="text-[#9eadffd9]">.</Text>
+            vistyle<Text className="text-[#9eadffd9]">.{"\n"}
+            {/* {!isConnected && <Text className="text-base text-red-500 ">No Internet Connection</Text>} */}
+
+            </Text>
           </Text>
           {showAuthenticationScreen ? (
             <View className="flex flex-row justify-center w-full ">
@@ -208,9 +227,9 @@ const HomePage = () => {
         onPress={() => {
           handleAuthenticationScreen();
         }}
-        disabled={isLoading}
+        disabled={isDataLoading}
       >
-        {isLoading ? (
+        {isDataLoading ? (
           <ActivityIndicator size="small" color="white" />
         ) : (
           <AntDesign name="arrowleft" size={24} color="white" />

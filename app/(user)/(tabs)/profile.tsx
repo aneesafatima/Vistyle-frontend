@@ -35,8 +35,7 @@ const Profile = () => {
     transform: [{ translateX: translate.value }],
   }));
   const [showModal, setShowModal] = useState(false);
-  const [isEditingProfile, setIsEditingProfile] = useState(false);
-  const { userData } = useContext(GlobalContext)!;
+  const { userData, isEditingProfile, setIsEditingProfile } = useContext(GlobalContext)!;
   useEffect(() => {
     translate.value = withTiming(isEditingProfile ? -screenWidth : 0, {
       duration: 300,
@@ -94,7 +93,7 @@ const Profile = () => {
         >
           <Image
             className="w-36 h-36 rounded-full bg-pink-100 bg-contain self-center absolute top-[-70px] shadow-lg"
-            source={require("../../../assets/images/avatar-pfp.jpg")}
+            source={require("../../../assets/images/pfp-demo-1.jpg")}
           />
 
           <View className="px-2 mt-20">

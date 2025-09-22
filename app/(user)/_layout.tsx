@@ -11,6 +11,12 @@ const _layout = () => {
             headerShown: false,
           }}
         ></Stack.Screen>
+           <Stack.Screen
+          name="design-canvas"
+          options={{
+            headerShown: false,
+          }}
+        ></Stack.Screen>
         <Stack.Screen
           name="item-page/[code]"
           options={{

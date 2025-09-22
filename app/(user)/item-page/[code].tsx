@@ -121,17 +121,18 @@ const ItemPage = () => {
         className=" bg-white p-5 h-[45vh] px-10 flex flex-col"
         contentContainerStyle={{ paddingBottom: 20 }}
       >
-        <View className="flex-row items-center justify-between">
+        <View className="flex-col  justify-around">
           <Text className="text-2xl font-arial-rounded font-semibold">
             {data.product.name}
           </Text>
-          <Text className="text-[#737373] text-sm font-poppins-medium">
+
+          <Text className="text-[#737373] text-sm font-poppins-medium mt-4">
             {data.product.whitePrice.price} {data.product.whitePrice.currency}
           </Text>
+          <Text className="text-[#919191] text-xs font-poppins-medium my-4">
+            {data.product.description}
+          </Text>
         </View>
-        <Text className="text-[#919191] text-xs font-poppins-medium my-4">
-          {data.product.description}
-        </Text>
         <View>
           <TouchableOpacity
             className="bg-black px-4 py-2 rounded items-center active:opacity-80 w-1/2"
@@ -156,8 +157,8 @@ const ItemPage = () => {
             </Text>
           </TouchableOpacity>
           <Pressable className="flex-row items-center px-4 py-2 rounded bg-transparent active:opacity-70">
+            <Text className="text-sm text-black mr-1">Visit</Text>
             <Link href={data.product.productUrl}>
-              <Text className="text-sm text-black mr-2">Visit</Text>
               <Iconify
                 icon="mdi:link-variant"
                 width={18}

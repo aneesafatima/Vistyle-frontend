@@ -13,7 +13,7 @@ const HomePage = () => {
   //add shopping categories to the home page
   return (
     isLoggedIn && (
-      <SafeAreaView className="flex-1 bg-[#fafafa]">
+      <SafeAreaView className="flex-1 flex-col bg-[#fafafa]">
         <StatusBar
           barStyle="dark-content"
           translucent={false}

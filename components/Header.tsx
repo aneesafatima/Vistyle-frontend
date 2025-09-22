@@ -7,6 +7,7 @@ import {
   Dimensions,
   Easing,
   TextInput,
+  ActivityIndicator,
 } from "react-native";
 import React, { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "@/context/GlobalProvider";
@@ -38,14 +39,14 @@ const Header = ({
   const animatedStyle = {
     width: widthAnim,
   };
-  const { userData, setMakeSearch } = useContext(GlobalContext)!;
+  const { userData, setMakeSearch, makeSearch } = useContext(GlobalContext)!;
   return (
     <View className="relative  pt-6 flex flex-row items-center justify-between px-4">
       {!isSearching && (
         <View className="flex flex-row items-center">
           <Image
             className="w-16 h-16 rounded-full bg-pink-100 bg-contain"
-            source={require("../assets/images/avatar-pfp.jpg")}
+            source={require("../assets/images/pfp-demo-1.jpg")}
           />
           <View className="ml-3">
             <Text className="text-xl font-semibold font-interTight-bold">
@@ -91,17 +92,21 @@ const Header = ({
         <Pressable
           onPress={() => {
             if (searchText.length == 0) setIsSearching((prev) => !prev);
-            else
-            setMakeSearch(true);
+            else setMakeSearch(true);
           }}
           className="absolute right-[13px]"
+          disabled={makeSearch}
         >
-          <Iconify
-            icon="mdi-light:magnify"
-            width={30}
-            height={30}
-            color={"gray"}
-          />
+          {makeSearch ? (
+            <ActivityIndicator size="small" color="#888" />
+          ) : (
+            <Iconify
+              icon="mdi-light:magnify"
+              width={30}
+              height={30}
+              color={"gray"}
+            />
+          )}
         </Pressable>
       </Animated.View>
     </View>

@@ -23,6 +23,7 @@ const _layout = () => {
             headerShown: false,
           }}
         ></Stack.Screen>
+       
       </Stack>
     </>
   );

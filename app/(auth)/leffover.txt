@@ -1,1 +1,0 @@
-Use the data from the storage rather than making api call using the stored token
