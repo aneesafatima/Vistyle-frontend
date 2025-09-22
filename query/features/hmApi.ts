@@ -18,13 +18,17 @@ export const hmApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    productListByText: builder.query<any, string>({
-      query: (searchText: string) => {
+    productListByText: builder.query<
+      any,
+      { searchText: string; countryCode: string | null }
+    >({
+      query: ({ searchText, countryCode }) => {
+        console.log(searchText, countryCode)
         return {
           url: "list",
           method: "GET",
           params: {
-            country: "in",
+            country: countryCode?.toLowerCase() || "in",
             lang: "en",
             currentpage: "0",
             pagesize: "30",

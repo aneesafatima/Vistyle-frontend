@@ -5,7 +5,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { useProductListByTextQuery } from "@/query/features/hmApi";
 import { skipToken } from "@reduxjs/toolkit/query";
-// import * as Location from "expo-location";
+import * as Location from "expo-location";
 
 const ShopContent = ({
   searchText,
@@ -23,41 +23,43 @@ const ShopContent = ({
     url: "",
   });
   const { makeSearch, setMakeSearch } = useContext(GlobalContext)!;
-  const { data, isLoading, error, refetch } = useProductListByTextQuery(
-    makeSearch && searchText.trim() ? searchText : skipToken
-  );
 
   const [countryCode, setCountryCode] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const { data, isLoading, error, refetch } = useProductListByTextQuery(
+    makeSearch && searchText.trim() && countryCode
+      ? { searchText, countryCode }
+      : skipToken
+  );
 
-  // const getCountryCode = async () => {
-  //   try {
-  //     // Ask for location permission
-  //     const { status } = await Location.requestForegroundPermissionsAsync();
-  //     if (status !== "granted") {
-  //       setErrorMsg("Permission to access location was denied");
-  //       return;
-  //     }
-
-  //     // Get user coordinates
-  //     const loc = await Location.getCurrentPositionAsync({});
-  //     const { latitude, longitude } = loc.coords;
-
-  //     // Reverse geocode to get country info
-  //     const geocode = await Location.reverseGeocodeAsync({
-  //       latitude,
-  //       longitude,
-  //     });
-
-  //     if (geocode.length > 0) {
-  //       setCountryCode(geocode[0].isoCountryCode || null); // "IN", "US", etc.
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     setErrorMsg("Error fetching country code");
-  //   }
-  // };
-
+  useEffect(() => {
+    const getCountryCode = async () => {
+      try {
+        // Ask for location permission
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== "granted") {
+          setErrorMsg("Permission to access location was denied");
+          return;
+        }
+        // Get user coordinates
+        const loc = await Location.getCurrentPositionAsync({});
+        const { latitude, longitude } = loc.coords;
+        // Reverse geocode to get country info
+        const geocode = await Location.reverseGeocodeAsync({
+          latitude,
+          longitude,
+        });
+        if (geocode.length > 0) {
+          console.log("Setting Country Code:", geocode[0].isoCountryCode);
+          setCountryCode(geocode[0].isoCountryCode || null); // "IN", "US", etc.
+        }
+      } catch (error) {
+        console.log(error);
+        setErrorMsg("Error fetching country code");
+      }
+    };
+    getCountryCode();
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -65,12 +67,21 @@ const ShopContent = ({
     }
   }, [data]);
 
+  useEffect(() => {
+    if (makeSearch && !countryCode) setMakeSearch(false);
+  }, [makeSearch]);
+
+
+  useEffect(() => {
+    console.log("Country Code changed:", countryCode);
+  }, [countryCode]);
+
   return (
     <View className="" style={{ marginTop: 96 }}>
       {!data ? (
         <View className="w-screen">
-          <Text className="text-xl text-gray-600 text-center ">
-            Let’s see what we can find…
+          <Text className="text-lg text-gray-600 text-center ">
+            {errorMsg ? errorMsg : "Let’s see what we can find…"}
           </Text>
         </View>
       ) : error ? (
@@ -101,6 +112,7 @@ const ShopContent = ({
                 showModal={showModal}
                 setSelectedProduct={setSelectedProduct}
                 priceValue={product.price?.value || 0}
+                countryCode={countryCode}
               />
             ) : null
           )}

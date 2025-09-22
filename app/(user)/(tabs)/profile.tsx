@@ -102,9 +102,9 @@ const Profile = () => {
             </Text>
             <Text className="text-center italic">{userData?.description}</Text>
             <View className="flex flex-row justify-between mt-5">
-              <Text className="text-xl font-medium  pl-6">Interests</Text>
+              <Text className="text-xl font-medium  pl-6 text-gray-500">Interests</Text>
               <TouchableOpacity onPress={() => setShowModal(true)}>
-                <Text className="text-gray-500 underline pr-6">Edit</Text>
+                <Text className="text-gray-400 underline pr-6">Edit</Text>
               </TouchableOpacity>
             </View>
             <View className="flex-row justify-center flex-wrap mt-5 ">
@@ -120,7 +120,7 @@ const Profile = () => {
               ))}
             </View>
           </View>
-          <Text className=" mb-6  font-medium text-xl mt-10 pl-6 font-poppins-medium">
+          <Text className=" mb-6 text-gray-500 font-medium text-xl mt-10 pl-6">
             Drafts
           </Text>
         </View>

@@ -23,18 +23,12 @@ type userDataType = {
     code: string;
     _id: string;
   }[];
-  // cart: {
-  //   code: string;
-  //   title: string;
-  //   url: string;
-  //   price: number;
-  //   size: string;
-  // }[];
 };
 type updatedUserDataType = Pick<
   userDataType,
   "name" | "description" | "designHouse"
 > & {
+  interests?: userDataType["interests"];
   password?: string | undefined;
   passwordConfirm?: string | undefined;
   newpassword?: string | undefined;
@@ -52,5 +46,5 @@ type CartItemType = {
   url: string;
   price: number;
   size: string;
-  img:string
-}
+  img: string;
+};

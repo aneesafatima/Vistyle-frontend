@@ -1,9 +1,10 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, ActivityIndicator } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Modal from "react-native-modal";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { FashionInterest } from "@/assets/ui-data/data";
+import { useUpdateUserDetailsMutation } from "@/query/features/userApi";
 
 const InterestsModal = ({
   showModal,
@@ -12,8 +13,9 @@ const InterestsModal = ({
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  // UPDATE THE TAGS IN BACKEND AND UI
+  const [updateUserDetails, { isLoading }] = useUpdateUserDetailsMutation();
   const { userData, setUserData } = useContext(GlobalContext)!;
+
   const handleTagPress = (tag: string) => {
     setUserData((prev) => {
       if (prev) {
@@ -24,7 +26,22 @@ const InterestsModal = ({
       } else return prev;
     });
   };
- 
+
+  const handleClose = async () => {
+    if (userData) {
+      updateUserDetails({
+        userId: userData.id,
+        data: {
+          name: userData.name,
+          description: userData.description,
+          designHouse: userData.designHouse,
+          interests: userData.interests,
+        },
+      });
+    }
+    setShowModal(false);
+  };
+
   return (
     <View className="flex-1">
       <Modal
@@ -45,10 +62,7 @@ const InterestsModal = ({
       >
         <View className="bg-white rounded-3xl p-4 pb-6  w-full">
           {userData?.interests && userData.interests.length >= 3 && (
-            <Pressable
-              className="absolute top-4 right-4"
-              onPress={() => setShowModal(false)}
-            >
+            <Pressable className="absolute top-4 right-4" onPress={handleClose}>
               <Entypo name="cross" size={24} color="black" />
             </Pressable>
           )}

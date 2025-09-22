@@ -46,7 +46,6 @@ const PostsModal = ({
           setTimeout(() => {
             onClose();
             if (shouldNavigate) {
-              router.push("/(user)/post-upload");
               setShouldNavigate(false);
             }
           }, 400);
@@ -68,9 +67,9 @@ const PostsModal = ({
           <Text className="text-[#222831] font-georgia text-2xl text-center font-semibold">
             Share this style board with your friends
           </Text>
-          <Text className="mt-2 mb-4 px-6 leading-7 text-center text-[#393E46]">
+          <Text className="mt-2 mb-4 px-6 leading-6 text-center text-[#393E46]">
             Styleboards can be viewed in your profile. Currently they can't be
-            shared.
+            shared or saved in this version of the app.
           </Text>
 
           <View
@@ -92,7 +91,8 @@ const PostsModal = ({
             </View>
             <View style={{ flex: 1, marginLeft: 8 }}>
               <Pressable
-                className="bg-orange-300 rounded-lg"
+                className="bg-[#fdbb7471] rounded-lg"
+                disabled={true}
                 onPress={() => {
                   console.log("Share button pressed");
                   setShouldNavigate(true);

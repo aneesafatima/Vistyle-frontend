@@ -29,7 +29,6 @@ import Animated, {
 import { Controller, useForm } from "react-hook-form";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { EditableElements } from "@/assets/ui-data/data";
-import { router } from "expo-router";
 const userDetailsSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -112,7 +111,6 @@ const UserSettings = ({
     const generalData = Object.fromEntries(
       Object.entries(data).filter(([key]) => !excludedFields.includes(key))
     ) as updatedUserDataType;
-    console.log("General Data:", generalData);
     try {
       console.log("Nornmal user data being updated");
       const result = await updateUserDetails({
@@ -122,7 +120,7 @@ const UserSettings = ({
       if (data.password && data.newpassword && data.passwordConfirm) {
         console.log("Updating password");
 
-        const passwordData = await updateUserPassword({
+        await updateUserPassword({
           userId: userData?.id ?? "",
           data: {
             password: data.password,

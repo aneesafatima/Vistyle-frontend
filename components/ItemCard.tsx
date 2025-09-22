@@ -20,6 +20,7 @@ interface ItemCardProps {
   code: string;
   baseUrl: string;
   priceValue: number;
+  countryCode:string | null;
   setSelectedProduct: React.Dispatch<
     React.SetStateAction<{
       price: number;
@@ -41,6 +42,7 @@ const ItemCard = ({
   showModal,
   setSelectedProduct,
   priceValue,
+  countryCode
 }: ItemCardProps) => {
   const router = useRouter();
   const [error, setError] = useState(false);
