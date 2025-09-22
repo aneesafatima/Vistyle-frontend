@@ -1,7 +1,6 @@
 import { GlobalContext } from "@/context/GlobalProvider";
 import React, { useContext } from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
-import { Iconify } from "react-native-iconify";
+import { View, Text,ScrollView } from "react-native";
 import { CartItem } from "@/components";
 
 export default function CartScreen() {
@@ -18,9 +17,6 @@ export default function CartScreen() {
             BEST COLLECTION!
           </Text>
         </View>
-        {/* <View className="bg-[#9eadffd9] px-3 py-1 rounded-full">
-          <Text className="text-lg font-bold text-white">{cart?.length}</Text>
-        </View> */}
         <View
           style={{ backgroundColor: "#9eadffd9" }}
           className="w-20 h-20 rounded-full flex items-center justify-center"

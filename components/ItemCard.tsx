@@ -50,10 +50,7 @@ const ItemCard = ({
   return (
     <Pressable
       onPress={() => {
-        router.push({
-          pathname: "/(user)/item-page/[code]",
-          params: { code },
-        });
+        router.push(`/(user)/item-page/${code}/${countryCode}`);
       }}
       style={{ width: cardWidth }}
       className="mb-4 font-interTight-regular mx-1 relative"

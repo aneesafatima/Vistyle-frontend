@@ -6,11 +6,12 @@ import useAuth from "@/hooks/useAuth";
 import { HomeContent, ShopContent, Header } from "@/components";
 
 const HomePage = () => {
-  const { isLoggedIn, userData } = useContext(GlobalContext)!;
+  const { isLoggedIn} = useContext(GlobalContext)!;
   const { loggingUserOut } = useAuth();
   const [isSearching, setIsSearching] = useState(false);
   const [searchText, setSearchText] = useState("");
-  //add shopping categories to the home page
+
+
   return (
     isLoggedIn && (
       <SafeAreaView className="flex-1 flex-col bg-[#fafafa]">
@@ -28,7 +29,7 @@ const HomePage = () => {
         {isSearching ? (
           <ShopContent searchText={searchText} setSearchText={setSearchText} />
         ) : (
-          <HomeContent/>
+          <HomeContent />
         )}
         <TouchableOpacity
           className="absolute bottom-4 right-4 bg-blue-500 p-3 rounded-full"

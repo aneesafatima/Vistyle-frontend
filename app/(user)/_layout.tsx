@@ -18,7 +18,7 @@ const _layout = () => {
           }}
         ></Stack.Screen>
         <Stack.Screen
-          name="item-page/[code]"
+          name="item-page/[code]/[countryCode]"
           options={{
             headerShown: false,
           }}

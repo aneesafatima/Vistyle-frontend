@@ -39,6 +39,7 @@ export default function Layout() {
             width: "80%",
             alignSelf: "center",
           }}
+          
         >
           <TabTrigger name="home" href="/home">
             <Ionicons

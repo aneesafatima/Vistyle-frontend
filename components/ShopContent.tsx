@@ -6,6 +6,7 @@ import { GlobalContext } from "@/context/GlobalProvider";
 import { useProductListByTextQuery } from "@/query/features/hmApi";
 import { skipToken } from "@reduxjs/toolkit/query";
 import * as Location from "expo-location";
+import { set } from "react-hook-form";
 
 const ShopContent = ({
   searchText,
@@ -25,6 +26,7 @@ const ShopContent = ({
   const { makeSearch, setMakeSearch } = useContext(GlobalContext)!;
 
   const [countryCode, setCountryCode] = useState<string | null>(null);
+  const [isFetchingLocation, setIsFetchingLocation] = useState(true);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const { data, isLoading, error, refetch } = useProductListByTextQuery(
     makeSearch && searchText.trim() && countryCode
@@ -56,6 +58,8 @@ const ShopContent = ({
       } catch (error) {
         console.log(error);
         setErrorMsg("Error fetching country code");
+      } finally {
+        setIsFetchingLocation(false);
       }
     };
     getCountryCode();
@@ -71,17 +75,16 @@ const ShopContent = ({
     if (makeSearch && !countryCode) setMakeSearch(false);
   }, [makeSearch]);
 
-
-  useEffect(() => {
-    console.log("Country Code changed:", countryCode);
-  }, [countryCode]);
-
   return (
     <View className="" style={{ marginTop: 96 }}>
       {!data ? (
         <View className="w-screen">
           <Text className="text-lg text-gray-600 text-center ">
-            {errorMsg ? errorMsg : "Let’s see what we can find…"}
+            {isFetchingLocation
+              ? "Detecting location..."
+              : errorMsg
+              ? errorMsg
+              : "Let’s see what we can find…"}
           </Text>
         </View>
       ) : error ? (

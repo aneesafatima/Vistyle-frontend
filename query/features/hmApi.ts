@@ -38,13 +38,13 @@ export const hmApi = createApi({
       },
     }),
     productDetail: builder.query({
-      query: (code: string) => {
+      query: ({code, countryCode}:{code: string, countryCode: string}) => {
         console.log("Fetching product detail for code:", code);
         return {
           url: "detail",
           method: "GET",
           params: {
-            country: "in",
+            country: countryCode.toLowerCase() || "in",
             lang: "en",
             productcode: code,
           },

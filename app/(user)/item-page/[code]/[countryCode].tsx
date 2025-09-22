@@ -25,8 +25,14 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 const ItemPage = () => {
   const [selectedColor, setSelectedColor] = React.useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { code: itemId } = useLocalSearchParams<{ code: string }>();
-  const { data, isLoading, error } = useProductDetailQuery(itemId);
+  const { code: itemId, countryCode } = useLocalSearchParams<{
+    code: string;
+    countryCode: string;
+  }>();
+  const { data, isLoading, error } = useProductDetailQuery({
+    code: itemId,
+    countryCode,
+  });
   const [selectedSize, setSelectedSize] = React.useState<string | null>(null);
   const [addToCart, { isLoading: isAddingToCart, isSuccess }] =
     useAddToCartMutation();
@@ -127,7 +133,7 @@ const ItemPage = () => {
           </Text>
 
           <Text className="text-[#737373] text-sm font-poppins-medium mt-4">
-            {data.product.whitePrice.price} {data.product.whitePrice.currency}
+            {data.product.redPrice.price} {data.product.redPrice.currency}
           </Text>
           <Text className="text-[#919191] text-xs font-poppins-medium my-4">
             {data.product.description}
