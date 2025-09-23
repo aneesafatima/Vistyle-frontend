@@ -1,4 +1,11 @@
-import { View, Text, Image, TouchableOpacity, Alert } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Alert,
+  ActivityIndicator,
+} from "react-native";
 import React, { useState, useEffect, useContext } from "react";
 import Animated, {
   useAnimatedStyle,
@@ -45,42 +52,38 @@ const CartItem = ({ item, i }: CartItemProps) => {
     console.log(cart);
   }, [cart]);
 
-  useEffect(() => {
-    const handleDelete = async () => {
-      scale.value = withSequence(
-        withTiming(0.95, { duration: 150 }),
-        withTiming(0.9, { duration: 100 })
-      );
-      translateX.value = withTiming(-400, { duration: 300 });
-      opacity.value = withTiming(0, { duration: 300 });
-
-      await deleteFromCart({
-        email: userData?.email || "",
-        code: item.code,
+  const handleDelete = async () => {
+    setIsDeleting(true);
+    await deleteFromCart({
+      email: userData?.email || "",
+      code: item.code,
+    })
+      .unwrap()
+      .then((res) => {
+        scale.value = withSequence(
+          withTiming(0.95, { duration: 150 }),
+          withTiming(0.9, { duration: 100 })
+        );
+        translateX.value = withTiming(-400, { duration: 300 });
+        opacity.value = withTiming(0, { duration: 300 });
+        setCart((prevCart) =>
+          prevCart.filter((cartItem) => {
+            console.log(cartItem.code, item.code);
+            return cartItem.code !== item.code;
+          })
+        );
       })
-        .unwrap()
-        .then(() => {
-          setTimeout(() => {
-            setIsDeleting(false);
-            setCart((prevData) =>
-              prevData ? prevData.filter((cartItem) => cartItem == item) : []
-            );
-          }, 300);
-        })
-        .catch((error) => {
-          console.error("Error deleting item:", error);
-          Alert.alert("Error", error.message || "Failed to delete item");
-        })
-        .finally(() => setIsDeleting(false));
-    };
-    if (isDeleting) handleDelete();
-  }, [isDeleting]);
+      .catch((error) => {
+        console.error("Error deleting item:", error);
+        Alert.alert("Error", error.message || "Failed to delete item");
+      })
+      .finally(() => setIsDeleting(false));
+  };
 
   return (
     <Animated.View
       style={[animatedStyle]}
       className="flex-row items-center justify-between mb-6 relative overflow-hidden"
-      key={i}
     >
       <View className="flex-row items-center justify-between  w-full">
         <Image
@@ -115,10 +118,14 @@ const CartItem = ({ item, i }: CartItemProps) => {
         </View>
         <TouchableOpacity
           className="items-center w-10"
-          onPress={() => setIsDeleting(true)}
+          onPress={handleDelete}
           disabled={isDeleting}
         >
-          <Iconify icon="mdi:minus" size={25} color="#222831" />
+          {isDeleting ? (
+            <ActivityIndicator size="small" color="#222831" />
+          ) : (
+            <Iconify icon="mdi:minus" size={25} color="#222831" />
+          )}
         </TouchableOpacity>
       </View>
     </Animated.View>

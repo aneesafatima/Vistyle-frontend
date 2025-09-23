@@ -133,7 +133,9 @@ const ItemPage = () => {
           </Text>
 
           <Text className="text-[#737373] text-sm font-poppins-medium mt-4">
-            {data.product.redPrice.price} {data.product.redPrice.currency}
+            {data.product.redPrice?.price || data.product.whitePrice?.price}{" "}
+            {data.product.redPrice?.currency ||
+              data.product.whitePrice?.currency}
           </Text>
           <Text className="text-[#919191] text-xs font-poppins-medium my-4">
             {data.product.description}

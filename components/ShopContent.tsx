@@ -28,7 +28,7 @@ const ShopContent = ({
   const [countryCode, setCountryCode] = useState<string | null>(null);
   const [isFetchingLocation, setIsFetchingLocation] = useState(true);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const { data, isLoading, error, refetch } = useProductListByTextQuery(
+  const { data, error, isSuccess } = useProductListByTextQuery(
     makeSearch && searchText.trim() && countryCode
       ? { searchText, countryCode }
       : skipToken
@@ -66,10 +66,10 @@ const ShopContent = ({
   }, []);
 
   useEffect(() => {
-    if (data) {
+    if (isSuccess) {
       setMakeSearch(false);
     }
-  }, [data]);
+  }, [isSuccess]);
 
   useEffect(() => {
     if (makeSearch && !countryCode) setMakeSearch(false);

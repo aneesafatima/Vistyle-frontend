@@ -1,10 +1,14 @@
 import { GlobalContext } from "@/context/GlobalProvider";
-import React, { useContext } from "react";
-import { View, Text,ScrollView } from "react-native";
+import React, { useContext, useEffect } from "react";
+import { View, Text, ScrollView } from "react-native";
 import { CartItem } from "@/components";
 
 export default function CartScreen() {
-  const {  cart } = useContext(GlobalContext)!;
+  const { cart } = useContext(GlobalContext)!;
+
+  useEffect(() => {
+    console.log("Cart updated:", cart);
+  }, [cart]);
   return (
     <View className="flex-1 bg-white ">
       {/* Header */}
@@ -30,12 +34,17 @@ export default function CartScreen() {
 
       {cart?.length === 0 ? (
         <View className=" absolute w-screen h-screen flex items-center justify-center">
-          <Text className="font-arial-rounded text-lg text-gray-300">Your cart is empty</Text>
+          <Text className="font-arial-rounded text-lg text-gray-300">
+            Your cart is empty
+          </Text>
         </View>
       ) : (
-        <ScrollView className="flex-1 mb-6 px-9">
+        <ScrollView
+          className="flex-1 px-9 mb-6"
+          contentContainerStyle={{ paddingBottom: 100 }}
+        >
           {cart?.map((item, i) => (
-            <CartItem  item={item} i={i} />
+            <CartItem item={item} i={i} key={item.code} />
           ))}
         </ScrollView>
       )}
