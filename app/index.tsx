@@ -76,7 +76,7 @@ const HomePage = () => {
       setCart(data.user.cart || []);
       setIsLoading(false);
       setIsLoggedIn(true);
-      router.replace("/(user)/(tabs)/home");
+      router.replace("/(user)/(tabs)/"  as any);
     } else if (isLoading && !isDataLoading) {
       setIsLoading(false);
     }
@@ -163,6 +163,7 @@ const HomePage = () => {
           {showAuthenticationScreen ? (
             <View className="flex flex-row justify-center w-full ">
               <TouchableOpacity
+              
                 onPress={() => {
                   setSelectedScreen("sign-up");
                 }}

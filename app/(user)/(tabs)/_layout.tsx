@@ -1,14 +1,12 @@
 import { Tabs, TabList, TabTrigger, TabSlot } from "expo-router/ui";
 import { Ionicons } from "@expo/vector-icons";
 import { usePathname } from "expo-router";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GlobalContext } from "@/context/GlobalProvider";
 import { UserSettings } from "@/components";
 export default function Layout() {
   const pathname = usePathname();
   const { isEditingProfile, setIsEditingProfile } = useContext(GlobalContext)!;
-
-  console.log("Current Pathname:", pathname);
 
   if (isEditingProfile)
     return (
@@ -39,15 +37,15 @@ export default function Layout() {
             width: "80%",
             alignSelf: "center",
           }}
-          
         >
-          <TabTrigger name="home" href="/home">
+          <TabTrigger name="index" href="/">
             <Ionicons
               name="home-outline"
               size={25}
-              color={pathname == "/home" ? "#9eadff" : "black"}
+              color={pathname == "/" ? "#9eadff" : "black"}
             />
           </TabTrigger>
+
           <TabTrigger name="cart" href="/cart">
             <Ionicons
               name="cart-outline"
@@ -55,6 +53,7 @@ export default function Layout() {
               color={pathname == "/cart" ? "#9eadff" : "black"}
             />
           </TabTrigger>
+
           <TabTrigger name="design-studio" href="/design-studio">
             <Ionicons
               name="layers-outline"
@@ -62,6 +61,7 @@ export default function Layout() {
               color={pathname == "/design-studio" ? "#9eadff" : "black"}
             />
           </TabTrigger>
+
           <TabTrigger name="profile" href="/profile">
             <Ionicons
               name="person-outline"

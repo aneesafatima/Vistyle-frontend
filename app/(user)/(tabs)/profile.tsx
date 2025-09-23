@@ -3,10 +3,8 @@ import {
   Text,
   SafeAreaView,
   TouchableOpacity,
-  Pressable,
   Image,
   Dimensions,
-  StatusBar,
 } from "react-native";
 import Animated, {
   useSharedValue,
@@ -14,7 +12,6 @@ import Animated, {
   withTiming,
   Easing,
 } from "react-native-reanimated";
-import { ScrollView } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
@@ -35,7 +32,8 @@ const Profile = () => {
     transform: [{ translateX: translate.value }],
   }));
   const [showModal, setShowModal] = useState(false);
-  const { userData, isEditingProfile, setIsEditingProfile } = useContext(GlobalContext)!;
+  const { userData, isEditingProfile, setIsEditingProfile } =
+    useContext(GlobalContext)!;
   useEffect(() => {
     translate.value = withTiming(isEditingProfile ? -screenWidth : 0, {
       duration: 300,
@@ -50,11 +48,6 @@ const Profile = () => {
       <UserSettings
         setIsEditingProfile={setIsEditingProfile}
         isEditingProfile={isEditingProfile}
-      />
-      <StatusBar
-        barStyle="dark-content"
-        translucent={false}
-        backgroundColor="#9eadffd9"
       />
 
       <Modal showModal={showModal} setShowModal={setShowModal} />
@@ -102,7 +95,9 @@ const Profile = () => {
             </Text>
             <Text className="text-center italic">{userData?.description}</Text>
             <View className="flex flex-row justify-between mt-5">
-              <Text className="text-xl font-medium  pl-6 text-gray-500">Interests</Text>
+              <Text className="text-xl font-medium  pl-6 text-gray-500">
+                Interests
+              </Text>
               <TouchableOpacity onPress={() => setShowModal(true)}>
                 <Text className="text-gray-400 underline pr-6">Edit</Text>
               </TouchableOpacity>

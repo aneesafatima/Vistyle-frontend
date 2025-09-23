@@ -45,7 +45,7 @@ export default function OtpVerify({ setStep }: UserEmailProps) {
   };
   return (
     <View
-      className="flex-1 justify-center items-center mt-10"
+      className=" justify-center items-center mt-10"
       style={{
         width: "100%",
         alignSelf: "center",
@@ -92,7 +92,7 @@ export default function OtpVerify({ setStep }: UserEmailProps) {
 
       {/* Submit Button */}
       <Pressable
-        className="py-4 px-12 rounded-lg flex-row justify-center items-center bg-[#9eadffd9] mb-4"
+        className="py-2 px-12 rounded-lg flex-row justify-center items-center bg-[#9eadffd9] mb-4"
         style={{
           width: "100%",
           maxWidth: 300,

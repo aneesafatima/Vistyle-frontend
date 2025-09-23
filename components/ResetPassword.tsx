@@ -2,7 +2,7 @@ import {
   View,
   Text,
   Alert,
-  Pressable,
+  TouchableOpacity,
   TextInput,
   ActivityIndicator,
 } from "react-native";
@@ -11,7 +11,6 @@ import { useForm, Controller, set } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { GlobalContext } from "@/context/GlobalProvider";
-import { saveToken } from "@/utils/storage";
 import { useResetPasswordMutation } from "@/query/features/authApi";
 import { LoginResponseType } from "@/types/auth";
 import useAuth from "@/hooks/useAuth";
@@ -26,8 +25,8 @@ const resetPasswordSchema = z
   })
   .refine((data) => data.password === data.passwordConfirm, {
     message: "Passwords must match",
-    path: ["passwordConfirm"], // Error will appear under passwordConfirm
-  }); // update to confirm that both the entries are the same
+    path: ["passwordConfirm"],
+  });
 type ResetFormValues = z.infer<typeof resetPasswordSchema>;
 const ResetPassword = () => {
   const { loggingUserIn } = useAuth();
@@ -44,7 +43,10 @@ const ResetPassword = () => {
 
   const onSubmit = async (data: ResetFormValues) => {
     try {
-      const result:LoginResponseType = await resetPassword({ email, ...data }).unwrap();
+      const result: LoginResponseType = await resetPassword({
+        email,
+        ...data,
+      }).unwrap();
       await loggingUserIn(result);
     } catch (error: any) {
       Alert.alert("Error", error?.data?.message || "Something went wrong");
@@ -52,60 +54,68 @@ const ResetPassword = () => {
   };
 
   return (
-    <View className="flex-1 bg-gray-100 justify-center px-6">
-      <Text className="text-2xl font-bold text-center mb-4">
+    <View className="bg-[#fafafa] justify-center px-6">
+      <Text className="text-lg font-medium text-[#222831] my-4 mb-6">
         Reset Password
       </Text>
 
       {/* Password Field */}
-      <View className="mb-4">
-        <Text className="text-lg text-gray-800">Password</Text>
-        <Controller
-          control={control}
-          name="password"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 rounded-lg px-4 py-4 mt-2 bg-white"
-              placeholder="Enter your email"
-              secureTextEntry
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-            />
-          )}
-        />
+      <View className="mb-6">
+        <View className="relative">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Password
+          </Text>
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Enter your new password"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+                secureTextEntry
+              />
+            )}
+          />
+        </View>
         {errors.password && (
-          <Text className="mt-1 text-red-500">{errors.password.message}</Text>
+          <Text className="mt-1 text-[#F87171]">{errors.password.message}</Text>
         )}
       </View>
-
-      {/* Confirm Password Field */}
-      <View className="mb-4">
-        <Text className="text-lg text-gray-800">Confirm Password</Text>
-        <Controller
-          control={control}
-          name="passwordConfirm"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border border-gray-300 rounded-lg px-4 py-4 mt-2 bg-white"
-              placeholder="Enter your password"
-              secureTextEntry
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-            />
-          )}
-        />
+      <View className="mb-6">
+        <View className="relative">
+          <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
+            Confirm Password
+          </Text>
+          <Controller
+            control={control}
+            name="passwordConfirm"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="border border-gray-300 text-[#222831] rounded-2xl px-4 py-5"
+                placeholder="Confirm your new password"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholderTextColor="#9CA3AF"
+                secureTextEntry
+              />
+            )}
+          />
+        </View>
         {errors.passwordConfirm && (
-          <Text className="mt-1 text-red-500">
+          <Text className="mt-1 text-[#F87171]">
             {errors.passwordConfirm.message}
           </Text>
         )}
       </View>
 
       {/* Submit Button */}
-      <Pressable
-        className={`bg-black py-3 rounded-lg flex-row justify-center items-center`}
+      <TouchableOpacity
+        className={`py-4 rounded-lg bg-[#9eadffd9] tracking-wider mt-4`}
         onPress={handleSubmit(onSubmit)}
         disabled={isLoading}
       >
@@ -116,7 +126,7 @@ const ResetPassword = () => {
             Submit
           </Text>
         )}
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

@@ -3,12 +3,10 @@ import {
   Text,
   Image,
   TextInput,
-  TouchableOpacity,
   Pressable,
   Dimensions,
-  ScrollView,
-  StatusBar,
   Alert,
+  ActivityIndicator,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useContext, useEffect } from "react";
@@ -78,8 +76,10 @@ const UserSettings = ({
 }) => {
   const { userData, setUserData } = useContext(GlobalContext)!;
 
-  const [updateUserDetails] = useUpdateUserDetailsMutation();
-  const [updateUserPassword] = useUpdateUserPasswordMutation();
+  const [updateUserDetails, { isLoading: isLoadingUser }] =
+    useUpdateUserDetailsMutation();
+  const [updateUserPassword, { isLoading: isLoadingPassword }] =
+    useUpdateUserPasswordMutation();
   const {
     control,
     handleSubmit,
@@ -112,14 +112,11 @@ const UserSettings = ({
       Object.entries(data).filter(([key]) => !excludedFields.includes(key))
     ) as updatedUserDataType;
     try {
-      console.log("Nornmal user data being updated");
       const result = await updateUserDetails({
         userId: userData?.id ?? "",
         data: generalData,
       }).unwrap();
       if (data.password && data.newpassword && data.passwordConfirm) {
-        console.log("Updating password");
-
         await updateUserPassword({
           userId: userData?.id ?? "",
           data: {
@@ -140,13 +137,10 @@ const UserSettings = ({
 
   return (
     <SafeAreaView className="bg-[#222831] relative">
-      <Animated.ScrollView style={[animatedStyles, { paddingBottom: 200 }]}>
-        <StatusBar
-          barStyle="light-content"
-          translucent={false}
-          animated={true}
-          backgroundColor="#222831"
-        />
+      <Animated.ScrollView
+        contentContainerStyle={{ paddingBottom: 80 }}
+        style={[animatedStyles]}
+      >
         <View className="px-10 w-screen z-20 ">
           {/* Header */}
           <View className="mt-12 flex flex-row justify-between">
@@ -165,7 +159,11 @@ const UserSettings = ({
                 console.log(errors)
               )}
             >
-              <Ionicons name="checkmark" size={24} color="#f2f2f2" />
+              {isLoadingUser || isLoadingPassword ? (
+                <ActivityIndicator size="small" color="#f2f2f2" />
+              ) : (
+                <Ionicons name="checkmark" size={24} color="#f2f2f2" />
+              )}
             </Pressable>
           </View>
 

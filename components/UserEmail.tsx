@@ -39,10 +39,10 @@ const UserEmail = ({ setStep }: UserEmailProps) => {
   };
 
   return (
-    <View className="px-10 pt-14">
+    <View className="px-10 pt-7">
       {/* Email Field */}
 
-      <View className="mb-10">
+      <View className="">
         <View className="relative mt-2">
           <Text className="absolute -top-2 left-3 bg-[#fafafa] text-[#222831] px-1 text-xs z-10">
             Email

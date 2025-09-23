@@ -44,7 +44,7 @@ const logIn = ({
       }).unwrap();
       await loggingUserIn(result);
     } catch (error: any) {
-      console.error(error);
+      console.log("Login error:", error);
     }
   };
 

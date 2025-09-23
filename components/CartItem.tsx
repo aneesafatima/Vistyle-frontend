@@ -48,9 +48,6 @@ const CartItem = ({ item, i }: CartItemProps) => {
     };
   });
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   const handleDelete = async () => {
     setIsDeleting(true);
@@ -68,7 +65,6 @@ const CartItem = ({ item, i }: CartItemProps) => {
         opacity.value = withTiming(0, { duration: 300 });
         setCart((prevCart) =>
           prevCart.filter((cartItem) => {
-            console.log(cartItem.code, item.code);
             return cartItem.code !== item.code;
           })
         );

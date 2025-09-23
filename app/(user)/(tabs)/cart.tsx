@@ -6,9 +6,6 @@ import { CartItem } from "@/components";
 export default function CartScreen() {
   const { cart } = useContext(GlobalContext)!;
 
-  useEffect(() => {
-    console.log("Cart updated:", cart);
-  }, [cart]);
   return (
     <View className="flex-1 bg-white ">
       {/* Header */}

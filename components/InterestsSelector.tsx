@@ -15,7 +15,8 @@ const InterestsSelector = () => {
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [signUpUser, { isLoading }] = useSignUpUserMutation();
   const router = useRouter();
-  const { signUpData, setUserData, setIsLoggedIn, setCart } = useContext(GlobalContext)!;
+  const { signUpData, setUserData, setIsLoggedIn, setCart } =
+    useContext(GlobalContext)!;
   const toggleInterest = (interest: string) => {
     setSelectedInterests((prev) =>
       prev.includes(interest)
@@ -39,10 +40,9 @@ const InterestsSelector = () => {
         designHouse: result["user"].designHouse,
         id: result["user"].id,
         stickers: result["user"].stickers,
-
       });
       setCart(result["user"].cart || []);
-      router.replace("/(user)/(tabs)/home");
+      router.replace("/(user)/(tabs)/"  as any);
     } catch (error: any) {
       console.error("Error during sign up:", error);
     }
