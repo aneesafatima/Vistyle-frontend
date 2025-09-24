@@ -7,7 +7,7 @@ import { UserSettings } from "@/components";
 export default function Layout() {
   const pathname = usePathname();
   const { isEditingProfile, setIsEditingProfile } = useContext(GlobalContext)!;
-
+  console.log(pathname)
   if (isEditingProfile)
     return (
       <UserSettings
@@ -38,11 +38,11 @@ export default function Layout() {
             alignSelf: "center",
           }}
         >
-          <TabTrigger name="index" href="/">
+          <TabTrigger name="app-home" href="/app-home">
             <Ionicons
               name="home-outline"
               size={25}
-              color={pathname == "/" ? "#9eadff" : "black"}
+              color={pathname == "/app-home" ? "#9eadff" : "black"}
             />
           </TabTrigger>
 

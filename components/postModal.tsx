@@ -3,7 +3,6 @@ import { View, Text, Pressable } from "react-native";
 import Modal from "react-native-modal";
 import { Canvas, useImage } from "@shopify/react-native-skia";
 import { PostSticker } from ".";
-import { router } from "expo-router";
 
 const PostsModal = ({
   stickers,
@@ -14,7 +13,6 @@ const PostsModal = ({
   onClose: () => void;
   onCloseStart: () => void;
 }) => {
-  console.log("In post modal");
   const [shouldNavigate, setShouldNavigate] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const images = stickers.map((sticker) => useImage(sticker.src));

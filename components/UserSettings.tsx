@@ -7,6 +7,7 @@ import {
   Dimensions,
   Alert,
   ActivityIndicator,
+  TouchableOpacity,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useContext, useEffect } from "react";
@@ -27,6 +28,7 @@ import Animated, {
 import { Controller, useForm } from "react-hook-form";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { EditableElements } from "@/assets/ui-data/data";
+import useAuth from "@/hooks/useAuth";
 const userDetailsSchema = z
   .object({
     name: z.string().nonempty("Name is required"),
@@ -105,6 +107,7 @@ const UserSettings = ({
       easing: Easing.inOut(Easing.ease),
     });
   }, [isEditingProfile]);
+  const { loggingUserOut } = useAuth();
 
   const handleUpdationResult = async (data: updatedUserDataType) => {
     const excludedFields = ["password", "newpassword", "passwordConfirm"];
@@ -221,6 +224,12 @@ const UserSettings = ({
               </View>
             );
           })}
+          <TouchableOpacity
+            className="bg-[#9eadffd9]  p-3 py-4 rounded-xl"
+            onPress={loggingUserOut}
+          >
+            <Text className="text-white text-center">Log Out</Text>
+          </TouchableOpacity>
         </View>
       </Animated.ScrollView>
     </SafeAreaView>

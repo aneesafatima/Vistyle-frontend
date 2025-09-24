@@ -24,7 +24,7 @@ const useAuth = () => {
         stickers: result.user.stickers,
       });
       setCart(result.user.cart || []);
-      router.replace("/(user)/(tabs)/" as any);
+      router.replace("/(user)/(tabs)/app-home");
     } catch (error) {
       console.error("Error during login:", error);
     }

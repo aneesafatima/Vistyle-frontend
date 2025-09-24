@@ -21,7 +21,7 @@ import {
 import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
 import Animated from "react-native-reanimated";
 import Alert from "@/components/Alert";
-import { CategoryListModal } from "@/components";
+import { CategoryListModal, HelpModal } from "@/components";
 const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 const DesignStudio = () => {
@@ -31,6 +31,7 @@ const DesignStudio = () => {
   const [showModal, setShowModal] = React.useState(false);
   const [showAlert, setShowAlert] = React.useState(false);
   const [menuVisible, setMenuVisible] = React.useState(false);
+  const [showHelpModal, setShowHelpModal] = React.useState(false);
 
   // Animation values for menu
   const menuOpacity = useSharedValue(0);
@@ -161,6 +162,21 @@ const DesignStudio = () => {
           selectedCategories={selelctedCategories}
         />
       )}
+
+      {showHelpModal && (
+        <HelpModal
+          title="Using the Design Studio"
+          steps={[
+            "Stickers can be created in the app home section using the search button.",
+            "Sticker's position and category can be set while creating the sticker.",
+            "Select categories to mix from the created list of stickers using ↑↓.",
+            "Mix and Match stickers from different categories in the studio.",
+            "Optionally, navigate to the design canvas to create custom styleboards.",
+          ]}
+          showModal={showHelpModal}
+          setShowModal={setShowHelpModal}
+        />
+      )}
       <StatusBar
         backgroundColor={"#FAFAFA"}
         barStyle="dark-content"
@@ -172,7 +188,7 @@ const DesignStudio = () => {
           description="You haven't created any stickers yet. Please create some stickers to use in the design studio."
           onAcceptText="Dismiss"
           onAccept={() => {
-            router.push("/(user)/(tabs)/home");
+            router.push("/(user)/(tabs)/app-home");
             setShowAlert(false);
           }}
         />
@@ -243,7 +259,10 @@ const DesignStudio = () => {
             <Iconify icon="iconamoon:swap-light" size={30} color="#6E6E6E" />
           </TouchableOpacity>
 
-          <TouchableOpacity className="bg-[#eaeaea] p-3 rounded-xl">
+          <TouchableOpacity
+            className="bg-[#eaeaea] p-3 rounded-xl"
+            onPress={() => setShowHelpModal(true)}
+          >
             <Iconify
               icon="material-symbols:question-mark-rounded"
               size={30}

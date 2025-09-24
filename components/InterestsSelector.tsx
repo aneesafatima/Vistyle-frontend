@@ -42,7 +42,7 @@ const InterestsSelector = () => {
         stickers: result["user"].stickers,
       });
       setCart(result["user"].cart || []);
-      router.replace("/(user)/(tabs)/"  as any);
+      router.replace("/(user)/(tabs)/app-home");
     } catch (error: any) {
       console.error("Error during sign up:", error);
     }

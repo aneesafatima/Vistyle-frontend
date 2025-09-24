@@ -66,10 +66,10 @@ const ShopContent = ({
   }, []);
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccess || data) {
       setMakeSearch(false);
     }
-  }, [isSuccess]);
+  }, [isSuccess,data]);
 
   useEffect(() => {
     if (makeSearch && !countryCode) setMakeSearch(false);

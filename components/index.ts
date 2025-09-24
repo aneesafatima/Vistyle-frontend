@@ -20,3 +20,4 @@ export { default as CartItem } from "./CartItem";
 export { default as ResetPassword } from "./ResetPassword";
 export { default as HouseSelector } from "./HouseSelector";
 export { default as InterestsSelector } from "./InterestsSelector";
+export { default as HelpModal } from "./HelpModal";

@@ -76,7 +76,7 @@ const HomePage = () => {
       setCart(data.user.cart || []);
       setIsLoading(false);
       setIsLoggedIn(true);
-      router.replace("/(user)/(tabs)/"  as any);
+      router.replace("/(user)/(tabs)/app-home");
     } else if (isLoading && !isDataLoading) {
       setIsLoading(false);
     }

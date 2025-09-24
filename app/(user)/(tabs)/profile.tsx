@@ -115,7 +115,7 @@ const Profile = () => {
               ))}
             </View>
           </View>
-          <Text className=" mb-6 text-gray-500 font-medium text-xl mt-10 pl-6">
+          <Text className="text-xl font-medium  pl-8 text-gray-500 mt-5">
             Drafts
           </Text>
         </View>
