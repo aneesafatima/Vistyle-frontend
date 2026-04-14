@@ -136,3 +136,5 @@ If you’re here reading this:
 - and maybe… don’t be as delusional as I was  
 
 or do and make your own README like this later 🙂
+
+Read more about my experience here https://medium.com/@aneesafatima238/a-startup-gone-wrong-9fbc17b51608
